@@ -48,7 +48,7 @@ public enum RespCode {
     private String code;
     private String description;
 
-    private RespCode(String code, String description) {
+    RespCode(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,17 +38,18 @@ public class DemoController {
 
     @PostMapping("getDemoList")
     @SuppressWarnings("rawtypes")
-    public HttpResult getDemoList(@RequestBody DemoDto demoDto) throws Exception {
-        List<Demo> demoList = Lists.newArrayList();
+    public HttpResult getDemoList(@RequestBody DemoDto demoDto) throws CommonException {
+        List<Demo> demoList;
         try {
             demoList = demoService.getDemoList(demoDto);
         } catch (Exception e) {
-            throw new CommonException("数据库查询出错!");
+            throw new CommonException("数据库查询出错!", e);
         }
         List<DemoVo> demoVoList = demoList.stream()
                 .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).build())
                 .collect(Collectors.toList());
         return HttpResult.success(demoVoList);
+
     }
 
 }

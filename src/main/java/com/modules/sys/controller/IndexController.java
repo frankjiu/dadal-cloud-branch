@@ -48,7 +48,7 @@ public class IndexController {
      * Post request(return json)
      */
     @PostMapping("/test")
-    public String test() throws Exception {
+    public String test() throws CommonException {
         throw new CommonException("test请求(xx业务处理)异常!");
     }
 

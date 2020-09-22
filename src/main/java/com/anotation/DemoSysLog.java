@@ -24,21 +24,21 @@ public @interface DemoSysLog {
     /**
      * 操作类型
      */
-    public String operationType() default "";
+    String operationType() default "";
 
     /**
      * 操作模块
      */
-    public String operationModule() default "";
+    String operationModule() default "";
 
     /**
      * 描述
      */
-    public String description() default "";
+    String description() default "";
 
     /**
      * 备注
      */
-    public String remark() default "";
+    String remark() default "";
 
 }
