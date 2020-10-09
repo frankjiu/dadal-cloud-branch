@@ -7,9 +7,10 @@
 
 package com.modules.sys.model.dto;
 
-import java.time.LocalDateTime;
-
 import lombok.Data;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * @Description: xxx参数
@@ -17,11 +18,12 @@ import lombok.Data;
  * @date: 2020年8月26日
  */
 @Data
+@Component
 public class DemoDto {
 
     private String id;
     private String cardName;
     private String cardNumber;
-    private LocalDateTime createTime;
+    private Date createTime;
 
 }

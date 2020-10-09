@@ -19,8 +19,8 @@ import lombok.Data;
 @Builder
 public class DemoVo {
 
-    private String id;
+    private Integer id;
     private String cardName;
-    private String cardNumber;
+    private Long cardNumber;
 
 }

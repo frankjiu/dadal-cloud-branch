@@ -8,22 +8,19 @@
 
 package com.modules.sys.controller;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.exception.CommonException;
-import com.google.common.collect.Lists;
 import com.modules.sys.model.dto.DemoDto;
 import com.modules.sys.model.entity.Demo;
 import com.modules.sys.model.vo.DemoVo;
 import com.modules.sys.service.DemoService;
 import com.result.HttpResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Description: Demo Controller
@@ -36,12 +33,12 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
 
-    @PostMapping("getDemoList")
+    @PostMapping("findDemoList")
     @SuppressWarnings("rawtypes")
-    public HttpResult getDemoList(@RequestBody DemoDto demoDto) throws CommonException {
+    public HttpResult findDemoList(@RequestBody DemoDto demoDto) throws CommonException {
         List<Demo> demoList;
         try {
-            demoList = demoService.getDemoList(demoDto);
+            demoList = demoService.findDemoList(demoDto);
         } catch (Exception e) {
             throw new CommonException("数据库查询出错!", e);
         }

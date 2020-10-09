@@ -19,6 +19,6 @@ import com.modules.sys.model.entity.Demo;
 public interface DemoService {
 
     /** 获取所有demo表数据 */
-    List<Demo> getDemoList(DemoDto demoDto) throws Exception;
+    List<Demo> findDemoList(DemoDto demoDto) throws Exception;
 
 }

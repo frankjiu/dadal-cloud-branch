@@ -28,7 +28,7 @@ public class DemoServiceImpl implements DemoService {
     private DemoDao demoDao;
 
     @Override
-    public List<Demo> getDemoList(DemoDto demoDto) throws Exception {
+    public List<Demo> findDemoList(DemoDto demoDto) throws Exception {
         return demoDao.getDemoList(demoDto);
     }
 
