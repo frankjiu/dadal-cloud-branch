@@ -2,16 +2,17 @@ package com.modules.sys.controller;
 
 import com.google.common.collect.Lists;
 import com.modules.sys.model.entity.Demo;
+import jodd.util.StringUtil;
 import org.thymeleaf.util.DateUtils;
 
 import javax.sql.rowset.serial.SQLOutputImpl;
 import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,6 +29,8 @@ public class tes {
         add("sub_region");
         add("country");
     }};
+
+    private static final Pattern pattern = Pattern.compile("&#x([0-9a-f]+);?");
 
     public static void main(String[] args) {
         /*Object fourthVal = "50%";
@@ -102,14 +105,219 @@ public class tes {
         LocalDateTime parse = LocalDateTime.parse(str, pattern);
         System.out.println(parse.toString());*/
 
-        String timeStr = "2019-08-26 18:03:33";
+        /*String timeStr = "2019-08-26 18:03:33";
         DateTimeFormatter timeDtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime localDateTime = LocalDateTime.parse(timeStr, timeDtf);
         Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
         Date date = Date.from(instant);
 
-        System.out.println(date);
+        System.out.println(date);*/
 
+        /*String str = "aaa(test)bbb(111)";
+        String restr = getInnerStr(str);
+
+        System.out.println(restr);*/
+
+        /*StringBuffer stb = new StringBuffer();
+        String s = null;
+        stb.append(s);
+        stb.append("aa");
+
+        String s1 = stb.toString();
+        System.out.println(s1);*/
+
+        /*int a = 0;
+        ++a;
+        System.out.println(a);*/
+
+        /*String statisticWayForCabin = "(sum(rpk_curr)/sum(ask_curr)-sum(rpk_curr_ly)/sum(ask_curr_ly))";
+
+        statisticWayForCabin = getInnerStr(statisticWayForCabin);
+
+        String[] statisticField = statisticWayForCabin.split("\\/|-");
+
+        List<String> list = Arrays.asList(statisticField);
+        System.out.println(list.size());*/
+
+        /*Long start = 1620835200000L;
+
+        LocalDate localDate = Instant.ofEpochMilli(start).atZone(ZoneOffset.ofHours(8)).toLocalDate();
+        //LocalDateTime localDateTime = Instant.ofEpochMilli(start).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+
+        System.out.println(localDate);*/
+
+        /*Date date = new Date();
+        System.out.println(date);
+        LocalDate localDate = dateToLocalDate(date);
+        System.out.println(localDate);*/
+
+
+
+        // sum(case when cabin in ('Y') then rpk_curr else 0 end) / sum(case when cabin in ('Y') then ask_curr else 0 end) as rlf,
+        //String statisticWay = "sum(case when cabin in ('Y') then ask_curr else 0 end)";
+        /*String statisticWay = "sum(rpk_curr)/sum(ask_curr)";
+        String leftStr = "sum(case when cabin in ('Y') then ";
+        String rightStr = " else 0 end)";
+
+        // 正则表达式, 匹配字符串中的sum关键字, 匹配到sum关键字的取sum后括号内的字段, 对该字段添加case when条件.
+        Matcher matcher = Pattern.compile("sum\\([a-z]{1,8}+_[a-z]+\\d?\\)").matcher(statisticWay);*/
+        // 匹配sum区间段
+        // String last = "";
+        /*while (matcher.find()) {
+            String sumStr = matcher.group(0);
+            System.out.println(sumStr);
+            String innerField = sumStr.substring(4, sumStr.length()-1);
+            System.out.println(innerField);
+
+            // 拼接case when条件
+            String newSumStr = leftStr + innerField + rightStr;
+            System.out.println(newSumStr);
+
+            // 替换新的sum区间段
+            String last = matcher.replaceFirst(newSumStr);
+            System.out.println("===============" + last);
+
+            //String last = statisticWay.replaceFirst(sumStr,newSumStr);
+            //System.out.println("===============" + last);
+
+        }*/
+
+
+        /*String line = "This order was placed for QT3000! OK?";
+        String pattern = "\\(\\.*\\)\\(\d+)\\(\\.*\\)";
+
+        // Create a Pattern object
+        Pattern r = Pattern.compile(pattern);
+
+        // Now create matcher object.
+        Matcher m = r.matcher(line);
+
+        if (m.find( )) {
+            System.out.println("Found value: " + m.group(0) );
+            System.out.println("Found value: " + m.group(1) );
+            System.out.println("Found value: " + m.group(2) );
+        } else {
+            System.out.println("NO MATCH");
+        }*/
+
+
+        /*String statisticWay = "sum(rpk_curr)/sum(ask_curr)";
+        //String s = conditionStatistic(statisticWay);
+        StringBuffer cabinClassCondition = new StringBuffer("cabin in ('Y') and seg_class in ('Y', 'P', 'B')");
+        String s = conditionStatistic(statisticWay, cabinClassCondition);
+        System.out.println(s);*/
+
+
+
+        /*String statisticWay = "sum(seg_revenue_yqyr_curr)/sum(tkd_rpk_curr)/(sum(seg_revenue_yqyr_curr_ly)/sum(tkd_rpk_curr_ly))-1";
+        String leftStr = "sum(case when cabin in ('Y') then ";
+        String rightStr = " else 0 end)";
+
+        String last = statisticWay;
+        // 正则表达式, 匹配字符串中的sum关键字, 匹配到sum关键字的取sum后括号内的字段, 对该字段添加case when条件.
+        Matcher matcher = Pattern.compile("sum\\([a-z]{1,8}+(_[a-z]+)+\\d?\\)").matcher(statisticWay);
+        // 匹配sum区间段
+        while (matcher.find()) {
+            String sumStr = matcher.group(0);
+            //System.out.println(sumStr);
+            String innerField = sumStr.substring(4, sumStr.length()-1);
+            //System.out.println(innerField);
+
+            // 拼接case when条件
+            String newSumStr = leftStr + innerField + rightStr;
+            //System.out.println(newSumStr);
+
+            // 替换新的sum区间段
+            last  = last.replace(sumStr,newSumStr);
+        }
+        System.out.println("===============" + last);*/
+
+        String s = "abc";
+        int i = s.indexOf("a");
+        System.out.println(i);
+
+    }
+
+    public static String conditionStatistic(String statisticWay){
+        // statisticWay = "sum(rpk_curr)/sum(ask_curr)";
+        String leftStr = "sum(case when cabin in ('Y') then ";
+        String rightStr = " else 0 end)";
+        // 正则表达式, 匹配字符串中的sum关键字, 匹配到sum关键字的取sum后括号内的字段, 对该字段添加case when条件.
+        Matcher matcher = Pattern.compile("sum\\([a-z]{1,8}+(_[a-z]+)+\\d?\\)").matcher(statisticWay);
+        // 匹配sum区间段
+        while (matcher.find()) {
+            String sumStr = matcher.group(0);
+            String innerField = sumStr.substring(4, sumStr.length()-1);
+            // 拼接case when条件
+            String newSumStr = leftStr + innerField + rightStr;
+            // 替换新的sum区间段
+            statisticWay  = statisticWay.replace(sumStr,newSumStr);
+        }
+        return statisticWay;
+    }
+
+    public String conditionStatistic1(String statisticWay){
+        //String statisticWay = "sum(rpk_curr)/sum(ask_curr)";
+        statisticWay = "sum(seg_revenue_yqyr_curr)/sum(tkd_rpk_curr)/(sum(seg_revenue_yqyr_curr_ly)/sum(tkd_rpk_curr_ly))-1";
+        String leftStr = "sum(case when cabin in ('Y') then ";
+        String rightStr = " else 0 end)";
+
+        String last = statisticWay;
+        // 正则表达式, 匹配字符串中的sum关键字, 匹配到sum关键字的取sum后括号内的字段, 对该字段添加case when条件.
+        Matcher matcher = Pattern.compile("sum\\([a-z]{1,8}+(_[a-z]+)+\\d?\\)").matcher(statisticWay);
+        // 匹配sum区间段
+        while (matcher.find()) {
+            String sumStr = matcher.group(0);
+            //System.out.println(sumStr);
+            String innerField = sumStr.substring(4, sumStr.length()-1);
+            //System.out.println(innerField);
+
+            // 拼接case when条件
+            String newSumStr = leftStr + innerField + rightStr;
+            //System.out.println(newSumStr);
+
+            // 替换新的sum区间段
+            last  = last.replace(sumStr,newSumStr);
+        }
+        return last;
+    }
+
+    /**
+     * question
+     */
+    private static String conditionStatistic(String statisticWay, StringBuffer innerCabinClassCondition){
+        // statisticWay = "sum(rpk_curr)/sum(ask_curr)";
+        // 正则表达式, 匹配字符串中的sum关键字, 匹配到sum关键字的取sum后括号内的字段, 对该字段添加case when条件.
+        Matcher matcher = Pattern.compile("sum\\([a-z]{1,8}+(_[a-z]+)+\\d?\\)").matcher(statisticWay);
+        // 匹配sum区间段
+        while (matcher.find()) {
+            StringBuffer statisticWayBuffer = new StringBuffer();
+            String sumStr = matcher.group(0);
+            String innerField = sumStr.substring(4, sumStr.length()-1);
+            // 拼接case when条件
+            String newSumStr = statisticWayBuffer.append("sum(case when ")
+                    .append(innerCabinClassCondition)
+                    .append(" then ")
+                    .append(innerField)
+                    .append(" else 0 end)").toString();
+            // 替换新的sum区间段
+            statisticWay  = statisticWay.replace(sumStr,newSumStr);
+        }
+        return statisticWay;
+    }
+
+
+
+
+    public static LocalDate dateToLocalDate(Date date) {
+        if(null == date) {
+            return null;
+        }
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+
+    public static String getInnerStr(String str) {
+        return str.substring(str.indexOf("(") + 1, str.lastIndexOf(")"));
     }
 
     /**

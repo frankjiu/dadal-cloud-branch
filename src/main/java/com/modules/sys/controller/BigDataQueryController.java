@@ -83,7 +83,7 @@ public class BigDataQueryController implements Runnable {
             List<Demo> demoList = demoService.findDemoList(demoDto);
 
             List<DemoVo> demoVoList = demoList.stream()
-                    .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).build())
+                    .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
                     .collect(Collectors.toList());
             result.addAll(demoVoList);
         }

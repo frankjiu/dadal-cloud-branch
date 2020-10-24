@@ -43,7 +43,7 @@ public class DemoController {
             throw new CommonException("数据库查询出错!", e);
         }
         List<DemoVo> demoVoList = demoList.stream()
-                .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).build())
+                .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
                 .collect(Collectors.toList());
         return HttpResult.success(demoVoList);
 
