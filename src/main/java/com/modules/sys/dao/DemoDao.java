@@ -14,6 +14,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.modules.sys.model.dto.DemoDto;
 import com.modules.sys.model.entity.Demo;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @author: Frankjiu
@@ -22,6 +23,10 @@ import com.modules.sys.model.entity.Demo;
 @Mapper
 public interface DemoDao {
 
-    List<Demo> getDemoList(@Param("demoDto") DemoDto demoDto) throws Exception;
+    @Select(" SELECT d.* FROM (SELECT CARD_NAME, MAX( CARD_NUMBER ) m FROM demo GROUP BY CARD_NAME ) t, " +
+            " demo d WHERE t.CARD_NAME = d.CARD_NAME AND t.m = d.CARD_NUMBER AND d.CARD_NAME = #{demoDtoVal.cardName} ")
+    List<Demo> getDemoList(@Param("demoDtoVal") DemoDto demoDto) throws Exception;
+
+    List<Demo> getDemoListFast(@Param("demoDto") DemoDto demoDto) throws Exception;
 
 }

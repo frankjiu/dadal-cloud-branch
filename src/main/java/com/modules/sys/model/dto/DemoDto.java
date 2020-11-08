@@ -7,7 +7,9 @@
 
 package com.modules.sys.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -19,6 +21,8 @@ import java.util.Date;
  */
 @Data
 @Component
+@NoArgsConstructor
+@AllArgsConstructor
 public class DemoDto {
 
     private String id;

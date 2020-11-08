@@ -10,7 +10,7 @@ spring:
     #MySQL
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/dadal?serverTimezone=Asia/Shanghai&useSSL=false
+        url: jdbc:mysql://localhost:3306/dadal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
         username: root
         password: root
         
@@ -32,4 +32,7 @@ logging:
   
 #mapper files location
 mybatis:
+
+    configLocation: classpath:/mybatis-config.xml
+
     mapper-locations: classpath:mapper/**/*.xml

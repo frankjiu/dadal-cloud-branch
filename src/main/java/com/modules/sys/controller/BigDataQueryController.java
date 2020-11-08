@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 /**
@@ -25,48 +24,20 @@ import java.util.stream.Collectors;
  */
 @RestController
 @Slf4j
-public class BigDataQueryController implements Runnable {
+public class BigDataQueryController implements Callable <List<DemoVo>> {
 
     @Autowired
     private DemoService demoService;
 
+    @Autowired
     private DemoDto demoDto;
 
     private BigDataQueryController (DemoDto demoDto) {
         this.demoDto = demoDto;
     }
 
-    private static List<DemoDto> list;
-
-    private static List<DemoVo> result;
-
-    static {
-        list = new ArrayList<>();
-
-        for (int i = 0; i < 20; i++) {
-            DemoDto d = new DemoDto();
-            d.setCardName("中国银行");
-            list.add(d);
-        }
-
-        /*DemoDto d1 = new DemoDto();
-        d1.setCardName("中国银行");
-        DemoDto d2 = new DemoDto();
-        d2.setCardName("农业银行");
-        DemoDto d3 = new DemoDto();
-        d3.setCardName("工商银行");
-        DemoDto d4 = new DemoDto();
-        d3.setCardName("建设银行");
-        DemoDto d5 = new DemoDto();
-        d3.setCardName("交通银行");
-
-        list.add(d1);
-        list.add(d2);
-        list.add(d3);
-        list.add(d4);
-        list.add(d5);*/
-
-    }
+    private static final int roundTimes = 18;
+    private static final int threadNum = 4;
 
     /**
      * 串行查询
@@ -76,15 +47,19 @@ public class BigDataQueryController implements Runnable {
      */
     @PostMapping("findList")
     public HttpResult findList(@RequestBody DemoDto demoDto) throws Exception {
-        result = new ArrayList<>();
+        List<DemoVo> result = new ArrayList<>();
         long start = System.currentTimeMillis();
-        for (int i = 0; i < list.size(); i++) {
-            demoDto = list.get(i);
+        for (int i = 0; i < roundTimes; i++) {
             List<Demo> demoList = demoService.findDemoList(demoDto);
-
             List<DemoVo> demoVoList = demoList.stream()
-                    .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
+                    .map(e -> DemoVo.builder().
+                            id(e.getId())
+                            .cardName(e.getCardName())
+                            .cardNumber(e.getCardNumber())
+                            .createTime(e.getCreateTime())
+                            .build())
                     .collect(Collectors.toList());
+
             result.addAll(demoVoList);
         }
         long end = System.currentTimeMillis();
@@ -93,19 +68,24 @@ public class BigDataQueryController implements Runnable {
     }
 
     @Override
-    public void run() {
+    public List<DemoVo> call() {
+        List<DemoVo> demoVoList = null;
         try {
             demoService = SpringContextUtils.getBeanByClass(DemoService.class);
             List<Demo> demoList = demoService.findDemoList(demoDto);
-
-            List<DemoVo> demoVoList = demoList.stream()
-                    .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).build())
+            demoVoList = demoList.stream()
+                    .map(e -> DemoVo.builder()
+                            .id(e.getId())
+                            .cardName(e.getCardName())
+                            .cardNumber(e.getCardNumber())
+                            .createTime(e.getCreateTime())
+                            .build())
                     .collect(Collectors.toList());
 
-            result.addAll(demoVoList);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return demoVoList;
     }
 
     /**
@@ -113,17 +93,27 @@ public class BigDataQueryController implements Runnable {
      * @return
      */
     @PostMapping("findAllList")
-    public HttpResult findAllList(){
-        result = new ArrayList<>();
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
-
-        log.info(">>>多线程查询开始...");
+    public HttpResult findAllList(@RequestBody DemoDto demoDto){
+        List<DemoVo> result = new ArrayList<>();
+        List<Future<List<DemoVo>>> futures = new ArrayList<>();
+        ExecutorService executorService = Executors.newFixedThreadPool(threadNum);
         long start = System.currentTimeMillis();
-        for (int i = 0; i < list.size(); i++) {
-            demoDto = list.get(i);
-            executorService.execute(new BigDataQueryController(demoDto));
+        for (int i = 0; i < roundTimes; i++) {
+            Future<List<DemoVo>> future = executorService.submit(new BigDataQueryController(demoDto));
+            futures.add(future);
         }
 
+        for (Future<List<DemoVo>> future : futures) {
+            List<DemoVo> demoVos = null;
+            try {
+                demoVos = future.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            result.addAll(demoVos);
+        }
         executorService.shutdown();
         while (true) {
             if (executorService.isTerminated()) {
@@ -131,14 +121,9 @@ public class BigDataQueryController implements Runnable {
             }
         }
         long end = System.currentTimeMillis();
-        log.info("多线程查询结束,耗时{}s, 结果总量:{}<<<", (end-start)/1000, result.size());
-
+        log.info("=======================并行查询耗时{}s, 结果总量:{}<<<", (end-start)/1000, result.size());
         return HttpResult.success(result);
-
     }
-
-
-
 
 
 }
