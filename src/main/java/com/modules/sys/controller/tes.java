@@ -1,21 +1,22 @@
 package com.modules.sys.controller;
 
-import com.google.common.collect.Lists;
-import com.modules.sys.model.entity.Demo;
-import jodd.util.StringUtil;
-import org.thymeleaf.util.DateUtils;
+import com.modules.sys.model.dto.User;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
-import javax.sql.rowset.serial.SQLOutputImpl;
 import java.lang.reflect.Field;
-import java.sql.SQLOutput;
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @Description:
@@ -33,7 +34,7 @@ public class tes {
 
     private static final Pattern pattern = Pattern.compile("&#x([0-9a-f]+);?");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         /*Object fourthVal = "50%";
         fourthVal = percentToDouble(fourthVal.toString());
         System.out.println(fourthVal.toString());*/
@@ -242,12 +243,170 @@ public class tes {
         /*boolean flag = hasField(Demo.class, "cardName");
         System.out.println(flag);*/
 
-        Demo demo = new Demo();
+        /*Demo demo = new Demo();
         demo.setCardName(null);
 
         String cardNameVal = getFieldValueByName("cardName", demo);
-        System.out.println(cardNameVal);
+        System.out.println(cardNameVal);*/
 
+        /*String test = "BOX_SSTXFFABDK";
+        String s = test.substring(0, 4);
+        System.out.println(s);*/
+
+        /*List<String> oriCityList = new ArrayList<>();
+        oriCityList.add("A");
+        oriCityList.add("B");
+        List<String> destCityList = new ArrayList<>();
+        destCityList.add("1");
+        destCityList.add("2");
+        destCityList.add("3");
+
+        for (String ori : oriCityList) {
+            for (String dest : destCityList) {
+                String origin = ori;
+                String destination = dest;
+                String total = origin + "-" + destination;
+                System.out.println(total);
+            }
+
+        }*/
+
+        /*User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        user1.setName("zhangsan");
+        user1.setAddress("beijing");
+        user1.setAge(10);
+        user2.setName("zhangsan");
+        user2.setAddress("beijing");
+        user2.setAge(20);
+        user3.setName("lisi");
+        user3.setAddress("shanghai");
+        user3.setAge(30);
+        List<User> list = new ArrayList<>();
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+        Map<String, List<User>> collect = list.stream().collect(Collectors.groupingBy(e -> getGroupField(e)));
+        Set<String> set = collect.keySet();
+        set.forEach(e -> System.out.println(e)); // zhangsan#beijing    lisi#shanghai
+        User user = new User();
+        User.Detail detailList = new User.Detail();
+        collect.entrySet().stream().map(e -> {
+            String key = e.getKey();
+            user.setName(key);
+            user.setAddress(key);
+            return key;
+        });*/
+
+        //Map<String, List<User>> collect = list.stream().collect(Collectors.groupingBy(User::getName));
+
+
+        // {zhangsan#beijing=[User{age=10, name='zhangsan', address='beijing'}, User{age=20, name='zhangsan', address='beijing'}],
+        // lisi#shanghai=[User{age=30, name='lisi', address='shanghai'}]}
+
+        //System.out.println(collect);
+
+        //LocalDateTime now = LocalDateTime.now();
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String now = LocalDateTime.now().format(formatter);
+
+        System.out.println(now);*/
+
+        /*String a = "[\"R\",\"S\",\"T\",\"E\",\"V\",\"G\",\"X\",\"I\",\"Z\",\"N\",\"O\"]";
+        String substring = a.substring(1, a.length() - 1).replace("\"","");
+        System.out.println(substring);*/
+
+        /*Integer s = null;
+        String a = s + "aaa";
+        System.out.println(a);*/
+
+        //long dateTime = 148306827694L;
+        //Date date = new Date(dateTime);
+        //System.out.println(date.toString());
+
+        /*Date depDateTimeLeft = new Date("1970/1/1");
+        // Date parse1 = DateFormat.parse("1970-01-01");
+        System.out.println(depDateTimeLeft);*/
+
+        /*List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        List<String> strings = list.subList(1, 3); // 包首不包尾
+        for (String string : strings) {
+            System.out.println(string);
+        }
+
+        String a = null;
+        String b = a + "ss";
+        System.out.println(b);*/
+
+        /*Integer integer = Integer.valueOf("");
+        System.out.println(integer);*/
+        /*List<String> a = new ArrayList<>();
+        String join = String.join(",", a);
+        System.out.println(join);*/
+        //String patternFirst = null;
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern(patternFirst);
+
+        /*Assert.notNull(patternFirst, "patternFirst is required!");
+
+        // String类型转LocalDate
+        String str = "2020-11-11 15:41:40";
+        String formattering = "yyyyMMddHHmmss";
+        //String formattering = "yyyy-MM-dd HH:mm:ss";
+        LocalDateTime localDateTime = string2LocalDateTime(str.replaceAll("\\s|-|:", ""), formattering);
+        System.out.println(localDateTime);
+        String s = str.replaceAll("\\s|-|:", "");
+        System.out.println(s);*/
+
+        /*Pattern compile = Pattern.compile("(^$)|(^[1-9]\\d*)|(0$)");
+        boolean flag = compile.matcher("0").find();
+        System.out.println(flag);*/
+        BigDecimal finalLySeatShare = null;
+        if (finalLySeatShare == null) {
+            finalLySeatShare = BigDecimal.ZERO;
+        }
+        //boolean a = finalLySeatShare.compareTo(new BigDecimal(0)) == -1;
+        boolean a = new BigDecimal(-0.1).compareTo(finalLySeatShare) == -1;
+        System.out.println(a);
+
+    }
+
+    /**
+     * String类型转LocalDate
+     * @param strDate
+     * @param pattern
+     * @return
+     */
+    public static LocalDate string2LocalDate(String strDate, String pattern) {
+        if (StringUtils.isEmpty(pattern)) {
+            pattern = "yyyy-MM-dd";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        LocalDate localDate = LocalDate.parse(strDate, formatter);
+        return localDate;
+    }
+
+    /**
+     * String类型转LocalDateTime
+     * @param strDate
+     * @param pattern
+     * @return
+     */
+    public static LocalDateTime string2LocalDateTime(String strDate, String pattern) {
+        if (StringUtils.isEmpty(pattern)) {
+            pattern = "yyyy-MM-dd HH:mm:ss";
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        LocalDateTime localDateTime = LocalDateTime.parse(strDate, formatter);
+        return localDateTime;
+    }
+
+    private static String getGroupField(User user){
+        return user.getName() +"#"+ user.getAddress();
     }
 
     private static String getFieldValueByName(String fieldName, Object object) {
