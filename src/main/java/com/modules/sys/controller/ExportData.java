@@ -157,7 +157,7 @@ public class ExportData {
     /**
      * 判断是否是yyyy-MM-dd日期格式
      */
-    public static boolean isDate(String strDate) {
+    /*public static boolean isDate(String strDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             format.setLenient(false);
@@ -166,7 +166,7 @@ public class ExportData {
             return false;
         }
         return true;
-    }
+    }*/
 
     /**
      * sheet设置

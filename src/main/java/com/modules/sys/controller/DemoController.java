@@ -1,6 +1,7 @@
 /**
- * All rights Reserved, Designed By www.xcompany.com  
- * @Package: com.modules.sys.controller   
+ * All rights Reserved, Designed By www.xcompany.com
+ *
+ * @Package: com.modules.sys.controller
  * @author: Frankjiu
  * @date: 2020年8月29日
  * @version: V1.0
@@ -15,6 +16,10 @@ import com.modules.sys.model.vo.DemoVo;
 import com.modules.sys.service.DemoService;
 import com.result.HttpResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +38,9 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
 
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
+
     @PostMapping("findDemoList")
     @SuppressWarnings("rawtypes")
     public HttpResult findDemoList(@RequestBody DemoDto demoDto) throws CommonException {
@@ -46,7 +54,16 @@ public class DemoController {
                 .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
                 .collect(Collectors.toList());
         return HttpResult.success(demoVoList);
+    }
 
+    @GetMapping("findRedis")
+    public HttpResult findDemoList() throws CommonException {
+        redisTemplate.opsForValue().set("a", "heiheihei!");
+        Object a = redisTemplate.opsForValue().get("a");
+        ValueOperations<String, Object> opr = redisTemplate.opsForValue();
+        opr.set("demo", new Demo(55, "华夏", 8L, null));
+        Demo demo = (Demo)opr.get("demo");
+        return HttpResult.success(demo);
     }
 
 }

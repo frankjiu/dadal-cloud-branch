@@ -1,70 +1,39 @@
-2020-11-08 00:17:15.313 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 1648 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:17:15.318 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:17:18.938 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:17:19.108 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:17:20.128 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:17:20.228 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:17:20.538 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 5.717 seconds (JVM running for 6.824)
-2020-11-08 00:17:21.247 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:17:21.247 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:17:21.247 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:18:17.600 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 11844 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:18:17.604 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:18:20.797 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:18:20.980 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:18:21.958 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:18:22.058 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:18:22.340 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 5.305 seconds (JVM running for 6.608)
-2020-11-08 00:18:22.947 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:18:22.947 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:18:22.956 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:19:33.909 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 3300 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:19:33.909 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:19:37.858 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:19:38.033 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:19:39.048 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:19:39.148 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:19:39.443 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 6.194 seconds (JVM running for 7.198)
-2020-11-08 00:19:43.936 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:19:43.936 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:19:43.944 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:21:48.739 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 9876 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:21:48.743 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:21:52.078 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:21:52.253 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:21:53.208 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:21:53.313 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:21:53.608 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 5.445 seconds (JVM running for 6.451)
-2020-11-08 00:21:54.076 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:21:54.076 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:21:54.078 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:22:08.478 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 11460 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:22:08.478 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:22:11.628 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:22:11.805 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:22:12.798 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:22:12.887 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:22:13.189 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 5.275 seconds (JVM running for 6.496)
-2020-11-08 00:22:13.598 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:22:13.598 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:22:13.608 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:25:30.147 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 13548 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:25:30.155 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:25:33.498 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:25:33.678 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:25:34.623 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:25:34.725 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:25:35.005 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 5.396 seconds (JVM running for 6.59)
-2020-11-08 00:25:35.518 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:25:35.518 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:25:35.518 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
-2020-11-08 00:33:20.128 | INFO  | main | com.modules.dvc.ClientController-line:55 | Starting ClientController on LAPTOP with PID 1804 (started by Frankie in D:\workspace\dadal-cloud-branch)
-2020-11-08 00:33:20.135 | INFO  | main | com.modules.dvc.ClientController-line:651 | No active profile set, falling back to default profiles: default
-2020-11-08 00:33:24.098 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
-2020-11-08 00:33:24.267 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
-2020-11-08 00:33:25.277 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:33:25.378 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2020-11-08 00:33:25.669 | INFO  | main | com.modules.dvc.ClientController-line:61 | Started ClientController in 6.149 seconds (JVM running for 7.284)
-2020-11-08 00:33:26.118 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
-2020-11-08 00:33:26.118 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
-2020-11-08 00:33:26.118 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
+2020-11-15 22:10:36.426 | INFO  | main | com.CloudBranchApplicationTests-line:55 | Starting CloudBranchApplicationTests on LAPTOP with PID 10712 (started by Frankie in D:\workspace\dadal-cloud-branch)
+2020-11-15 22:10:36.430 | INFO  | main | com.CloudBranchApplicationTests-line:651 | No active profile set, falling back to default profiles: default
+2020-11-15 22:10:38.233 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-15 22:10:38.237 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-15 22:10:38.803 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 553ms. Found 0 Redis repository interfaces.
+2020-11-15 22:10:40.048 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
+2020-11-15 22:10:40.183 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2020-11-15 22:10:41.150 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:10:41.250 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
+2020-11-15 22:10:41.645 | INFO  | main | com.CloudBranchApplicationTests-line:61 | Started CloudBranchApplicationTests in 5.555 seconds (JVM running for 6.366)
+2020-11-15 22:10:42.101 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:10:42.103 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
+2020-11-15 22:10:42.104 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
+2020-11-15 22:12:29.600 | INFO  | main | com.CloudBranchApplicationTests-line:55 | Starting CloudBranchApplicationTests on LAPTOP with PID 13912 (started by Frankie in D:\workspace\dadal-cloud-branch)
+2020-11-15 22:12:29.603 | INFO  | main | com.CloudBranchApplicationTests-line:651 | No active profile set, falling back to default profiles: default
+2020-11-15 22:12:31.417 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-15 22:12:31.419 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-15 22:12:31.952 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 527ms. Found 0 Redis repository interfaces.
+2020-11-15 22:12:33.061 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
+2020-11-15 22:12:33.192 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2020-11-15 22:12:34.071 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:12:34.168 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
+2020-11-15 22:12:34.526 | INFO  | main | com.CloudBranchApplicationTests-line:61 | Started CloudBranchApplicationTests in 5.246 seconds (JVM running for 6.066)
+2020-11-15 22:12:34.873 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:12:34.874 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
+2020-11-15 22:12:34.876 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
+2020-11-15 22:23:28.209 | INFO  | main | com.CloudBranchApplicationTests-line:55 | Starting CloudBranchApplicationTests on LAPTOP with PID 9968 (started by Frankie in D:\workspace\dadal-cloud-branch)
+2020-11-15 22:23:28.211 | INFO  | main | com.CloudBranchApplicationTests-line:651 | No active profile set, falling back to default profiles: default
+2020-11-15 22:23:30.036 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-15 22:23:30.038 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-15 22:23:30.757 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 708ms. Found 0 Redis repository interfaces.
+2020-11-15 22:23:32.151 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
+2020-11-15 22:23:32.302 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2020-11-15 22:23:33.395 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:181 | Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:23:33.496 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
+2020-11-15 22:23:33.924 | INFO  | main | com.CloudBranchApplicationTests-line:61 | Started CloudBranchApplicationTests in 6.037 seconds (JVM running for 6.873)
+2020-11-15 22:23:34.428 | INFO  | SpringContextShutdownHook | org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor-line:218 | Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-15 22:23:34.430 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
+2020-11-15 22:23:34.431 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed
