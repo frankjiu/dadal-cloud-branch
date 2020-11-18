@@ -12,9 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -365,13 +363,57 @@ public class tes {
         /*Pattern compile = Pattern.compile("(^$)|(^[1-9]\\d*)|(0$)");
         boolean flag = compile.matcher("0").find();
         System.out.println(flag);*/
-        BigDecimal finalLySeatShare = null;
+        /*BigDecimal finalLySeatShare = null;
         if (finalLySeatShare == null) {
             finalLySeatShare = BigDecimal.ZERO;
         }
         //boolean a = finalLySeatShare.compareTo(new BigDecimal(0)) == -1;
         boolean a = new BigDecimal(-0.1).compareTo(finalLySeatShare) == -1;
-        System.out.println(a);
+        System.out.println(a);*/
+
+        /*Boolean f = null;
+        if ("true".equalsIgnoreCase(f+"")) {
+            System.out.println("eeeee");
+        }
+        System.out.println(null + "eeeee");
+        //System.out.println("eeeee".indexOf(null));
+
+        Assert.notNull("", "HomeMarket1对象不能为空!");
+        Assert.notNull(null, "HomeMarket2对象不能为空!");*/
+
+        /*String str1 = "2015-02-08 20:20:20";
+        String str2 = null;
+        int res = str1.compareTo(str2);
+        if (res > 0)
+            System.out.println("str1>str2");
+        else if (res == 0)
+            System.out.println("str1=str2");
+        else
+            System.out.println("str1<str2");*/
+
+        /*List<String> dateStartList = new ArrayList<>();
+        dateStartList.add("2020/05/09");
+        dateStartList.add("");
+        dateStartList.add("2030/01/09");
+        dateStartList.add("2015/03/09");
+        dateStartList.add("2019/04/09");
+
+        dateStartList.forEach(str -> System.out.println(str));
+        System.out.println("======================");
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        Collections.sort(dateStartList, (s1, s2) -> LocalDate.parse(s1, formatter).compareTo(LocalDate.parse(s2, formatter)));
+        dateStartList.forEach(str -> System.out.println(str));
+
+        dateStartList.sort(Comparator.comparing((String s) -> s).reversed());
+        dateStartList.forEach(str -> System.out.println(str));*/
+
+        /*List<String> strDows = new ArrayList<>();
+        strDows.add("2");
+        strDows.add("5");
+        strDows.add("8");
+        String join = String.join("", strDows);
+        System.out.println(join);*/
 
     }
 
