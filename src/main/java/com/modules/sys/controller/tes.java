@@ -1,11 +1,17 @@
 package com.modules.sys.controller;
 
 import com.modules.sys.model.dto.User;
+import jodd.util.StringUtil;
+import okhttp3.*;
+import org.apache.http.client.HttpClient;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -13,6 +19,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,7 +39,9 @@ public class tes {
 
     private static final Pattern pattern = Pattern.compile("&#x([0-9a-f]+);?");
 
-    public static void main(String[] args) throws ParseException {
+    private static OkHttpClient client;
+
+    public static void main(String[] args) throws ParseException, IOException {
         /*Object fourthVal = "50%";
         fourthVal = percentToDouble(fourthVal.toString());
         System.out.println(fourthVal.toString());*/
@@ -415,7 +424,95 @@ public class tes {
         String join = String.join("", strDows);
         System.out.println(join);*/
 
+        /*//StringUtils
+        String s = org.apache.commons.lang3.StringUtils.leftPad("10", 4, "0"); // 0010
+        System.out.println(s);
+
+        String abcde = org.apache.commons.lang3.StringUtils.left("ABCDE", 3);
+        System.out.println(abcde);
+
+        //如果字符串长度小于参数二的值，首部加空格补全。(小于字符串长度不处理返回)
+        org.apache.commons.lang3.StringUtils.leftPad("海川", 4); //   海川*/
+
+        /*try {
+            run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+        //findDataByOkHttp();
+
+        /*HttpClient client = new HttpClient().execute()
+        client.getState().setCredentials("www.cnblogs.com","user/signin",new UsernamePasswordCredentials("username", "password"));
+        GetMethod method = new GetMethod("http://home.cnblogs.com/u/Sir-Lin/followers/1/");
+        method.setDoAuthentication(true);
+        int status = client.executeMethod(method);
+        method.releaseConnection();*/
     }
+
+
+
+
+
+
+    public static void findDataByOkHttp() throws IOException {
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(30, TimeUnit.SECONDS);
+        //代理服务器的IP和端口号  https://172.28.129.6:9990
+        //172.28.129.6:9990
+        //admin/rtdpTest@2019
+        String userName = "admin";
+        String passWord = "rtdpTest@2019";
+        Integer REQUEST_TIMEOUT_MS = 15;
+        //String url = "https://172.28.129.6:9990/rtdpadmin/services/rest/market/{marketId}/competitiveStrategy/{strategyId}";
+        String url = "https://172.28.129.6:9990/rtdpadmin/services/rest/market/AIRPORT_AIRPORT_CAN_USA/competitiveStrategy?id=AIRPORT_AIRPORT_CAN_USA_817d2651-39a6-496d-ad31" +
+                "-729856987043";
+        builder.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("172.28.129.6", 9990)));
+        //代理的鉴权账号密码
+        builder.proxyAuthenticator(new Authenticator() {
+            @Override
+            public Request authenticate(Route route, Response response) {
+                //设置代理服务器账号密码
+                String credential = Credentials.basic(userName, passWord);
+                return response.request().newBuilder()
+                        .header("Proxy-Authorization", credential)
+                        .addHeader("Connection", "close")
+                        .build();
+            }
+        });
+        /*client = builder
+                //设置读取超时时间
+                .readTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS)
+                //设置写的超时时间
+                .writeTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS)
+                .connectTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS).build();*/
+        client = builder.build();
+        ////////////////////////////////////////////////////////////////////////////
+
+        //String url = ipPrefix + uriPrefix + competitiveGetIdUrl;
+        //url = url.replace("{marketId}", params.get("marketId")).replace("/{strategyId}", "?id=" + params.get("strategyId"));
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Connection", "close")
+                .build();
+        Response response = client.newCall(request).execute();
+        // String str = OkHttp3Util.get(url, params);
+        ResponseBody body = response.body();
+        System.out.println(body.toString());
+    }
+
+    public static void run() throws Exception {
+        //authenticate();
+        Request request = new Request.Builder()
+                .url("http://publicobject.com/secrets/hellosecret.txt")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+        System.out.println(response.body().string());
+    }
+
 
     /**
      * String类型转LocalDate
