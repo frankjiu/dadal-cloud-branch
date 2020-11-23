@@ -448,6 +448,19 @@ public class tes {
         method.setDoAuthentication(true);
         int status = client.executeMethod(method);
         method.releaseConnection();*/
+
+        /*String marketId = "AIRPORT_AIRPORT_CAN_PKX";
+        String org = marketId.substring(marketId.length() - 3);
+        String des = marketId.substring(marketId.length() - 7, marketId.length() - 4);
+        String lvId = marketId.substring(0, marketId.length() - 8);*/
+
+        /*Integer a = null;
+        Boolean f = a > 3;
+        System.out.println(f); // NPE */
+
+
+
+
     }
 
 
