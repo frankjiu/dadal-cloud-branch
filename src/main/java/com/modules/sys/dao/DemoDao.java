@@ -7,14 +7,13 @@
 
 package com.modules.sys.dao;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
 import com.modules.sys.model.dto.DemoDto;
 import com.modules.sys.model.entity.Demo;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @author: Frankjiu
@@ -22,6 +21,9 @@ import org.apache.ibatis.annotations.Select;
  */
 @Mapper
 public interface DemoDao {
+
+    @Select(" SELECT * FROM demo WHERE CARD_NAME = #{demoDtoVal.cardName} ")
+    List<Demo> getDemoListByCondition(@Param("demoDtoVal") DemoDto demoDto) throws Exception;
 
     @Select(" SELECT d.* FROM (SELECT CARD_NAME, MAX( CARD_NUMBER ) m FROM demo GROUP BY CARD_NAME ) t, " +
             " demo d WHERE t.CARD_NAME = d.CARD_NAME AND t.m = d.CARD_NUMBER AND d.CARD_NAME = #{demoDtoVal.cardName} ")

@@ -34,6 +34,12 @@ public class HttpResult<T> {
         this.data = data;
     }
 
+    public HttpResult(boolean success, T data, String message) {
+        this.success = success;
+        this.message = message;
+        this.data = data;
+    }
+
     public HttpResult(RespCode respCode) {
         this.code = respCode.getCode();
         this.message = respCode.getDescription();
@@ -56,6 +62,13 @@ public class HttpResult<T> {
      */
     public static <T> HttpResult<T> success(T data) {
         return new HttpResult<>(true, RespCode.SUCCESS, data);
+    }
+
+    /**
+     * 返回成功(数据)
+     */
+    public static <T> HttpResult<T> success(T data, String message) {
+        return new HttpResult<>(true, data, message);
     }
 
     /**

@@ -30,4 +30,8 @@ public class DemoDto {
     private String cardNumber;
     private Date createTime;
 
+    public DemoDto (String cardName) {
+        this.cardName = cardName;
+    }
+
 }

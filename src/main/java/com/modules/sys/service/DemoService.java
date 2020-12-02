@@ -21,4 +21,6 @@ public interface DemoService {
     /** 获取所有demo表数据 */
     List<Demo> findDemoList(DemoDto demoDto) throws Exception;
 
+    List<Demo> findDemoListByCondition(DemoDto demoDto);
+
 }

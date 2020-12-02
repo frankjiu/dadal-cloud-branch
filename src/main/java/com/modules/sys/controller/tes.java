@@ -1,27 +1,48 @@
 package com.modules.sys.controller;
 
+import com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer;
 import com.modules.sys.model.dto.User;
+import com.modules.sys.model.entity.Demo;
+import com.sun.el.parser.AstString;
 import jodd.util.StringUtil;
-import okhttp3.*;
-import org.apache.http.client.HttpClient;
+import lombok.Data;
+import lombok.SneakyThrows;
+import lombok.ToString;
+import org.apache.commons.beanutils.BasicDynaBean;
+import org.apache.commons.beanutils.BasicDynaClass;
+import org.apache.commons.beanutils.DynaProperty;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.time.StopWatch;
+import org.springframework.beans.BeanUtils;
+import org.springframework.cglib.beans.BeanGenerator;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
+import java.net.*;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.LongAdder;
+import java.util.function.BinaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
+import java.util.stream.Stream;
 
 /**
  * @Description:
@@ -39,9 +60,9 @@ public class tes {
 
     private static final Pattern pattern = Pattern.compile("&#x([0-9a-f]+);?");
 
-    private static OkHttpClient client;
+    //private static OkHttpClient client;
 
-    public static void main(String[] args) throws ParseException, IOException {
+    public static void main(String[] args) throws Exception {
         /*Object fourthVal = "50%";
         fourthVal = percentToDouble(fourthVal.toString());
         System.out.println(fourthVal.toString());*/
@@ -458,17 +479,362 @@ public class tes {
         Boolean f = a > 3;
         System.out.println(f); // NPE */
 
+        /*List<String> list = Arrays.asList("a,b,c", "b,c,e", "a,d,f", "a,e", "b,d");
+        Set<String> sets = handle(list);
+        list.stream().forEach(e -> System.out.println(e));*/
 
+
+        /*ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            list.add(i);
+        }
+
+        long l1 = System.currentTimeMillis();
+        LongAdder sum = new LongAdder();
+        list.parallelStream().forEach(integer -> {
+        //System.out.println("当前线程" + Thread.currentThread().getName());
+            sum.add(integer);
+        });
+        long l2 = System.currentTimeMillis();
+        System.out.println(sum + ":" + (l2-l1));
+
+        long l3 = System.currentTimeMillis();
+        LongAdder sum2 = new LongAdder();
+        list.stream().forEach(e -> sum2.add(e));
+        long l4 = System.currentTimeMillis();
+        System.out.println(sum2 + ":" + (l4 - l3));*/
+
+        //jdk11 httpclient:  java.net.http. 包
+        /*HttpClient httpClient = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://www.weather.com.cn/weather/101280101.shtml"))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());*/
+
+        // 方式一
+        /*String userName = "admin";
+        String passWord = "rtdpTest@2019";
+        Integer REQUEST_TIMEOUT_MS = 15;
+        String url = "https://172.28.129.6:9990/rtdpadmin/services/rest/market/competitiveStrategy";
+        HttpClient httpClient = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(REQUEST_TIMEOUT_MS))
+                .authenticator(new Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(userName, passWord.toCharArray());
+                    }
+                }).build();
+        HttpRequest request = HttpRequest.newBuilder().header("Content-Type", "application/json").uri(URI.create(url))
+                .build();
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());*/
+
+        /*// 方式二
+        String url = "https://www.weather.com.cn/weather/101280101.shtml";
+        URL u = new URL(url);
+        if("https".equalsIgnoreCase(u.getProtocol())){
+            SslUtils.ignoreSsl();
+        }
+        URLConnection conn = u.openConnection();
+        conn.setConnectTimeout(3000);
+        conn.setReadTimeout(3000);
+        String s = IOUtils.toString(conn.getInputStream());
+        System.out.println(s);*/
+
+        /*List<Demo> dtoList = new ArrayList<>();
+        Demo demo1 = new Demo();
+        demo1.setCardName("FBC623");
+        Demo demo2 = new Demo();
+        demo2.setCardName("BBC321");
+        Demo demo3 = new Demo();
+        demo3.setCardName("ABC613");
+        Demo demo4 = new Demo();
+        demo4.setCardName("ECB123");
+        Demo demo5 = new Demo();
+        demo5.setCardName("ABC283");
+        Demo demo6 = new Demo();
+        demo6.setCardName("ABC281");
+        Demo demo7 = new Demo();
+        demo7.setCardName("CAB512");
+        dtoList.add(demo1);
+        dtoList.add(demo2);
+        dtoList.add(demo3);
+        dtoList.add(demo4);
+        dtoList.add(demo5);
+        dtoList.add(demo6);
+        dtoList.add(demo7);
+        //Collections.sort(dtoList, (s1, s2) -> s1.getCardName().compareTo(s2.getCardName()) > 0 ? 1 : -1);
+        Collections.sort(dtoList, (s1, s2) -> s1.getCardName().compareTo(s2.getCardName()) > 0 ? -1 : 1); // 倒序
+        dtoList.stream().forEach(e -> System.out.println(e.getCardName()));*/
+
+        // 记录end值比start大, 并且记录start值比end小, 即通过
+        /*String recordStart = "2020-04-01";
+        String recordEnd = "2020-06-30";
+        String conditionStart = "20201116";
+        String conditionEnd = "20200402";
+        Boolean flag = false;
+        if (conditionEnd.compareTo(conditionStart) > 0) {
+            flag = true;
+        }
+        System.out.println(flag);*/
+
+        /*List<Stu> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Stu stu = new Stu();
+            stu.setId(i+"");
+            stu.setAge(i);
+            list.add(stu);
+        }
+
+        long sum = list.stream().map(e -> e.getAge()).mapToLong(e -> e.longValue()).sum();
+        System.out.println("sum: " + sum);*/
+
+        //System.out.println(Long.MAX_VALUE); // 922 3372 0368 5477 5807
+
+        /*Long a = 10L;
+        Long b = 12L;
+
+        Long c = a + b;
+        // System.out.println((a + b) instanceof Long);
+        //下面这句就可以，因为上面用Long去接收a + b的值了，就又装箱了。
+        System.out.println(c instanceof Long);
+        System.out.println(c);
+
+        BigDecimal x = new BigDecimal("0");
+        long val = x.longValue();
+        System.out.println(x);
+        System.out.println(val);*/
+
+        /*StringBuffer stringBuffer = new StringBuffer();
+        System.out.println(stringBuffer.toString());*/
+
+        /*int a = 200;
+        Boolean flag = true;
+        if (!(a == 200 || a == 201)) {
+            flag = false;
+        }*/
+
+        /*Set<String> list = new HashSet<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        System.out.println(list.toString());
+        //System.out.println(org.apache.commons.lang3.StringUtils.strip(list.toString(),"[]"));
+        String[] strArr = new String[3];
+        System.out.println(strArr);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("x", 1L);
+        map.put("y", 2L);
+        map.put("z", 3L);
+        System.out.println(map);*/
+
+        /*List<Integer> list=Arrays.asList(0,1);
+        System.out.println(list.toString());
+
+        StringBuilder stb = new StringBuilder();
+        list.forEach(stb::append);
+        System.out.println(stb.toString());*/
+
+        //java9引入 List.of("a","b"); 生成一个List<String> 后,集合元素就是不可变的了,如果再增加list中的元素就会报错
+        /*List<Integer> list = List.of(1, 2);
+        System.out.println(list.size());
+        Integer integer = list.get(1);
+        System.out.println(integer);*/
+
+        /*List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        List<String> collect = list.stream().map(e -> e).collect(Collectors.toList());// 使用集合创建流
+
+        List<String> collect1 = Stream.of("a", "c", "b").collect(Collectors.toList()); // Stream.of("a", "c", "b"),使用指定元素创建有序流Stream
+        System.out.println(collect1);*/
+
+        //Stream<String> stream = Stream.of("a", "c", "b");
+
+        /*Stream<String> stream = Stream.of("1;", "2;", "3;", "4;");
+        // 使用Lambda语法： s.reduce("0;", (s1, s2) -> s1.concat(s2));
+        String str = stream.reduce("0;", new BinaryOperator<String>() {
+            @Override
+            public String apply(String s, String s2) {
+                return s.concat(s2);
+            }
+        });
+        System.out.println(str); // 0;1;2;3;4;*/
+
+        /*Integer i = Stream.of(1, 2, 3).parallel().reduce(4, (s1, s2) -> s1 + s2
+                , (s1, s2) -> s1 + s2);
+        System.out.println(i); // 18*/
+
+        /*Demo demo = new Demo();
+        demo.setCardName("haha");
+        // PropertyUtils.setProperty(demo, "test", "abc");
+        System.out.println(demo);
+
+        DynaProperty testField = new DynaProperty("testField", String.class);
+        BasicDynaClass dynaDemo = new BasicDynaClass("demo", null, new DynaProperty[]{testField});
+        BasicDynaBean dynaDemoBean = new BasicDynaBean(dynaDemo);
+        BeanUtils.copyProperties(dynaDemoBean, demo);
+        dynaDemoBean.set("testField", "aaaaaaaaaaaa");
+
+        Map<String, Object> map = dynaDemoBean.getMap();
+        Iterator<String> it = map.keySet().iterator();
+        while (it.hasNext()) { String key = it.next();
+            System.out.println(key + ":" + map.get(key));
+        }*/
+
+        /*SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        Date date = formatter.parse("20110305");
+        System.out.println(date);*/
+
+        /*Date date1 = new SimpleDateFormat("yyyyMMdd").parse("20110305");
+        String dateString = new SimpleDateFormat("yyyy-MM-dd").format(date1);
+        System.out.println(dateString);*/
+
+        /*int[] arr = new int[2];
+        arr[0] = 3;
+        arr[1] = 5;
+        SumTask sumTask = new SumTask(1, 10, arr);
+        Integer integer = sumTask.get();
+        System.out.println(integer);*/
+
+        /*MyTask myTask = new MyTask(0,100);
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        ForkJoinTask<Integer> forkJoinTask = forkJoinPool.submit(myTask);
+        System.out.println(forkJoinTask.get());
+        forkJoinPool.shutdown();
+
+        long l = Runtime.getRuntime().freeMemory();
+        long l1 = Runtime.getRuntime().totalMemory();
+        System.out.println(l/1024L/1024L);
+        System.out.println(l1/1024L/1024L);*/
+
+        /*Object a = "aa";
+        Object b = "aa";
+        boolean b1 = a.toString().equals(b.toString().toUpperCase());
+        System.out.println(b1);*/
+
+        /*List<String> posValue = new ArrayList<>();
+        posValue.add("AU");
+        posValue.add("AS");
+        posValue.add("AT");
+        String str = "*" + String.join(",", posValue);
+        System.out.println(str);*/
+
+        /*Optional<Integer> canBeEmpty1 = Optional.of(5);
+        canBeEmpty1.isPresent();                    // returns true
+        canBeEmpty1.get();                          // returns 5
+
+        Optional<Integer> canBeEmpty2 = Optional.empty();
+        canBeEmpty2.isPresent();                    // returns false
+        Integer i = canBeEmpty2.get();
+        System.out.println(i);*/
+
+        //假设此值已从方法返回
+        //Optional<Demo> companyOptional = Optional.of(new Demo());
+        /*Optional<Demo> companyOptional = Optional.empty();
+
+        // 使用静态工厂方法 Optional.ofNullable()构建一个可能为null的Optional对象
+        Demo demo = new Demo("test121");
+        Optional<Demo> optDemo = Optional.ofNullable(demo);
+        // 打印出 cardName.
+        optDemo.ifPresent(e -> System.out.println(e.getCardName()));
+        // 合并起来
+        Optional.ofNullable(demo).ifPresent(e -> System.out.println(e.getCardName()));
+        // 如果存在满足条件的数据打印出来
+        optDemo.filter(e -> "test121".equals(e.getCardName())).ifPresent((e) -> System.out.println("abc"));
+        // 取出 cardName:  orElse(如果存在则返回原值, 否则返回新值)
+        // demo = null;
+        demo = new Demo();
+        String cardName = Optional.ofNullable(demo.getCardName()).orElse("new"); //demo不为空打印原值; 否则打印新对象的值;
+        System.out.println("===========" + cardName);*/
+
+        /*boolean ff = org.apache.commons.lang3.StringUtils.equals(null, null); //比较: 都是null也返回true
+        boolean b = org.apache.commons.lang3.StringUtils.containsAny("abcabc", "de");// false
+        boolean b1 = org.apache.commons.lang3.StringUtils.containsOnly("abcabc", "abc");//true
+        int i = org.apache.commons.lang3.StringUtils.indexOfIgnoreCase("ABc", "a"); //0
+        String str = org.apache.commons.lang3.StringUtils.left("abcabc", 4);//abca
+        String str1 = org.apache.commons.lang3.StringUtils.right("abcabc", 4);//cabc
+        String str2 = org.apache.commons.lang3.StringUtils.mid("abcabc", 0,2);//ab
+        String str3 = org.apache.commons.lang3.StringUtils.leftPad("123", 6,"0");//000123
+        String str4 = org.apache.commons.lang3.StringUtils.chop("abc");//去掉字符串的最后一个字符:ab
+        boolean f = org.apache.commons.lang3.StringUtils.isAlpha("abcdefg");//判断字符串是否都是字母 true
+        boolean f1 = org.apache.commons.lang3.StringUtils.isNumeric("12345");//判断字符串是否都是数字 true
+        String str5 = org.apache.commons.lang3.StringUtils.reverse("12345");//翻转 54321
+        String str6 = org.apache.commons.lang3.StringUtils.abbreviate("now i will say a story!", 7);//省略文字如:now ...
+        String[] split = org.apache.commons.lang3.StringUtils.split("a-b-c", "-"); //使用字符串作为分割参数
+        //ArrayUtils类*/
+
+        /*List<Object> list1 = new ArrayList<>();
+        List<Object> list2 = new ArrayList<>();
+        boolean b = list1.addAll(list2);
+        System.out.println(b);*/
+
+        System.out.println(LocalDateTime.now());
 
 
     }
 
 
 
+    static class MyTask extends RecursiveTask<Integer>{
+        private final Integer ADJUST_VALUE = 10;
+        private int begin;
+        private int end;
+        private int result;
+
+        public MyTask(int begin, int end) {
+            this.begin = begin;
+            this.end = end;
+        }
+
+        @Override
+        protected Integer compute() {
+            if((end - begin)<=ADJUST_VALUE){
+                for(int i =begin;i <= end;i++){
+                    result = result + i;
+                }
+            }else{
+                int middle = (begin + end)/2;
+                MyTask task01 = new MyTask(begin,middle);
+                MyTask task02 = new MyTask(middle+1,end);
+                task01.fork();
+                task02.fork();
+                result =  task01.join() + task02.join();
+            }
+
+
+            return result;
+        }
+    }
 
 
 
-    public static void findDataByOkHttp() throws IOException {
+
+    public static String getRequest(String url, int timeOut) throws Exception{
+        URL u = new URL(url);
+        if("https".equalsIgnoreCase(u.getProtocol())){
+            SslUtils.ignoreSsl();
+        }
+        URLConnection conn = u.openConnection();
+        conn.setConnectTimeout(timeOut);
+        conn.setReadTimeout(timeOut);
+        return IOUtils.toString(conn.getInputStream());
+    }
+
+
+    public static Set<String> handle(List<String> list) {
+        return Optional.ofNullable(list)//判空
+                .orElse(new ArrayList<>())//空处理
+                .stream()//转流操作
+                .map(str -> str.split(","))//将列表单个元素分离，得到数组
+                .flatMap(Arrays::stream)//将上一步得到的数组转流，并拼接成一个stream
+                .collect(Collectors.toSet());//将流转Set集合，去重
+    }
+
+    /*public static void findDataByOkHttp() throws IOException {
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder().retryOnConnectionFailure(true).connectTimeout(30, TimeUnit.SECONDS);
         //代理服务器的IP和端口号  https://172.28.129.6:9990
@@ -493,12 +859,12 @@ public class tes {
                         .build();
             }
         });
-        /*client = builder
+        *//*client = builder
                 //设置读取超时时间
                 .readTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS)
                 //设置写的超时时间
                 .writeTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS)
-                .connectTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS).build();*/
+                .connectTimeout(REQUEST_TIMEOUT_MS, TimeUnit.SECONDS).build();*//*
         client = builder.build();
         ////////////////////////////////////////////////////////////////////////////
 
@@ -524,7 +890,7 @@ public class tes {
         if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
         System.out.println(response.body().string());
-    }
+    }*/
 
 
     /**
@@ -721,4 +1087,10 @@ public class tes {
         return true;
     }
 
+}
+
+@Data
+class Stu {
+    private String id;
+    private Integer age;
 }
