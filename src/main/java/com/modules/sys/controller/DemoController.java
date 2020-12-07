@@ -26,10 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
@@ -109,28 +107,5 @@ public class DemoController {
         long end = System.currentTimeMillis();
         return HttpResult.success(completeList, "耗时:" + (end-start)/1000);
     }
-
-    /*public void findPrices() {
-        Executor executor = Executors.newCachedThreadPool();
-        List<DemoDto> demoDtos = Lists.newArrayList(new DemoDto("ABC"), new DemoDto("DEF"));
-        long start = System.currentTimeMillis();
-        //Executor executor = Executors.newFixedThreadPool(Math.min(shops.size(),100));
-        CompletableFuture<?>[] priceFuture = demoDtos.stream()
-                .map(demoDto -> CompletableFuture
-                        .supplyAsync(() -> demoService.findDemoListByCondition(demoDto), executor)
-                        .thenCombine(CompletableFuture.supplyAsync(() -> demoService.findDemoListByCondition(new DemoDto("ABC")), executor),
-                                (quote, rate) -> new Quote(quote.getShop(), quote.getPrice() * rate, quote.getDiscount())))//这返回的是异步处理
-                //.map(future->future.thenApply(Quote::parse))//thenApp是前一个对象完成了之后调下个对象的方法（parse）
-                .map(future -> future.thenCompose(quote -> CompletableFuture.supplyAsync(() -> DiscountDemo.applyDiscount(quote), executor)))
-                //thenAccept()定义CompletableFuture返回的结果
-                .map(future -> future.thenAccept(content -> System.out.println(content + "(done in " + (System.currentTimeMillis() - start) + " msecs")))
-                .toArray(size -> new CompletableFuture[size]);
-        //allOf接收一个数组，当里面的CompletableFuture都完成的时候，就会执行下一个语句
-        CompletableFuture.allOf(priceFuture).thenAccept((obj) -> System.out.println(" all done"));
-        //allOf接收一个数组，当里面的CompletableFuture有一个完成时，就会执行下一个语句
-        CompletableFuture.anyOf(priceFuture).thenAccept((obj) -> System.out.println("fastest anyOf done " + obj));
-
-    }*/
-
 
 }
