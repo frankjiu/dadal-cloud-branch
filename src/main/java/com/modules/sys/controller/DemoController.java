@@ -16,13 +16,12 @@ import com.modules.sys.model.entity.Demo;
 import com.modules.sys.model.vo.DemoVo;
 import com.modules.sys.service.DemoService;
 import com.result.HttpResult;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,6 +29,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -46,12 +46,23 @@ public class DemoController {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    @PostMapping("findDemoById")
+    public HttpResult findDemoById(@RequestParam String id) throws CommonException {
+        Demo demo;
+        try {
+            //demo = ((DemoService)AopContext.currentProxy()).findDemoById(id);
+            demo = demoService.findDemoById(id);
+        } catch (Exception e) {
+            throw new CommonException("数据库查询出错!", e);
+        }
+        return HttpResult.success(demo);
+    }
+
     @PostMapping("findDemoList")
-    @SuppressWarnings("rawtypes")
     public HttpResult findDemoList(@RequestBody DemoDto demoDto) throws CommonException {
         List<Demo> demoList;
         try {
-            demoList = demoService.findDemoList(demoDto);
+            demoList = demoService.findDemoList();
         } catch (Exception e) {
             throw new CommonException("数据库查询出错!", e);
         }
@@ -68,6 +79,10 @@ public class DemoController {
         ValueOperations<String, Object> opr = redisTemplate.opsForValue();
         opr.set("demo", new Demo(55, "华夏", 8L, null));
         Demo demo = (Demo)opr.get("demo");
+
+        redisTemplate.opsForValue().set("name","tom",10, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().get("name"); //由于设置的是10秒失效，十秒之内查询有结果，十秒之后返回为null
+
         return HttpResult.success(demo);
     }
 

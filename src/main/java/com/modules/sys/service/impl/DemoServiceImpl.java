@@ -12,6 +12,7 @@ import com.modules.sys.model.dto.DemoDto;
 import com.modules.sys.model.entity.Demo;
 import com.modules.sys.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,8 +29,15 @@ public class DemoServiceImpl implements DemoService {
     private DemoDao demoDao;
 
     @Override
-    public List<Demo> findDemoList(DemoDto demoDto) throws Exception {
-        return demoDao.getDemoList(demoDto);
+    @Cacheable(value = "DemoCache", key = "#id")
+    public Demo findDemoById(String id) throws Exception {
+        System.out.println(">>>查询数据库...");
+        return demoDao.findDemoById(id);
+    }
+
+    @Override
+    public List<Demo> findDemoList() throws Exception {
+        return demoDao.getDemoList();
     }
 
     @Override

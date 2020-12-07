@@ -1,58 +1,14 @@
-#port
-server:
-  port: 55555
-
 spring:
-  #application name
-  application:
-    name: dadal-cloud-branch
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
 
-  #MySQL
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dadal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
-    username: root
-    password: root
-
-  #html templates config
-  mvc:
-    view:
-      prefix: /
-      suffix: .html
-
-    #redis
-    redis:
-      database: 0
-      host: 127.0.0.1
-      port: 6379
-      password:
-      timeout: 20000
-      #    集群环境打开下面注释，单机不需要打开
-      #    cluster:
-      #      集群信息
-      #      nodes: xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx
-      #      #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
-      #      maxRedirects: 3
-      pool:
-        max-active: 8
-        min-idle: 0
-        max-idle: 8
-        max-wait: -1
-
-      application:
-        name: spring-boot-redis
-
-#register-url
-#eureka:
-#    client:
-#        serviceUrl:
-#            defaultZone: http://register-center-1001:1001/eureka/
-
-#logging configs
-logging:
-  config: classpath:logback-spring.xml
-
-#mapper files location
-mybatis:
-  configLocation: classpath:/mybatis-config.xml
-  mapper-locations: classpath:mapper/**/*.xml

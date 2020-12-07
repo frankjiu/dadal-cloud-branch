@@ -50,7 +50,7 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
         List<DemoVo> result = new ArrayList<>();
         long start = System.currentTimeMillis();
         for (int i = 0; i < roundTimes; i++) {
-            List<Demo> demoList = demoService.findDemoList(demoDto);
+            List<Demo> demoList = demoService.findDemoListByCondition(demoDto);
             List<DemoVo> demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder().
                             id(e.getId())
@@ -72,7 +72,7 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
         List<DemoVo> demoVoList = null;
         try {
             demoService = SpringContextUtils.getBeanByClass(DemoService.class);
-            List<Demo> demoList = demoService.findDemoList(demoDto);
+            List<Demo> demoList = demoService.findDemoListByCondition(demoDto);
             demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder()
                             .id(e.getId())

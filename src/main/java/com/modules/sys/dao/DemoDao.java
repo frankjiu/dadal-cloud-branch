@@ -12,6 +12,7 @@ import com.modules.sys.model.entity.Demo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -22,12 +23,14 @@ import java.util.List;
 @Mapper
 public interface DemoDao {
 
+    @Select(" SELECT * FROM demo WHERE ID = #{id} ")
+    Demo findDemoById(@Param("id") String id) throws Exception;
+
     @Select(" SELECT * FROM demo WHERE CARD_NAME = #{demoDtoVal.cardName} ")
     List<Demo> getDemoListByCondition(@Param("demoDtoVal") DemoDto demoDto) throws Exception;
 
-    @Select(" SELECT d.* FROM (SELECT CARD_NAME, MAX( CARD_NUMBER ) m FROM demo GROUP BY CARD_NAME ) t, " +
-            " demo d WHERE t.CARD_NAME = d.CARD_NAME AND t.m = d.CARD_NUMBER AND d.CARD_NAME = #{demoDtoVal.cardName} ")
-    List<Demo> getDemoList(@Param("demoDtoVal") DemoDto demoDto) throws Exception;
+    @Select(" SELECT * FROM demo ")
+    List<Demo> getDemoList() throws Exception;
 
     List<Demo> getDemoListFast(@Param("demoDto") DemoDto demoDto) throws Exception;
 

@@ -9,7 +9,9 @@ package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
  * @date: 2020年4月18日 下午8:49:33
  */
 @SpringBootApplication
+@EnableCaching
 public class CloudBranchApplication {
 
     public static void main(String[] args) {

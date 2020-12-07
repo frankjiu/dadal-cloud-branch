@@ -1,0 +1,73 @@
+#port
+server:
+  port: 55555
+
+  #编码格式
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  #application name
+  application:
+    name: dadal-cloud-branch
+
+  #MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/dadal?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+  druid:
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    #validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+
+  #html templates config
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+
+  #redis
+  redis:
+    database: 0
+    host: 192.168.75.130
+    port: 6379
+    password: 123456
+    timeout: 20000
+    #    集群环境打开下面注释，单机不需要打开
+    #    cluster:
+    #      集群信息
+    #      nodes: xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx
+    #      #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
+    #      maxRedirects: 3
+    pool:
+      max-active: 8
+      min-idle: 0
+      max-idle: 8
+      max-wait: -1
+
+#register-url
+#eureka:
+#    client:
+#        serviceUrl:
+#            defaultZone: http://register-center-1001:1001/eureka/
+
+#logging configs
+logging:
+  config: classpath:logback-spring.xml
+
+#mapper files location
+mybatis:
+  configLocation: classpath:/mybatis-config.xml
+  mapper-locations: classpath:mapper/**/*.xml
