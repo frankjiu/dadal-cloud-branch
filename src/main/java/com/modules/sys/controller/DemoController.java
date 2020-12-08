@@ -46,6 +46,14 @@ public class DemoController {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    @GetMapping("insert")
+    public HttpResult insertData() throws Exception {
+        Demo demo1 = new Demo("testData");
+        int num = demoService.insert(demo1);
+        System.out.println(num);
+        return HttpResult.success(demo1.getId());
+    }
+
     @PostMapping("findDemoById")
     public HttpResult findDemoById(@RequestParam String id) throws CommonException {
         Demo demo;

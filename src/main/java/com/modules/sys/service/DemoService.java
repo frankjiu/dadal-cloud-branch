@@ -25,4 +25,6 @@ public interface DemoService {
 
     List<Demo> findDemoListByCondition(DemoDto demoDto);
 
+    int insert(Demo demo) throws Exception;
+
 }

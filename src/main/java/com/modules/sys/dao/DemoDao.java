@@ -9,9 +9,7 @@ package com.modules.sys.dao;
 
 import com.modules.sys.model.dto.DemoDto;
 import com.modules.sys.model.entity.Demo;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
@@ -23,6 +21,19 @@ import java.util.List;
 @Mapper
 public interface DemoDao {
 
+    /*@Select("select * from department where id=#{id}")
+    public Department getDeptById(Integer id);
+
+    @Delete("delete from department where id=#{id}")
+    public int deleteDeptById(Integer id);
+
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    @Insert("insert into department(departmentName) values(#{departmentName})")
+    public int insertDept(Department department);
+
+    @Update("update department set departmentName=#{departmentName} where id=#{id}")
+    public int updateDept(Department department);*/
+
     @Select(" SELECT * FROM demo WHERE ID = #{id} ")
     Demo findDemoById(@Param("id") String id) throws Exception;
 
@@ -33,5 +44,9 @@ public interface DemoDao {
     List<Demo> getDemoList() throws Exception;
 
     List<Demo> getDemoListFast(@Param("demoDto") DemoDto demoDto) throws Exception;
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @Insert("insert into demo(card_name) values(#{demo.cardName})")
+    int insert(@Param("demo") Demo demo);
 
 }

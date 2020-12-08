@@ -1,48 +1,39 @@
 package com.modules.sys.controller;
 
-import com.fasterxml.jackson.databind.ser.std.ObjectArraySerializer;
 import com.modules.sys.model.dto.User;
 import com.modules.sys.model.entity.Demo;
-import com.sun.el.parser.AstString;
-import jodd.util.StringUtil;
+import com.util.KeyUtil;
 import lombok.Data;
-import lombok.SneakyThrows;
-import lombok.ToString;
-import org.apache.commons.beanutils.BasicDynaBean;
-import org.apache.commons.beanutils.BasicDynaClass;
-import org.apache.commons.beanutils.DynaProperty;
-import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.time.StopWatch;
-import org.springframework.beans.BeanUtils;
-import org.springframework.cglib.beans.BeanGenerator;
-import org.springframework.util.Assert;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
-import java.io.IOException;
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.net.*;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.text.ParseException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.LongAdder;
-import java.util.function.BinaryOperator;
+import java.util.concurrent.RecursiveTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 /**
  * @Description:
@@ -62,7 +53,8 @@ public class tes {
 
     //private static OkHttpClient client;
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void testMe1() {
         /*Object fourthVal = "50%";
         fourthVal = percentToDouble(fourthVal.toString());
         System.out.println(fourthVal.toString());*/
@@ -772,11 +764,94 @@ public class tes {
         boolean b = list1.addAll(list2);
         System.out.println(b);*/
 
-        System.out.println(LocalDateTime.now());
+        /*System.out.println(LocalDateTime.now());
+        String abc = org.apache.commons.lang3.StringUtils.capitalize("abc");
+        System.out.println(abc);
+        boolean numeric = org.apache.commons.lang3.StringUtils.isNumericSpace("34 5");
+        System.out.println(numeric);
 
+        Date date1 = new Date();
+        System.out.println(date1);
 
+        String date = DateFormatUtils.format(1607388261406L, "yyyy-MM-dd");
+        System.out.println(date);
+
+        String dateStr = DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.format(1607388261406L);
+        System.out.println(dateStr);
+
+        String format = DateFormatUtils.ISO_8601_EXTENDED_TIME_FORMAT.format(1607388261406L);
+        System.out.println(format);
+
+        Demo demo = new Demo("hahah");
+        System.out.println(ToStringBuilder.reflectionToString(demo));
+
+        //CollectionUtils.union()
+
+        ArrayList<Object> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(4);
+        list1.add(5);
+        ArrayList<Object> list2 = new ArrayList<>();
+        list2.add(4);
+        list2.add(5);
+        list2.add(7);
+
+        Collection<Object> lists = CollectionUtils.subtract(list2, list1);
+        System.out.println(lists);
+
+        Date date2 = DateUtils.addYears(new Date(), 2);
+        System.out.println(date2);
+
+        Date date3 = DateUtils.parseDate("1998-05-06", "yyyy-MM-dd");
+        System.out.println(date3);
+
+        boolean f1 = NumberUtils.isDigits("3a");
+        System.out.println(f1);
+
+        String path = "C:\\Users\\Administrator\\Desktop\\RedisConfig.java";
+        String s1 = FilenameUtils.getBaseName(path);
+        System.out.println(s1);
+
+        String s2 = FilenameUtils.getExtension(path);        //获取扩展名
+        System.out.println(s2);
+
+        String s3 = FilenameUtils.separatorsToUnix(path);    //转成 linux 路径分隔符
+        System.out.println(s3);
+
+        byte[] bt = new byte[]{1, 2};
+        byte[] bytes = Base64.encodeBase64(new byte[]{1, 2});
+        System.out.println(new String(bytes));
+        byte[] bytes1 = Base64.decodeBase64(bytes);
+        System.out.println(new String(bytes1));
+
+        char[] chars = Hex.encodeHex(bt);
+        System.out.println(new String(chars));
+
+        System.out.println(RandomUtils.nextInt(10, 20));
+
+        String s = Base64Utils.encodeToString("www.baidu.com".getBytes());
+        System.out.println(s);
+
+        byte[] bytes2 = Base64Utils.decodeFromString(s);
+        String s4 = new String(bytes2);
+        System.out.println(s4);
+
+        String s5 = java.util.Base64.getEncoder().encodeToString("".getBytes(StandardCharsets.UTF_8));*/
+
+        /*String s = KeyUtil.generateUniqueKey();
+        System.out.println(s);
+
+        String salt = RandomStringUtils.randomAlphanumeric(20);
+        System.out.println(salt);*/
     }
 
+
+    @Test
+    public void testMe2() {
+        Random random = new Random();
+        int i = random.nextInt(2);
+        System.out.println(i);
+    }
 
 
     static class MyTask extends RecursiveTask<Integer>{

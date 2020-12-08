@@ -14,9 +14,12 @@ import com.modules.sys.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author: Frankjiu
@@ -50,6 +53,17 @@ public class DemoServiceImpl implements DemoService {
             e.printStackTrace();
         }
         return demoList;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public int insert(Demo demo) throws Exception {
+        int i = demoDao.insert(demo);
+        Random random = new Random();
+        if (random.nextInt(2) == 0) {
+            throw new Exception("数据插入出错");
+        }
+        return demo.getId();
     }
 
 }
