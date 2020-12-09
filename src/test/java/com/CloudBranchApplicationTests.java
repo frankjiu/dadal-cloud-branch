@@ -1,34 +1,14 @@
 package com;
 
-import com.google.common.util.concurrent.RateLimiter;
-import com.modules.sys.model.entity.Demo;
-import com.modules.sys.service.DemoService;
-import com.result.HttpResult;
+import com.modules.base.model.entity.Demo;
+import com.modules.base.service.DemoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.connection.SortParameters;
-import org.springframework.data.redis.core.BulkMapper;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.data.redis.core.query.SortQuery;
-import org.springframework.data.redis.core.query.SortQueryBuilder;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionManager;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
-
-import javax.naming.AuthenticationException;
-import java.util.*;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {CloudBranchApplication.class})
@@ -114,8 +94,7 @@ public class CloudBranchApplicationTests {
         System.out.println(status);*/
 
         Demo demo1 = new Demo("testData");
-        int num = demoService.insert(demo1);
-        System.out.println(num);
+        demo1 = demoService.save(demo1);
         System.out.println(demo1.getId());
         //System.out.println(3/0);
         //transactionManager.commit(status);

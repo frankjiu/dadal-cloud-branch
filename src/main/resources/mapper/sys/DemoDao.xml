@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.modules.sys.dao.DemoDao">
+<mapper namespace="com.modules.base.dao.DemoDao">
 	<sql id="columns">
 		/*ID, CARD_NAME AS cardName, CARD_NUMBER AS cardNumber,
 		CREATE_TIME AS createTime*/
@@ -10,7 +10,7 @@
         CREATE_TIME AS createTime
 	</sql>
 
-	<select id="getDemoListFast" resultType="com.modules.sys.model.entity.Demo">
+	<select id="getDemoListFast" resultType="com.modules.base.model.entity.Demo">
 		SELECT
 		<include refid="columns" />
 		FROM DEMO

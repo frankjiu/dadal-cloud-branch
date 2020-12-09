@@ -1,114 +1,114 @@
-2020-12-08 16:20:57.288 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:20:57.389 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:22:28.994 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:22:29.065 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:25:29.114 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(#id, ?)
-2020-12-08 16:28:28.226 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(#id, ?)
-2020-12-08 16:30:38.394 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(?, ?)
-2020-12-08 16:32:24.057 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(?, ?)
-2020-12-08 16:34:00.035 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:34:00.112 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:45:32.194 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:45:32.244 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:46:38.251 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:46:38.303 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:51:07.478 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 16:51:07.535 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:51:07.541 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 16:54:36.577 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id, card_name) values(#id, ?)
-2020-12-08 16:55:59.260 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 16:55:59.309 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:55:59.315 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 16:57:30.245 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 16:57:30.288 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 16:57:30.292 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:01:53.572 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 17:01:53.635 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:01:53.639 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:07:27.158 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 17:07:27.204 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:07:27.206 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:09:09.605 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 17:09:09.653 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:09:09.657 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:09:09.724 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
-2020-12-08 17:09:09.726 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
-2020-12-08 17:09:09.755 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
-2020-12-08 17:13:00.519 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
-2020-12-08 17:13:00.563 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:13:00.568 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:13:00.614 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
-2020-12-08 17:13:00.615 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
-2020-12-08 17:13:00.636 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
-2020-12-08 17:15:14.363 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:15:14.422 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:15:14.427 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:15:14.478 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
-2020-12-08 17:15:14.479 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
-2020-12-08 17:15:14.496 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
-2020-12-08 17:19:00.418 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:19:00.461 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:19:00.463 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:19:00.518 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
-2020-12-08 17:19:00.519 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
-2020-12-08 17:19:00.540 | DEBUG | main | com.modules.sys.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
-2020-12-08 17:23:39.322 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:23:39.372 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:23:39.373 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:25:19.535 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:25:19.584 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:25:19.588 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:26:47.219 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:26:47.291 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:26:47.294 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:29:13.220 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:29:13.303 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:29:13.305 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:32:17.561 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:32:17.612 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:32:17.615 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:34:35.927 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:34:36.005 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:34:36.020 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:36:06.969 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:36:07.026 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:36:07.029 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:40:48.429 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:40:48.476 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:40:48.479 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:46:37.333 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:46:37.380 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:46:37.384 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:50:37.375 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:50:37.436 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:50:37.438 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:52:39.662 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:52:39.737 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:52:39.740 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 17:54:03.782 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 17:54:03.843 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 17:54:03.848 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:25:20.415 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:25:20.472 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:25:20.476 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:29:03.842 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:29:03.890 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:29:03.892 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:30:34.143 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:30:34.188 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:30:34.190 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:31:32.258 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:31:32.302 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:31:32.305 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:32:52.350 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:32:52.401 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:32:52.404 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:33:40.100 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:33:40.158 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:33:40.160 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:36:35.715 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:36:35.760 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:36:35.762 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
-2020-12-08 18:51:10.716 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
-2020-12-08 18:51:10.757 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
-2020-12-08 18:51:10.759 | DEBUG | main | com.modules.sys.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 16:20:57.288 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:20:57.389 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:22:28.994 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:22:29.065 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:25:29.114 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(#id, ?)
+2020-12-08 16:28:28.226 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(#id, ?)
+2020-12-08 16:30:38.394 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(?, ?)
+2020-12-08 16:32:24.057 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id,card_name) values(?, ?)
+2020-12-08 16:34:00.035 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:34:00.112 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:45:32.194 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:45:32.244 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:46:38.251 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:46:38.303 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:51:07.478 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 16:51:07.535 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:51:07.541 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 16:54:36.577 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(id, card_name) values(#id, ?)
+2020-12-08 16:55:59.260 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 16:55:59.309 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:55:59.315 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 16:57:30.245 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 16:57:30.288 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 16:57:30.292 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:01:53.572 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 17:01:53.635 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:01:53.639 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:07:27.158 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 17:07:27.204 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:07:27.206 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:09:09.605 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 17:09:09.653 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:09:09.657 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:09:09.724 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
+2020-12-08 17:09:09.726 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
+2020-12-08 17:09:09.755 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
+2020-12-08 17:13:00.519 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(CARD_NAME) values(?)
+2020-12-08 17:13:00.563 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:13:00.568 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:13:00.614 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
+2020-12-08 17:13:00.615 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
+2020-12-08 17:13:00.636 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
+2020-12-08 17:15:14.363 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:15:14.422 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:15:14.427 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:15:14.478 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
+2020-12-08 17:15:14.479 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
+2020-12-08 17:15:14.496 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
+2020-12-08 17:19:00.418 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:19:00.461 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:19:00.463 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:19:00.518 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==>  Preparing: SELECT * FROM demo WHERE ID = ?
+2020-12-08 17:19:00.519 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | ==> Parameters: 1(String)
+2020-12-08 17:19:00.540 | DEBUG | main | com.modules.base.dao.DemoDao.findDemoById-line:137 | <==      Total: 1
+2020-12-08 17:23:39.322 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:23:39.372 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:23:39.373 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:25:19.535 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:25:19.584 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:25:19.588 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:26:47.219 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:26:47.291 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:26:47.294 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:29:13.220 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:29:13.303 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:29:13.305 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:32:17.561 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:32:17.612 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:32:17.615 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:34:35.927 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:34:36.005 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:34:36.020 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:36:06.969 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:36:07.026 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:36:07.029 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:40:48.429 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:40:48.476 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:40:48.479 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:46:37.333 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:46:37.380 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:46:37.384 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:50:37.375 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:50:37.436 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:50:37.438 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:52:39.662 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:52:39.737 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:52:39.740 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 17:54:03.782 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 17:54:03.843 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 17:54:03.848 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:25:20.415 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:25:20.472 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:25:20.476 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:29:03.842 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:29:03.890 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:29:03.892 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:30:34.143 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:30:34.188 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:30:34.190 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:31:32.258 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:31:32.302 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:31:32.305 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:32:52.350 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:32:52.401 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:32:52.404 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:33:40.100 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:33:40.158 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:33:40.160 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:36:35.715 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:36:35.760 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:36:35.762 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
+2020-12-08 18:51:10.716 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==>  Preparing: insert into demo(card_name) values(?)
+2020-12-08 18:51:10.757 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | ==> Parameters: testData(String)
+2020-12-08 18:51:10.759 | DEBUG | main | com.modules.base.dao.DemoDao.insert-line:137 | <==    Updates: 1
