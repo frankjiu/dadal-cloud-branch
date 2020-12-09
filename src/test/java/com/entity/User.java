@@ -17,14 +17,15 @@ import java.util.List;
 public class User {
 
     private String name;
-    private String address;
     private Integer age;
-    private List<Detail> detailList;
+    private List<Detail> details;
 
     @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class Detail{
-        private String description = "年龄信息";
-        private Integer age;
+        private String description;
+        private String address;
     }
 
 }
