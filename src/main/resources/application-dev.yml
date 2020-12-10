@@ -71,3 +71,7 @@ logging:
 mybatis:
   configLocation: classpath:/mybatis-config.xml
   mapper-locations: classpath:mapper/**/*.xml
+
+#limited of data query
+limited:
+  count: 10_0000

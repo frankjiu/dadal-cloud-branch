@@ -2,7 +2,7 @@ package com.modules.base.controller;
 
 import com.core.result.HttpResult;
 import com.core.utils.SpringContextUtils;
-import com.modules.base.model.dto.DemoDto;
+import com.modules.base.model.dto.DemoGetDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.model.vo.DemoVo;
 import com.modules.base.service.DemoService;
@@ -30,10 +30,10 @@ public class FutureTest implements Callable <List<DemoVo>> {
     private DemoService demoService;
 
     @Autowired
-    private DemoDto demoDto;
+    private DemoGetDto demoGetDto;
 
-    private FutureTest(DemoDto demoDto) {
-        this.demoDto = demoDto;
+    private FutureTest(DemoGetDto demoGetDto) {
+        this.demoGetDto = demoGetDto;
     }
 
     private static final int roundTimes = 18;
@@ -41,16 +41,16 @@ public class FutureTest implements Callable <List<DemoVo>> {
 
     /**
      * 串行查询
-     * @param demoDto
+     * @param demoGetDto
      * @return
      * @throws Exception
      */
     @PostMapping("single")
-    public HttpResult findList(@RequestBody DemoDto demoDto) throws Exception {
+    public HttpResult findList(@RequestBody DemoGetDto demoGetDto) throws Exception {
         List<DemoVo> result = new ArrayList<>();
         long start = System.currentTimeMillis();
         for (int i = 0; i < roundTimes; i++) {
-            List<Demo> demoList = demoService.findPage(demoDto);
+            List<Demo> demoList = demoService.findPage(demoGetDto);
             List<DemoVo> demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder().
                             id(e.getId())
@@ -72,7 +72,7 @@ public class FutureTest implements Callable <List<DemoVo>> {
         List<DemoVo> demoVoList = null;
         try {
             demoService = SpringContextUtils.getBeanByClass(DemoService.class);
-            List<Demo> demoList = demoService.findPage(demoDto);
+            List<Demo> demoList = demoService.findPage(demoGetDto);
             demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder()
                             .id(e.getId())
@@ -93,13 +93,13 @@ public class FutureTest implements Callable <List<DemoVo>> {
      * @return
      */
     @PostMapping("multi")
-    public HttpResult findAllList(@RequestBody DemoDto demoDto){
+    public HttpResult findAllList(@RequestBody DemoGetDto demoGetDto){
         List<DemoVo> result = new ArrayList<>();
         List<Future<List<DemoVo>>> futures = new ArrayList<>();
         ExecutorService executorService = Executors.newFixedThreadPool(threadNum);
         long start = System.currentTimeMillis();
         for (int i = 0; i < roundTimes; i++) {
-            Future<List<DemoVo>> future = executorService.submit(new FutureTest(demoDto));
+            Future<List<DemoVo>> future = executorService.submit(new FutureTest(demoGetDto));
             futures.add(future);
         }
 

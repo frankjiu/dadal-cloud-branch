@@ -11,13 +11,15 @@ package com.modules.base.controller;
 
 import com.core.result.HttpResult;
 import com.google.common.collect.Lists;
-import com.modules.base.model.dto.DemoDto;
+import com.modules.base.model.dto.DemoGetDto;
+import com.modules.base.model.dto.DemoPostDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.model.vo.DemoVo;
 import com.modules.base.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionStatus;
@@ -54,14 +56,8 @@ public class DemoController {
     @Autowired
     private DataSourceTransactionManager transactionManager;
 
-    @PostMapping("demo/page/")
-    public HttpResult findPage(@RequestBody @Valid DemoDto demoDto) {
-        List<Demo> demoList = demoService.findPage(demoDto);
-        List<DemoVo> demoVoList = demoList.stream()
-                .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
-                .collect(Collectors.toList());
-        return HttpResult.success(demoVoList);
-    }
+    @Value("${limited.count}")
+    public Integer limitedCount;
 
     @GetMapping("demo/{id}")
     public HttpResult findById(@PathVariable Integer id) {
@@ -69,12 +65,36 @@ public class DemoController {
         return HttpResult.success(demo);
     }
 
-    @PostMapping("demo")
-    public HttpResult save(@RequestBody @Valid DemoDto demoDto) {
+    @GetMapping("demo")
+    public HttpResult findAll() {
+        log.info(">>>>>>>>>>>>>>>>> 数据总量限制: " + limitedCount);
+        List<Demo> demoList = demoService.findAll(limitedCount);
+        List<DemoVo> demoVoList = demoList.stream()
+                .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
+                .collect(Collectors.toList());
+        return HttpResult.success(demoVoList);
+    }
+
+    @PostMapping("demo/page")
+    public HttpResult findPage(@RequestBody @Valid DemoGetDto demoGetDto) {
+        List<Demo> demoList = demoService.findPage(demoGetDto);
+        List<DemoVo> demoVoList = demoList.stream()
+                .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
+                .collect(Collectors.toList());
+        return HttpResult.success(demoVoList);
+    }
+
+    /**
+     * Post or Put
+     * @param demoPostDto
+     * @return
+     */
+    @RequestMapping(value = "demo", method = {RequestMethod.POST, RequestMethod.PUT})
+    public HttpResult save(@RequestBody @Valid DemoPostDto demoPostDto) {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
         // 数据校验, 数据转换
         Demo demo = new Demo();
-        BeanUtils.copyProperties(demoDto, demo);
+        BeanUtils.copyProperties(demoPostDto, demo);
         int num = 0;
         try {
             num = demoService.save(demo);
@@ -90,7 +110,7 @@ public class DemoController {
         return HttpResult.success(demo.getId());
     }
 
-    @GetMapping("demo/{id}")
+    @DeleteMapping("demo/{id}")
     public HttpResult delete(@PathVariable Integer id) {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
         int num = 0;
@@ -112,7 +132,7 @@ public class DemoController {
      */
     @GetMapping("redis/{key}")
     public HttpResult findRedis(@PathVariable String key) {
-        Demo data = new Demo(999, "China_Bank_Test", 8L, null);
+        Demo data = new Demo(999, "China_Bank_Test", "66668888", null);
         redisTemplate.opsForValue().set(key, data, 10, TimeUnit.MINUTES); // 10min有效
         data = (Demo)redisTemplate.opsForValue().get(key);
         return HttpResult.success(data);
@@ -123,12 +143,12 @@ public class DemoController {
      * @return
      */
     @GetMapping("testSerial")
-    public HttpResult testThreadNo() throws Exception {
+    public HttpResult testThreadNo() {
         long start = System.currentTimeMillis();
-        DemoDto demoDto1 = new DemoDto("ABC");
-        List<Demo> list1 = demoService.findPage(demoDto1);
-        DemoDto demoDto2 = new DemoDto("DEF");
-        List<Demo> list2 = demoService.findPage(demoDto2);
+        DemoGetDto demoGetDto1 = new DemoGetDto("ABC");
+        List<Demo> list1 = demoService.findPage(demoGetDto1);
+        DemoGetDto demoGetDto2 = new DemoGetDto("DEF");
+        List<Demo> list2 = demoService.findPage(demoGetDto2);
         long end = System.currentTimeMillis();
         list1.addAll(list2);
         return HttpResult.success(list1, "耗时:" + (end-start)/1000);
@@ -141,7 +161,7 @@ public class DemoController {
     @GetMapping("testParallel")
     public HttpResult testThread() {
         ExecutorService pool = Executors.newFixedThreadPool(2);
-        List<DemoDto> conditionList = Lists.newArrayList(new DemoDto("ABC"), new DemoDto("DEF"));
+        List<DemoGetDto> conditionList = Lists.newArrayList(new DemoGetDto("ABC"), new DemoGetDto("DEF"));
         List<Demo> completeList = new ArrayList<>();
 
         long start = System.currentTimeMillis();

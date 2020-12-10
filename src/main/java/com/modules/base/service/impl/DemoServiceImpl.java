@@ -8,7 +8,7 @@
 package com.modules.base.service.impl;
 
 import com.modules.base.dao.DemoDao;
-import com.modules.base.model.dto.DemoDto;
+import com.modules.base.model.dto.DemoGetDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author: Frankjiu
@@ -33,21 +32,7 @@ public class DemoServiceImpl implements DemoService {
     private DemoDao demoDao;
 
     @Override
-    @Cacheable(value = "DemoCache", key = "#demoDto")
-    public List<Demo> findPage(DemoDto demoDto) {
-        log.info(">>> Query from database....");
-        List<Demo> list = new ArrayList<>();
-        try {
-            Thread.sleep(3000);
-            list = demoDao.findPage(demoDto);
-        } catch (Exception e) {
-            log.info(e.getMessage(), e);
-        }
-        return list;
-    }
-
-    @Override
-    @Cacheable(value = "DemoCache", key = "#id")
+    //@Cacheable(value = "DemoCache", key = "#id")
     public Demo findById(Integer id) {
         log.info(">>> Query from database..");
         Demo demo = null;
@@ -57,6 +42,32 @@ public class DemoServiceImpl implements DemoService {
             log.info(e.getMessage(), e);
         }
         return demo;
+    }
+
+    @Override
+    //@Cacheable(value = "DemoCache", key = "demo_find_all")
+    public List<Demo> findAll(Integer limitedCount) {
+        log.info(">>> Query from database....");
+        List<Demo> list = new ArrayList<>();
+        try {
+            Thread.sleep(2000);
+            list = demoDao.findAll(limitedCount);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+        }
+        return list;
+    }
+
+    @Override
+    public List<Demo> findPage(DemoGetDto demoGetDto) {
+        log.info(">>> Query from database....");
+        List<Demo> list = new ArrayList<>();
+        try {
+            list = demoDao.findPage(demoGetDto);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+        }
+        return list;
     }
 
     @Override

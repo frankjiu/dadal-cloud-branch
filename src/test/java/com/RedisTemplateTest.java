@@ -41,7 +41,7 @@ public class RedisTemplateTest {
         System.out.println(a);
 
         ValueOperations<String, Object> opr = redisTemplate.opsForValue();
-        opr.set("demo", new Demo(55, "华夏", 8L, null));
+        opr.set("demo", new Demo(55, "华夏", "86", null));
         Demo demo = (Demo) opr.get("demo");
         redisTemplate.opsForValue().set("name", "tom", 10, TimeUnit.SECONDS);
         String name = (String) redisTemplate.opsForValue().get("name");//由于设置的是10秒失效，十秒之内查询有结果，十秒之后返回为null

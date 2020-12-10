@@ -28,7 +28,7 @@ public class Demo {
 
     private Integer id;
     private String cardName;
-    private Long cardNumber;
+    private String cardNumber;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;

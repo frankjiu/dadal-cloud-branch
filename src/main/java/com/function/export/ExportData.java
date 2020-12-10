@@ -1,9 +1,9 @@
 package com.function.export;
 
+import com.core.utils.DownloadUtils;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.modules.base.model.entity.Demo;
-import com.core.utils.DownloadUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -57,10 +57,10 @@ public class ExportData {
     public void export(@RequestBody String demoVoJsonStr, HttpServletRequest request, HttpServletResponse response) throws Exception {
         var list = new ArrayList<Demo>();
         for (int i = 1; i < 21000 ; i++) {
-            Demo demo = new Demo().builder().id(i).cardName("中国银行" + i).cardNumber(99999999555L + i).createTime(new Date()).build();
+            Demo demo = new Demo().builder().id(i).cardName("中国银行" + i).cardNumber("99999999555" + i).createTime(new Date()).build();
             list.add(demo);
             if (i % 2 == 0) {
-                Demo newDemo = new Demo().builder().id(i).cardName("中国银行" + (i-1)).cardNumber(99999999555L + i-1).createTime(new Date()).build();
+                Demo newDemo = new Demo().builder().id(i).cardName("中国银行" + (i-1)).cardNumber("99999999555" + (i-1)).createTime(new Date()).build();
                 list.add(newDemo);
             }
         }
