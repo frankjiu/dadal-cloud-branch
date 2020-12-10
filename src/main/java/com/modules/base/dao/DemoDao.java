@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 /**
- * @description: 使用注解方式(@select和@SelectProvider)进行简单CRUD, 复杂的条件查询到xml中进行.
+ * @description: 使用注解方式(@select和@SelectProvider)进行简单CRUD或统计查询, 复杂的条件查询到xml中进行.
  * @author: Frankjiu
  * @date: 2020年8月26日
  */
@@ -52,7 +52,9 @@ public interface DemoDao {
      * @return
      * @throws Exception
      */
-    @Select(" SELECT * FROM demo ")
-    List<Demo> findPage(DemoGetDto demoGetDto) throws Exception;
+    @Select(" SELECT * FROM demo WHERE CARD_NAME = #{demoGetDto.cardName} " +
+            "AND CARD_NUMBER LIKE CONCAT('%',#{demoGetDto.cardNumber},'%') " +
+            "LIMIT #{demoGetDto.pageNum}, #{demoGetDto.pageSize}")
+    List<Demo> findPage(@Param("demoGetDto") DemoGetDto demoGetDto) throws Exception;
 
 }

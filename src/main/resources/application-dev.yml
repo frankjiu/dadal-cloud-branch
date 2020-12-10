@@ -74,4 +74,4 @@ mybatis:
 
 #limited of data query
 limited:
-  count: 10_0000
+  count: 1_0000

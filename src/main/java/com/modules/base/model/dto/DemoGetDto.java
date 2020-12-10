@@ -35,7 +35,7 @@ public class DemoGetDto {
     private String cardName;
 
     @NotBlank
-    private String cardNumber;
+    private String cardNumber; //模糊查询
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
