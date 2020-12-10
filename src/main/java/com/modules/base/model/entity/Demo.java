@@ -37,4 +37,9 @@ public class Demo {
         this.cardName = cardName;
     }
 
+    public Demo(String cardName, Date createTime){
+        this.cardName = cardName;
+        this.createTime = createTime;
+    }
+
 }

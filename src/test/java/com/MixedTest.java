@@ -4,6 +4,7 @@ import com.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.NullNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.Test;
 import org.springframework.util.StringUtils;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
  * @Author: QiuQiang
  * @Date: 2020-09-24
  */
-public class CommonTest {
+public class MixedTest {
 
     public static final List<String> thirdFieldList = new ArrayList<>() {{
         add("city");
@@ -830,68 +831,42 @@ public class CommonTest {
         System.out.println(salt);*/
     }
 
-
     @Test
     public void testMe2() throws JsonProcessingException {
         /*Random random = new Random();
         int i = random.nextInt(2);
         System.out.println(i);*/
-        //ObjectMapper mapper = new ObjectMapper();
-        //JsonNode node = mapper.readTree(jsonStr);
-        //String color = node.get("dog").get("color").asText();
-        //System.out.println(color);
-        //String jsonStr = "{\"name\":\"YourBatman\",\"age\":18,\"dog\":{\"name\":\"旺财\",\"color\":\"WHITE\"},\"hobbies\":[\"篮球\",\"football\"]}";
-        //String jsonStr = "{\"name\":\"YourBatman\",\"age\":18,\"dog\":{\"name\":\"旺财\",\"color\":\"\"},\"hobbies\":[\"篮球\",\"football\"]}";
 
-        /*User user = new User("laowang", 25, new User.Detail("详细地址", ""));
-
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectNode rootNode = mapper.valueToTree(user);
-        System.out.println(">>>rootNode: " + rootNode);
-
-        String address = rootNode.get("detail").get("address").asText();
-        System.out.println(">>>address: " + address);
-
-        if (StringUtils.isEmpty(address)) {
-            System.out.println("=========属性为空========");
-            ObjectNode innerNode = (ObjectNode)(rootNode.get("detail"));
-            innerNode.remove("address");
-            System.out.println(innerNode.get("description"));
-            System.out.println("<<<移除空属性后的 rootNode: " + rootNode);
-        }*/
-
-
-
-        User user = new User("laowang", 25, List.of(
+        /*User user = new User("laowang", 25, List.of(
                 new User.Detail("详细地址1", "广州白云区"),
-                new User.Detail("详细地址2", ""),
+                new User.Detail("详细地址2", null),
                 new User.Detail("详细地址3", "广州越秀区")
         ));
-
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode rootNode = mapper.valueToTree(user);
-        //System.out.println(">>>rootNode: " + rootNode);
-
-        //String address = rootNode.get("details").get("address").asText();
-        JsonNode details = rootNode.get("details");
-        Iterator<JsonNode> iterator = details.iterator();
+        JsonNode detailsNodes = rootNode.get("details");
+        Iterator<JsonNode> iterator = detailsNodes.iterator();
         while (iterator.hasNext()) {
             JsonNode next = iterator.next();
             String address = next.get("address").asText();
-
-            if (StringUtils.isEmpty(address)) {
+            if (isEmptyNull(address)) {
                 System.out.println("=========address属性为空========");
                 ObjectNode innerNode = (ObjectNode)next;
                 innerNode.remove("address");
-                //System.out.println(innerNode.get("description"));
-                //System.out.println("<<<rootNode: " + rootNode);
+                iterator.remove(); // 移除节点数组中当前空元素
             }
-            //System.out.println("next:" + next.get("description").asText());
         }
-        System.out.println("<<<rootNode: " + rootNode);
+        System.out.println("<<<rootNode: " + rootNode);*/
 
+    }
 
+    @Test
+    public void testMe3() throws Exception {
 
+    }
+
+    public boolean isEmptyNull(Object str) {
+        return (str == null || "".equals(str) || "null".equals(str));
     }
 
 
@@ -1151,9 +1126,6 @@ public class CommonTest {
         return statisticWay;
     }
 
-
-
-
     public static LocalDate dateToLocalDate(Date date) {
         if(null == date) {
             return null;
@@ -1171,8 +1143,6 @@ public class CommonTest {
     public static Double percentToDouble(String str) {
         return str.contains("%") ? Double.valueOf(str.trim().replace("%", "")) / 100 : Double.valueOf(str);
     }
-
-
 
     /**
      * 判断是否是yyyy-MM-dd日期格式

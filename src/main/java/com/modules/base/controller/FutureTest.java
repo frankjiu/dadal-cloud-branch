@@ -1,11 +1,11 @@
 package com.modules.base.controller;
 
+import com.core.result.HttpResult;
+import com.core.utils.SpringContextUtils;
 import com.modules.base.model.dto.DemoDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.model.vo.DemoVo;
 import com.modules.base.service.DemoService;
-import com.core.result.HttpResult;
-import com.core.utils.SpringContextUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @Slf4j
-public class BigDataQueryController implements Callable <List<DemoVo>> {
+public class FutureTest implements Callable <List<DemoVo>> {
 
     @Autowired
     private DemoService demoService;
@@ -32,7 +32,7 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
     @Autowired
     private DemoDto demoDto;
 
-    private BigDataQueryController (DemoDto demoDto) {
+    private FutureTest(DemoDto demoDto) {
         this.demoDto = demoDto;
     }
 
@@ -45,12 +45,12 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
      * @return
      * @throws Exception
      */
-    @PostMapping("findList")
+    @PostMapping("single")
     public HttpResult findList(@RequestBody DemoDto demoDto) throws Exception {
         List<DemoVo> result = new ArrayList<>();
         long start = System.currentTimeMillis();
         for (int i = 0; i < roundTimes; i++) {
-            List<Demo> demoList = demoService.findDemoListByCondition(demoDto);
+            List<Demo> demoList = demoService.findPage(demoDto);
             List<DemoVo> demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder().
                             id(e.getId())
@@ -72,7 +72,7 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
         List<DemoVo> demoVoList = null;
         try {
             demoService = SpringContextUtils.getBeanByClass(DemoService.class);
-            List<Demo> demoList = demoService.findDemoListByCondition(demoDto);
+            List<Demo> demoList = demoService.findPage(demoDto);
             demoVoList = demoList.stream()
                     .map(e -> DemoVo.builder()
                             .id(e.getId())
@@ -92,14 +92,14 @@ public class BigDataQueryController implements Callable <List<DemoVo>> {
      * 并行查询
      * @return
      */
-    @PostMapping("findAllList")
+    @PostMapping("multi")
     public HttpResult findAllList(@RequestBody DemoDto demoDto){
         List<DemoVo> result = new ArrayList<>();
         List<Future<List<DemoVo>>> futures = new ArrayList<>();
         ExecutorService executorService = Executors.newFixedThreadPool(threadNum);
         long start = System.currentTimeMillis();
         for (int i = 0; i < roundTimes; i++) {
-            Future<List<DemoVo>> future = executorService.submit(new BigDataQueryController(demoDto));
+            Future<List<DemoVo>> future = executorService.submit(new FutureTest(demoDto));
             futures.add(future);
         }
 

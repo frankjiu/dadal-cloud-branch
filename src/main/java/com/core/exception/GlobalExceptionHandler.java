@@ -7,16 +7,14 @@
 
 package com.core.exception;
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.core.result.HttpResult;
+import com.core.result.RespCode;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.core.result.HttpResult;
-import com.core.result.RespCode;
-
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Description: Global Exception Handler

@@ -11,6 +11,7 @@ import com.modules.base.dao.DemoDao;
 import com.modules.base.model.dto.DemoDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.service.DemoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -25,51 +26,56 @@ import java.util.Random;
  * @date: 2020年8月26日
  */
 @Service
+@Slf4j
 public class DemoServiceImpl implements DemoService {
 
     @Autowired
     private DemoDao demoDao;
 
     @Override
-    public List<Demo> findPage(DemoDto demoDto) throws Exception {
-        return demoDao.findPage(demoDto);
+    @Cacheable(value = "DemoCache", key = "#demoDto")
+    public List<Demo> findPage(DemoDto demoDto) {
+        log.info(">>> Query from database....");
+        List<Demo> list = new ArrayList<>();
+        try {
+            Thread.sleep(3000);
+            list = demoDao.findPage(demoDto);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+        }
+        return list;
     }
 
     @Override
     @Cacheable(value = "DemoCache", key = "#id")
-    public Demo findById(Integer id) throws Exception {
-        System.out.println(">>>查询数据库...");
-        return demoDao.findById(id);
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public Demo save(Demo demo) throws Exception {
-        if (demo.getId() == null) {
-            demo = demoDao.save(demo);
-        } else {
-            demo = demoDao.update(demo);
-        }
-        Random random = new Random();
-        if (random.nextInt(2) == 0) {
-            throw new Exception("save failed!");
+    public Demo findById(Integer id) {
+        log.info(">>> Query from database..");
+        Demo demo = null;
+        try {
+            demo = demoDao.findById(id);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
         }
         return demo;
     }
 
-
     @Override
-    public List<Demo> findDemoListByCondition(DemoDto demoDto) {
-        List<Demo> demoList = new ArrayList<>();
-        try {
-            demoList = demoDao.getDemoListByCondition(demoDto);
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            e.printStackTrace();
+    @Transactional(rollbackFor = Exception.class)
+    public int save(Demo demo) throws Exception {
+        int num;
+        if (demo.getId() == null) {
+            num = demoDao.insert(demo);
+        } else {
+            num = demoDao.update(demo);
         }
-        return demoList;
+        // if (new Random().nextInt(2) == 0) throw new Exception("save failed!"); // 测试事务处理效果
+        return num;
     }
 
-
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public int delete(Integer id) throws Exception {
+        return demoDao.delete(id);
+    }
 
 }

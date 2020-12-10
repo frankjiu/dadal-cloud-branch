@@ -7,10 +7,10 @@
 
 package com.modules.base.service;
 
-import java.util.List;
-
 import com.modules.base.model.dto.DemoDto;
 import com.modules.base.model.entity.Demo;
+
+import java.util.List;
 
 /**
  * @author: Frankjiu
@@ -18,12 +18,12 @@ import com.modules.base.model.entity.Demo;
  */
 public interface DemoService {
 
-    List<Demo> findPage(DemoDto demoDto) throws Exception;
+    List<Demo> findPage(DemoDto demoDto);
 
-    Demo findById(Integer id) throws Exception;
+    Demo findById(Integer id);
 
-    Demo save(Demo demo) throws Exception;
+    int save(Demo demo) throws Exception;
 
-    List<Demo> findDemoListByCondition(DemoDto demoDto);
+    int delete(Integer id) throws Exception;
 
 }
