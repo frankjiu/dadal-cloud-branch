@@ -43,11 +43,11 @@
             <if test="demoGetDto.cardName != null and demoGetDto.cardName != ''">
                 AND dm.CARD_NAME = #{demoGetDto.cardName}
             </if>
-            <if test="demoGetDto.cardName != null and demoGetDto.cardName != ''">
+            <if test="demoGetDto.cardNumber != null and demoGetDto.cardNumber != ''">
                 AND dm.CARD_NUMBER like CONCAT('%',#{demoGetDto.cardNumber},'%')
             </if>
             <if test="demoGetDto.createTime != null and demoGetDto.createTime != ''">
-                AND <![CDATA[ dm.CREATE_TIME <= #{demoGetDto.cardName} ]]>
+                AND <![CDATA[ dm.CREATE_TIME <= #{demoGetDto.createTime} ]]>
             </if>
         </where>
     </sql>
