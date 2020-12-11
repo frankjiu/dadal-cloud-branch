@@ -7,30 +7,33 @@
 
 package com.modules.base.model.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
- * @Description: xxx参数
+ * @Description: Demo-POST数据
  * @author: Frankjiu
  * @date: 2020年8月26日
  */
 @Data
-@Component
-@NoArgsConstructor
-@AllArgsConstructor
 public class DemoPostDto {
 
+    @org.hibernate.validator.constraints.Range(min = 1, max = 99999999, message = "[非必填, 只允许输入1个1~99999999(含)的整数]")
     private Integer id;
+
+    @NotBlank
+    @Size(max = 30)
+    @Pattern(regexp = "\\w*|^[\\u4e00-\\u9fa5]*$", message = "[必填, 仅允许字母或汉字!]")
     private String cardName;
+
+    @Pattern(regexp = "^[1-9]\\d*$", message = "[Only positive integers are allowed!]")
     private String cardNumber;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 

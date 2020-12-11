@@ -39,7 +39,7 @@ public class TransactionTest {
         try {
             // Demo demo = new Demo("testData");
             Demo demo2 = new Demo("testData", new Date());
-            int i = demoService.save(demo2);
+            int i = demoService.insert(demo2);
             System.out.println(demo2.getId());
             // 制造异常..
             System.out.println(3/0);

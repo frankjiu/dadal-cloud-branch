@@ -9,7 +9,9 @@
 
 package com.modules.base.controller;
 
+import com.core.exception.CommonException;
 import com.core.result.HttpResult;
+import com.core.result.PageModel;
 import com.google.common.collect.Lists;
 import com.modules.base.model.dto.DemoGetDto;
 import com.modules.base.model.dto.DemoPostDto;
@@ -24,12 +26,14 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -62,26 +66,46 @@ public class DemoController {
     @GetMapping("demo/{id}")
     public HttpResult findById(@PathVariable Integer id) {
         Demo demo = demoService.findById(id);
+        if (demo == null) {
+            return HttpResult.fail("record not found!");
+        }
         return HttpResult.success(demo);
     }
 
     @GetMapping("demo")
     public HttpResult findAll() {
-        log.info(">>>>>>>>>>>>>>>>> 数据总量限制: " + limitedCount);
-        List<Demo> demoList = demoService.findAll(limitedCount);
+        String key = "demo_find_all";
+        // 查询Redis
+        List<Demo> demoList = (List<Demo>)redisTemplate.opsForValue().get(key);
+        // 查询DB
+        if (CollectionUtils.isEmpty(demoList)) {
+            log.info(">>> Query from db.., the total data limited at: " + limitedCount);
+            demoList = demoService.findAll(limitedCount);
+            if (demoList.size() > limitedCount) {
+                throw new CommonException("Data size overload!");
+            }
+            redisTemplate.opsForValue().set(key, demoList, 30, TimeUnit.SECONDS); //30s容忍
+        }
         List<DemoVo> demoVoList = demoList.stream()
                 .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
                 .collect(Collectors.toList());
+
         return HttpResult.success(demoVoList);
     }
 
+    // @SysLog("findDemoPage")
+    // @RequiresPermissions("demo:demo:page")
     @PostMapping("demo/page")
     public HttpResult findPage(@RequestBody @Valid DemoGetDto demoGetDto) {
         List<Demo> demoList = demoService.findPage(demoGetDto);
+        int total = demoService.count(demoGetDto);
         List<DemoVo> demoVoList = demoList.stream()
                 .map(e -> DemoVo.builder().id(e.getId()).cardName(e.getCardName()).cardNumber(e.getCardNumber()).createTime(e.getCreateTime()).build())
                 .collect(Collectors.toList());
-        return HttpResult.success(demoVoList);
+        PageModel<DemoVo> pageModel = new PageModel<>();
+        pageModel.setData(demoVoList);
+        pageModel.setTotalCount(total);
+        return HttpResult.success(pageModel);
     }
 
     /**
@@ -92,12 +116,17 @@ public class DemoController {
     @RequestMapping(value = "demo", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid DemoPostDto demoPostDto) {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
-        // 数据校验, 数据转换
+        // data check: has been check with annotation; We can also check in another method with regex and commonException.
+        // data convert
         Demo demo = new Demo();
         BeanUtils.copyProperties(demoPostDto, demo);
         int num = 0;
         try {
-            num = demoService.save(demo);
+            if (demo.getId() == null) {
+                num = demoService.insert(demo);
+            } else {
+                num = demoService.update(demo);
+            }
             transactionManager.commit(transaction);
         } catch (Exception e) {
             log.info(e.getMessage(), e);
@@ -130,10 +159,10 @@ public class DemoController {
     /**
      * 缓存
      */
-    @GetMapping("redis/{key}")
+    @GetMapping("demo/redis/{key}")
     public HttpResult findRedis(@PathVariable String key) {
-        Demo data = new Demo(999, "China_Bank_Test", "66668888", null);
-        redisTemplate.opsForValue().set(key, data, 10, TimeUnit.MINUTES); // 10min有效
+        Demo data = new Demo(999, "China_Bank_Test", "66668888", new Date());
+        redisTemplate.opsForValue().set(key, data, 10, TimeUnit.MINUTES); // 10min effect time
         data = (Demo)redisTemplate.opsForValue().get(key);
         return HttpResult.success(data);
     }
@@ -151,7 +180,7 @@ public class DemoController {
         List<Demo> list2 = demoService.findPage(demoGetDto2);
         long end = System.currentTimeMillis();
         list1.addAll(list2);
-        return HttpResult.success(list1, "耗时:" + (end-start)/1000);
+        return HttpResult.success(list1, "cost:" + (end-start)/1000);
     }
 
     /**
@@ -168,12 +197,12 @@ public class DemoController {
         CompletableFuture[] futureResult = conditionList.stream().map(object -> CompletableFuture.supplyAsync(() -> demoService.findPage(object), pool)
                 .thenApply(k -> k)
                 .whenComplete((t, e) -> {
-                    System.out.println(">>>>>>任务完成! result=" + t + "; 异常=" + e + "; " + LocalDateTime.now());
+                    System.out.println(">>>>>>task completed! result=" + t + "; exception=" + e + "; " + LocalDateTime.now());
                     completeList.addAll(t);
                 })).toArray(CompletableFuture[]::new);
         CompletableFuture.allOf(futureResult).join();
         long end = System.currentTimeMillis();
-        return HttpResult.success(completeList, "耗时:" + (end-start)/1000);
+        return HttpResult.success(completeList, "cost:" + (end-start)/1000);
     }
 
 }

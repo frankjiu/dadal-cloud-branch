@@ -48,13 +48,9 @@ public interface DemoDao {
 
     /**
      * 分页条件查询使用xml
-     * @param demoGetDto
-     * @return
-     * @throws Exception
      */
-    @Select(" SELECT * FROM demo WHERE CARD_NAME = #{demoGetDto.cardName} " +
-            "AND CARD_NUMBER LIKE CONCAT('%',#{demoGetDto.cardNumber},'%') " +
-            "LIMIT #{demoGetDto.pageNum}, #{demoGetDto.pageSize}")
     List<Demo> findPage(@Param("demoGetDto") DemoGetDto demoGetDto) throws Exception;
+
+    int count(@Param("demoGetDto") DemoGetDto demoGetDto) throws Exception;
 
 }

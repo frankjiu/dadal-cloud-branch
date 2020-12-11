@@ -5,7 +5,7 @@
  * @version: V1.0
  */
 
-package com.modules.base.controller;
+package com.modules.index;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

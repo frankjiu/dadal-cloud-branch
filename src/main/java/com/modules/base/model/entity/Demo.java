@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * @Description: xxx实体类
+ * @Description: Demo实体类
  * @author: Frankjiu
  * @date: 2020年8月26日
  */
@@ -26,12 +26,12 @@ import java.util.Date;
 @Builder
 public class Demo {
 
-    private Integer id;
-    private String cardName;
-    private String cardNumber;
+    private Integer id; //主键
+    private String cardName; //卡名
+    private String cardNumber; //卡号
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createTime;
+    private Date createTime; //创建时间
 
     public Demo(String cardName){
         this.cardName = cardName;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.modules.base.dao.DemoDao">
-	<sql id="columns">
+    <sql id="columns">
 		/*ID, CARD_NAME AS cardName, CARD_NUMBER AS cardNumber,
 		CREATE_TIME AS createTime*/
 		SUM(ROUND(ID/3.1415926, 5)) AS id,
@@ -10,17 +10,58 @@
         CREATE_TIME AS createTime
 	</sql>
 
-	<select id="getDemoListFast" resultType="com.modules.base.model.entity.Demo">
-		SELECT
-		<include refid="columns" />
-		FROM DEMO
-		<where>
-			<if test="demoDto.cardName != null and demoDto.cardName != ''">
-				AND CARD_NAME = #{demoDto.cardName}
+    <select id="case1" resultType="com.modules.base.model.entity.Demo">
+        SELECT
+        <include refid="columns"/>
+        FROM DEMO
+        <where>
+            <if test="demoDto.cardName != null and demoDto.cardName != ''">
+                AND CARD_NAME = #{demoDto.cardName}
                 AND ID % 13 > 1
                 AND CARD_NUMBER LIKE '%9%'
-                GROUP BY cardName,cardNumber,createTime
-			</if>
-		</where>
+                GROUP BY cardName,cardNumber,createTime;
+            </if>
+        </where>
+    </select>
+
+    <select id="case2" resultType="java.lang.String">
+		SELECT
+			distinct (t3.perms)
+		FROM
+			demo t1
+		INNER JOIN demo t2 on
+			t1.role_id = t2.role_id
+		INNER JOIN demo t3 on
+			t2.menu_id = t3.menu_id
+		WHERE
+			t1.user_id = #{value};
 	</select>
+
+    <!-- Page query with conditions -->
+    <sql id="page_sql">
+        <where>
+            <if test="demoGetDto.cardName != null and demoGetDto.cardName != ''">
+                AND dm.CARD_NAME = #{demoGetDto.cardName}
+            </if>
+            <if test="demoGetDto.cardName != null and demoGetDto.cardName != ''">
+                AND dm.CARD_NUMBER like CONCAT('%',#{demoGetDto.cardNumber},'%')
+            </if>
+            <if test="demoGetDto.createTime != null and demoGetDto.createTime != ''">
+                AND <![CDATA[ dm.CREATE_TIME <= #{demoGetDto.cardName} ]]>
+            </if>
+        </where>
+    </sql>
+
+    <select id="findPage" parameterType="com.modules.base.model.dto.DemoGetDto" resultType="com.modules.base.model.entity.Demo">
+        select * from demo dm
+        <include refid="page_sql"/>
+        ORDER BY dm.CREATE_TIME DESC
+        LIMIT ${(demoGetDto.pageNum-1)*demoGetDto.pageSize},${demoGetDto.pageSize};
+    </select>
+
+    <select id="count" parameterType="com.modules.base.model.dto.DemoGetDto" resultType="java.lang.Integer">
+        select count(*) from demo dm
+        <include refid="page_sql"/>
+    </select>
+
 </mapper>

@@ -24,7 +24,11 @@ public interface DemoService {
 
     List<Demo> findPage(DemoGetDto demoGetDto);
 
-    int save(Demo demo) throws Exception;
+    int count(DemoGetDto demoGetDto);
+
+    int insert(Demo demo) throws Exception;
+
+    int update(Demo demo) throws Exception;
 
     int delete(Integer id) throws Exception;
 

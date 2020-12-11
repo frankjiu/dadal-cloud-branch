@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * @Description: xxx参数
+ * @Description: Demo-查询条件
  * @author: Frankjiu
  * @date: 2020年8月26日
  */
@@ -31,14 +31,11 @@ public class DemoGetDto {
 
     private Integer id;
 
-    @NotBlank
     private String cardName;
 
-    @NotBlank
-    private String cardNumber; //模糊查询
+    private String cardNumber;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date createTime;
+    private String createTime;
 
     @NotNull
     @Min(1)
@@ -50,6 +47,6 @@ public class DemoGetDto {
 
     public DemoGetDto(String cardName) {
         this.cardName = cardName;
-    }
+    } //used for test
 
 }

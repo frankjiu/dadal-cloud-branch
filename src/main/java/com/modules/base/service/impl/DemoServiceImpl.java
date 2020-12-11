@@ -13,6 +13,7 @@ import com.modules.base.model.entity.Demo;
 import com.modules.base.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,9 +33,9 @@ public class DemoServiceImpl implements DemoService {
     private DemoDao demoDao;
 
     @Override
-    //@Cacheable(value = "DemoCache", key = "#id")
+    @Cacheable(value = "DemoCache", key = "#id")
     public Demo findById(Integer id) {
-        log.info(">>> Query from database..");
+        log.info(">>> Query from database.."); // 测试cache缓存效果
         Demo demo = null;
         try {
             demo = demoDao.findById(id);
@@ -45,12 +46,9 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    //@Cacheable(value = "DemoCache", key = "demo_find_all")
     public List<Demo> findAll(Integer limitedCount) {
-        log.info(">>> Query from database....");
         List<Demo> list = new ArrayList<>();
         try {
-            Thread.sleep(2000);
             list = demoDao.findAll(limitedCount);
         } catch (Exception e) {
             log.info(e.getMessage(), e);
@@ -60,9 +58,9 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public List<Demo> findPage(DemoGetDto demoGetDto) {
-        log.info(">>> Query from database....");
         List<Demo> list = new ArrayList<>();
         try {
+            // Thread.sleep(3000); // 测试并行查询效果
             list = demoDao.findPage(demoGetDto);
         } catch (Exception e) {
             log.info(e.getMessage(), e);
@@ -71,20 +69,34 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public int save(Demo demo) throws Exception {
-        int num;
-        if (demo.getId() == null) {
-            num = demoDao.insert(demo);
-        } else {
-            num = demoDao.update(demo);
+    public int count(DemoGetDto demoGetDto) {
+        int total = 0;
+        try {
+            total = demoDao.count(demoGetDto);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
         }
-        // if (new Random().nextInt(2) == 0) throw new Exception("save failed!"); // 测试事务处理效果
+        return total;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public int insert(Demo demo) throws Exception {
+        int num = demoDao.insert(demo);
+        // if (new Random().nextInt(2) == 0) throw new Exception("insert failed!"); // 测试事务处理效果
         return num;
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
+    @CacheEvict(value = "DemoCache", key = "#demo.id")
+    public int update(Demo demo) throws Exception {
+        return demoDao.update(demo);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    @CacheEvict(value = "DemoCache", key = "#id")
     public int delete(Integer id) throws Exception {
         return demoDao.delete(id);
     }

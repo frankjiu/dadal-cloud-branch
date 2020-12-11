@@ -1,4 +1,4 @@
-package com.modules.base.controller;
+package com.function.thread;
 
 import com.core.result.HttpResult;
 import com.core.utils.SpringContextUtils;
