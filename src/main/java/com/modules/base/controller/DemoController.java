@@ -39,6 +39,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -72,6 +73,10 @@ public class DemoController {
         return HttpResult.success(demo);
     }
 
+    /**
+     * 查询所有数据, 缓存到redis 30s
+     * @return
+     */
     @GetMapping("demo")
     public HttpResult findAll() {
         String key = "demo_find_all";
@@ -117,6 +122,11 @@ public class DemoController {
     public HttpResult save(@RequestBody @Valid DemoPostDto demoPostDto) {
         TransactionStatus transaction = transactionManager.getTransaction(new DefaultTransactionDefinition());
         // data check: has been check with annotation; We can also check in another method with regex and commonException.
+        Pattern pattern = Pattern.compile("^[A-Za-z]*$|^[\\u4e00-\\u9fa5]*$");
+        boolean match = pattern.matcher(demoPostDto.getCardName()).matches();
+        if (!match) {
+            throw new CommonException("cardName: required, and only letters or Chinese characters are allowed!");
+        }
         // data convert
         Demo demo = new Demo();
         BeanUtils.copyProperties(demoPostDto, demo);

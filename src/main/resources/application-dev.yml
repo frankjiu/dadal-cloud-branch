@@ -1,11 +1,3 @@
-#port
-server:
-  port: 55555
-
-  #编码格式
-  tomcat:
-    uri-encoding: utf-8
-
 spring:
   #application name
   application:
@@ -41,7 +33,10 @@ spring:
   #redis
   redis:
     database: 0
-    host: 192.168.75.130
+    #办公本CentOS7 Linux redis服务地址
+    #host: 192.168.75.130
+    #便携本Windows 本地redis服务地址
+    host: 127.0.0.1
     port: 6379
     password: 123456
     timeout: 20000

@@ -26,24 +26,34 @@ public enum RespCode {
     PARAM_ERROR("90001", "Invalid parameters"),
 
     /**
+     * 绑定错误
+     */
+    BIND_ERROR("90002", "Bind error"),
+
+    /**
+     * 方法错误
+     */
+    METHOD_ERROR("90003", "Request method error"),
+
+    /**
      * 解析错误
      */
-    PARSE_ERROR("90002", "Parse failed"),
+    PARSE_ERROR("90006", "Parse failed"),
 
     /**
      * 权限不足
      */
-    INSUFFICIENT_AUTHORITY("90003", "Permissions is required!"),
+    INSUFFICIENT_AUTHORITY("90007", "Permissions is required!"),
 
     /**
      * 资源不存在
      */
-    NOT_FOUND("90004", "Resource not found"),
+    NOT_FOUND("90008", "Resource not found"),
 
     /**
      * 系统错误
      */
-    INTERNAL_ERROR("90005", "Internal System Error");
+    INTERNAL_ERROR("90009", "Internal System Error");
 
     private String code;
     private String description;
