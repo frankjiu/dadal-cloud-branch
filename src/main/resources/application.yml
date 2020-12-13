@@ -1,5 +1,5 @@
 server:
-  port: 55555
+  port: 8080
   tomcat:
     uri-encoding: UTF-8
 
@@ -16,6 +16,8 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
       enabled: true
-
+  #application name
+  application:
+    name: dadal-cloud-branch
 
 
