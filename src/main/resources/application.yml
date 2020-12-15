@@ -2,12 +2,18 @@ server:
   port: 8080
   tomcat:
     uri-encoding: UTF-8
+  # 小型项目一个tomcat对应多个app,通过上下文区分; 大型项目一个tomcat对应一个app,通过不同的端口进行区分
+  servlet:
+    context-path: /
+    encoding:
+      # utf-8只包含20000+个中文字符,对生僻字显示不了
+      charset: utf-8
 
 spring:
-  # 环境 dev|test|prod
+  # dev|test|prod环境
   profiles:
     active: dev
-  # jackson时间格式化
+  # 格式化输出日期
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -16,8 +22,15 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
       enabled: true
-  #application name
+  # 应用名称
   application:
     name: dadal-cloud-branch
+  # 开启thymeleaf缓存:true
+  # 开启thymeleaf热部署, 除了false外,还要设置idea中File-Settings-Build-Compiler-build project auto勾选
+  thymeleaf:
+    cache: false
+
+
+
 
 

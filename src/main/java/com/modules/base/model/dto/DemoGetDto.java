@@ -10,13 +10,11 @@ package com.modules.base.model.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * @Description: Demo-查询条件
@@ -27,7 +25,7 @@ import java.util.Date;
 @Component
 @NoArgsConstructor
 @AllArgsConstructor
-public class DemoGetDto {
+public class DemoGetDto implements Serializable {
 
     private Integer id;
 

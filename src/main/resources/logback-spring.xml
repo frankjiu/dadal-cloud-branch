@@ -2,7 +2,7 @@
 
 <configuration scan="true" scanPeriod="60 seconds" debug="false" >
     <!-- OFF(最高),FATAL,(ERROR,WARN,INFO,DEBUG),TRACE,ALL(最低) 设置级别后, 只会打印当前级 以及 更高级别的日志. -->
-	<contextName>logback</contextName>
+	<contextName>/</contextName>
 	<!-- name的值是变量的名称,value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后,可以使“${}”来使用变量。 -->
 	<property name="logback.logdir" value="${user.dir}/logs" />
 	<property name="logback.item.name" value="dadal" />
@@ -97,22 +97,23 @@
 		</encoder>
 	</appender>
 	
-	<!-- 必选节点,用来指定最基础的日志输出级别,格式化日志输出 -->
-	<!-- SpringProfile分配配置了开发(dev)测试(test)以及生产(prod)环境 -->	
-	<!-- <springProfile name="prod"> -->
-		<!--指定基础日志输出级别 -->
+	<!-- 必选节点: SpringProfile分配配置了开发(dev)测试(test)以及生产(prod)环境 -->
+	<springProfile name="dev">
+		<!--指定日志输出级别 -->
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
-            <appender-ref ref="DEBUG_FILE" />
-            <appender-ref ref="INFO_FILE" />
-            <appender-ref ref="ERROR_FILE" />
+            <!--<appender-ref ref="DEBUG_FILE" />
+			<appender-ref ref="INFO_FILE" />
+            <appender-ref ref="ERROR_FILE" />-->
         </root>
-    <!-- </springProfile> -->
+    </springProfile>
     
-    <!-- 可选节点,用来具体指明包的日志输出级别,它将会覆盖root的输出级别 -->  
+    <!-- 可选节点,用来具体指明xxx包的日志输出级别,它将会覆盖root的输出级别 -->
     <!-- com.xxx为根包,将记录该包下面的 DEBUG 以及 DEBUG 以下级别的所有日志操作 -->  
-    <logger name="com.modules" level="DEBUG">      
-        <!-- <appender-ref ref="syslogs" /> -->      
+    <logger name="com.modules" level="DEBUG">
+		<appender-ref ref="DEBUG_FILE" />
+		<appender-ref ref="INFO_FILE" />
+		<appender-ref ref="ERROR_FILE" />
     </logger>
-	
+
 </configuration>
