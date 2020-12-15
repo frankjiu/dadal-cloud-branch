@@ -53,4 +53,6 @@ public interface DemoDao {
 
     int count(@Param("demoGetDto") DemoGetDto demoGetDto) throws Exception;
 
+    int batchInsert(@Param("demoList") List<Demo> demoList) throws Exception;
+
 }

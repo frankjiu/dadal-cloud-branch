@@ -57,6 +57,28 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
+    public int insert(Demo demo) throws Exception {
+        int num = demoDao.insert(demo);
+        // if (new Random().nextInt(2) == 0) throw new Exception("insert failed!"); // 测试事务处理效果
+        return num;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    @CacheEvict(value = "DemoCache", key = "#demo.id")
+    public int update(Demo demo) throws Exception {
+        return demoDao.update(demo);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    @CacheEvict(value = "DemoCache", key = "#id")
+    public int delete(Integer id) throws Exception {
+        return demoDao.delete(id);
+    }
+
+    @Override
     public List<Demo> findPage(DemoGetDto demoGetDto) {
         List<Demo> list = new ArrayList<>();
         try {
@@ -81,24 +103,9 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public int insert(Demo demo) throws Exception {
-        int num = demoDao.insert(demo);
-        // if (new Random().nextInt(2) == 0) throw new Exception("insert failed!"); // 测试事务处理效果
-        return num;
+    public int batchInsert(List<Demo> demoList) throws Exception {
+        return demoDao.batchInsert(demoList);
     }
 
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    @CacheEvict(value = "DemoCache", key = "#demo.id")
-    public int update(Demo demo) throws Exception {
-        return demoDao.update(demo);
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    @CacheEvict(value = "DemoCache", key = "#id")
-    public int delete(Integer id) throws Exception {
-        return demoDao.delete(id);
-    }
 
 }

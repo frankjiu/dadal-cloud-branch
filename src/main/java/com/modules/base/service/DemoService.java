@@ -22,14 +22,16 @@ public interface DemoService {
 
     List<Demo> findAll(Integer limitedCount);
 
-    List<Demo> findPage(DemoGetDto demoGetDto);
-
-    int count(DemoGetDto demoGetDto);
-
     int insert(Demo demo) throws Exception;
 
     int update(Demo demo) throws Exception;
 
     int delete(Integer id) throws Exception;
+
+    List<Demo> findPage(DemoGetDto demoGetDto);
+
+    int count(DemoGetDto demoGetDto);
+
+    int batchInsert(List<Demo> demoList) throws Exception;
 
 }

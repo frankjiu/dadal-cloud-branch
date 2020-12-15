@@ -12,6 +12,8 @@ public class SimpleTest {
     @Test
     public void simpleTest() throws Exception {
 
+        int a = 3/2;
+        System.out.println(a);
 
     }
 

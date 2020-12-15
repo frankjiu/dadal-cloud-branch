@@ -64,4 +64,16 @@
         <include refid="page_sql"/>
     </select>
 
+    <!-- 批量插入 -->
+    <insert id="batchInsert" parameterType="java.util.List">
+        INSERT INTO demo(CARD_NAME, CARD_NUMBER)
+        VALUES
+        <foreach collection="demoList" item="demo" index="index" separator=",">
+            (
+            #{demo.cardName},
+            #{demo.cardNumber}
+            )
+        </foreach>
+    </insert>
+
 </mapper>

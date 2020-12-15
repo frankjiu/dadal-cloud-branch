@@ -109,8 +109,8 @@
     </springProfile>
     
     <!-- 可选节点,用来具体指明xxx包的日志输出级别,它将会覆盖root的输出级别 -->
-    <!-- com.xxx为根包,将记录该包下面的 DEBUG 以及 DEBUG 以下级别的所有日志操作 -->  
-    <logger name="com.modules" level="DEBUG">
+    <!-- com.xxx为根包,将记录该包下面当前级别及以上级别(ERROR,WARN,INFO,DEBUG)的日志操作; 生产中去掉DEBUG -->
+    <logger name="com" level="INFO,DEBUG">
 		<appender-ref ref="DEBUG_FILE" />
 		<appender-ref ref="INFO_FILE" />
 		<appender-ref ref="ERROR_FILE" />
