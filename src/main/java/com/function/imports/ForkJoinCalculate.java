@@ -21,7 +21,7 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
     private int end;
     private List<Demo> list;
     int sum = 0;
-    private static final int BATCH_SIZE = 100; //临界值
+    private static final int BATCH_SIZE = 100;
 
     public ForkJoinCalculate(int start, int end, List<Demo> list) {
         this.start = start;
@@ -33,7 +33,7 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
     protected Integer compute() {
         int length = end - start;
         if (length <= BATCH_SIZE) {
-            //在临界值范围内(包括临界值<=)直接进行处理
+            //在临界值范围内(<=包括临界值)直接进行处理
             List<Demo> demoList = new ArrayList<>();
             for (int i = start; i < end; i++) {
                 demoList.add(list.get(i));

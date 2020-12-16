@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
   tomcat:
     uri-encoding: UTF-8
   # 小型项目一个tomcat对应多个app,通过上下文区分; 大型项目一个tomcat对应一个app,通过不同的端口进行区分
