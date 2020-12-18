@@ -33,12 +33,11 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
     protected Integer compute() {
         int length = end - start;
         if (length <= BATCH_SIZE) {
-            //在临界值范围内(<=包括临界值)直接进行处理
+            //在BATCH_SIZE内(包括)直接进行处理
             List<Demo> demoList = new ArrayList<>();
             for (int i = start; i < end; i++) {
                 demoList.add(list.get(i));
             }
-            //入库操作
             try {
                 DemoService demoService = SpringContextUtils.getBeanByClass(DemoService.class);
                 demoService.batchInsert(demoList);
@@ -48,15 +47,15 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
             sum++;
             return sum;
         } else {
-            //不在临界值范围则继续拆分
+            //继续拆分
             int middle = (start + end) / 2;
             ForkJoinCalculate taskLeft = new ForkJoinCalculate(start, middle, list);
             ForkJoinCalculate taskRight = new ForkJoinCalculate(middle, end, list);
             taskLeft.fork();
             taskRight.fork();
-
             int left = taskLeft.join();
             int right = taskRight.join();
+
             if (left != 0 && right != 0) {
                 return left + right;
             } else if (left == 0) {

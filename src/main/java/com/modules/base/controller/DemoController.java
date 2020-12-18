@@ -9,10 +9,12 @@
 
 package com.modules.base.controller;
 
+import com.core.anotation.DemoSysLog;
 import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.google.common.collect.Lists;
+import com.modules.base.config.AppConfig;
 import com.modules.base.model.dto.DemoGetDto;
 import com.modules.base.model.dto.DemoPostDto;
 import com.modules.base.model.entity.Demo;
@@ -62,7 +64,15 @@ public class DemoController {
     private DataSourceTransactionManager transactionManager;
 
     @Value("${limited.count}")
-    public Integer limitedCount;
+    private Integer limitedCount;
+
+    @Autowired
+    private AppConfig appConfig;
+
+    @GetMapping("demo/config")
+    public HttpResult findConfig() {
+        return HttpResult.success(appConfig);
+    }
 
     @GetMapping("demo/{id}")
     public HttpResult findById(@PathVariable Integer id) {
@@ -98,7 +108,7 @@ public class DemoController {
         return HttpResult.success(demoVoList);
     }
 
-    // @SysLog("findDemoPage")
+    @DemoSysLog
     // @RequiresPermissions("demo:demo:page")
     @PostMapping("demo/page")
     public HttpResult findPage(@RequestBody @Valid DemoGetDto demoGetDto) {

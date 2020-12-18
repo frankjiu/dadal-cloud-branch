@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--在scanPeriod的周期里会定时判断一次文件大小-->
 <configuration scan="true" scanPeriod="60 seconds" debug="false" >
     <!-- OFF(最高),FATAL,(ERROR,WARN,INFO,DEBUG),TRACE,ALL(最低) 设置级别后, 只会打印当前级 以及 更高级别的日志. -->
 	<contextName>/</contextName>
 	<!-- name的值是变量的名称,value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义后,可以使“${}”来使用变量。 -->
 	<property name="logback.logdir" value="${user.dir}/logs" />
 	<property name="logback.item.name" value="dadal" />
-	<!-- 保存时间 -->
+	<!-- 日志保存时间(本配置按日期天算, 2020-12-01与2020-12-02算2天) -->
     <property name="maxHistory" value="30"/>
-	<!-- 单个日志文件大小上限 -->
-    <property name="FILESIZE" value="10MB"/>
-    <property name="SIZECAP" value="10GB"/>
-	<!-- 日志级别debug -->
+	<!-- 单个日志文件大小上限(滚动分割)与总日志容量上限 -->
+    <property name="FILESIZE" value="20MB"/>
+    <property name="SIZECAP" value="2GB"/>
+	<!-- 日志级别 -->
     <property name="DEBUGLV" value="debug"/>
-	<!-- 日志级别info -->
     <property name="INFOLV" value="info"/>
-	<!-- 日志级别error -->
     <property name="ERRORLV" value="error"/>
+
+	<!-- 彩色日志配置 -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx"
+					converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+	<property name="CONSOLE_LOG_PATTERN"
+			  value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS,Asia/Shanghai}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
 
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+            <!--<pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>-->
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-	<!-- 此日志文档只记录debug级别的 -->
+	<!-- 记录debug级别日志 -->
 	<appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>${DEBUGLV}</level>
@@ -40,13 +47,15 @@
 		<!--滚动策略,按照时间和大小滚动 SizeAndTimeBasedRollingPolicy -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<!-- 根据时间(每日)滚动归档日志文件  -->
-			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${DEBUGLV}.${logback.item.name}-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
-			<!-- 日志周期x天  -->
+			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${DEBUGLV}.${logback.item.name}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<!-- 日志文件保留x天,启动退出或触发滚动时执行清理  -->
+			<cleanHistoryOnStart>true</cleanHistoryOnStart>
 			<maxHistory>${maxHistory}</maxHistory>
 			<!-- 单个日志文件大小上限 -->
 			<maxFileSize>${FILESIZE}</maxFileSize>
 			<!-- 用来指定日志文件占用空间上限大小,达到此值将会删除旧的日志 -->
 			<totalSizeCap>${SIZECAP}</totalSizeCap>
+
 		</rollingPolicy>
 		
 		<!--日志输出编码格式化 -->
@@ -56,7 +65,7 @@
 		</encoder>
 	</appender>
 
-	<!-- 此日志文档只记录info级别的 -->
+	<!-- 记录info级别日志 -->
 	<appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>${INFOLV}</level>
@@ -65,7 +74,9 @@
         </filter>
 		<File>${logback.logdir}/${INFOLV}.${logback.item.name}.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${INFOLV}.${logback.item.name}-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${INFOLV}.${logback.item.name}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<!-- 日志文件保留x天  -->
+			<cleanHistoryOnStart>true</cleanHistoryOnStart>
 			<maxHistory>${maxHistory}</maxHistory>
 			<maxFileSize>${FILESIZE}</maxFileSize>
 			<totalSizeCap>${SIZECAP}</totalSizeCap>
@@ -76,7 +87,7 @@
 		</encoder>
 	</appender>
 
-	<!-- 此日志文档只记录error级别的 -->
+	<!-- 记录error级别日志 -->
 	<appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>${ERRORLV}</level>
@@ -86,7 +97,9 @@
 		
 		<File>${logback.logdir}/${ERRORLV}.${logback.item.name}.log</File>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${ERRORLV}.${logback.item.name}-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+			<FileNamePattern>${logback.logdir}/%d{yyyy-MM,aux}/${ERRORLV}.${logback.item.name}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<!-- 日志文件保留x天  -->
+			<cleanHistoryOnStart>true</cleanHistoryOnStart>
 			<maxHistory>${maxHistory}</maxHistory>
 			<maxFileSize>${FILESIZE}</maxFileSize>
 			<totalSizeCap>${SIZECAP}</totalSizeCap>
@@ -99,21 +112,30 @@
 	
 	<!-- 必选节点: SpringProfile分配配置了开发(dev)测试(test)以及生产(prod)环境 -->
 	<springProfile name="dev">
-		<!--指定日志输出级别 -->
+		<!--指定日志输出级别(由低到高: DEBUG,INFO,WARN,ERROR); 生产中去掉DEBUG -->
+		<logger name="com" level="DEBUG"></logger>
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
-            <!--<appender-ref ref="DEBUG_FILE" />
+            <appender-ref ref="DEBUG_FILE" />
 			<appender-ref ref="INFO_FILE" />
-            <appender-ref ref="ERROR_FILE" />-->
+            <appender-ref ref="ERROR_FILE" />
         </root>
     </springProfile>
+
+	<springProfile name="prod">
+		<root level="INFO">
+			<appender-ref ref="CONSOLE" />
+            <appender-ref ref="INFO_FILE" />
+            <appender-ref ref="ERROR_FILE" />
+		</root>
+	</springProfile>
     
     <!-- 可选节点,用来具体指明xxx包的日志输出级别,它将会覆盖root的输出级别 -->
-    <!-- com.xxx为根包,将记录该包下面当前级别及以上级别(ERROR,WARN,INFO,DEBUG)的日志操作; 生产中去掉DEBUG -->
-    <logger name="com" level="INFO,DEBUG">
+    <!-- com.xxx为根包,将记录该包下面当前级别及以上的日志操作 -->
+    <!--<logger name="com" level="DEBUG">
 		<appender-ref ref="DEBUG_FILE" />
 		<appender-ref ref="INFO_FILE" />
 		<appender-ref ref="ERROR_FILE" />
-    </logger>
+    </logger>-->
 
 </configuration>

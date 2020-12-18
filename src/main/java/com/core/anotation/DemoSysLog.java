@@ -7,16 +7,15 @@
 
 package com.core.anotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * @Description: 系统日志注解
  * @author: Frankjiu
  * @date: 2020年6月3日
  */
+@Documented
+@Inherited
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DemoSysLog {
