@@ -71,7 +71,7 @@ public class SimpleTest {
 
         System.out.println(list);*/
 
-        Boolean flag = true;
+        //Boolean flag = true;
         /*if (flag && StringUtils.isEmpty("aa")) {
             flag = true;
         } else if (flag && "aa".equals("aa1")) {
@@ -80,11 +80,29 @@ public class SimpleTest {
             flag = false;
         }*/
 
-        if (!StringUtils.isEmpty("aa") && "aa".equals("aa")) {
+        /*if (!StringUtils.isEmpty("aa") && "aa".equals("aa")) {
             flag = flag && true;
         }
 
-        System.out.println(flag);
+        System.out.println(flag);*/
+
+
+        int a = 100;
+        Integer b = 100;
+        System.out.println(a == b);
+
+        Integer c = 200;
+        Integer d = 200;
+        System.out.println(d == c);
+        System.out.println(d.equals(c));
+
+        Integer m = 200;
+        Integer n = 200;
+
+        Object m1 = m;
+        Object m2 = n;
+        System.out.println(m1 == m2);
+        System.out.println(m1.equals(m2));
 
 
     }

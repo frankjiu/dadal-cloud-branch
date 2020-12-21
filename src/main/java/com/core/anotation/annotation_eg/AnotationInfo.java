@@ -1,4 +1,4 @@
-package com.core.anotation;
+package com.core.anotation.annotation_eg;
 
 
 import java.lang.annotation.Documented;

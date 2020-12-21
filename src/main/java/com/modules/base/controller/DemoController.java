@@ -9,7 +9,7 @@
 
 package com.modules.base.controller;
 
-import com.core.anotation.DemoSysLog;
+import com.core.anotation.SysLogged;
 import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
@@ -108,7 +108,7 @@ public class DemoController {
         return HttpResult.success(demoVoList);
     }
 
-    @DemoSysLog
+    @SysLogged(description = "Page query")
     // @RequiresPermissions("demo:demo:page")
     @PostMapping("demo/page")
     public HttpResult findPage(@RequestBody @Valid DemoGetDto demoGetDto) {

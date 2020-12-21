@@ -8,6 +8,8 @@
 
 package com.core.utils;
 
+import org.springframework.util.StringUtils;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -23,15 +25,15 @@ public class IpUtil {
     public static String getIp(HttpServletRequest request) {
         String ipAddress = request.getHeader("x-forwarded-for");
 
-        if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
+        if (StringUtils.isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
             ipAddress = request.getHeader("Proxy-Client-IP");
         }
 
-        if (ipAddress == null || ipAddress.length() == 0 || "unknow".equalsIgnoreCase(ipAddress)) {
+        if (StringUtils.isEmpty(ipAddress) || "unknow".equalsIgnoreCase(ipAddress)) {
             ipAddress = request.getHeader("WL-Proxy-Client-IP");
         }
 
-        if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
+        if (StringUtils.isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
             ipAddress = request.getRemoteAddr();
             if (ipAddress.equals("0:0:0:0:0:0:0:1") || ipAddress.equals("127.0.0.1")) {
                 // 通过网卡获取本机ip配置

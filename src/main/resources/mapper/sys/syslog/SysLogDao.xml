@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.modules.sys.syslog.dao.SysLogDao">
+
+    <!-- Page query with conditions -->
+    <sql id="page_sql">
+        <where>
+            <if test="sysLogDto.userName != null and sysLogDto.userName != ''">
+                AND USER_NAME = #{sysLogDto.userName}
+            </if>
+            <if test="sysLogDto.description != null and sysLogDto.description != ''">
+                AND DESCRIPTION like CONCAT('%',#{sysLogDto.description},'%')
+            </if>
+            <if test="sysLogDto.method != null and sysLogDto.method != ''">
+                AND METHOD like CONCAT('%',#{sysLogDto.method},'%')
+            </if>
+
+            <if test="sysLogDto.time != null and sysLogDto.time != ''">
+                AND <![CDATA[ TIME <= #{sysLogDto.time} ]]>
+            </if>
+            <if test="sysLogDto.ip != null and sysLogDto.ip != ''">
+                AND IP = #{sysLogDto.ip}
+            </if>
+            <if test="sysLogDto.createTime != null and sysLogDto.createTime != ''">
+                AND <![CDATA[ CREATE_TIME <= #{sysLogDto.createTime} ]]>
+            </if>
+        </where>
+    </sql>
+
+    <select id="findPage" parameterType="com.modules.sys.syslog.model.dto.SysLogDto" resultType="com.modules.sys.syslog.model.entity.SysLog">
+        select * from sys_log
+        <include refid="page_sql"/>
+        ORDER BY CREATE_TIME DESC
+        LIMIT ${(sysLogDto.pageNum-1)*sysLogDto.pageSize},${sysLogDto.pageSize};
+    </select>
+
+    <select id="count" parameterType="com.modules.sys.syslog.model.dto.SysLogDto" resultType="java.lang.Integer">
+        select count(*) from sys_log
+        <include refid="page_sql"/>
+    </select>
+
+
+</mapper>

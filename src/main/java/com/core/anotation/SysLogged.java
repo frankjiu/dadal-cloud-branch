@@ -18,7 +18,12 @@ import java.lang.annotation.*;
 @Inherited
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DemoSysLog {
+public @interface SysLogged {
+
+    /**
+     * 描述
+     */
+    String description() default "";
 
     /**
      * 操作类型
@@ -29,11 +34,6 @@ public @interface DemoSysLog {
      * 操作模块
      */
     String operationModule() default "";
-
-    /**
-     * 描述
-     */
-    String description() default "";
 
     /**
      * 备注
