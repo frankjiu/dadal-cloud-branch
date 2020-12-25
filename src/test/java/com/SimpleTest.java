@@ -1,11 +1,13 @@
 package com;
 
+import com.modules.base.model.entity.Demo;
+import com.modules.base.model.entity.Demp;
 import org.junit.Test;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * @Description:
@@ -14,7 +16,6 @@ import java.util.List;
  */
 public class SimpleTest {
 
-    @Test
     public void simpleTest() throws Exception {
 
         //List<String> list = List.of("9", "5", "8", "6", "", "12", "7", "", "25", "4");
@@ -103,6 +104,41 @@ public class SimpleTest {
         Object m2 = n;
         System.out.println(m1 == m2);
         System.out.println(m1.equals(m2));
+
+
+    }
+
+    @Test
+    public void test2(){
+        Demp demp1 = new Demp();
+        demp1.setDesc(new Demp.Desc("BBB"));
+        Demp demp2 = new Demp();
+        demp2.setDesc(new Demp.Desc("FFF"));
+        Demp demp3 = new Demp();
+        demp3.setDesc(new Demp.Desc("AAA"));
+        Demp demp4 = new Demp();
+        demp4.setDesc(new Demp.Desc("EEE"));
+        Demp demp5 = new Demp();
+        demp5.setDesc(new Demp.Desc("CCC"));
+        //List<Demp> list = List.of(demp1,demp2,demp3,demp4,demp5); //这种无法排序.
+        List<Demp> list = new ArrayList<>();
+        list.add(demp1);
+        list.add(demp2);
+        list.add(demp3);
+        list.add(demp4);
+        list.add(demp5);
+
+        list.stream().forEach(e -> System.out.println("排序前:" + e.getDesc().getName()));
+
+        list.sort(Comparator.comparing(t -> t.getDesc().getName()));
+        Collections.reverse(list);
+        System.out.println("===================");
+
+        list.stream().forEach(e -> System.out.println("排序后:" + e.getDesc().getName()));
+    }
+
+    @Test
+    public void test3(){
 
 
     }

@@ -1,20 +1,15 @@
 package com.modules.sys.syslog.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * 系统日志查询条件
  */
 @Data
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class SysLogDto {
 
     private String userName;                // 用户名
