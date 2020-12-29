@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.modules.sys.admin.dao.UserDao">
+
+	<!-- Page query with conditions -->
+	<sql id="page_sql">
+		<where>
+			<if test="userGetDto.userName != null and userGetDto.userName != ''">
+				AND USER_NAME = #{userGetDto.userName}
+			</if>
+		</where>
+	</sql>
+
+	<select id="findPage" parameterType="com.modules.sys.admin.model.dto.UserGetDto" resultType="com.modules.sys.admin.model.entity.User">
+		select * from USER
+		<include refid="page_sql"/>
+		ORDER BY UPDATE_TIME DESC
+		LIMIT ${(userGetDto.pageNum-1)*userGetDto.pageSize},${userGetDto.pageSize};
+	</select>
+
+	<select id="count" parameterType="com.modules.sys.admin.model.dto.UserGetDto" resultType="java.lang.Integer">
+		select count(*) from USER
+		<include refid="page_sql"/>
+	</select>
+
+</mapper>

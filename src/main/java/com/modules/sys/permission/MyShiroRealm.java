@@ -1,6 +1,10 @@
+/*
 package com.modules.sys.permission;
 
-/*import com.sc.starry_sky.entity.PageData;
+import com.core.result.PageBean;
+import com.core.result.PageModel;
+import com.modules.sys.admin.service.UserService;
+import com.sc.starry_sky.entity.PageData;
 import com.sc.starry_sky.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -15,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 @Component("MyShiroRealm")
@@ -28,12 +33,12 @@ public class MyShiroRealm extends AuthorizingRealm{
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //获取用户
-        PageData user = (PageData) principalCollection.getPrimaryPrincipal();
+        Map user = (Map) principalCollection.getPrimaryPrincipal();
         //获取权限列表
-        ArrayList<PageData> roles = (ArrayList<PageData>) user.get("roles");
+        ArrayList<Map> roles = (ArrayList<Map>) user.get("roles");
         //添加角色和权限
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-        roles.forEach(item -> simpleAuthorizationInfo.addRole(item.getString("roleName")));
+        roles.forEach(item -> simpleAuthorizationInfo.addRole(item.get("roleName")));
         return simpleAuthorizationInfo;
     }
 
@@ -44,7 +49,7 @@ public class MyShiroRealm extends AuthorizingRealm{
 
         String username = usernamePasswordToken.getUsername();
 
-        PageData user = userService.findUserByUsername(username);
+        Map user = userService.findUserByUsername(username);
         if (user == null) {
             return null;
         } else {
@@ -53,4 +58,5 @@ public class MyShiroRealm extends AuthorizingRealm{
         }
     }
 
-}*/
+}
+*/

@@ -1,1 +1,22 @@
-2020-12-25 11:29:34.956 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-29 16:50:24.721 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-29 17:46:49.198 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-29 17:48:58.730 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==>  Preparing: select * from USER ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2020-12-29 17:48:58.749 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==> Parameters: 
+2020-12-29 17:48:58.770 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | <==      Total: 0
+2020-12-29 17:48:58.774 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==>  Preparing: select count(*) from USER
+2020-12-29 17:48:58.775 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==> Parameters: 
+2020-12-29 17:48:58.777 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.count-line:137 | <==      Total: 1
+2020-12-29 17:48:58.808 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | ==>  Preparing: INSERT INTO sys_log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2020-12-29 17:48:58.816 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | ==> Parameters: null, Page query(String), /user/page(String), com.modules.sys.admin.controller.UserController.findPage()(String), {"userName":"","pageNum":1,"pageSize":5}(String), 198(Long), 0:0:0:0:0:0:0:1(String), 2020-12-29 17:48:58.808(Timestamp), v1.2(String)
+2020-12-29 17:48:58.820 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | <==    Updates: 1
+2020-12-29 17:51:12.337 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==>  Preparing: select * from USER ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2020-12-29 17:51:12.338 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==> Parameters: 
+2020-12-29 17:51:12.342 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | <==      Total: 0
+2020-12-29 17:51:12.346 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==>  Preparing: select count(*) from USER
+2020-12-29 17:51:12.347 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==> Parameters: 
+2020-12-29 17:51:12.349 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.count-line:137 | <==      Total: 1
+2020-12-29 17:51:12.351 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | ==>  Preparing: INSERT INTO sys_log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2020-12-29 17:51:12.352 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | ==> Parameters: null, Page query(String), /user/page(String), com.modules.sys.admin.controller.UserController.findPage()(String), {"userName":"","pageNum":1,"pageSize":5}(String), 20(Long), 0:0:0:0:0:0:0:1(String), 2020-12-29 17:51:12.351(Timestamp), v1.2(String)
+2020-12-29 17:51:12.355 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.syslog.dao.SysLogDao.save-line:137 | <==    Updates: 1
+2020-12-29 18:01:20.419 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-29 18:12:49.554 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE

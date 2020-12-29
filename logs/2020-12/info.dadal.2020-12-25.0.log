@@ -1,0 +1,20 @@
+2020-12-25 11:29:34.926 | INFO  | background-preinit | org.hibernate.validator.internal.util.Version-line:21 | HV000001: Hibernate Validator 6.1.5.Final
+2020-12-25 11:29:34.954 | INFO  | main | com.CloudBranchApplication-line:55 | Starting CloudBranchApplication on PC-FRANK with PID 20148 (D:\IDEA\workspace_idea\dadal-cloud-branch\target\classes started by Administrator in D:\IDEA\workspace_idea\dadal-cloud-branch)
+2020-12-25 11:29:34.960 | INFO  | main | com.CloudBranchApplication-line:655 | The following profiles are active: dev
+2020-12-25 11:29:39.066 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-25 11:29:39.070 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-25 11:29:42.810 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 3708ms. Found 0 Redis repository interfaces.
+2020-12-25 11:29:45.731 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:108 | Tomcat initialized with port(s): 8090 (http)
+2020-12-25 11:29:45.741 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Initializing ProtocolHandler ["http-nio-8090"]
+2020-12-25 11:29:45.742 | INFO  | main | org.apache.catalina.core.StandardService-line:173 | Starting service [Tomcat]
+2020-12-25 11:29:45.742 | INFO  | main | org.apache.catalina.core.StandardEngine-line:173 | Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-25 11:29:45.858 | INFO  | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring embedded WebApplicationContext
+2020-12-25 11:29:45.859 | INFO  | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-line:285 | Root WebApplicationContext: initialization completed in 10823 ms
+2020-12-25 11:29:46.351 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
+2020-12-25 11:29:46.430 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2020-12-25 11:29:47.119 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
+2020-12-25 11:29:47.415 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Starting ProtocolHandler ["http-nio-8090"]
+2020-12-25 11:29:47.446 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:220 | Tomcat started on port(s): 8090 (http) with context path ''
+2020-12-25 11:29:47.458 | INFO  | main | com.CloudBranchApplication-line:61 | Started CloudBranchApplication in 13.322 seconds (JVM running for 16.313)
+2020-12-25 11:41:22.670 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1885 | {dataSource-1} closing ...
+2020-12-25 11:41:22.671 | INFO  | SpringContextShutdownHook | com.alibaba.druid.pool.DruidDataSource-line:1955 | {dataSource-1} closed

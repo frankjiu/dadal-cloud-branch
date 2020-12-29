@@ -1,9 +1,49 @@
 package com.modules.sys.admin.dao;
 
+import com.modules.sys.admin.model.dto.UserGetDto;
+import com.modules.sys.admin.model.entity.User;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
+
 /**
  * @Description:
  * @Author: QiuQiang
  * @Date: 2020-12-25
  */
-public class UserDao {
+@Mapper
+public interface UserDao {
+    
+    @Select(" SELECT * FROM USER WHERE ID = #{id} ")
+    User findById(@Param("id") Long id);
+
+    @Select(" SELECT * FROM USER ")
+    List<User> findAll();
+
+    // 使用数据库自增主键
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @Insert("INSERT INTO USER values(#{id}, #{user.userName}, #{user.passWord}, #{user.salt}, #{user.email}, #{user.mobile}, #{user.status}, #{user.updateTime})")
+    int insert(@Param("user") User user) throws Exception;
+
+    @Update("UPDATE USER SET USER_NAME=#{user.userName}, PASS_WORD=#{user.passWord}, SALT=#{user.salt}, " +
+            "EMAIL=#{user.email}, MOBILE=#{user.mobile}, STATUS=#{user.status}, UPDATE_TIME=#{user.updateTime} " +
+            "where id = #{user.id}")
+    int update(@Param("user") User user) throws Exception;
+
+    @Delete("DELETE FROM DEMO WHERE ID = #{id}")
+    int delete(@Param("id") Integer id) throws Exception;
+
+    /**
+     * 分页条件查询使用xml
+     */
+    List<User> findPage(@Param("userGetDto") UserGetDto userGetDto);
+
+    int count(@Param("userGetDto") UserGetDto userGetDto);
+
+    @Select("")
+    List<String> findPermsById(Long id);
+
+    @Select(" SELECT * FROM USER WHERE USER_NAME = #{userName} ")
+    User findByUserName(@Param("userName") String userName);
+    
 }

@@ -20,8 +20,9 @@ spring:
   servlet:
     multipart:
       max-file-size: 100MB
-      max-request-size: 100MB
+      max-request-size: 300MB
       enabled: true
+      location: d:/temp
   # 应用名称
   application:
     name: dadal-cloud-branch
