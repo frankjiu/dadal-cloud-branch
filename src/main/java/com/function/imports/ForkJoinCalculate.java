@@ -34,13 +34,13 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
         int length = end - start;
         if (length <= BATCH_SIZE) {
             //在BATCH_SIZE内(包括)直接进行处理
-            List<Demo> demoList = new ArrayList<>();
+            List<Demo> forkList = new ArrayList<>();
             for (int i = start; i < end; i++) {
-                demoList.add(list.get(i));
+                list.add(list.get(i));
             }
             try {
                 DemoService demoService = SpringContextUtils.getBeanByClass(DemoService.class);
-                demoService.batchInsert(demoList);
+                demoService.batchInsert(forkList);
             } catch (Exception e) {
                 log.info(e.getMessage(), e);
             }

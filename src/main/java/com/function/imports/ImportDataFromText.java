@@ -1,5 +1,6 @@
 package com.function.imports;
 
+import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.modules.base.model.entity.Demo;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ import java.util.concurrent.ForkJoinTask;
  */
 @RestController
 @Slf4j
-public class ImportData {
+public class ImportDataFromText {
 
     @Autowired
     private ForkJoinPool pool;
@@ -28,7 +29,7 @@ public class ImportData {
     private FileParser fileParser;
 
     /**
-     * import file data
+     * import file-text data
      *
      * @param fileContent(import_data)
      * @param fileName(data.txt)
@@ -36,6 +37,13 @@ public class ImportData {
      */
     @PostMapping("/import")
     public HttpResult imports(@RequestParam("fileContent") String fileContent, @RequestParam("fileName") String fileName) {
+        // 文件格式校验
+        String suffix = fileName.substring(fileName.lastIndexOf("."));
+        if (!".xls".equalsIgnoreCase(suffix) && !".xlsx".equalsIgnoreCase(suffix)) {
+            throw new CommonException("File type error!");
+        }
+
+        // 文件解析
         List<Demo> list = fileParser.parse(fileContent, fileName);
         try {
             long start = System.currentTimeMillis();
@@ -45,7 +53,7 @@ public class ImportData {
             return HttpResult.success("Data import successed " + list.size() + ", forked: " + result.get() + ", cost:" + (end - start) / 1000);
         } catch (Exception e) {
             log.info(e.getMessage(), e);
-            return HttpResult.fail("import failed!");
+            return HttpResult.fail("Import file was not successful!");
         }
     }
 

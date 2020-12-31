@@ -1,5 +1,7 @@
 package com.modules.sys.permission.controller;
 
+import com.modules.sys.admin.model.entity.LoginUser;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -9,10 +11,13 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@Slf4j
 public class PermissionController {
 
 	/**
@@ -51,7 +56,7 @@ public class PermissionController {
 	@RequestMapping("/testThymeleaf")
 	public String testThymeleaf(Model model){
 		//把数据存入model
-		model.addAttribute("name", "黑马程序员");
+		model.addAttribute("name", "franking");
 		//返回test.html
 		return "test";
 	}
@@ -59,34 +64,29 @@ public class PermissionController {
 	/**
 	 * 登录逻辑处理
 	 */
-	@RequestMapping("/login")
-	public String login(String name,String password,Model model){
-		System.out.println("name="+name);
-		/**
-		 * 使用Shiro编写认证操作
-		 */
+	@PostMapping("/login")
+	public String login(@RequestBody LoginUser loginUser){
+		log.info("name="+loginUser.getUserName());
+		// Shiro认证
 		//1.获取Subject
 		Subject subject = SecurityUtils.getSubject();
-		
 		//2.封装用户数据
-		UsernamePasswordToken token = new UsernamePasswordToken(name,password);
-		
+		UsernamePasswordToken token = new UsernamePasswordToken(loginUser.getUserName(),loginUser.getPassWord());
 		//3.执行登录方法
 		try {
 			subject.login(token);
-			
 			//登录成功
 			//跳转到test.html
 			return "redirect:/testThymeleaf";
 		} catch (UnknownAccountException e) {
 			//e.printStackTrace();
 			//登录失败:用户名不存在
-			model.addAttribute("msg", "用户名不存在");
+			//model.addAttribute("msg", "用户名不存在");
 			return "login";
 		}catch (IncorrectCredentialsException e) {
 			//e.printStackTrace();
 			//登录失败:密码错误
-			model.addAttribute("msg", "密码错误");
+			//model.addAttribute("msg", "密码错误");
 			return "login";
 		}
 	}

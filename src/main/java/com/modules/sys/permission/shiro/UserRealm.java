@@ -16,6 +16,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -61,8 +62,13 @@ public class UserRealm extends AuthorizingRealm {
         Subject subject = SecurityUtils.getSubject();
         User user = (User) subject.getPrincipal();
         // 根据userId获取权限perms
-        List<String> perms = userSerivce.findPermsById(user.getId());
-        info.addStringPermission(perms.get(0));
+        // List<String> menu_ids_perms = userSerivce.findPermsById(user.getId());
+        List<String> menu_ids_perms = new ArrayList<>();
+        menu_ids_perms.add("1");
+        menu_ids_perms.add("2");
+        menu_ids_perms.add("3");
+        menu_ids_perms.add("4");
+        info.addStringPermissions(menu_ids_perms);
         return info;
     }
 

@@ -139,7 +139,8 @@ public class SimpleTest {
 
     @Test
     public void test3(){
-
+        String property = System.getProperty("user.dir");
+        System.out.println(property);
 
     }
 

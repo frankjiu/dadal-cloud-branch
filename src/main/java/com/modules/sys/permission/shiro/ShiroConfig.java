@@ -43,7 +43,8 @@ public class ShiroConfig {
 		/*filterMap.put("/add", "authc");
 		filterMap.put("/update", "authc");*/
 		
-		filterMap.put("/testThymeleaf", "anon");
+		filterMap.put("/login", "anon");
+		filterMap.put("/import2", "anon");
 		//放行login.html页面
 		filterMap.put("/login", "anon");
 		
