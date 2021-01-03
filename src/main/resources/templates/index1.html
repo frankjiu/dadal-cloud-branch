@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--最重要的是要引入thymeleaf的命名空间 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--th:text="#{app.report.name}"-->
+    <title>[[#{app.report.name}]]</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet"></link>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <style type="text/css">
+        .pagination {
+            margin: 0px
+        }
+
+        .pagination > li > a, .pagination > li > span {
+            margin: 0 5px;
+            border: 1px solid #dddddd;
+        }
+
+        .glyphicon {
+            margin-right: 3px;
+        }
+        .highlight{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<!-- 引用模板 模板引用表达式为 页面名 :: 片段id-->
+<div th:insert="header_footer :: header"></div>
+<div class="container">
+    <div class="row">
+        <div>
+            <ol class="breadcrumb" style="background-color:transparent;font-size: 20px">
+                <!-- th:href相当于动态生成href属性 -->
+                <li><a th:href="#{app.website}">日志</a></li>
+                <li class="active">日志查询</li>
+            </ol>
+        </div>
+        <!-- th:text代表将内容输出到标签体 -->
+        <!-- #{app.report.name} #{}代表读取messages.properties相应的属性 -->
+        <h1 style="text-align: center" th:text="#{app.report.name}">在哪儿</h1>
+        <div class="panel panel-default">
+            <div class="clearfix panel-heading ">
+
+                <div class="input-group" style="width: 500px;">
+                    <!-- param用于获取请求的参数，相当于request.getParameter("keyword") -->
+                    <input id="txtKeyword" type="text" class="form-control" placeholder="请输入要查询的员工" th:value="${param.keyword}">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" id="btnQuery"><span class="glyphicon glyphicon-zoom-in"></span>查询</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>员工编号</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>岗位</th>
+                    <th>入职时间</th>
+                    <th>工资</th>
+                    <th>奖金</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- c:forEach -->
+                <!--1. #{}用于读取常量，配置文件中的信息-->
+                <!--2. ${}则用于读取变量，程序中创建的，可以灵活改变的对象。-->
+
+                <!--大多数的属性都可以支持“三目运算符” ， 格式  ${布尔表达式}?成立：不成立
+                    thymeleaf中布尔表达式的写法与java相同
+                 -->
+                <tr th:each="emp,stat:${emps}" th:class="${emp.job == 'MANAGER' || emp.job == 'PRESIDENT'}?'highlight':''">
+                    <td>[[${stat.index + 1}]]</td>
+                    <td th:text="${emp.empno}"></td>
+                    <!--strings对象其实就是java中的字符串对象，String提供的方法在#strings一样去使用-->
+                    <td>[[${#strings.toLowerCase(emp.ename)}]]</td>
+                    <!--switch case 用于多分支条件-->
+                    <td th:switch="${emp.dname}">
+                        <span th:case="RESEARCH">研发部</span>
+                        <span th:case="SALES">销售部</span>
+                        <span th:case="ACCOUNTING">会计部</span>
+                        <span th:case="*">其他部门</span>
+                        <!--在thymeleaf中只有th:if / th:unless 没有th:elseif -->
+                    </td>
+
+                    <!-- if表达式成立的时候，会显示该标签 -->
+                    <!--<td th:if="${emp.dname == 'RESEARCH'}" >研发部</td>-->
+                    <!-- unless表达式不成立的时候，会显示该标签 -->
+                    <!--<td th:unless="${emp.dname == 'RESEARCH'}" >研发部</td>-->
+                    <!--<td th:if="${emp.dname == 'ACCOUNTING'}" >财务部</td>-->
+                    <!--<td th:if="${emp.dname == 'SALES'}" >销售部</td>-->
+
+
+                    <td>[[${emp.job}]]</td>
+                    <td>[[${#dates.format(emp.hiredate , 'yyyy年MM月dd日')}]]</td>
+                    <td th:style="${emp.sal > 1500}?'color:red;font-weight:bold;'">[[${#numbers.formatCurrency(emp.sal)}]]</td>
+                    <td th:text="${emp.comm!=null}?${#numbers.formatCurrency(emp.comm)}:'N/A'"></td>
+                    <td style="text-align: center">
+                        <button class="btn btn-xs btn-info"></span>详细</button>
+                        <button class="btn btn-xs btn-warning"></span>删除</button>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    //绑定单击事件
+    document.getElementById("btnQuery").onclick = function (ev) {
+        var url = "/?keyword=" + document.getElementById("txtKeyword").value;
+        //跳转到url地址
+        window.location.href=url;
+    }
+
+</script>
+</body>
+</html>

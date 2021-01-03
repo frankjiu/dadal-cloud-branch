@@ -8,6 +8,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,6 +75,14 @@ public class LoginController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginUser(@RequestBody LoginDto loginDto, HttpServletRequest request, Model model, HttpSession session) {
+        //校验验证码
+        //session中的验证码
+        String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(CaptchaController.KEY_CAPTCHA);
+        if (null == loginDto.getCaptcha() || !loginDto.getCaptcha().equalsIgnoreCase(sessionCaptcha)) {
+            model.addAttribute("msg","验证码错误!");
+            return "login";
+        }
+
         if (loginDto.getRemeberMe() == null) {
             loginDto.setRemeberMe(false);
         }
