@@ -74,15 +74,15 @@ public class LoginController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginUser(@RequestBody LoginDto loginDto, HttpServletRequest request, Model model, HttpSession session) {
-        /*if (loginDto.getRemeberMe() == null) {
+        if (loginDto.getRemeberMe() == null) {
             loginDto.setRemeberMe(false);
-        }*/
+        }
         // 查询当前登录用户的盐
         String salt = userService.findByUserName(loginDto.getUserName()).getSalt();
         // 密码加密
         loginDto.setPassWord(new Sha256Hash(loginDto.getPassWord(), salt).toHex());
         // 创建token
-        UsernamePasswordToken token = new UsernamePasswordToken(loginDto.getUserName(), loginDto.getPassWord());
+        UsernamePasswordToken token = new UsernamePasswordToken(loginDto.getUserName(), loginDto.getPassWord(), loginDto.getRemeberMe());
         Subject subject = SecurityUtils.getSubject();
         try {
             // 登录成功
