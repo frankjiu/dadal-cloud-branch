@@ -20,10 +20,10 @@ import com.core.exception.CommonException;
  * @date: 2020年8月27日
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/index")
 public class IndexController {
 
-    @GetMapping("index")
+    @GetMapping("/index")
     public String toIndex() {
         return "here is the index page";
     }

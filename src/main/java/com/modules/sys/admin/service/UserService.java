@@ -4,6 +4,7 @@ import com.modules.sys.admin.model.dto.UserGetDto;
 import com.modules.sys.admin.model.entity.User;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Description:
@@ -20,14 +21,15 @@ public interface UserService {
 
     int update(User user) throws Exception;
 
-    int delete(Integer id) throws Exception;
+    int delete(Long id) throws Exception;
 
     List<User> findPage(UserGetDto userGetDto);
 
     int count(UserGetDto userGetDto);
 
-    List<String> findPermsById(Long id);
+    Set<String> findPermsById(Long id);
 
     User findByUserName(String userName);
-    
+
+    boolean updatePassword(Long userId, String oldPassword, String newPassword) throws Exception;
 }

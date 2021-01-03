@@ -142,6 +142,11 @@ public class SimpleTest {
         String property = System.getProperty("user.dir");
         System.out.println(property);
 
+        Integer a = 1;
+        String b = "1";
+        Boolean f = b.equals(a.toString());
+        System.out.println(f);
+
     }
 
 

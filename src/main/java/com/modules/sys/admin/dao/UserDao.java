@@ -5,6 +5,7 @@ import com.modules.sys.admin.model.entity.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Description:
@@ -31,7 +32,7 @@ public interface UserDao {
     int update(@Param("user") User user) throws Exception;
 
     @Delete("DELETE FROM DEMO WHERE ID = #{id}")
-    int delete(@Param("id") Integer id) throws Exception;
+    int delete(@Param("id") Long id) throws Exception;
 
     /**
      * 分页条件查询使用xml
@@ -40,10 +41,17 @@ public interface UserDao {
 
     int count(@Param("userGetDto") UserGetDto userGetDto);
 
-    @Select("")
-    List<String> findPermsById(Long id);
+    @Select(" SELECT DISTINCT name from Perm ")
+    Set<String> findPermsById(Long id);
 
     @Select(" SELECT * FROM USER WHERE USER_NAME = #{userName} ")
     User findByUserName(@Param("userName") String userName);
-    
+
+    @Select(" SELECT * FROM USER WHERE ID = #{userId} AND PASSWORD = #{oldPassword}")
+    User findByUserIdAndPassword(Long userId, String oldPassword);
+
+    @Update("UPDATE USER SET PASS_WORD=#{user.passWord} " +
+            "WHERE id = #{user.id} AND id = #{user.id} ")
+    int updatePassword(@Param("user") User user) throws Exception;
+
 }
