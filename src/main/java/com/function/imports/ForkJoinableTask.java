@@ -36,7 +36,7 @@ public class ForkJoinableTask extends RecursiveTask<Integer> {
             //在BATCH_SIZE内(包括)直接进行处理
             List<Demo> forkList = new ArrayList<>();
             for (int i = start; i < end; i++) {
-                list.add(list.get(i));
+                forkList.add(list.get(i));
             }
             try {
                 DemoService demoService = SpringContextUtils.getBeanByClass(DemoService.class);
@@ -56,7 +56,6 @@ public class ForkJoinableTask extends RecursiveTask<Integer> {
             int right = taskRight.join();
             int result = left + right;
             return result;
-
         }
     }
 }

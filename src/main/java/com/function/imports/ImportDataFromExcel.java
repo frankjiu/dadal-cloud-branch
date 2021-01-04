@@ -41,21 +41,23 @@ public class ImportDataFromExcel {
     private static final Integer startRows = 1; // 数据读取起始行
 
     @PostMapping("/import2")
-    public HttpResult importFromExcel(@RequestParam("file") MultipartFile file) throws Exception {
+    public HttpResult importFromExcel(/*@RequestParam("file") MultipartFile file*/) throws Exception {
         // 读取Excel文件
         // 获取输入流方案1
-        String fileName = file.getOriginalFilename();
+        /*String fileName = file.getOriginalFilename();
         String fileType = fileName.substring(fileName.lastIndexOf("."));
         if (!".xls".equalsIgnoreCase(fileType) && !".xlsx".equalsIgnoreCase(fileType)) {
             throw new CommonException("File type error!");
         }
-        InputStream ins = file.getInputStream();
+        InputStream ins = file.getInputStream();*/
 
         // 获取输入流方案2(用于postman测试)
-        /*String fileContent = "import_data";
+        String fileContent = "import_data";
         String fileName = "excel_test.xlsx";
         String sign = System.getProperty("file.separator");
-        FileInputStream ins = new FileInputStream(new File(System.getProperty("user.dir") + sign + fileContent + sign + fileName));*/
+        String root = System.getProperty("user.dir");
+        String content = "dadal-cloud-branch";
+        FileInputStream ins = new FileInputStream(new File(root + sign + content + sign + fileContent + sign + fileName));
 
         // 存储解析的数据集
         List<Demo> listData = new ArrayList<>();
@@ -92,13 +94,10 @@ public class ImportDataFromExcel {
         int i = 0;
         if (listData.size() > 0) {
             // i = demoService.batchInsert(listData);
-            ForkJoinTask task = new ForkJoinableTask(0, listData.size(), listData);
+            ForkJoinTask<Integer> task = new ForkJoinableTask(0, listData.size(), listData);
             ForkJoinTask<Integer> result = pool.submit(task);
-        }
-
-        ins.close();
-        if (i == listData.size()) {
-            return HttpResult.success("File data import successed: " + i);
+            ins.close();
+            return HttpResult.success("File data import successed!");
         }
         return HttpResult.fail("File data import failed!");
     }

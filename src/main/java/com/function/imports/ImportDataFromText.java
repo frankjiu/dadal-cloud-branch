@@ -47,7 +47,7 @@ public class ImportDataFromText {
         List<Demo> list = fileParser.parse(fileContent, fileName);
         try {
             long start = System.currentTimeMillis();
-            ForkJoinCalculate task = new ForkJoinCalculate(0, list.size(), list);
+            ForkJoinableTask task = new ForkJoinableTask(0, list.size(), list);
             ForkJoinTask<Integer> result = pool.submit(task);
             long end = System.currentTimeMillis();
             return HttpResult.success("Data import successed " + list.size() + ", forked: " + result.get() + ", cost:" + (end - start) / 1000);
