@@ -92,10 +92,9 @@ public class ImportDataFromExcel {
         int i = 0;
         if (listData.size() > 0) {
             // i = demoService.batchInsert(listData);
-            ForkJoinCalculate task = new ForkJoinCalculate(0, listData.size(), listData);
+            ForkJoinTask task = new ForkJoinableTask(0, listData.size(), listData);
             ForkJoinTask<Integer> result = pool.submit(task);
         }
-
 
         ins.close();
         if (i == listData.size()) {
