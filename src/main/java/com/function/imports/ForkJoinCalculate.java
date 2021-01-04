@@ -51,6 +51,7 @@ public class ForkJoinCalculate extends RecursiveTask<Integer> {
             int middle = (start + end) / 2;
             ForkJoinCalculate taskLeft = new ForkJoinCalculate(start, middle, list);
             ForkJoinCalculate taskRight = new ForkJoinCalculate(middle, end, list);
+            // invokeAll(taskLeft, taskRight);
             taskLeft.fork();
             taskRight.fork();
             int left = taskLeft.join();
