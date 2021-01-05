@@ -68,3 +68,7 @@ app:
 #limited of data query
 limited:
   count: 1_00
+
+config:
+  upload:
+    filepath: D:\demo\upload

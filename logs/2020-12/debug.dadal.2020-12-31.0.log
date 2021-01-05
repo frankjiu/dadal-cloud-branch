@@ -1,0 +1,74 @@
+2020-12-31 13:05:39.636 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:09:56.613 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:20:26.330 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:20:26.351 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:20:26.366 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:23:18.663 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:23:18.665 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:23:18.666 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:23:46.697 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:23:46.702 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:23:46.711 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:26:44.821 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:29:44.812 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:29:44.832 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:29:44.849 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:30:12.317 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:30:12.318 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:30:12.320 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:30:26.898 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:30:26.898 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: frank(String)
+2020-12-31 13:30:26.902 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2020-12-31 13:30:26.947 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findPermsById-line:137 | ==>  Preparing: 
+2020-12-31 13:31:03.768 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:31:18.981 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:31:19.002 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:31:19.017 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:31:30.122 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:31:30.123 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: frank(String)
+2020-12-31 13:31:30.127 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2020-12-31 13:31:30.422 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findPermsById-line:137 | ==>  Preparing: 
+2020-12-31 13:36:19.588 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:36:30.752 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:36:30.776 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:36:30.795 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:36:46.945 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:36:46.946 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:36:46.947 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:36:53.905 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:36:53.906 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: frank(String)
+2020-12-31 13:36:53.909 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2020-12-31 13:37:11.903 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:37:11.905 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:37:11.907 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:37:55.614 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:37:55.616 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: null
+2020-12-31 13:37:55.618 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 0
+2020-12-31 13:43:09.876 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:43:23.820 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM USER WHERE USER_NAME = ?
+2020-12-31 13:43:23.842 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: frank(String)
+2020-12-31 13:43:23.859 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2020-12-31 13:51:41.890 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:52:05.709 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==>  Preparing: INSERT INTO demo(CARD_NAME, CARD_NUMBER) VALUES ( ?, ? ) , ( ?, ? ) , ( ?, ? )
+2020-12-31 13:52:05.733 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==> Parameters: 5.4545451E7(String), 9991.0(String), 5.4545452E7(String), 9992.0(String), 5.4545453E7(String), 9993.0(String)
+2020-12-31 13:52:05.735 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | <==    Updates: 3
+2020-12-31 13:54:03.034 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 13:58:19.299 | DEBUG | http-nio-8090-exec-2 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==>  Preparing: INSERT INTO demo(CARD_NAME, CARD_NUMBER) VALUES ( ?, ? ) , ( ?, ? ) , ( ?, ? )
+2020-12-31 13:58:19.821 | DEBUG | http-nio-8090-exec-2 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==> Parameters: 5.4545451E7(String), 9991.0(String), 5.4545452E7(String), 9992.0(String), 5.4545453E7(String), 9993.0(String)
+2020-12-31 13:58:19.825 | DEBUG | http-nio-8090-exec-2 | com.modules.base.dao.DemoDao.batchInsert-line:137 | <==    Updates: 3
+2020-12-31 13:59:00.752 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 14:00:22.432 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==>  Preparing: INSERT INTO demo(CARD_NAME, CARD_NUMBER) VALUES ( ?, ? ) , ( ?, ? ) , ( ?, ? )
+2020-12-31 14:00:22.452 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==> Parameters: aaaabbbb(String), 5.4545451E7(String), ccccdddd(String), 5.4545452E7(String), eeeeffff(String), 5.4545453E7(String)
+2020-12-31 14:00:22.455 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | <==    Updates: 3
+2020-12-31 14:56:40.931 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:00:13.239 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:01:48.900 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:06:40.318 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:14:11.604 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:15:45.933 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==>  Preparing: INSERT INTO demo(CARD_NAME, CARD_NUMBER) VALUES ( ?, ? ) , ( ?, ? ) , ( ?, ? )
+2020-12-31 15:15:46.473 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==> Parameters: aaaabbbb(String), 5.4545451E7(String), ccccdddd(String), 5.4545452E7(String), eeeeffff(String), 5.4545453E7(String)
+2020-12-31 15:15:46.478 | DEBUG | http-nio-8090-exec-1 | com.modules.base.dao.DemoDao.batchInsert-line:137 | <==    Updates: 3
+2020-12-31 15:17:25.358 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-31 15:17:58.695 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==>  Preparing: INSERT INTO demo(CARD_NAME, CARD_NUMBER) VALUES ( ?, ? ) , ( ?, ? )
+2020-12-31 15:17:58.729 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | ==> Parameters: ccccdddd(String), 5.4545452E7(String), eeeeffff(String), 5.4545453E7(String)
+2020-12-31 15:17:58.730 | DEBUG | http-nio-8090-exec-3 | com.modules.base.dao.DemoDao.batchInsert-line:137 | <==    Updates: 2
