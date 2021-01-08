@@ -41,9 +41,9 @@ public interface UserDao {
     /**
      * 分页条件查询使用xml
      */
-    List<UserVo> findPage(@Param("userGetDto") UserGetDto dto);
+    List<UserVo> findPage(@Param("dto") UserGetDto dto);
 
-    int count(@Param("userGetDto") UserGetDto dto);
+    int count(@Param("dto") UserGetDto dto);
 
     @Select(" SELECT DISTINCT NAME from perm ")
     Set<String> findPermsById(@Param("id") Long id);

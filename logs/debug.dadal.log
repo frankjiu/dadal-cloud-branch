@@ -1,1 +1,11 @@
 2021-01-08 09:08:40.380 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 09:13:35.946 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.findPage-line:137 | ==>  Preparing: select * from log WHERE TIME <= ? AND CREATE_TIME <= ? ORDER BY CREATE_TIME DESC LIMIT 0,5;
+2021-01-08 09:13:35.972 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.findPage-line:137 | ==> Parameters: 1005(Long), 2020-12-30(String)
+2021-01-08 09:13:35.992 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.findPage-line:137 | <==      Total: 0
+2021-01-08 09:13:35.995 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.count-line:137 | ==>  Preparing: select count(*) from log WHERE TIME <= ? AND CREATE_TIME <= ?
+2021-01-08 09:13:35.996 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.count-line:137 | ==> Parameters: 1005(Long), 2020-12-30(String)
+2021-01-08 09:13:35.998 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.count-line:137 | <==      Total: 1
+2021-01-08 09:13:36.025 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:13:36.027 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, log.page(String), /log/page(String), com.modules.sys.log.controller.LogController.findPage()(String), {"userName":"","description":"","method":"","time":1005,"ip":"","createTime":"2020-12-30","pageNum":1,"pageSize":5}(String), 232(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:13:36.025(Timestamp), v1.2(String)
+2021-01-08 09:13:36.031 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:16:51.049 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
