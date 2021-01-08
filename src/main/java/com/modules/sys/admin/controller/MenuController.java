@@ -50,9 +50,9 @@ public class MenuController {
         return HttpResult.success(pageModel);
     }
 
-    @Logged(description = "menu.findTree")
+    @Logged(description = "menu.findTreeByPid")
     @PostMapping("menu/tree/{pid}")
-    public HttpResult findTree(@PathVariable Long pid) throws Exception {
+    public HttpResult findTreeByPid(@PathVariable Long pid) throws Exception {
         List<Menu> menuTree = menuService.findTreeByPid(pid);
         return HttpResult.success(menuTree);
     }

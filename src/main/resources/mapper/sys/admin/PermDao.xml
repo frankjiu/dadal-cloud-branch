@@ -5,20 +5,20 @@
 	<sql id="page_sql">
 		<where>
 			<if test="dto.permName != null and dto.permName != ''">
-				AND ROLE_NAME = #{dto.permName}
+				AND PERM_NAME = #{dto.permName}
 			</if>
 		</where>
 	</sql>
 
 	<select id="findPage" parameterType="com.modules.sys.admin.model.dto.PermGetDto" resultType="com.modules.sys.admin.model.entity.Perm">
-		select * from ROLE
+		select * from perm
 		<include refid="page_sql"/>
 		ORDER BY UPDATE_TIME DESC
 		LIMIT ${(dto.pageNum-1)*dto.pageSize},${dto.pageSize};
 	</select>
 
 	<select id="count" parameterType="com.modules.sys.admin.model.dto.PermGetDto" resultType="java.lang.Integer">
-		select count(*) from ROLE
+		select count(*) from perm
 		<include refid="page_sql"/>
 	</select>
 

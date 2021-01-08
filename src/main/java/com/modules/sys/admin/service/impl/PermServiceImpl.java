@@ -1,5 +1,6 @@
 package com.modules.sys.admin.service.impl;
 
+import com.core.exception.CommonException;
 import com.modules.sys.admin.dao.MenuDao;
 import com.modules.sys.admin.dao.PermDao;
 import com.modules.sys.admin.model.dto.PermGetDto;
@@ -62,10 +63,14 @@ public class PermServiceImpl implements PermService {
         } else {
             // 根据id查找原始perm
             Perm oldPerm = permDao.findById(perm.getId());
+            if (oldPerm == null) {
+                throw new CommonException("record not found!");
+            }
+
             // 根据 perm 名称查找 原始menu
-            Menu oldMenu = menuDao.findByPerm(oldPerm.getName());
+            Menu oldMenu = menuDao.findByPermName(oldPerm.getPermName());
             if (oldMenu != null) {
-                oldMenu.setPerm(perm.getName());
+                oldMenu.setPerm(perm.getPermName());
                 // 更新原始菜单的权限名称
                 menuNum = menuDao.update(oldMenu);
             } else {

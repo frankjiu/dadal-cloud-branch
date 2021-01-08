@@ -1,6 +1,7 @@
 package com.modules.sys.admin.controller;
 
 import com.core.anotation.Logged;
+import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.modules.sys.admin.model.dto.PermGetDto;
@@ -44,7 +45,7 @@ public class PermController {
     @PostMapping("perm/findAll")
     public HttpResult findAll() throws Exception {
         List<Perm> permList = permService.findAll();
-        List<String> nameList = permList.stream().map(e -> e.getName()).collect(Collectors.toList());
+        List<String> nameList = permList.stream().map(e -> e.getPermName()).collect(Collectors.toList());
         return HttpResult.success(nameList);
     }
 
@@ -77,7 +78,7 @@ public class PermController {
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Perm perm = permService.findById(id);
         if (perm == null) {
-            return HttpResult.fail("Record is not exist!");
+            throw new CommonException("Record is not exist!");
         }
         boolean deleted = permService.delete(id);
         if (deleted) {

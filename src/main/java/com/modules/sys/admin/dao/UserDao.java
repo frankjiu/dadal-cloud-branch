@@ -24,7 +24,7 @@ public interface UserDao {
 
     // 使用数据库自增主键
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    @Insert("INSERT INTO user values(#{id}, #{user.userName}, #{user.passWord}, " +
+    @Insert("INSERT INTO user(USER_NAME, PASS_WORD, SALT, EMAIL, MOBILE, STATUS, UPDATE_TIME) values(#{user.userName}, #{user.passWord}, " +
             " #{user.salt}, #{user.email}, #{user.mobile}, " +
             " #{user.status}, #{user.updateTime})")
     int insert(@Param("user") User user) throws Exception;

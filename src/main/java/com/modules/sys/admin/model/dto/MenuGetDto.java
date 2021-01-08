@@ -2,6 +2,9 @@ package com.modules.sys.admin.model.dto;
 
 import lombok.Data;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 /**
  * @Description:
  * @Author: QiuQiang
@@ -9,4 +12,15 @@ import lombok.Data;
  */
 @Data
 public class MenuGetDto {
+
+    private String menuName;
+
+    @NotNull
+    @Min(1)
+    private Integer pageNum;
+
+    @NotNull
+    @Min(1)
+    private Integer pageSize;
+
 }

@@ -9,4 +9,14 @@ import lombok.Data;
  */
 @Data
 public class MenuPostDto {
+
+    private Long id;
+    private Long parentId;
+    private Integer type;
+    private String menuName;
+    private String url;
+    private String perm;
+    private Integer orderNum;
+    private Long updateTime;
+
 }

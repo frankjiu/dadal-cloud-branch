@@ -9,3 +9,458 @@
 2021-01-08 09:13:36.027 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, log.page(String), /log/page(String), com.modules.sys.log.controller.LogController.findPage()(String), {"userName":"","description":"","method":"","time":1005,"ip":"","createTime":"2020-12-30","pageNum":1,"pageSize":5}(String), 232(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:13:36.025(Timestamp), v1.2(String)
 2021-01-08 09:13:36.031 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
 2021-01-08 09:16:51.049 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 09:17:30.605 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==>  Preparing: select u.*, r.role_name from user u LEFT JOIN user_role ur ON u.ID = ur.USER_ID LEFT JOIN role r ON r.ID = ur.ROLE_ID ORDER BY u.UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 09:17:30.623 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 09:17:30.641 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | <==      Total: 1
+2021-01-08 09:17:30.644 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==>  Preparing: select count(*) from user u
+2021-01-08 09:17:30.644 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==> Parameters: 
+2021-01-08 09:17:30.646 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.count-line:137 | <==      Total: 1
+2021-01-08 09:17:30.677 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:17:30.683 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, user.findPage(String), /user/page(String), com.modules.sys.admin.controller.UserController.findPage()(String), {"userName":"","pageNum":1,"pageSize":5}(String), 207(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:17:30.677(Timestamp), v1.2(String)
+2021-01-08 09:17:30.685 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:37:19.199 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==>  Preparing: SELECT * FROM user WHERE ID = ?
+2021-01-08 09:37:19.200 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 09:37:19.204 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findById-line:137 | <==      Total: 1
+2021-01-08 09:37:19.206 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:37:19.207 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, user.findById(String), /user/1(String), com.modules.sys.admin.controller.UserController.findById()(String), 1(String), 15(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:37:19.205(Timestamp), v1.2(String)
+2021-01-08 09:37:19.210 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:37:36.353 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==>  Preparing: SELECT * FROM user WHERE ID = ?
+2021-01-08 09:37:36.355 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 09:37:36.358 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findById-line:137 | <==      Total: 1
+2021-01-08 09:37:36.359 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:37:36.361 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, user.findById(String), /user/1(String), com.modules.sys.admin.controller.UserController.findById()(String), 1(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:37:36.359(Timestamp), v1.2(String)
+2021-01-08 09:37:36.363 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:44:17.951 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==>  Preparing: DELETE FROM user WHERE ID = ?
+2021-01-08 09:44:17.953 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==> Parameters: 1000000(Long)
+2021-01-08 09:44:17.954 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.delete-line:137 | <==    Updates: 0
+2021-01-08 09:44:17.955 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-08 09:44:17.956 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1000000(Long)
+2021-01-08 09:44:17.958 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 0
+2021-01-08 09:45:03.365 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==>  Preparing: DELETE FROM user WHERE ID = ?
+2021-01-08 09:45:03.366 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==> Parameters: 10000(Long)
+2021-01-08 09:45:03.368 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.delete-line:137 | <==    Updates: 0
+2021-01-08 09:45:03.369 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-08 09:45:03.370 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 10000(Long)
+2021-01-08 09:45:03.371 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 0
+2021-01-08 09:45:10.145 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==>  Preparing: DELETE FROM user WHERE ID = ?
+2021-01-08 09:45:10.146 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.delete-line:137 | ==> Parameters: 10000(Long)
+2021-01-08 09:45:10.147 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.delete-line:137 | <==    Updates: 0
+2021-01-08 09:45:10.148 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-08 09:45:10.149 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 10000(Long)
+2021-01-08 09:45:10.151 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 0
+2021-01-08 09:49:44.085 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==>  Preparing: select u.*, r.role_name from user u LEFT JOIN user_role ur ON u.ID = ur.USER_ID LEFT JOIN role r ON r.ID = ur.ROLE_ID ORDER BY u.UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 09:49:44.086 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 09:49:44.089 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findPage-line:137 | <==      Total: 1
+2021-01-08 09:49:44.091 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==>  Preparing: select count(*) from user u
+2021-01-08 09:49:44.092 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.count-line:137 | ==> Parameters: 
+2021-01-08 09:49:44.093 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.count-line:137 | <==      Total: 1
+2021-01-08 09:49:44.095 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:49:44.098 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, user.findPage(String), /user/page(String), com.modules.sys.admin.controller.UserController.findPage()(String), {"userName":"","pageNum":1,"pageSize":5}(String), 13(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:49:44.095(Timestamp), v1.2(String)
+2021-01-08 09:49:44.101 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:52:02.446 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 09:52:22.921 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | ==>  Preparing: select * from ROLE ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 09:52:22.939 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 09:52:22.953 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | <==      Total: 0
+2021-01-08 09:52:22.955 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.count-line:137 | ==>  Preparing: select count(*) from ROLE
+2021-01-08 09:52:22.956 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.count-line:137 | ==> Parameters: 
+2021-01-08 09:52:22.958 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.RoleDao.count-line:137 | <==      Total: 1
+2021-01-08 09:52:22.991 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:52:22.997 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.findPage(String), /role/page(String), com.modules.sys.admin.controller.RoleController.findPage()(String), {"roleName":null,"pageNum":1,"pageSize":5}(String), 187(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:52:22.991(Timestamp), v1.2(String)
+2021-01-08 09:52:23.000 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:52:47.407 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==>  Preparing: SELECT * FROM role WHERE ID = ?
+2021-01-08 09:52:47.408 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 09:52:47.410 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | <==      Total: 0
+2021-01-08 09:52:47.412 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:52:47.414 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.findById(String), /role/1(String), com.modules.sys.admin.controller.RoleController.findById()(String), 1(String), 5(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:52:47.412(Timestamp), v1.2(String)
+2021-01-08 09:52:47.416 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:52:54.038 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==>  Preparing: SELECT * FROM role WHERE ID = ?
+2021-01-08 09:52:54.039 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 09:52:54.040 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | <==      Total: 0
+2021-01-08 09:52:54.042 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:52:54.047 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.findById(String), /role/1(String), com.modules.sys.admin.controller.RoleController.findById()(String), 1(String), 5(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:52:54.042(Timestamp), v1.2(String)
+2021-01-08 09:52:54.049 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:54:55.460 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | ==>  Preparing: INSERT INTO role values(?, ?, ?, ?)
+2021-01-08 09:55:46.044 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 09:56:08.566 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | ==>  Preparing: INSERT INTO role values(?, ?, ?)
+2021-01-08 09:56:08.589 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | ==> Parameters: admin(String), 超级管理员(String), 1610070968(Long)
+2021-01-08 09:57:08.814 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 09:57:35.182 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | ==>  Preparing: INSERT INTO role(ROLE_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 09:57:35.207 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | ==> Parameters: admin(String), 超级管理员(String), 1610071055(Long)
+2021-01-08 09:57:35.212 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.insert-line:137 | <==    Updates: 1
+2021-01-08 09:57:35.250 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:57:35.254 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.save(String), /role(String), com.modules.sys.admin.controller.RoleController.save()(String), {"id":null,"roleName":"admin","remark":"超级管理员","updateTime":null}(String), 218(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:57:35.25(Timestamp), v1.2(String)
+2021-01-08 09:57:35.256 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 09:57:46.799 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | ==>  Preparing: select * from ROLE ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 09:57:46.800 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 09:57:46.813 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.findPage-line:137 | <==      Total: 1
+2021-01-08 09:57:46.814 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.count-line:137 | ==>  Preparing: select count(*) from ROLE
+2021-01-08 09:57:46.815 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.count-line:137 | ==> Parameters: 
+2021-01-08 09:57:46.817 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.RoleDao.count-line:137 | <==      Total: 1
+2021-01-08 09:57:46.821 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 09:57:46.823 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.findPage(String), /role/page(String), com.modules.sys.admin.controller.RoleController.findPage()(String), {"roleName":null,"pageNum":1,"pageSize":5}(String), 52(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 09:57:46.821(Timestamp), v1.2(String)
+2021-01-08 09:57:46.826 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:05:33.071 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:06:34.452 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.update-line:137 | ==>  Preparing: UPDATE role SET ROLE_NAME=?, REMARK=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:06:34.477 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.update-line:137 | ==> Parameters: admin(String), 超级管理员(String), 1610071594(Long), 1(Long)
+2021-01-08 10:06:34.479 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.RoleDao.update-line:137 | <==    Updates: 0
+2021-01-08 10:06:34.508 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:06:34.510 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.save(String), /role(String), com.modules.sys.admin.controller.RoleController.save()(String), {"id":1,"roleName":"admin","remark":"超级管理员","updateTime":null}(String), 172(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:06:34.507(Timestamp), v1.2(String)
+2021-01-08 10:06:34.514 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:06:42.712 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.update-line:137 | ==>  Preparing: UPDATE role SET ROLE_NAME=?, REMARK=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:06:42.714 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.update-line:137 | ==> Parameters: admin(String), 超级管理员(String), 1610071602(Long), 2(Long)
+2021-01-08 10:06:42.715 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.RoleDao.update-line:137 | <==    Updates: 0
+2021-01-08 10:06:42.716 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:06:42.718 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.save(String), /role(String), com.modules.sys.admin.controller.RoleController.save()(String), {"id":2,"roleName":"admin","remark":"超级管理员","updateTime":null}(String), 4(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:06:42.716(Timestamp), v1.2(String)
+2021-01-08 10:06:42.721 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:07:45.350 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==>  Preparing: SELECT * FROM role WHERE ID = ?
+2021-01-08 10:07:45.351 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==> Parameters: 3(Long)
+2021-01-08 10:07:45.365 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:07:45.367 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:07:45.369 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.delete(String), /role/3(String), com.modules.sys.admin.controller.RoleController.delete()(String), 3(String), 27(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:07:45.367(Timestamp), v1.2(String)
+2021-01-08 10:07:45.371 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:07:48.479 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==>  Preparing: SELECT * FROM role WHERE ID = ?
+2021-01-08 10:07:48.480 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==> Parameters: 3(Long)
+2021-01-08 10:07:48.482 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:07:48.483 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:07:48.485 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.delete(String), /role/3(String), com.modules.sys.admin.controller.RoleController.delete()(String), 3(String), 4(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:07:48.483(Timestamp), v1.2(String)
+2021-01-08 10:07:48.487 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:07:57.762 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==>  Preparing: SELECT * FROM role WHERE ID = ?
+2021-01-08 10:07:57.769 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | ==> Parameters: 3(Long)
+2021-01-08 10:07:57.770 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.RoleDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:07:57.772 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:07:57.773 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, role.delete(String), /role/3(String), com.modules.sys.admin.controller.RoleController.delete()(String), 3(String), 12(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:07:57.772(Timestamp), v1.2(String)
+2021-01-08 10:07:57.776 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:10:30.015 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:10:30.016 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 10:10:30.018 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:10:30.020 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:10:30.021 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findById(String), /menu/1(String), com.modules.sys.admin.controller.MenuController.findById()(String), 1(String), 18(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:10:30.019(Timestamp), v1.2(String)
+2021-01-08 10:10:30.024 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:16:21.870 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:16:43.229 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==>  Preparing: select * from menu ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 10:16:43.251 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 10:16:43.274 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | <==      Total: 0
+2021-01-08 10:16:43.277 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==>  Preparing: select count(*) from menu
+2021-01-08 10:16:43.278 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==> Parameters: 
+2021-01-08 10:16:43.281 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.count-line:137 | <==      Total: 1
+2021-01-08 10:16:43.313 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:16:43.320 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findPage(String), /menu/page(String), com.modules.sys.admin.controller.MenuController.findPage()(String), {"menuName":"","pageNum":1,"pageSize":5}(String), 233(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:16:43.313(Timestamp), v1.2(String)
+2021-01-08 10:16:43.322 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:21:06.409 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:21:30.942 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:21:30.947 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072490(Long)
+2021-01-08 10:21:30.950 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | <==    Updates: 1
+2021-01-08 10:21:30.954 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:21:30.956 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":null,"parentId":600000,"type":5,"menuName":"1","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 11(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:21:30.954(Timestamp), v1.2(String)
+2021-01-08 10:21:30.960 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:21:38.820 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:23:25.813 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:24:48.611 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:24:48.635 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072688(Long), 50000(Long)
+2021-01-08 10:24:48.636 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.update-line:137 | <==    Updates: 0
+2021-01-08 10:24:48.663 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:24:48.666 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":50000,"parentId":600000,"type":5,"menuName":"1","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 173(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:24:48.663(Timestamp), v1.2(String)
+2021-01-08 10:24:48.669 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:25:36.004 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:25:36.005 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 10:25:36.020 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:25:36.022 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:25:36.023 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findById(String), /menu/1(String), com.modules.sys.admin.controller.MenuController.findById()(String), 1(String), 22(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:25:36.022(Timestamp), v1.2(String)
+2021-01-08 10:25:36.026 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:25:44.997 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:25:44.998 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 50000(Long)
+2021-01-08 10:25:45.000 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:25:45.001 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:25:45.003 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findById(String), /menu/50000(String), com.modules.sys.admin.controller.MenuController.findById()(String), 50000(String), 4(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:25:45.001(Timestamp), v1.2(String)
+2021-01-08 10:25:45.006 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:26:07.742 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:26:07.744 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 10:26:07.747 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 1
+2021-01-08 10:26:07.749 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:26:07.750 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findById(String), /menu/10001(String), com.modules.sys.admin.controller.MenuController.findById()(String), 10001(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:26:07.749(Timestamp), v1.2(String)
+2021-01-08 10:26:07.753 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:26:16.372 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==>  Preparing: select * from menu ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 10:26:16.373 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 10:26:16.374 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | <==      Total: 1
+2021-01-08 10:26:16.375 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==>  Preparing: select count(*) from menu
+2021-01-08 10:26:16.376 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==> Parameters: 
+2021-01-08 10:26:16.378 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.count-line:137 | <==      Total: 1
+2021-01-08 10:26:16.382 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:26:16.383 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findPage(String), /menu/page(String), com.modules.sys.admin.controller.MenuController.findPage()(String), {"menuName":"","pageNum":1,"pageSize":5}(String), 42(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:26:16.382(Timestamp), v1.2(String)
+2021-01-08 10:26:16.385 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:26:26.398 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:26:26.399 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072786(Long)
+2021-01-08 10:26:32.607 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:26:32.608 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072792(Long)
+2021-01-08 10:26:46.986 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:26:46.988 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072806(Long), 10001(Long)
+2021-01-08 10:26:46.991 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.update-line:137 | <==    Updates: 1
+2021-01-08 10:26:46.992 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:26:46.994 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":10001,"parentId":600000,"type":5,"menuName":"1","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 7(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:26:46.992(Timestamp), v1.2(String)
+2021-01-08 10:26:46.996 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:26:55.316 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:26:55.318 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072815(Long), 10002(Long)
+2021-01-08 10:26:55.320 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.MenuDao.update-line:137 | <==    Updates: 0
+2021-01-08 10:26:55.321 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:26:55.323 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":10002,"parentId":600000,"type":5,"menuName":"1","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:26:55.321(Timestamp), v1.2(String)
+2021-01-08 10:26:55.325 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:27:30.432 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 10:27:30.433 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072850(Long), 10001(Long)
+2021-01-08 10:27:30.437 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.update-line:137 | <==    Updates: 1
+2021-01-08 10:27:30.438 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:27:30.439 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":10001,"parentId":600000,"type":5,"menuName":"1","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:27:30.438(Timestamp), v1.2(String)
+2021-01-08 10:27:30.441 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:28:19.431 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:28:19.432 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 200000(Long)
+2021-01-08 10:28:19.434 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:28:19.435 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:28:19.437 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.delete(String), /menu/200000(String), com.modules.sys.admin.controller.MenuController.delete()(String), 200000(String), 4(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:28:19.435(Timestamp), v1.2(String)
+2021-01-08 10:28:19.440 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:28:42.948 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:28:42.949 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 600000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072922(Long)
+2021-01-08 10:29:16.103 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:29:16.105 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 700000(Long), 5(Integer), 1(String), /service/init(String), user:user:findById(String), 3(Integer), 1610072956(Long)
+2021-01-08 10:30:02.062 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:30:02.063 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 700000(Long), 5(Integer), 2(String), /service/init(String), user:user:findById(String), 3(Integer), 1610073002(Long)
+2021-01-08 10:30:02.066 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | <==    Updates: 1
+2021-01-08 10:30:02.068 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:30:02.069 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":null,"parentId":700000,"type":5,"menuName":"2","url":"/service/init","perm":"user:user:findById","orderNum":3,"updateTime":null}(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:30:02.067(Timestamp), v1.2(String)
+2021-01-08 10:30:02.072 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:30:13.292 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 10:30:13.294 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 700000(Long), 5(Integer), 2(String), /service/init(String), user:user:findById(String), 3(Integer), 1610073013(Long)
+2021-01-08 10:30:58.624 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==>  Preparing: select * from menu ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 10:30:58.625 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 10:30:58.628 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findPage-line:137 | <==      Total: 2
+2021-01-08 10:30:58.629 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==>  Preparing: select count(*) from menu
+2021-01-08 10:30:58.630 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.count-line:137 | ==> Parameters: 
+2021-01-08 10:30:58.632 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.count-line:137 | <==      Total: 1
+2021-01-08 10:30:58.633 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:30:58.634 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findPage(String), /menu/page(String), com.modules.sys.admin.controller.MenuController.findPage()(String), {"menuName":"","pageNum":1,"pageSize":5}(String), 10(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:30:58.633(Timestamp), v1.2(String)
+2021-01-08 10:30:58.637 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:31:07.037 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:31:07.038 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 10002(Long)
+2021-01-08 10:31:07.039 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:31:07.041 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:31:07.042 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.delete(String), /menu/10002(String), com.modules.sys.admin.controller.MenuController.delete()(String), 10002(String), 4(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:31:07.041(Timestamp), v1.2(String)
+2021-01-08 10:31:07.045 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:31:09.872 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 10:31:09.873 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 10006(Long)
+2021-01-08 10:31:09.875 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 1
+2021-01-08 10:31:09.877 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | ==>  Preparing: DELETE FROM menu WHERE ID = ?
+2021-01-08 10:31:09.878 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | ==> Parameters: 10006(Long)
+2021-01-08 10:31:09.880 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | <==    Updates: 1
+2021-01-08 10:31:09.881 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:31:09.883 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.delete(String), /menu/10006(String), com.modules.sys.admin.controller.MenuController.delete()(String), 10006(String), 9(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:31:09.881(Timestamp), v1.2(String)
+2021-01-08 10:31:09.885 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:32:17.955 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 10:32:17.957 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 10:32:17.959 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:32:17.960 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:32:17.961 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10001(String), com.modules.sys.admin.controller.PermController.findById()(String), 10001(String), 19(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:32:17.96(Timestamp), v1.2(String)
+2021-01-08 10:32:17.965 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:43:19.104 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:43:28.178 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 10:43:28.199 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 10:43:28.216 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:43:28.243 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:43:28.249 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10001(String), com.modules.sys.admin.controller.PermController.findById()(String), 10001(String), 225(Long), 127.0.0.1(String), 2021-01-08 10:43:28.243(Timestamp), v1.2(String)
+2021-01-08 10:43:28.253 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:43:34.812 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==>  Preparing: select * from ROLE ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 10:43:34.812 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 10:43:34.815 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | <==      Total: 1
+2021-01-08 10:43:34.816 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==>  Preparing: select count(*) from ROLE
+2021-01-08 10:43:34.816 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==> Parameters: 
+2021-01-08 10:43:34.818 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | <==      Total: 1
+2021-01-08 10:43:34.822 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:43:34.824 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findPage(String), /perm/page(String), com.modules.sys.admin.controller.PermController.findPage()(String), {"permName":null,"pageNum":1,"pageSize":5}(String), 38(Long), 127.0.0.1(String), 2021-01-08 10:43:34.822(Timestamp), v1.2(String)
+2021-01-08 10:43:34.827 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:45:35.150 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:46:07.936 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==>  Preparing: select * from perm ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 10:46:07.955 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 10:46:07.971 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | <==      Total: 0
+2021-01-08 10:46:07.973 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==>  Preparing: select count(*) from perm
+2021-01-08 10:46:07.974 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==> Parameters: 
+2021-01-08 10:46:07.976 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.count-line:137 | <==      Total: 1
+2021-01-08 10:46:08.008 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:46:08.014 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findPage(String), /perm/page(String), com.modules.sys.admin.controller.PermController.findPage()(String), {"permName":null,"pageNum":1,"pageSize":5}(String), 201(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:46:08.008(Timestamp), v1.2(String)
+2021-01-08 10:46:08.016 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:47:59.621 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 10:47:59.622 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 20000(Long)
+2021-01-08 10:47:59.624 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:48:13.510 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==>  Preparing: INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 10:48:13.513 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==> Parameters: user:user:findById(String), 用户主键查询(String), 1610074093(Long)
+2021-01-08 10:48:13.521 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.insert-line:137 | <==    Updates: 1
+2021-01-08 10:48:13.529 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 10:48:13.531 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.save(String), /perm(String), com.modules.sys.admin.controller.PermController.save()(String), {"id":null,"permName":"user:user:findById","remark":"用户主键查询","updateTime":null}(String), 27(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 10:48:13.529(Timestamp), v1.2(String)
+2021-01-08 10:48:13.533 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 10:52:06.721 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 10:52:29.803 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 10:52:29.821 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 20000(Long)
+2021-01-08 10:52:29.837 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:53:10.951 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 10:53:10.953 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 20000(Long)
+2021-01-08 10:53:10.958 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 10:53:41.812 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==>  Preparing: INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 10:53:41.818 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==> Parameters: user:user:findById(String), 用户主键查询(String), 1610074421(Long)
+2021-01-08 11:10:42.004 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 11:11:42.809 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:11:42.835 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 20000(Long)
+2021-01-08 11:11:42.857 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 11:11:42.885 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:11:42.891 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.delete(String), /perm/20000(String), com.modules.sys.admin.controller.PermController.delete()(String), 20000(String), 273(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:11:42.885(Timestamp), v1.2(String)
+2021-01-08 11:11:42.895 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:11:48.465 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:11:48.466 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 20000(Long)
+2021-01-08 11:11:48.467 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 11:11:57.186 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==>  Preparing: INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 11:11:57.187 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==> Parameters: user:user:findById(String), 用户主键查询(String), 1610075517(Long)
+2021-01-08 11:12:06.305 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:12:06.306 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 11:12:06.310 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:12:06.311 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:12:06.313 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10001(String), com.modules.sys.admin.controller.PermController.findById()(String), 10001(String), 16(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:12:06.311(Timestamp), v1.2(String)
+2021-01-08 11:12:06.315 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:12:13.902 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==>  Preparing: select * from perm ORDER BY UPDATE_TIME DESC LIMIT 0,5;
+2021-01-08 11:12:13.903 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | ==> Parameters: 
+2021-01-08 11:12:13.904 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.findPage-line:137 | <==      Total: 1
+2021-01-08 11:12:13.908 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==>  Preparing: select count(*) from perm
+2021-01-08 11:12:13.909 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.count-line:137 | ==> Parameters: 
+2021-01-08 11:12:13.910 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.PermDao.count-line:137 | <==      Total: 1
+2021-01-08 11:12:13.915 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:12:13.917 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findPage(String), /perm/page(String), com.modules.sys.admin.controller.PermController.findPage()(String), {"permName":null,"pageNum":1,"pageSize":5}(String), 43(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:12:13.915(Timestamp), v1.2(String)
+2021-01-08 11:12:13.919 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:12:23.296 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==>  Preparing: INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 11:12:23.297 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==> Parameters: user:user:findPage(String), 用户主键查询(String), 1610075543(Long)
+2021-01-08 11:12:23.298 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.insert-line:137 | <==    Updates: 1
+2021-01-08 11:12:23.305 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:12:23.307 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.save(String), /perm(String), com.modules.sys.admin.controller.PermController.save()(String), {"id":null,"permName":"user:user:findPage","remark":"用户主键查询","updateTime":null}(String), 8(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:12:23.305(Timestamp), v1.2(String)
+2021-01-08 11:12:23.311 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:13:20.466 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==>  Preparing: INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(?, ?, ?)
+2021-01-08 11:13:20.468 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.PermDao.insert-line:137 | ==> Parameters: user:user:findPage(String), 用户分页查询(String), 1610075600(Long)
+2021-01-08 11:13:30.564 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:13:30.565 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:13:30.567 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:13:30.569 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findByPermName-line:137 | ==>  Preparing: SELECT * FROM menu WHERE PERM = ?
+2021-01-08 11:13:30.570 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findByPermName-line:137 | ==> Parameters: user:user:findPage(String)
+2021-01-08 11:13:30.572 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findByPermName-line:137 | <==      Total: 0
+2021-01-08 11:13:30.573 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.update-line:137 | ==>  Preparing: UPDATE perm SET PERM_NAME=?, REMARK=?, UPDATE_TIME=? where ID = ?
+2021-01-08 11:13:30.574 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.update-line:137 | ==> Parameters: user:user:findPage(String), 用户分页查询(String), 1610075610(Long), 10003(Long)
+2021-01-08 11:13:30.575 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.PermDao.update-line:137 | <==    Updates: 1
+2021-01-08 11:13:30.583 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:13:30.585 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.save(String), /perm(String), com.modules.sys.admin.controller.PermController.save()(String), {"id":10003,"permName":"user:user:findPage","remark":"用户分页查询","updateTime":null}(String), 28(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:13:30.583(Timestamp), v1.2(String)
+2021-01-08 11:13:30.588 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:13:50.471 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:13:50.473 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:13:50.474 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:13:50.476 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==>  Preparing: DELETE FROM perm WHERE ID = ?
+2021-01-08 11:13:50.477 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:15:26.259 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:15:26.260 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:15:26.262 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:15:26.264 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==>  Preparing: DELETE FROM perm WHERE ID = ?
+2021-01-08 11:15:26.265 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:16:37.796 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:16:37.808 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:16:37.841 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 11:16:59.000 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:16:59.002 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.delete(String), /perm/10003(String), com.modules.sys.admin.controller.PermController.delete()(String), 10003(String), 27805(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:16:59.0(Timestamp), v1.2(String)
+2021-01-08 11:16:59.003 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:20:23.992 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:20:23.993 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:20:23.995 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:20:23.996 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==>  Preparing: DELETE FROM perm WHERE ID = ?
+2021-01-08 11:20:23.997 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:20:57.643 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==>  Preparing: SELECT * FROM user WHERE ID = ?
+2021-01-08 11:20:57.645 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findById-line:137 | ==> Parameters: 1(Long)
+2021-01-08 11:20:57.649 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.admin.dao.UserDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:20:57.650 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:20:57.652 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, user.findById(String), /user/1(String), com.modules.sys.admin.controller.UserController.findById()(String), 1(String), 21(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:20:57.65(Timestamp), v1.2(String)
+2021-01-08 11:20:57.653 | DEBUG | http-nio-8090-exec-9 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:21:07.213 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:21:07.214 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 11:21:07.217 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:21:07.219 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:21:07.221 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10001(String), com.modules.sys.admin.controller.PermController.findById()(String), 10001(String), 23(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:21:07.219(Timestamp), v1.2(String)
+2021-01-08 11:21:07.224 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:21:19.865 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:21:19.866 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:21:19.870 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:21:19.871 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:21:19.874 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10003(String), com.modules.sys.admin.controller.PermController.findById()(String), 10003(String), 7(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:21:19.871(Timestamp), v1.2(String)
+2021-01-08 11:21:19.876 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:21:41.745 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:21:41.747 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10001(Long)
+2021-01-08 11:21:41.751 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:21:41.753 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:21:41.757 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.findById(String), /perm/10001(String), com.modules.sys.admin.controller.PermController.findById()(String), 10001(String), 9(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:21:41.753(Timestamp), v1.2(String)
+2021-01-08 11:21:41.762 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:22:23.091 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:22:23.103 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:22:23.148 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:22:34.410 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==>  Preparing: DELETE FROM perm WHERE ID = ?
+2021-01-08 11:22:34.422 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:27:32.152 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:27:32.153 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:27:32.155 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 0
+2021-01-08 11:27:32.156 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:27:32.159 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.delete(String), /perm/10003(String), com.modules.sys.admin.controller.PermController.delete()(String), 10003(String), 5(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:27:32.156(Timestamp), v1.2(String)
+2021-01-08 11:27:32.161 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:27:41.512 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 11:28:16.088 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==>  Preparing: SELECT * FROM perm WHERE ID = ?
+2021-01-08 11:28:16.107 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:28:16.125 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:28:16.127 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==>  Preparing: DELETE FROM perm WHERE ID = ?
+2021-01-08 11:28:16.127 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.delete-line:137 | ==> Parameters: 10003(Long)
+2021-01-08 11:28:16.132 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.PermDao.delete-line:137 | <==    Updates: 1
+2021-01-08 11:28:16.151 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:28:16.155 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, perm.delete(String), /perm/10003(String), com.modules.sys.admin.controller.PermController.delete()(String), 10003(String), 206(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:28:16.15(Timestamp), v1.2(String)
+2021-01-08 11:28:16.158 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:31:33.312 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 11:32:15.349 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-08 11:33:13.610 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==>  Preparing: SELECT ID, MENU_NAME menuName, PARENT_ID parentId, URL, ORDER_NUM orderNum FROM menu WHERE PARENT_ID = ? ORDER BY ORDER_NUM ASC
+2021-01-08 11:33:13.631 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==> Parameters: 0(Long)
+2021-01-08 11:33:13.648 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | <==      Total: 0
+2021-01-08 11:33:13.669 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:33:13.673 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findTreeByPid(String), /menu/tree/0(String), com.modules.sys.admin.controller.MenuController.findTreeByPid()(String), 0(String), 261(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:33:13.669(Timestamp), v1.2(String)
+2021-01-08 11:33:13.679 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:35:28.220 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 11:35:28.222 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 0(Long), 1(Integer), 用户id查询(String), /user/findById(String), user:user:findById(String), 1(Integer), 1610076928(Long)
+2021-01-08 11:35:28.224 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | <==    Updates: 1
+2021-01-08 11:35:28.229 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:35:28.231 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":null,"parentId":0,"type":1,"menuName":"用户id查询","url":"/user/findById","perm":"user:user:findById","orderNum":1,"updateTime":null}(String), 33(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:35:28.229(Timestamp), v1.2(String)
+2021-01-08 11:35:28.234 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:36:17.994 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 11:36:17.996 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 0(Long), 1(Integer), 用户id查询(String), /user/findById(String), user:user:findById(String), 1(Integer), 1610076977(Long)
+2021-01-08 11:36:29.885 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==>  Preparing: SELECT ID, MENU_NAME menuName, PARENT_ID parentId, URL, ORDER_NUM orderNum FROM menu WHERE PARENT_ID = ? ORDER BY ORDER_NUM ASC
+2021-01-08 11:36:29.886 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==> Parameters: 0(Long)
+2021-01-08 11:36:29.889 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | <==      Total: 1
+2021-01-08 11:36:29.891 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:36:29.892 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findTreeByPid(String), /menu/tree/0(String), com.modules.sys.admin.controller.MenuController.findTreeByPid()(String), 0(String), 7(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:36:29.891(Timestamp), v1.2(String)
+2021-01-08 11:36:29.896 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:38:29.454 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==>  Preparing: UPDATE menu SET PARENT_ID=?, TYPE=?, MENU_NAME=?, URL=?, PERM=?, ORDER_NUM=?, UPDATE_TIME=? where ID = ?
+2021-01-08 11:38:29.456 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.update-line:137 | ==> Parameters: 0(Long), 5(Integer), 系统参数初始化(String), /service/init(String), config:config:init(String), 2(Integer), 1610077109(Long), 10002(Long)
+2021-01-08 11:38:29.458 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.update-line:137 | <==    Updates: 1
+2021-01-08 11:38:29.460 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:38:29.461 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":10002,"parentId":0,"type":5,"menuName":"系统参数初始化","url":"/service/init","perm":"config:config:init","orderNum":2,"updateTime":null}(String), 10(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:38:29.46(Timestamp), v1.2(String)
+2021-01-08 11:38:29.464 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:38:58.733 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==>  Preparing: INSERT INTO menu(PARENT_ID, TYPE, MENU_NAME, URL, PERM, ORDER_NUM, UPDATE_TIME) values(?, ?, ?, ?, ?, ?, ?)
+2021-01-08 11:38:58.736 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | ==> Parameters: 0(Long), 1(Integer), 测试(String), /user/findById(String), user:user:findById(String), 1(Integer), 1610077138(Long)
+2021-01-08 11:38:58.738 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.insert-line:137 | <==    Updates: 1
+2021-01-08 11:38:58.740 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:38:58.742 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.save(String), /menu(String), com.modules.sys.admin.controller.MenuController.save()(String), {"id":null,"parentId":0,"type":1,"menuName":"测试","url":"/user/findById","perm":"user:user:findById","orderNum":1,"updateTime":null}(String), 6(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:38:58.739(Timestamp), v1.2(String)
+2021-01-08 11:38:58.744 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:39:22.660 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==>  Preparing: SELECT ID, MENU_NAME menuName, PARENT_ID parentId, URL, ORDER_NUM orderNum FROM menu WHERE PARENT_ID = ? ORDER BY ORDER_NUM ASC
+2021-01-08 11:39:22.661 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | ==> Parameters: 0(Long)
+2021-01-08 11:39:22.664 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.MenuDao.findTreeByPid-line:137 | <==      Total: 3
+2021-01-08 11:39:22.665 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:39:22.667 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.findTreeByPid(String), /menu/tree/0(String), com.modules.sys.admin.controller.MenuController.findTreeByPid()(String), 0(String), 5(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:39:22.665(Timestamp), v1.2(String)
+2021-01-08 11:39:22.673 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1
+2021-01-08 11:39:31.456 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID = ?
+2021-01-08 11:39:31.458 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | ==> Parameters: 10004(Long)
+2021-01-08 11:39:31.461 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.findById-line:137 | <==      Total: 1
+2021-01-08 11:39:31.463 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | ==>  Preparing: DELETE FROM menu WHERE ID = ?
+2021-01-08 11:39:31.464 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | ==> Parameters: 10004(Long)
+2021-01-08 11:39:31.474 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.MenuDao.delete-line:137 | <==    Updates: 1
+2021-01-08 11:39:31.475 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==>  Preparing: INSERT INTO log(USER_NAME, DESCRIPTION, URL, METHOD, PARAMS, TIME, IP, CREATE_TIME, VERSION) values(?, ?, ? , ?, ?, ? , ?, ?, ?)
+2021-01-08 11:39:31.477 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | ==> Parameters: null, menu.delete(String), /menu/10004(String), com.modules.sys.admin.controller.MenuController.delete()(String), 10004(String), 19(Long), 0:0:0:0:0:0:0:1(String), 2021-01-08 11:39:31.475(Timestamp), v1.2(String)
+2021-01-08 11:39:31.480 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.log.dao.LogDao.save-line:137 | <==    Updates: 1

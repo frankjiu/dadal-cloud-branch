@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class PermGetDto {
 
-    private String name;
+    private String permName;
 
     @NotNull
     @Min(1)

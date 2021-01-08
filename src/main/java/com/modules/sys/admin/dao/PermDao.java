@@ -25,10 +25,10 @@ public interface PermDao {
     int count(@Param("dto") PermGetDto dto) throws Exception;
 
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    @Insert("INSERT INTO perm values(#{id}, #{perm.name}, #{perm.remark}, #{perm.updateTime})")
+    @Insert("INSERT INTO perm(PERM_NAME, REMARK, UPDATE_TIME) values(#{perm.permName}, #{perm.remark}, #{perm.updateTime})")
     int insert(@Param("perm") Perm perm) throws Exception;
 
-    @Update("UPDATE perm SET NAME=#{perm.name}, REMARK=#{perm.remark}, UPDATE_TIME=#{perm.updateTime} " +
+    @Update("UPDATE perm SET PERM_NAME=#{perm.permName}, REMARK=#{perm.remark}, UPDATE_TIME=#{perm.updateTime} " +
             "where ID = #{perm.id}")
     int update(@Param("perm") Perm perm) throws Exception;
 

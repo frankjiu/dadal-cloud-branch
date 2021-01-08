@@ -11,7 +11,7 @@ import lombok.Data;
 public class PermPostDto {
 
     private Long id;
-    private String name;
+    private String permName;
     private String remark;
     private Long updateTime;
 
