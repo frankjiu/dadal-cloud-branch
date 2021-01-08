@@ -19,4 +19,6 @@ public class UserVo {
     private Integer status;             // 状态 0:禁用 1:正常
     private Long updateTime;            // 更新时间
 
+    private String roleName;              // 角色
+
 }

@@ -1,7 +1,9 @@
 package com.modules.sys.admin.service;
 
 import com.modules.sys.admin.model.dto.UserGetDto;
+import com.modules.sys.admin.model.dto.UserPostDto;
 import com.modules.sys.admin.model.entity.User;
+import com.modules.sys.admin.model.vo.UserVo;
 
 import java.util.List;
 import java.util.Set;
@@ -21,15 +23,17 @@ public interface UserService {
 
     int update(User user) throws Exception;
 
-    int delete(Long id) throws Exception;
+    boolean save(UserPostDto dto) throws Exception;
 
-    List<User> findPage(UserGetDto userGetDto);
+    boolean delete(Long id) throws Exception;
 
-    int count(UserGetDto userGetDto);
+    List<UserVo> findPage(UserGetDto dto);
+
+    int count(UserGetDto dto);
 
     Set<String> findPermsById(Long id);
 
     User findByUserName(String userName);
 
-    boolean updatePassword(Long userId, String oldPassword, String newPassword) throws Exception;
+    boolean changePassword(Long userId, String oldPassword, String newPassword) throws Exception;
 }

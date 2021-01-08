@@ -5,21 +5,21 @@
 	<!-- Page query with conditions -->
 	<sql id="page_sql">
 		<where>
-			<if test="userGetDto.userName != null and userGetDto.userName != ''">
-				AND USER_NAME = #{userGetDto.userName}
+			<if test="dto.userName != null and dto.userName != ''">
+				AND u.USER_NAME = #{dto.userName}
 			</if>
 		</where>
 	</sql>
 
-	<select id="findPage" parameterType="com.modules.sys.admin.model.dto.UserGetDto" resultType="com.modules.sys.admin.model.entity.User">
-		select * from USER
+	<select id="findPage" parameterType="com.modules.sys.admin.model.dto.UserGetDto" resultType="com.modules.sys.admin.model.vo.UserVo">
+		select u.*, r.role_name from user u LEFT JOIN user_role ur ON u.ID = ur.USER_ID LEFT JOIN role r ON r.ID = ur.ROLE_ID
 		<include refid="page_sql"/>
-		ORDER BY UPDATE_TIME DESC
-		LIMIT ${(userGetDto.pageNum-1)*userGetDto.pageSize},${userGetDto.pageSize};
+		ORDER BY u.UPDATE_TIME DESC
+		LIMIT ${(dto.pageNum-1)*dto.pageSize},${dto.pageSize};
 	</select>
 
 	<select id="count" parameterType="com.modules.sys.admin.model.dto.UserGetDto" resultType="java.lang.Integer">
-		select count(*) from USER
+		select count(*) from user u
 		<include refid="page_sql"/>
 	</select>
 

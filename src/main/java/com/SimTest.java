@@ -1,6 +1,5 @@
 package com;
 
-import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.junit.Test;
 
 /**
@@ -12,10 +11,9 @@ public class SimTest {
 
     @Test
     public void test1() {
-        String s = (new Sha256Hash("123456", "123456")).toHex();
 
-        String property = System.getProperty("user.dir");
-        System.out.println(property);
+        System.out.println((1 & 1));
+
     }
 
 }

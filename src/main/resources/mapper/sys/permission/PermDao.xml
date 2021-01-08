@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.modules.sys.admin.dao.PermDao">
+
+	<sql id="page_sql">
+		<where>
+			<if test="dto.permName != null and dto.permName != ''">
+				AND ROLE_NAME = #{dto.permName}
+			</if>
+		</where>
+	</sql>
+
+	<select id="findPage" parameterType="com.modules.sys.admin.model.dto.PermGetDto" resultType="com.modules.sys.admin.model.entity.Perm">
+		select * from ROLE
+		<include refid="page_sql"/>
+		ORDER BY UPDATE_TIME DESC
+		LIMIT ${(dto.pageNum-1)*dto.pageSize},${dto.pageSize};
+	</select>
+
+	<select id="count" parameterType="com.modules.sys.admin.model.dto.PermGetDto" resultType="java.lang.Integer">
+		select count(*) from ROLE
+		<include refid="page_sql"/>
+	</select>
+
+</mapper>

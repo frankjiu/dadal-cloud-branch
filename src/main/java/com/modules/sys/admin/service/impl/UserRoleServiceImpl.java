@@ -36,4 +36,5 @@ public class UserRoleServiceImpl implements UserRoleService {
     public int delete(Long id) throws Exception {
         return userRoleDao.delete(id);
     }
+
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.modules.sys.admin.dao.RoleMenuDao">
+
+	<select id="findMenuByRoleId" parameterType="java.lang.String" resultType="com.modules.sys.admin.model.entity.Menu">
+		SELECT m.* FROM role r
+		LEFT JOIN role_menu rm on r.id = rm.role_id
+		LEFT JOIN menu m ON m.id = rm.menu_id
+		WHERE r.id = #{rid}
+	</select>
+
+	<delete id="deleteByRoleId" parameterType="java.lang.Long">
+		DELETE FROM role_menu WHERE role_id = #{rid}
+	</delete>
+
+	<!-- 批量插入 -->
+	<insert id="save" parameterType="java.util.List">
+		INSERT INTO role_menu(role_id, menu_id)
+		VALUES
+		<foreach collection="roleMenus" item="roleMenu" index="index" separator=",">
+			(
+			#{roleMenu.role_id},
+			#{roleMenu.menu_id}
+			)
+		</foreach>
+	</insert>
+
+</mapper>
