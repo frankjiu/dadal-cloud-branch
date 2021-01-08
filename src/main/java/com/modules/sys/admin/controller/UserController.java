@@ -12,6 +12,7 @@ import com.modules.sys.admin.model.vo.UserVo;
 import com.modules.sys.admin.service.UserRoleService;
 import com.modules.sys.admin.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 @Validated
+@RequestMapping("user/")
 public class UserController extends AbstractController {
 
     @Autowired
@@ -41,8 +43,9 @@ public class UserController extends AbstractController {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    @RequiresPermissions("user:info")
     @Logged(description = "user.findById")
-    @GetMapping("user/{id}")
+    @GetMapping("/{id}")
     public HttpResult findById(@PathVariable Long id) {
         User user = userService.findById(id);
         if (user == null) {
@@ -51,9 +54,9 @@ public class UserController extends AbstractController {
         return HttpResult.success(user);
     }
 
+    @RequiresPermissions("user:info")
     @Logged(description = "user.findPage")
-    // @RequiresPermissions("user:user:page")
-    @PostMapping("user/page")
+    @PostMapping("/findPage")
     public HttpResult findPage(@RequestBody @Valid UserGetDto userGetDto) {
         List<UserVo> userList = userService.findPage(userGetDto);
         int total = userService.count(userGetDto);
@@ -69,14 +72,15 @@ public class UserController extends AbstractController {
         return HttpResult.success(pageModel);
     }
 
+    @RequiresPermissions("user:save")
     @Logged(description = "user.save")
-    @RequestMapping(value = "user", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid UserPostDto dto) throws Exception {
         // 查询登录用户角色. 如果当前用户不是超级管理员(roleId == 0): 不准创建或修改超级管理员信息
-        UserRole currentUserRole = userRoleService.findByUserId(getUserId());
+        /*UserRole currentUserRole = userRoleService.findByUserId(getUserId());
         if (0 != currentUserRole.getRoleId() && 0 == dto.getRoleType()) {
             return HttpResult.fail("You have no permission to operate!");
-        }
+        }*/
         boolean saved = userService.save(dto);
         if (saved) {
             return HttpResult.success(dto);
@@ -84,9 +88,21 @@ public class UserController extends AbstractController {
         return HttpResult.fail("save failed!");
     }
 
+    @RequiresPermissions("user:delete")
     @Logged(description = "user.delete")
-    @DeleteMapping("user/{id}")
+    @DeleteMapping("/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
+        // 根据用户ID查询用户角色
+        UserRole userRole = userRoleService.findByUserId(id);
+        Long optRoleId = null;
+        if (userRole != null) {
+            optRoleId = userRole.getId();
+        }
+        // 不准删除超级管理员
+        UserRole currentUserRole = userRoleService.findByUserId(getUserId());
+        if (0 != currentUserRole.getRoleId() && 0 == optRoleId) {
+            return HttpResult.fail("You can not delete the administrator!");
+        }
         boolean deleted = userService.delete(id);
         if (deleted) {
             return HttpResult.success();
@@ -94,8 +110,9 @@ public class UserController extends AbstractController {
         return HttpResult.fail("delete failed");
     }
 
+    @RequiresPermissions("user:save")
     @Logged(description = "user.changePassword")
-    @PostMapping("changePassword")
+    @PostMapping("/changePassword")
     public HttpResult changePassword(@RequestBody @Valid PasswordDto form) throws Exception {
         String oldPassword = new Sha256Hash(form.getOldPassword(), getUser().getSalt()).toHex();
         String newPassword = new Sha256Hash(form.getNewPassword(), getUser().getSalt()).toHex();

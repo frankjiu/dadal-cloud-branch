@@ -9,4 +9,4 @@ CREATE TABLE `menu` (
     `update_time` bigint(20) DEFAULT NULL COMMENT '更新时间',
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_menu_name` (`menu_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10001 DEFAULT CHARSET=utf8 COMMENT='菜单表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='菜单表';

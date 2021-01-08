@@ -31,7 +31,7 @@ public interface UserService {
 
     int count(UserGetDto dto);
 
-    Set<String> findPermsById(Long id);
+    Set<String> findPermsByUserId(Long id);
 
     User findByUserName(String userName);
 

@@ -39,7 +39,14 @@ public interface MenuDao {
     @Select(" SELECT * FROM menu WHERE PERM = #{permName} ")
     Menu findByPermName(@Param("permName") String permName) throws Exception;
 
-    @Select(" SELECT ID, MENU_NAME menuName, PARENT_ID parentId, URL, ORDER_NUM orderNum FROM menu WHERE PARENT_ID = #{pid} ORDER BY ORDER_NUM ASC ")
+    @Select(" SELECT ID, MENU_NAME menuName, PARENT_ID parentId, URL, ORDER_NUM orderNum FROM menu " +
+            " WHERE PARENT_ID = #{pid} AND ID <> 0 ORDER BY ORDER_NUM ASC ")
     List<Menu> findTreeByPid(@Param("pid") Long pid) throws Exception;
+
+    List<Menu> findMenuByRoleId(@Param("rid") Long rid) throws Exception;
+
+    @Select(" SELECT * FROM menu " +
+            " WHERE ID <> 0 ORDER BY ORDER_NUM ASC ")
+    List<Menu> findAll() throws Exception;
 
 }

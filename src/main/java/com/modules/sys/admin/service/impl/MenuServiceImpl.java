@@ -64,4 +64,14 @@ public class MenuServiceImpl implements MenuService {
         return menuDao.findTreeByPid(pid);
     }
 
+    @Override
+    public List<Menu> findMenuByRoleId(Long rid) throws Exception {
+        return menuDao.findMenuByRoleId(rid);
+    }
+
+    @Override
+    public List<Menu> findAll() throws Exception {
+        return menuDao.findAll();
+    }
+
 }

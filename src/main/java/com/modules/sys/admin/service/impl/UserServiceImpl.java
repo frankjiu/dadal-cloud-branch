@@ -1,5 +1,6 @@
 package com.modules.sys.admin.service.impl;
 
+import com.core.exception.CommonException;
 import com.modules.sys.admin.dao.UserDao;
 import com.modules.sys.admin.dao.UserRoleDao;
 import com.modules.sys.admin.model.dto.UserGetDto;
@@ -12,7 +13,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
 import java.util.Set;
@@ -30,6 +34,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRoleDao userRoleDao;
+
+    @Autowired
+    private DataSourceTransactionManager transactionManager;
 
     @Override
     public User findById(Long id) {
@@ -57,6 +64,7 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(dto, user);
         user.setUpdateTime(System.currentTimeMillis() / 1000);
         int m, n;
+        TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
         if (user.getId() == null) {
             String salt = RandomStringUtils.randomAlphanumeric(20);
             user.setPassWord(new Sha256Hash(user.getPassWord(), salt).toHex());
@@ -80,15 +88,24 @@ public class UserServiceImpl implements UserService {
         dto.setSalt(null);
         dto.setId(user.getId());
         if (m == 0 || n == 0) {
+            transactionManager.rollback(status);
             return false;
         }
+        transactionManager.commit(status);
         return true;
     }
 
     @Override
     public boolean delete(Long id) throws Exception {
+        User user = userDao.findById(id);
+        if (user == null) {
+            throw new CommonException("record not found!");
+        }
         int m = userDao.delete(id);
         UserRole userRole = userRoleDao.findByUserId(id);
+        if (userRole == null) {
+            throw new CommonException("Current user didn't config any role!");
+        }
         int n = userRoleDao.delete(userRole.getId());
         if (m == 1 && n == 1) {
             return true;
@@ -107,8 +124,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Set<String> findPermsById(Long id) {
-        return userDao.findPermsById(id);
+    public Set<String> findPermsByUserId(Long id) {
+        return userDao.findPermsByUserId(id);
     }
 
     @Override

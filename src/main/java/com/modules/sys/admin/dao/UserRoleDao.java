@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.*;
 public interface UserRoleDao {
 
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    @Insert("INSERT INTO user_role(USER_ID, ROLE_ID) values(#{userRole.userId}, #{userRole.roleId} ")
+    @Insert(" INSERT INTO user_role(USER_ID, ROLE_ID) values(#{userRole.userId}, #{userRole.roleId}) ")
     int insert(@Param("userRole") UserRole userRole) throws Exception;
 
     @Update(" UPDATE user_role SET ROLE_ID = #{userRole.roleId} WHERE ID = #{userRole.id} ")

@@ -9,6 +9,7 @@ import com.modules.sys.admin.model.dto.PermPostDto;
 import com.modules.sys.admin.model.entity.Perm;
 import com.modules.sys.admin.service.PermService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -26,13 +27,15 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 @Validated
+@RequestMapping("/perm")
 public class PermController {
 
     @Autowired
     private PermService permService;
 
+    @RequiresPermissions("perm:info")
     @Logged(description = "perm.findById")
-    @GetMapping("perm/{id}")
+    @GetMapping("/{id}")
     public HttpResult findById(@PathVariable Long id) throws Exception {
         Perm perm = permService.findById(id);
         if (perm == null) {
@@ -41,16 +44,18 @@ public class PermController {
         return HttpResult.success(perm);
     }
 
+    @RequiresPermissions("perm:info")
     @Logged(description = "perm.findAll")
-    @PostMapping("perm/findAll")
+    @PostMapping("/findAll")
     public HttpResult findAll() throws Exception {
         List<Perm> permList = permService.findAll();
         List<String> nameList = permList.stream().map(e -> e.getPermName()).collect(Collectors.toList());
         return HttpResult.success(nameList);
     }
 
+    @RequiresPermissions("perm:info")
     @Logged(description = "perm.findPage")
-    @PostMapping("perm/page")
+    @PostMapping("/page")
     public HttpResult findPage(@RequestBody @Valid PermGetDto dto) throws Exception {
         List<Perm> permList = permService.findPage(dto);
         int total = permService.count(dto);
@@ -60,8 +65,9 @@ public class PermController {
         return HttpResult.success(pageModel);
     }
 
+    @RequiresPermissions("perm:save")
     @Logged(description = "perm.save")
-    @RequestMapping(value = "perm", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid PermPostDto dto) throws Exception {
         Perm perm = new Perm();
         BeanUtils.copyProperties(dto, perm);
@@ -73,8 +79,9 @@ public class PermController {
         return HttpResult.fail();
     }
 
+    @RequiresPermissions("perm:delete")
     @Logged(description = "perm.delete")
-    @DeleteMapping("perm/{id}")
+    @DeleteMapping("/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Perm perm = permService.findById(id);
         if (perm == null) {

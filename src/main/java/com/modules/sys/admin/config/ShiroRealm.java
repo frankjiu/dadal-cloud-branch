@@ -61,7 +61,7 @@ public class ShiroRealm extends AuthorizingRealm {
         // 获取当前登录用户
         User user = (User)SecurityUtils.getSubject().getPrincipal();
         // 根据userId获取用户权限perms, 如"user:add","user:delete"等
-        Set<String> menu_ids_perms = userSerivce.findPermsById(user.getId());
+        Set<String> menu_ids_perms = userSerivce.findPermsByUserId(user.getId());
         // 资源授权
         authorizationInfo.setStringPermissions(menu_ids_perms);
         return authorizationInfo;

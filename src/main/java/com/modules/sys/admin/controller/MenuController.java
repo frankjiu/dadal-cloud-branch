@@ -8,6 +8,7 @@ import com.modules.sys.admin.model.dto.MenuPostDto;
 import com.modules.sys.admin.model.entity.Menu;
 import com.modules.sys.admin.service.MenuService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Description: 菜单管理
@@ -24,13 +26,15 @@ import java.util.List;
 @RestController
 @Slf4j
 @Validated
+@RequestMapping("/menu")
 public class MenuController {
 
     @Autowired
     private MenuService menuService;
 
+    @RequiresPermissions("menu:info")
     @Logged(description = "menu.findById")
-    @GetMapping("menu/{id}")
+    @GetMapping("/{id}")
     public HttpResult findById(@PathVariable Long id) throws Exception {
         Menu menu = menuService.findById(id);
         if (menu == null) {
@@ -39,8 +43,17 @@ public class MenuController {
         return HttpResult.success(menu);
     }
 
+    @RequiresPermissions("menu:info")
+    @Logged(description = "menu.findAllMenuId")
+    @GetMapping
+    public HttpResult findAllMenuId() throws Exception {
+        List<Long> menuIds = menuService.findAll().stream().map(e -> e.getId()).collect(Collectors.toList());
+        return HttpResult.success(menuIds);
+    }
+
+    @RequiresPermissions("menu:info")
     @Logged(description = "menu.findPage")
-    @PostMapping("menu/page")
+    @PostMapping("/page")
     public HttpResult findPage(@RequestBody @Valid MenuGetDto dto) throws Exception {
         List<Menu> menuList = menuService.findPage(dto);
         int total = menuService.count(dto);
@@ -50,15 +63,17 @@ public class MenuController {
         return HttpResult.success(pageModel);
     }
 
+    @RequiresPermissions("menu:info")
     @Logged(description = "menu.findTreeByPid")
-    @PostMapping("menu/tree/{pid}")
+    @PostMapping("/tree/{pid}")
     public HttpResult findTreeByPid(@PathVariable Long pid) throws Exception {
         List<Menu> menuTree = menuService.findTreeByPid(pid);
         return HttpResult.success(menuTree);
     }
 
+    @RequiresPermissions("menu:save")
     @Logged(description = "menu.save")
-    @RequestMapping(value = "menu", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid MenuPostDto dto) throws Exception {
         Menu menu = new Menu();
         BeanUtils.copyProperties(dto, menu);
@@ -70,8 +85,9 @@ public class MenuController {
         return HttpResult.fail();
     }
 
+    @RequiresPermissions("menu:delete")
     @Logged(description = "menu.delete")
-    @DeleteMapping("menu/{id}")
+    @DeleteMapping("/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Menu menu = menuService.findById(id);
         if (menu == null) {

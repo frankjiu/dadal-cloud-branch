@@ -1,7 +1,6 @@
 package com.modules.sys.admin.service.impl;
 
 import com.modules.sys.admin.dao.RoleMenuDao;
-import com.modules.sys.admin.model.entity.Menu;
 import com.modules.sys.admin.model.entity.RoleMenu;
 import com.modules.sys.admin.service.RoleMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,6 @@ public class RoleMenuServiceImpl implements RoleMenuService {
 
     @Autowired
     private RoleMenuDao roleMenuDao;
-
-    @Override
-    public List<Menu> findMenuByRoleId(Long rid) throws Exception {
-        return roleMenuDao.findMenuByRoleId(rid);
-    }
 
     @Override
     public int deleteByRoleId(Long rid) throws Exception {

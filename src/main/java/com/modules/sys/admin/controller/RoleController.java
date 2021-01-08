@@ -8,6 +8,7 @@ import com.modules.sys.admin.model.dto.RolePostDto;
 import com.modules.sys.admin.model.entity.Role;
 import com.modules.sys.admin.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -24,13 +25,15 @@ import java.util.List;
 @RestController
 @Slf4j
 @Validated
+@RequestMapping("/role")
 public class RoleController {
 
     @Autowired
     private RoleService roleService;
 
+    @RequiresPermissions("role:info")
     @Logged(description = "role.findById")
-    @GetMapping("role/{id}")
+    @GetMapping("/{id}")
     public HttpResult findById(@PathVariable Long id) throws Exception {
         Role role = roleService.findById(id);
         if (role == null) {
@@ -39,8 +42,9 @@ public class RoleController {
         return HttpResult.success(role);
     }
 
+    @RequiresPermissions("role:info")
     @Logged(description = "role.findPage")
-    @PostMapping("role/page")
+    @PostMapping("/page")
     public HttpResult findPage(@RequestBody @Valid RoleGetDto dto) throws Exception {
         List<Role> roleList = roleService.findPage(dto);
         int total = roleService.count(dto);
@@ -50,8 +54,9 @@ public class RoleController {
         return HttpResult.success(pageModel);
     }
 
+    @RequiresPermissions("role:save")
     @Logged(description = "role.save")
-    @RequestMapping(value = "role", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid RolePostDto dto) throws Exception {
         Role role = new Role();
         BeanUtils.copyProperties(dto, role);
@@ -63,8 +68,9 @@ public class RoleController {
         return HttpResult.fail();
     }
 
+    @RequiresPermissions("role:delete")
     @Logged(description = "role.delete")
-    @DeleteMapping("role/{id}")
+    @DeleteMapping("/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Role role = roleService.findById(id);
         if (role == null) {

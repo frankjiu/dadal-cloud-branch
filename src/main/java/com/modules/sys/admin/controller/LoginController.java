@@ -76,11 +76,11 @@ public class LoginController {
     public String loginUser(@RequestBody LoginDto loginDto, HttpServletRequest request, Model model, HttpSession session) {
         //校验验证码
         //session中的验证码
-        String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(CaptchaController.KEY_CAPTCHA);
+        /*String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(CaptchaController.KEY_CAPTCHA);
         if (null == loginDto.getCaptcha() || !loginDto.getCaptcha().equalsIgnoreCase(sessionCaptcha)) {
             model.addAttribute("msg","验证码错误!");
             return "login";
-        }
+        }*/
 
         if (loginDto.getRemeberMe() == null) {
             loginDto.setRemeberMe(false);

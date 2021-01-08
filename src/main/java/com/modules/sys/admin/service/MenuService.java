@@ -23,4 +23,9 @@ public interface MenuService {
     boolean delete(Long id) throws Exception;
 
     List<Menu> findTreeByPid(Long pid) throws Exception;
+
+    List<Menu> findMenuByRoleId(Long rid) throws Exception;
+
+    List<Menu> findAll() throws Exception;
+
 }
