@@ -1,6 +1,6 @@
 package com.modules.sys.admin.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.modules.sys.admin.model.dto.RoleMenuPostDto;
 import com.modules.sys.admin.model.entity.Menu;
@@ -34,7 +34,7 @@ public class RoleMenuController {
      * @return
      * @throws Exception
      */
-    @SysLogged(description = "roleMenu.findMenuByRoleId")
+    @Logged(description = "roleMenu.findMenuByRoleId")
     @GetMapping("roleMenu/{id}")
     public HttpResult findMenuByRoleId(@PathVariable("id") Long rid) throws Exception {
         List<Menu> menus = roleMenuService.findMenuByRoleId(rid);
@@ -47,7 +47,7 @@ public class RoleMenuController {
      * @return
      * @throws Exception
      */
-    @SysLogged(description = "roleMenu.save")
+    @Logged(description = "roleMenu.save")
     @RequestMapping(value = "roleMenu", method = {RequestMethod.POST})
     public HttpResult save(@RequestBody @Valid RoleMenuPostDto dto) throws Exception {
         // 删除角色原有权限

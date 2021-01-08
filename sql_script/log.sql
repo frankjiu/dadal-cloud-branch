@@ -1,4 +1,4 @@
-CREATE TABLE `sys_log` (
+CREATE TABLE `log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(50) DEFAULT NULL COMMENT '用户名',
   `description` varchar(50) DEFAULT NULL COMMENT '操作描述',
@@ -10,4 +10,4 @@ CREATE TABLE `sys_log` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `version` varchar(10) DEFAULT NULL COMMENT '版本信息',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=10021 DEFAULT CHARSET=utf8 COMMENT='系统日志';

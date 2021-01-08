@@ -18,7 +18,7 @@ import java.lang.annotation.*;
 @Inherited
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface SysLogged {
+public @interface Logged {
 
     /**
      * 描述

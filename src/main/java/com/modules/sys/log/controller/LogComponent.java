@@ -1,10 +1,10 @@
-package com.modules.sys.syslog.controller;
+package com.modules.sys.log.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.utils.IPUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.modules.sys.syslog.model.entity.SysLog;
-import com.modules.sys.syslog.service.SysLogService;
+import com.modules.sys.log.model.entity.Log;
+import com.modules.sys.log.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -29,10 +29,10 @@ import java.util.Date;
 @Aspect
 @Component
 @Slf4j
-public class SysLogComponent {
+public class LogComponent {
 
     @Autowired
-    private SysLogService sysLogService;
+    private LogService logService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -40,7 +40,7 @@ public class SysLogComponent {
     @Value("${app.version}")
     private String version;
 
-    @Pointcut("@annotation(com.core.anotation.SysLogged)")
+    @Pointcut("@annotation(com.core.anotation.Logged)")
     public void logPointCut() {
     }
 
@@ -55,26 +55,26 @@ public class SysLogComponent {
     }
 
     private void save(ProceedingJoinPoint joinPoint, long executeTime) throws Exception {
-        SysLog sysLog = new SysLog();
+        Log newLog = new Log();
 
         // 注解上操作描述
         Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
-        SysLogged annotation = method.getAnnotation(SysLogged.class);
+        Logged annotation = method.getAnnotation(Logged.class);
         if (annotation != null) {
-            sysLog.setDescription(annotation.description());
+            newLog.setDescription(annotation.description());
         }
 
         // 请求方法
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
-        sysLog.setMethod(className + "." + methodName + "()");
+        newLog.setMethod(className + "." + methodName + "()");
 
         // 请求参数
         Object[] args = joinPoint.getArgs();
         if (ArrayUtils.isNotEmpty(args)) {
             try {
                 String params = objectMapper.writeValueAsString(args[0]);
-                sysLog.setParams(params);
+                newLog.setParams(params);
             } catch (Exception e) {
                 log.info(e.getMessage(), e);
             }
@@ -82,23 +82,23 @@ public class SysLogComponent {
 
         // 获取request, 设置ip,url
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        sysLog.setIp(IPUtils.getIpAddr(request));
+        newLog.setIp(IPUtils.getIpAddr(request));
         String url = request.getRequestURI();
         if (StringUtils.startsWith(url, "//")) {
-            url = StringUtils.substring(sysLog.getUrl(), 1);
+            url = StringUtils.substring(newLog.getUrl(), 1);
         }
-        sysLog.setUrl(url);
+        newLog.setUrl(url);
 
         // userName
         //String userName = ((RedisSysUser) SecurityUtils.getSubject().getPrincipal()).getSysUser().getUserName();
         //sysLog.setUserName(userName);
 
-        sysLog.setCreateTime(new Date());
-        sysLog.setTime(executeTime);
-        sysLog.setVersion(version);
+        newLog.setCreateTime(new Date());
+        newLog.setTime(executeTime);
+        newLog.setVersion(version);
 
         // 记录系统日志
-        sysLogService.save(sysLog);
+        logService.save(newLog);
     }
 
 }

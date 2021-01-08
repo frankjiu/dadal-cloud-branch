@@ -1,6 +1,6 @@
 package com.modules.sys.admin.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.modules.sys.admin.model.dto.RoleGetDto;
@@ -29,7 +29,7 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @SysLogged(description = "role.findById")
+    @Logged(description = "role.findById")
     @GetMapping("role/{id}")
     public HttpResult findById(@PathVariable Long id) throws Exception {
         Role role = roleService.findById(id);
@@ -39,7 +39,7 @@ public class RoleController {
         return HttpResult.success(role);
     }
 
-    @SysLogged(description = "role.findPage")
+    @Logged(description = "role.findPage")
     @PostMapping("role/page")
     public HttpResult findPage(@RequestBody @Valid RoleGetDto dto) throws Exception {
         List<Role> roleList = roleService.findPage(dto);
@@ -50,7 +50,7 @@ public class RoleController {
         return HttpResult.success(pageModel);
     }
 
-    @SysLogged(description = "role.save")
+    @Logged(description = "role.save")
     @RequestMapping(value = "role", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid RolePostDto dto) throws Exception {
         Role role = new Role();
@@ -63,7 +63,7 @@ public class RoleController {
         return HttpResult.fail();
     }
 
-    @SysLogged(description = "role.delete")
+    @Logged(description = "role.delete")
     @DeleteMapping("role/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Role role = roleService.findById(id);

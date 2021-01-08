@@ -1,4 +1,4 @@
-package com.modules.sys.syslog.model.dto;
+package com.modules.sys.log.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 系统日志查询条件
  */
 @Data
-public class SysLogDto {
+public class LogDto {
 
     private String userName;                // 用户名
     private String description;             // 操作描述

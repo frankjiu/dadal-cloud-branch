@@ -1,6 +1,6 @@
 package com.modules.sys.admin.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.modules.sys.admin.model.dto.PermGetDto;
@@ -30,7 +30,7 @@ public class PermController {
     @Autowired
     private PermService permService;
 
-    @SysLogged(description = "perm.findById")
+    @Logged(description = "perm.findById")
     @GetMapping("perm/{id}")
     public HttpResult findById(@PathVariable Long id) throws Exception {
         Perm perm = permService.findById(id);
@@ -40,7 +40,7 @@ public class PermController {
         return HttpResult.success(perm);
     }
 
-    @SysLogged(description = "perm.findAll")
+    @Logged(description = "perm.findAll")
     @PostMapping("perm/findAll")
     public HttpResult findAll() throws Exception {
         List<Perm> permList = permService.findAll();
@@ -48,7 +48,7 @@ public class PermController {
         return HttpResult.success(nameList);
     }
 
-    @SysLogged(description = "perm.findPage")
+    @Logged(description = "perm.findPage")
     @PostMapping("perm/page")
     public HttpResult findPage(@RequestBody @Valid PermGetDto dto) throws Exception {
         List<Perm> permList = permService.findPage(dto);
@@ -59,7 +59,7 @@ public class PermController {
         return HttpResult.success(pageModel);
     }
 
-    @SysLogged(description = "perm.save")
+    @Logged(description = "perm.save")
     @RequestMapping(value = "perm", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid PermPostDto dto) throws Exception {
         Perm perm = new Perm();
@@ -72,7 +72,7 @@ public class PermController {
         return HttpResult.fail();
     }
 
-    @SysLogged(description = "perm.delete")
+    @Logged(description = "perm.delete")
     @DeleteMapping("perm/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         Perm perm = permService.findById(id);

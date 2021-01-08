@@ -1,11 +1,11 @@
-package com.modules.sys.syslog.controller;
+package com.modules.sys.log.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
-import com.modules.sys.syslog.model.dto.SysLogDto;
-import com.modules.sys.syslog.model.entity.SysLog;
-import com.modules.sys.syslog.service.SysLogService;
+import com.modules.sys.log.model.dto.LogDto;
+import com.modules.sys.log.model.entity.Log;
+import com.modules.sys.log.service.LogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -25,18 +25,18 @@ import java.util.List;
 @RestController
 @Slf4j
 @Validated
-public class SysLogController {
+public class LogController {
 
     @Autowired
-    SysLogService sysLogService;
+    LogService logService;
 
-    @SysLogged(description = "syslog query")
+    @Logged(description = "log.page")
     // @RequiresPermissions("syslog:syslog:page")
-    @PostMapping("syslog/page")
-    public HttpResult findPage(@RequestBody @Valid SysLogDto sysLogDto) {
-        List<SysLog> sysLogList = sysLogService.findPage(sysLogDto);
-        int total = sysLogService.count(sysLogDto);
-        PageModel<SysLog> pageModel = new PageModel<>();
+    @PostMapping("log/page")
+    public HttpResult findPage(@RequestBody @Valid LogDto sysLogDto) throws Exception {
+        List<Log> sysLogList = logService.findPage(sysLogDto);
+        int total = logService.count(sysLogDto);
+        PageModel<Log> pageModel = new PageModel<>();
         pageModel.setData(sysLogList);
         pageModel.setTotalCount(total);
         return HttpResult.success(pageModel);

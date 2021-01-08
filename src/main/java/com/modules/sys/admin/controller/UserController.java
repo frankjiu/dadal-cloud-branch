@@ -1,6 +1,6 @@
 package com.modules.sys.admin.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.modules.sys.admin.model.dto.PasswordDto;
@@ -41,7 +41,7 @@ public class UserController extends AbstractController {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
-    @SysLogged(description = "user.findById")
+    @Logged(description = "user.findById")
     @GetMapping("user/{id}")
     public HttpResult findById(@PathVariable Long id) {
         User user = userService.findById(id);
@@ -51,7 +51,7 @@ public class UserController extends AbstractController {
         return HttpResult.success(user);
     }
 
-    @SysLogged(description = "user.findPage")
+    @Logged(description = "user.findPage")
     // @RequiresPermissions("user:user:page")
     @PostMapping("user/page")
     public HttpResult findPage(@RequestBody @Valid UserGetDto userGetDto) {
@@ -69,7 +69,7 @@ public class UserController extends AbstractController {
         return HttpResult.success(pageModel);
     }
 
-    @SysLogged(description = "user.save")
+    @Logged(description = "user.save")
     @RequestMapping(value = "user", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid UserPostDto dto) throws Exception {
         // 查询登录用户角色. 如果当前用户不是超级管理员(roleId == 0): 不准创建或修改超级管理员信息
@@ -84,7 +84,7 @@ public class UserController extends AbstractController {
         return HttpResult.fail("save failed!");
     }
 
-    @SysLogged(description = "user.delete")
+    @Logged(description = "user.delete")
     @DeleteMapping("user/{id}")
     public HttpResult delete(@PathVariable Long id) throws Exception {
         boolean deleted = userService.delete(id);
@@ -94,7 +94,7 @@ public class UserController extends AbstractController {
         return HttpResult.fail("delete failed");
     }
 
-    @SysLogged(description = "user.changePassword")
+    @Logged(description = "user.changePassword")
     @PostMapping("changePassword")
     public HttpResult changePassword(@RequestBody @Valid PasswordDto form) throws Exception {
         String oldPassword = new Sha256Hash(form.getOldPassword(), getUser().getSalt()).toHex();

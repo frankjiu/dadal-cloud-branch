@@ -9,7 +9,7 @@
 
 package com.modules.base.controller;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
@@ -125,7 +125,7 @@ public class DemoController extends AbstractController {
         return HttpResult.success(demoVoList);
     }
 
-    @SysLogged(description = "Page query")
+    @Logged(description = "Page query")
     // @RequiresPermissions("demo:demo:page")
     @PostMapping("demo/page")
     public HttpResult findPage(@RequestBody @Valid DemoGetDto demoGetDto) {

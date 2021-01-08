@@ -1,6 +1,6 @@
 package com.core.anotation.annotation_eg;
 
-import com.core.anotation.SysLogged;
+import com.core.anotation.Logged;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.List;
 public class AnotationUses {
 
     @Override
-    @SysLogged(operationType = "保存", operationModule = "系统模块", description = "用户系统操作信息", remark = "无")
+    @Logged(operationType = "保存", operationModule = "系统模块", description = "用户系统操作信息", remark = "无")
     public String toString() {
         return "Overriden toString method";
     }

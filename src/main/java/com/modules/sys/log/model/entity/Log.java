@@ -1,4 +1,4 @@
-package com.modules.sys.syslog.model.entity;
+package com.modules.sys.log.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.util.Date;
  * 系统日志
  */
 @Data
-public class SysLog implements Serializable {
+public class Log implements Serializable {
 
     private Integer id;                     // 主键
     private String userName;                // 用户名
