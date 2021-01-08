@@ -73,7 +73,7 @@ public class MenuController {
 
     @RequiresPermissions("menu:save")
     @Logged(description = "menu.save")
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid MenuPostDto dto) throws Exception {
         Menu menu = new Menu();
         BeanUtils.copyProperties(dto, menu);

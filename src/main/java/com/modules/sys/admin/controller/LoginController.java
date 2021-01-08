@@ -1,5 +1,6 @@
 package com.modules.sys.admin.controller;
 
+import com.core.exception.CommonException;
 import com.modules.sys.admin.model.dto.LoginDto;
 import com.modules.sys.admin.model.entity.User;
 import com.modules.sys.admin.service.UserService;
@@ -86,7 +87,11 @@ public class LoginController {
             loginDto.setRemeberMe(false);
         }
         // 查询当前登录用户的盐
-        String salt = userService.findByUserName(loginDto.getUserName()).getSalt();
+        User loginUserInfo = userService.findByUserName(loginDto.getUserName());
+        if (loginUserInfo == null) {
+            throw new CommonException("User name does not exist!");
+        }
+        String salt = loginUserInfo.getSalt();
         // 密码加密
         loginDto.setPassWord(new Sha256Hash(loginDto.getPassWord(), salt).toHex());
         // 创建token

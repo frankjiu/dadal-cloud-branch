@@ -47,12 +47,6 @@ public class RoleMenuController {
     @Logged(description = "permission.findMenuByRoleId")
     @GetMapping("/{id}")
     public HttpResult findMenuByRoleId(@PathVariable("id") Long rid) throws Exception {
-        // 超级管理员拥有全部权限
-        if (0 == rid) {
-            List<Menu> menus = menuService.findAll();
-            List<String> perms = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
-            return HttpResult.success(perms);
-        }
         List<Menu> menus = menuService.findMenuByRoleId(rid);
         menus.removeAll(Collections.singleton(null));
         if (CollectionUtils.isEmpty(menus)) {

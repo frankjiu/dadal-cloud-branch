@@ -67,7 +67,7 @@ public class PermController {
 
     @RequiresPermissions("perm:save")
     @Logged(description = "perm.save")
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid PermPostDto dto) throws Exception {
         Perm perm = new Perm();
         BeanUtils.copyProperties(dto, perm);

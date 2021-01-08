@@ -1,7 +1,13 @@
 package com.modules.sys.admin.config;
 
+import com.modules.sys.admin.model.entity.Menu;
 import com.modules.sys.admin.model.entity.User;
+import com.modules.sys.admin.model.entity.UserRole;
+import com.modules.sys.admin.service.MenuService;
+import com.modules.sys.admin.service.RoleService;
+import com.modules.sys.admin.service.UserRoleService;
 import com.modules.sys.admin.service.UserService;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -10,8 +16,12 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -22,6 +32,12 @@ public class ShiroRealm extends AuthorizingRealm {
 
     @Autowired
     private UserService userSerivce;
+
+    @Autowired
+    private MenuService menuSerivce;
+
+    @Autowired
+    private UserRoleService userRoleSerivce;
 
     /**
      * 认证
@@ -54,16 +70,21 @@ public class ShiroRealm extends AuthorizingRealm {
      * add添加单个权限, set添加一组权限;
      * 在shiro配置中添加filterChainDefinitionMap.put("/add", "perms[user:add]"); 说明访问/add需要有"user:add"权限.
      */
+    @SneakyThrows
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
         log.info(">>>>>>>>>>>>>>>开始授权>>>>>>>>>>>>..");
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         // 获取当前登录用户
         User user = (User)SecurityUtils.getSubject().getPrincipal();
-        // 根据userId获取用户权限perms, 如"user:add","user:delete"等
-        Set<String> menu_ids_perms = userSerivce.findPermsByUserId(user.getId());
+        // 获取登录用户的角色
+        UserRole userRole = userRoleSerivce.findByUserId(user.getId());
+        // 根据userId获取用户权限perms, 如"user:add","user:delete"等; 如果用户为超管角色, 则查询所有菜单.
+        List<Menu> menus = menuSerivce.findMenuByRoleId(userRole.getRoleId());
+        List<String> permList = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
+        Set<String> perms = CollectionUtils.isEmpty(permList) ? new HashSet<>() : new HashSet<>(permList);
         // 资源授权
-        authorizationInfo.setStringPermissions(menu_ids_perms);
+        authorizationInfo.setStringPermissions(perms);
         return authorizationInfo;
     }
 

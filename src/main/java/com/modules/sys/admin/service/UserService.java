@@ -6,7 +6,6 @@ import com.modules.sys.admin.model.entity.User;
 import com.modules.sys.admin.model.vo.UserVo;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @Description:
@@ -31,9 +30,8 @@ public interface UserService {
 
     int count(UserGetDto dto);
 
-    Set<String> findPermsByUserId(Long id);
-
     User findByUserName(String userName);
 
     boolean changePassword(Long userId, String oldPassword, String newPassword) throws Exception;
+
 }

@@ -19,7 +19,6 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @Description:
@@ -121,11 +120,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public int count(UserGetDto dto) {
         return userDao.count(dto);
-    }
-
-    @Override
-    public Set<String> findPermsByUserId(Long id) {
-        return userDao.findPermsByUserId(id);
     }
 
     @Override

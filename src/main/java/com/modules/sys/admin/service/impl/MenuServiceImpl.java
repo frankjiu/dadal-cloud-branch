@@ -66,6 +66,10 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public List<Menu> findMenuByRoleId(Long rid) throws Exception {
+        // 超级管理员拥有全部权限
+        if (0 == rid) {
+            return menuDao.findAll();
+        }
         return menuDao.findMenuByRoleId(rid);
     }
 

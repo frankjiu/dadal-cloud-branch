@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 @Validated
-@RequestMapping("user/")
+@RequestMapping("/user")
 public class UserController extends AbstractController {
 
     @Autowired
@@ -56,7 +56,7 @@ public class UserController extends AbstractController {
 
     @RequiresPermissions("user:info")
     @Logged(description = "user.findPage")
-    @PostMapping("/findPage")
+    @PostMapping("/page")
     public HttpResult findPage(@RequestBody @Valid UserGetDto userGetDto) {
         List<UserVo> userList = userService.findPage(userGetDto);
         int total = userService.count(userGetDto);
@@ -74,7 +74,7 @@ public class UserController extends AbstractController {
 
     @RequiresPermissions("user:save")
     @Logged(description = "user.save")
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid UserPostDto dto) throws Exception {
         // 查询登录用户角色. 如果当前用户不是超级管理员(roleId == 0): 不准创建或修改超级管理员信息
         /*UserRole currentUserRole = userRoleService.findByUserId(getUserId());

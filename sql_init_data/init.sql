@@ -10,28 +10,9 @@ INSERT INTO `dadal`.`role`(`id`, `role_name`, `remark`, `update_time`) VALUES (1
 INSERT INTO `dadal`.`role`(`id`, `role_name`, `remark`, `update_time`) VALUES (2, 'FREE', '普通用户', 1610086969);
 
 #role_menu
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10010, 0, 1);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10011, 0, 2);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10012, 0, 3);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10013, 0, 4);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10014, 0, 5);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10015, 0, 6);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10016, 0, 8);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10017, 0, 9);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10018, 0, 10);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10019, 0, 11);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10020, 0, 12);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10021, 0, 13);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10022, 0, 14);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10023, 0, 15);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10024, 0, 16);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10025, 0, 17);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10026, 0, 18);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10027, 0, 19);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10028, 0, 20);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10029, 0, 21);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10030, 0, 22);
-INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10031, 0, 23);
+INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10010, 1, 1);
+INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10011, 1, 2);
+INSERT INTO `dadal`.`role_menu`(`id`, `role_id`, `menu_id`) VALUES (10012, 1, 3);
 
 #menu
 INSERT INTO `dadal`.`menu`(`id`, `parent_id`, `type`, `menu_name`, `url`, `perm`, `order_num`, `update_time`) VALUES (0, 0, 0, 'root', '/', '', 0, 1610016700);

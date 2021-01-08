@@ -6,7 +6,6 @@ import com.modules.sys.admin.model.vo.UserVo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @Description:
@@ -44,14 +43,6 @@ public interface UserDao {
     List<UserVo> findPage(@Param("dto") UserGetDto dto);
 
     int count(@Param("dto") UserGetDto dto);
-
-    @Select(" SELECT m.perm FROM `user` u " +
-            "INNER JOIN user_role ur ON u.id = ur.user_id" +
-            "INNER JOIN role r ON r.id = ur.role_id" +
-            "LEFT JOIN role_menu rm ON r.id = rm.role_id" +
-            "LEFT JOIN menu m ON m.id = rm.menu_id" +
-            "WHERE u.id = #{id} ")
-    Set<String> findPermsByUserId(@Param("id") Long id);
 
     @Select(" SELECT * FROM user WHERE USER_NAME = #{userName} ")
     User findByUserName(@Param("userName") String userName);

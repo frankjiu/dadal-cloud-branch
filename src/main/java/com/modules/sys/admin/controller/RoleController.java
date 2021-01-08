@@ -56,7 +56,7 @@ public class RoleController {
 
     @RequiresPermissions("role:save")
     @Logged(description = "role.save")
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "", method = {RequestMethod.POST, RequestMethod.PUT})
     public HttpResult save(@RequestBody @Valid RolePostDto dto) throws Exception {
         Role role = new Role();
         BeanUtils.copyProperties(dto, role);
