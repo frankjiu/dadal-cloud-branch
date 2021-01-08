@@ -1,0 +1,1 @@
+INSERT INTO `dadal`.`user`(`id`, `user_name`, `pass_word`, `salt`, `email`, `mobile`, `status`, `update_time`) VALUES (1, 'frank', 'ab27c9ce78268b5c2baf37560354f178c25c0d36676fe164c02db027f4662b7c', 'YZm8bQRk9BsVqmrfUmzQ', '2309094456@qq.com', '19988558998', 1, 1609384119);
