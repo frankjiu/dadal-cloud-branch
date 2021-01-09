@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Description:
@@ -67,10 +69,21 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<Menu> findMenuByRoleId(Long rid) throws Exception {
         // 超级管理员拥有全部权限
+        List<Menu> list;
         if (0 == rid) {
-            return menuDao.findAll();
+            list = menuDao.findAll();
+        } else {
+            list = menuDao.findMenuByRoleId(rid);
         }
-        return menuDao.findMenuByRoleId(rid);
+        list.removeAll(Collections.singleton(null));
+        return list;
+    }
+
+    @Override
+    public List<String> findPermsByRoleId(Long rid) throws Exception {
+        List<Menu> menus = findMenuByRoleId(rid);
+        List<String> perms = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
+        return perms;
     }
 
     @Override

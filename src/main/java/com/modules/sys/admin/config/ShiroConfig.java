@@ -44,12 +44,14 @@ public class ShiroConfig {
 		filterMap.put("/js/**", "anon");
 		filterMap.put("/css/**", "anon");
 		filterMap.put("/img/**", "anon");
+
 		//其它资源都需要通过authc认证才能进行访问; user表示通过认证和记住我可以访问
 		//filterMap.put("/**", "authc");
 		//filterMap.put("/**", "user");
+
 		//放行资源
-		filterMap.put("/Captcha.jpg","anon");
 		filterMap.put("/login", "anon");
+		filterMap.put("/random/code","anon");
 		filterMap.put("/import2", "anon");
 
 		//授权过滤
@@ -69,7 +71,6 @@ public class ShiroConfig {
 		//设置自定义realm
 		securityManager.setRealm(shiroRealm);
 		securityManager.setRememberMeManager(rememberMeManager());
-
 		return securityManager;
 	}
 	
@@ -128,5 +129,6 @@ public class ShiroConfig {
 		formAuthenticationFilter.setRememberMeParam("rememberMe");
 		return formAuthenticationFilter;
 	}
+
 
 }

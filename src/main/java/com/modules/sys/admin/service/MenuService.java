@@ -26,6 +26,8 @@ public interface MenuService {
 
     List<Menu> findMenuByRoleId(Long rid) throws Exception;
 
+    List<String> findPermsByRoleId(Long rid) throws Exception;
+
     List<Menu> findAll() throws Exception;
 
 }

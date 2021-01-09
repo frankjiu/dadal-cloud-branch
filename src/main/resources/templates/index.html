@@ -7,9 +7,9 @@
     <title>Insert title here</title>
 </head>
 <body>
-<h1 th:text="'欢迎' + ${user.userName} + '光临!请选择你的操作'"></h1><br/>
+<h1 th:text="'欢迎' + ${user.getUserName()} + '光临!请选择你的操作'"></h1><br/>
 <ul>
-    <h1 th:if="${msg != null }" th:text="${msg}" style="color: red"></h1>
+    <!--<h1 th:if="${msg != null }" th:text="${msg}" style="color: red"></h1>-->
 
     <shiro:hasPermission name="user:save"><a href="/userInfo/add">点击添加固定用户信息(后台写死,方便测试)</a></shiro:hasPermission>
     <br/>
@@ -38,7 +38,7 @@
     <shiro:principal type="java.lang.String"/>
     <br/>
     <!-- 相当于((User)Subject.getPrincipals()).getUsername() -->
-    <shiro:principal property="userName"/>
+    <!--<shiro:principal property="getUser.getUserName()"/>-->
     <br/>
     <!-- 如果当前Subject有角色将显示body体内容 name="角色名" -->
     <shiro:hasRole name="admin">这是admin角色</shiro:hasRole>
@@ -50,16 +50,16 @@
     <shiro:lacksRole name="admin">如果不是admin角色,显示内容</shiro:lacksRole>
     <br/>
     <!-- 如果当前Subject有权限将显示body体内容 name="权限名" -->
-    <shiro:hasPermission name="userInfo:add">用户拥有添加权限</shiro:hasPermission>
+    <shiro:hasPermission name="user:save">用户拥有添加权限</shiro:hasPermission>
     <br/>
     <!-- 用户同时拥有以下两种权限,显示内容 -->
-    <shiro:hasAllPermissions name="userInfo:add,userInfo:view">用户同时拥有列表权限和添加权限</shiro:hasAllPermissions>
+    <shiro:hasAllPermissions name="user:save,user:info">用户同时拥有列表权限和添加权限</shiro:hasAllPermissions>
     <br/>
     <!-- 用户拥有以下权限任意一种 -->
-    <shiro:hasAnyPermissions name="userInfo:view,userInfo:del">用户拥有列表权限或者删除权限</shiro:hasAnyPermissions>
+    <shiro:hasAnyPermissions name="user:info,user:delete">用户拥有列表权限或者删除权限</shiro:hasAnyPermissions>
     <br/>
     <!-- 如果当前Subject没有权限将显示body体内容 name="权限名" -->
-    <shiro:lacksPermission name="userInfo:add">如果用户没有添加权限，显示的内容</shiro:lacksPermission>
+    <shiro:lacksPermission name="user:save">如果用户没有添加权限，显示的内容</shiro:lacksPermission>
     <br/>
 </ul>
 <a href="/logout">点我注销</a>

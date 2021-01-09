@@ -1,23 +1,28 @@
 package com.modules.sys.admin.controller;
 
-import com.core.exception.CommonException;
+import com.core.constant.Constant;
+import com.core.result.HttpResult;
+import com.core.utils.TokenGenerator;
 import com.modules.sys.admin.model.dto.LoginDto;
+import com.modules.sys.admin.model.entity.RedisUser;
 import com.modules.sys.admin.model.entity.User;
+import com.modules.sys.admin.service.MenuService;
+import com.modules.sys.admin.service.UserRoleService;
 import com.modules.sys.admin.service.UserService;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description:
@@ -25,18 +30,27 @@ import javax.servlet.http.HttpSession;
  * @Date: 2021-01-02
  */
 @Controller
-public class LoginController {
+public class LoginController extends AbstractController{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRoleService userRoleService;
+
+    @Autowired
+    private MenuService menuService;
+
+    @Autowired
+    private RedisTemplate<String, RedisUser> redisTemplate;
 
     /**
      * 访问项目根路径
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Model model) {
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
-        if (user == null) {
+        RedisUser redisUser = (RedisUser) SecurityUtils.getSubject().getPrincipal();
+        if (redisUser == null) {
             return "redirect:/login";
         } else {
             return "redirect:/index";
@@ -48,8 +62,8 @@ public class LoginController {
      */
     @GetMapping("/login")
     public String login(Model model) {
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
-        if (user == null) {
+        RedisUser redisUser = (RedisUser) SecurityUtils.getSubject().getPrincipal();
+        if (redisUser == null) {
             return "login";
         } else {
             return "redirect:index"; //重定向到index方法
@@ -61,11 +75,11 @@ public class LoginController {
      */
     @GetMapping("/index")
     public String index(HttpSession session, Model model) {
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
-        if (user == null) {
+        RedisUser redisUser = (RedisUser) SecurityUtils.getSubject().getPrincipal();
+        if (redisUser == null) {
             return "login";
         } else {
-            model.addAttribute("user", user);
+            model.addAttribute("user", redisUser.getUser());
             return "index";
         }
     }
@@ -73,54 +87,38 @@ public class LoginController {
     /**
      * 登录
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginUser(HttpServletRequest request, Model model, HttpSession session) {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String checkcode = request.getParameter("checkcode");
-        String rememberMe = request.getParameter("rememberMe");
-        LoginDto loginDto = new LoginDto();
-        loginDto.setUserName(username);
-        loginDto.setPassWord(password);
-        loginDto.setCheckCode(checkcode);
-        if (StringUtils.isEmpty(rememberMe)) {
-            loginDto.setRememberMe(false);
-        } else {
-            loginDto.setRememberMe(true);
+    // public String loginUser(HttpServletRequest request, Model model, HttpSession session) {
+    @PostMapping("/login")
+    public HttpResult loginUser(@RequestBody LoginDto dto) throws Exception {
+        String sessionCode = (String) getSession().getAttribute(Constant.SESSION_RANDOM_CODE);
+        /*if (dto.getCheckCode() == null || !dto.getCheckCode().equalsIgnoreCase(sessionCode)) {
+            return HttpResult.fail("验证码错误!");
+        }*/
+        // 查询当前登录用户
+        User loginUser = userService.findByUserName(dto.getUserName());
+        if (loginUser == null) {
+            throw new UnknownAccountException("账户不存在!");
         }
-        //校验验证码
-        //session中的验证码
-        String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(RandomCodeController.KEY_CODE);
-        if (null == loginDto.getCheckCode() || !loginDto.getCheckCode().equalsIgnoreCase(sessionCaptcha)) {
-            model.addAttribute("msg","验证码错误!");
-            return "login";
+        if (0 == loginUser.getStatus()) {
+            throw new LockedAccountException("账号已被禁用,请联系管理员!");
         }
-
-        if (loginDto.getRememberMe() == null) {
-            loginDto.setRememberMe(false);
-        }
-        // 查询当前登录用户的盐
-        User loginUserInfo = userService.findByUserName(loginDto.getUserName());
-        if (loginUserInfo == null) {
-            throw new CommonException("User name does not exist!");
-        }
-        String salt = loginUserInfo.getSalt();
-        // 密码加密
-        loginDto.setPassWord(new Sha256Hash(loginDto.getPassWord(), salt).toHex());
         // 创建token
-        UsernamePasswordToken token = new UsernamePasswordToken(loginDto.getUserName(), loginDto.getPassWord(), loginDto.getRememberMe());
+        UsernamePasswordToken newToken = new UsernamePasswordToken(dto.getUserName(),
+                new Sha256Hash(dto.getPassWord(), loginUser.getSalt()).toHex(), dto.getRememberMe());
+        // 执行登陆
         Subject subject = SecurityUtils.getSubject();
-        try {
-            // 登录成功
-            subject.login(token);
-            User user = (User) subject.getPrincipal();
-            session.setAttribute("user", user);
-            model.addAttribute("user", user);
-            return "index";
-        } catch (Exception e) {
-            model.addAttribute("msg", e.getMessage());
-            return "login";
-        }
+        subject.login(newToken);
+        RedisUser user = (RedisUser) subject.getPrincipal();
+
+        RedisUser redisUser = new RedisUser();
+        String token = TokenGenerator.generateValue(loginUser.getUserName());
+        redisUser.setToken(token);
+        redisUser.setUser(loginUser);
+        redisUser.setRoleId(userRoleService.findByUserId(loginUser.getId()).getRoleId());
+        redisUser.setPermissions(menuService.findPermsByRoleId(redisUser.getRoleId()));
+        // 将用户信息加入缓存
+        redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + loginUser.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
+        return HttpResult.success(token);
     }
 
     /**

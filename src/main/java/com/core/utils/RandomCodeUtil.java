@@ -109,7 +109,7 @@ public class RandomCodeUtil {
         try {
             // 将内存中的图片通过流动形式输出到客户端
             ImageIO.write(image, "JPEG", new FileOutputStream(new File(
-                    "/Users/wangsaichao/Desktop/random-code.jpg")));
+                    "/Users/frank/Desktop/random-code.jpg")));
         } catch (Exception e) {
             e.printStackTrace();
         }

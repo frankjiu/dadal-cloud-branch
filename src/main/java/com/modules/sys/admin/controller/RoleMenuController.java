@@ -15,8 +15,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,10 +46,6 @@ public class RoleMenuController {
     @GetMapping("/{id}")
     public HttpResult findMenuByRoleId(@PathVariable("id") Long rid) throws Exception {
         List<Menu> menus = menuService.findMenuByRoleId(rid);
-        menus.removeAll(Collections.singleton(null));
-        if (CollectionUtils.isEmpty(menus)) {
-            return HttpResult.success(new ArrayList<>());
-        }
         List<String> perms = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
         return HttpResult.success(perms);
     }

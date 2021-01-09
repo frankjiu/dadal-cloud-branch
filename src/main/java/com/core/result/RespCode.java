@@ -31,9 +31,19 @@ public enum RespCode {
     BIND_ERROR("90002", "Bind error"),
 
     /**
+     * 认证失败
+     */
+    AUTHORIZATION_ERROR("90003", "Login timed out! please login again"),
+
+    /**
+     * TOKEN验证错误
+     */
+    TOKEN_ERROR("90004", "TOKEN verification error"),
+
+    /**
      * 方法错误
      */
-    METHOD_ERROR("90003", "Request method error"),
+    METHOD_ERROR("90005", "Request method error"),
 
     /**
      * 解析错误

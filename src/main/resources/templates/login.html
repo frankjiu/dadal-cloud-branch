@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+>
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <title>Insert title here</title>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js" ></script>
 </head>
 <body>
-<h1>欢迎登录</h1>
-<h1 th:if="${msg != null }" th:text="${msg }" style="color: red"></h1>
+<h3>登录</h3>
+<!--<h3 th:text="${msg}" style="color: red"></h3>-->
+
 <form action="/login" method="post">
-    用户名：<input type="text" name="username"/><br/>
-    密码：<input type="password" name="password"/><br/>
-    验证码：<input type="text" name="checkcode"/><img alt="验证码" th:src="@{/random/code}" title="点击更换" id="codeId"/>
-    (看不清<a href="javascript:void(0)" onclick="javascript:refresh()">换一张</a>)<br/>
-    <input type="checkbox" name="rememberMe"/>记住我<br/>
-    <input type="submit" value="提交"/>
-    <button><a href="/unlockAccount">解锁admin用户</a></button>
+	用户名：<input id="uid" type="text" name="username"/><br/>
+	密码：<input id="pid" type="password" name="password"/><br/>
+	验证码：<input type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="点击更换"/>
+	(看不清<a href="javascript:void(0)" onclick="javascript:refresh()">换一张</a>)<br/>
+	<input type="checkbox" name="rememberMe"/>记住我<br/>
+	<input id="btn" type="button" value="提交"/>
+	<button><a href="/unlockAccount">解锁admin用户</a></button>
 </form>
 </body>
 
@@ -24,18 +26,65 @@
 
 <script type="text/javascript">
 
-    function refresh() {
-        $("#codeId").attr("src", "/random/code?id=" + new Date() + Math.floor(Math.random() * 24));
-    }
+	function refresh() {
+		$("#codeId").attr("src", "/random/code?id=" + new Date() + Math.floor(Math.random() * 24));
+	}
 
-    function kickout() {
-        var href = location.href;
-        if (href.indexOf("kickout") > 0) {
-            alert("您的账号在另一台设备上登录,如非本人操作,请立即修改密码!");
-        }
-    }
+	function kickout() {
+		var href = location.href;
+		if (href.indexOf("kickout") > 0) {
+			alert("您的账号在另一台设备上登录,如非本人操作,请立即修改密码!");
+		}
+	}
 
-    window.onload = kickout();
+	window.onload = kickout();
 </script>
 
+<script>
+	//绑定单击事件
+	/*document.getElementById("btn").onclick = function () {
+		var url = "/?keyword=" + document.getElementById("txtKeyword").value;
+		//跳转到url地址
+		window.location.href=url;
+	}*/
+
+
+
+	$("#btn").click(function () {
+		let userName = $("#uid").val();
+		let passWord = $("#pid").val();
+		let codeId = $("#codeId").val();
+		console.log(userName);
+		console.log(passWord);
+		let dto = {userName: userName, passWord: passWord, rememberMe: false};
+		let data = JSON.stringify(dto);
+		$.ajax({
+			url: "/login",
+			type: "post",
+			datatype: "json",
+			contentType: "application/json;charset=utf-8",
+			data: data,
+			//async: false,
+			success: function (result) {
+				//console.info("success: " + result);
+				window.location.href = "/index";
+			}/*,
+			beforeSend: function () {
+				// 禁用按钮防止重复提交
+				$("#btn").attr({disabled: "disabled"});
+			},
+
+			complete: function () {
+				$("#btn").removeAttr("disabled");
+			},
+			error: function (data) {
+				console.info("error: " + data.responseText);
+			}*/
+		})
+	})
+
+
+</script>
+
+</body>
 </html>
