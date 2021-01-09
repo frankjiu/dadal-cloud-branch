@@ -12,7 +12,7 @@ public class LoginDto {
 
     private String userName;
     private String passWord;
-    private Boolean remeberMe;
-    private String captcha;
+    private String checkCode;
+    private Boolean rememberMe;
 
 }

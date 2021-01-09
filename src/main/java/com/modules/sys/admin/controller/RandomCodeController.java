@@ -1,6 +1,6 @@
 package com.modules.sys.admin.controller;
 
-import com.core.utils.CaptchaUtil;
+import com.core.utils.RandomCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,12 +11,12 @@ import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 
 @Controller
-public class CaptchaController {
+public class RandomCodeController {
 
-    public static final String KEY_CAPTCHA = "KEY_CAPTCHA";
+    public static final String KEY_CODE = "KEY_CODE";
 
-    @RequestMapping("/Captcha.jpg")
-    public void getCaptcha(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping("/random/code")
+    public void generateRandomCode(HttpServletRequest request, HttpServletResponse response) {
         // 设置相应类型,告诉浏览器输出的内容为图片
         response.setContentType("image/jpeg");
         // 不缓存此内容
@@ -25,11 +25,11 @@ public class CaptchaController {
         response.setDateHeader("Expire", 0);
         try {
             HttpSession session = request.getSession();
-            CaptchaUtil tool = new CaptchaUtil();
+            RandomCodeUtil tool = new RandomCodeUtil();
             StringBuffer code = new StringBuffer();
             BufferedImage image = tool.genRandomCodeImage(code);
-            session.removeAttribute(KEY_CAPTCHA);
-            session.setAttribute(KEY_CAPTCHA, code.toString());
+            session.removeAttribute(KEY_CODE);
+            session.setAttribute(KEY_CODE, code.toString());
             // 将内存中的图片通过流动形式输出到客户端
             ImageIO.write(image, "JPEG", response.getOutputStream());
         } catch (Exception e) {

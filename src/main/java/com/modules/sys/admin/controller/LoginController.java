@@ -11,8 +11,8 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -74,17 +74,30 @@ public class LoginController {
      * 登录
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginUser(@RequestBody LoginDto loginDto, HttpServletRequest request, Model model, HttpSession session) {
+    public String loginUser(HttpServletRequest request, Model model, HttpSession session) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String checkcode = request.getParameter("checkcode");
+        String rememberMe = request.getParameter("rememberMe");
+        LoginDto loginDto = new LoginDto();
+        loginDto.setUserName(username);
+        loginDto.setPassWord(password);
+        loginDto.setCheckCode(checkcode);
+        if (StringUtils.isEmpty(rememberMe)) {
+            loginDto.setRememberMe(false);
+        } else {
+            loginDto.setRememberMe(true);
+        }
         //校验验证码
         //session中的验证码
-        /*String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(CaptchaController.KEY_CAPTCHA);
-        if (null == loginDto.getCaptcha() || !loginDto.getCaptcha().equalsIgnoreCase(sessionCaptcha)) {
+        String sessionCaptcha = (String) SecurityUtils.getSubject().getSession().getAttribute(RandomCodeController.KEY_CODE);
+        if (null == loginDto.getCheckCode() || !loginDto.getCheckCode().equalsIgnoreCase(sessionCaptcha)) {
             model.addAttribute("msg","验证码错误!");
             return "login";
-        }*/
+        }
 
-        if (loginDto.getRemeberMe() == null) {
-            loginDto.setRemeberMe(false);
+        if (loginDto.getRememberMe() == null) {
+            loginDto.setRememberMe(false);
         }
         // 查询当前登录用户的盐
         User loginUserInfo = userService.findByUserName(loginDto.getUserName());
@@ -95,7 +108,7 @@ public class LoginController {
         // 密码加密
         loginDto.setPassWord(new Sha256Hash(loginDto.getPassWord(), salt).toHex());
         // 创建token
-        UsernamePasswordToken token = new UsernamePasswordToken(loginDto.getUserName(), loginDto.getPassWord(), loginDto.getRemeberMe());
+        UsernamePasswordToken token = new UsernamePasswordToken(loginDto.getUserName(), loginDto.getPassWord(), loginDto.getRememberMe());
         Subject subject = SecurityUtils.getSubject();
         try {
             // 登录成功

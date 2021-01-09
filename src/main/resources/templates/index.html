@@ -11,11 +11,11 @@
 <ul>
     <h1 th:if="${msg != null }" th:text="${msg}" style="color: red"></h1>
 
-    <shiro:hasPermission name="userInfo:add"><a href="/userInfo/add">点击添加固定用户信息(后台写死,方便测试)</a></shiro:hasPermission>
+    <shiro:hasPermission name="user:save"><a href="/userInfo/add">点击添加固定用户信息(后台写死,方便测试)</a></shiro:hasPermission>
     <br/>
-    <shiro:hasPermission name="userInfo:del"><a href="/userInfo/del">点击删除固定用户信息(后台写死,方便测试)</a></shiro:hasPermission>
+    <shiro:hasPermission name="user:delete"><a href="/userInfo/del">点击删除固定用户信息(后台写死,方便测试)</a></shiro:hasPermission>
     <br/>
-    <shiro:hasPermission name="userInfo:view"><a href="/userInfo/view">显示此内容表示拥有查看用户列表的权限</a></shiro:hasPermission>
+    <shiro:hasPermission name="user:info"><a href="/userInfo/view">显示此内容表示拥有查看用户列表的权限</a></shiro:hasPermission>
     <br/>
 
 
