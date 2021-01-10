@@ -11,7 +11,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Shiro配置
@@ -34,20 +37,20 @@ public class ShiroConfig {
 		//设置提示页
 		shiroFilterFactoryBean.setUnauthorizedUrl("/noAuth");
 
+		Map<String, Filter> filters = new HashMap<>();
+		filters.put("permitionFilter", new PermitionFilter());
+		shiroFilterFactoryBean.setFilters(filters);
+
 		// 使用 LinkedHashMap 配置访问权限, 保证按从上向下的顺序执行
 		// Shiro内置过滤器: anon: 无需认证即可访问; authc: 通过认证才能访问;
 		// user: 配置记住我或认证通过可以访问; perms: 资源获得授权才能访问; role: 资源获得角色权限才能访问.
 		LinkedHashMap<String, String> filterMap = new LinkedHashMap<>();
 		// 认证过滤
 		filterMap.put("/login", "anon");
-		filterMap.put("/logout", "logout");
+		//filterMap.put("/logout", "logout"); //这里需要进行缓存清理, 使用后台接口
 		filterMap.put("/js/**", "anon");
 		filterMap.put("/css/**", "anon");
 		filterMap.put("/img/**", "anon");
-
-		//其它资源都需要通过authc认证才能进行访问; user表示通过认证和记住我可以访问
-		//filterMap.put("/**", "authc");
-		//filterMap.put("/**", "user");
 
 		//放行资源
 		filterMap.put("/login", "anon");
@@ -57,6 +60,10 @@ public class ShiroConfig {
 		//授权过滤
 		filterMap.put("/add", "perms[demo:add]");
 		filterMap.put("/update", "perms[demo:update]");
+
+		//其它资源都需要通过authc认证才能进行访问; user表示通过认证和记住我可以访问
+		filterMap.put("/**", "authc");
+		filterMap.put("/**", "user");
 
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 		return shiroFilterFactoryBean;

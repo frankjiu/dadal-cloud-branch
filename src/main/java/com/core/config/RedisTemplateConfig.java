@@ -36,8 +36,8 @@ import java.util.List;
 /**
  * Redis配置
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisTemplateConfig {
 
     private final RedisConnectionFactory redisConnectionFactory;

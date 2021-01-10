@@ -17,7 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @Author: QiuQiang
  * @Date: 2020-11-15
  */
-//@Configuration
+@Configuration
 public class RedisConfig {
 
     /**
@@ -25,14 +25,14 @@ public class RedisConfig {
      * @param factory
      * @return
      */
-    //@Bean(name = "redisTemplate")
-    public RedisTemplate<String, Object> template(RedisConnectionFactory factory) {
+    @Bean(name = "redisTemplate")
+    public <T> RedisTemplate<String, T> template(RedisConnectionFactory factory) {
         // 创建RedisTemplate<String, Object>对象
-        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        RedisTemplate<String, T> redisTemplate = new RedisTemplate<>();
         // 配置连接工厂
         redisTemplate.setConnectionFactory(factory);
         // 定义Jackson2JsonRedisSerializer序列化对象
-        Jackson2JsonRedisSerializer<Object> jacksonSeial = new Jackson2JsonRedisSerializer<>(Object.class);
+        Jackson2JsonRedisSerializer<T> jacksonSeial = new Jackson2JsonRedisSerializer<>((Class<T>) Object.class);
         ObjectMapper mapper = new ObjectMapper();
         // 指定要序列化的域(GETTER,SETTER,FIELD,ALL) 以及修饰符范围(PUBLIC_ONLY, NON_PRIVATE, ANY)
         mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);

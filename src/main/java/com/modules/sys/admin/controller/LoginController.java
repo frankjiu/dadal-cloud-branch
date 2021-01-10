@@ -110,11 +110,13 @@ public class LoginController extends AbstractController{
         subject.login(newToken);
         RedisUser user = (RedisUser) subject.getPrincipal();
 
+        // 查询用户信息
         RedisUser redisUser = new RedisUser();
         String token = TokenGenerator.generateValue(loginUser.getUserName());
         redisUser.setToken(token);
         redisUser.setUser(loginUser);
         redisUser.setRoleId(userRoleService.findByUserId(loginUser.getId()).getRoleId());
+        redisUser.setMenus(menuService.findMenuByRoleId(redisUser.getRoleId()));
         redisUser.setPermissions(menuService.findPermsByRoleId(redisUser.getRoleId()));
         // 将用户信息加入缓存
         redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + loginUser.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
@@ -126,9 +128,16 @@ public class LoginController extends AbstractController{
      */
     @RequestMapping("/logout")
     public String logout(HttpSession session, Model model) {
+        // 删除缓存(这里放在一起全部删了; 可以只删除认证缓存,通过Spring-Cache存储权限缓存,因为授权缓存在用户再次登录后在有效期内仍可使用)
+        RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + getUser().getUserName());
+        if (redisUser != null) {
+            redisTemplate.delete(Constant.REDIS_USER_PREFIX + getUser().getUserName());
+        }
+
         Subject subject = SecurityUtils.getSubject();
-        session.invalidate();
         subject.logout();
+
+        session.invalidate();
         model.addAttribute("msg", "安全退出!");
         return "login";
     }

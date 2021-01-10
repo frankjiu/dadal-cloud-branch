@@ -13,9 +13,10 @@ import java.util.List;
 @Data
 public class RedisUser implements Serializable {
 
-    private User user;                      // 这个用户的实体对象
-    private Long roleId;                    // 这个用户的角色ID
-    private String token;                   // 这个用户的token
-    private List<String> permissions;       // 这个用户的所有权限
+    private User user;                      // 用户的实体对象
+    private Long roleId;                    // 用户的角色ID
+    private String token;                   // 用户的token
+    private List<Menu> menus;               // 用户的所有菜单
+    private List<String> permissions;       // 用户的所有权限
 
 }
