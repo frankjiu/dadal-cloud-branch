@@ -46,11 +46,14 @@ public class ShiroConfig {
 		filterMap.put("/js/**", "anon");
 		filterMap.put("/css/**", "anon");
 		filterMap.put("/img/**", "anon");
+		filterMap.put("/images/**", "anon");
 
 		//放行资源
 		filterMap.put("/login", "anon");
 		filterMap.put("/random/code","anon");
 		filterMap.put("/import2", "anon");
+		filterMap.put("/images/**", "anon");
+		filterMap.put("/userInfo/**", "anon");
 
 		//授权过滤
 		filterMap.put("/add", "perms[demo:add]");
