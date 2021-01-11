@@ -1,8 +1,8 @@
 package com.modules.sys.admin.controller;
 
 import com.core.constant.Constant;
+import com.core.exception.CommonException;
 import com.core.result.HttpResult;
-import com.core.utils.TokenGenerator;
 import com.modules.sys.admin.model.dto.LoginDto;
 import com.modules.sys.admin.model.entity.RedisUser;
 import com.modules.sys.admin.model.entity.User;
@@ -10,8 +10,7 @@ import com.modules.sys.admin.service.MenuService;
 import com.modules.sys.admin.service.UserRoleService;
 import com.modules.sys.admin.service.UserService;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.subject.Subject;
@@ -87,40 +86,35 @@ public class LoginController extends AbstractController{
     /**
      * 登录
      */
-    // public String loginUser(HttpServletRequest request, Model model, HttpSession session) {
     @PostMapping("/login")
-    public HttpResult loginUser(@RequestBody LoginDto dto) throws Exception {
-        String sessionCode = (String) getSession().getAttribute(Constant.SESSION_RANDOM_CODE);
-        /*if (dto.getCheckCode() == null || !dto.getCheckCode().equalsIgnoreCase(sessionCode)) {
-            return HttpResult.fail("验证码错误!");
+    public HttpResult loginUser(@RequestBody LoginDto loginForm) throws Exception {
+        /*// 从redis获取
+        RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + loginForm.getUserName());
+        if (redisUser != null) {
+            // 更新缓存
+            redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + loginForm.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
+            return HttpResult.success(redisUser.getToken());
         }*/
-        // 查询当前登录用户
-        User loginUser = userService.findByUserName(dto.getUserName());
-        if (loginUser == null) {
-            throw new UnknownAccountException("账户不存在!");
+        String sessionCode = (String) getSession().getAttribute(Constant.SESSION_RANDOM_CODE);
+        if (loginForm.getCheckCode() == null || !loginForm.getCheckCode().equalsIgnoreCase(sessionCode)) {
+            return HttpResult.fail("验证码错误!");
         }
-        if (0 == loginUser.getStatus()) {
-            throw new LockedAccountException("账号已被禁用,请联系管理员!");
+        // 创建token, 加密后执行登陆验证
+        User queryUser = this.userService.findByUserName(loginForm.getUserName());
+        if (queryUser == null) {
+            throw new CommonException("用户名不存在!");
         }
-        // 创建token
-        UsernamePasswordToken newToken = new UsernamePasswordToken(dto.getUserName(),
-                new Sha256Hash(dto.getPassWord(), loginUser.getSalt()).toHex(), dto.getRememberMe());
-        // 执行登陆
+        String encodePassWord = new Sha256Hash(loginForm.getPassWord(), queryUser.getSalt()).toHex();
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(loginForm.getUserName(), encodePassWord);
         Subject subject = SecurityUtils.getSubject();
-        subject.login(newToken);
-        RedisUser user = (RedisUser) subject.getPrincipal();
-
-        // 查询用户信息
-        RedisUser redisUser = new RedisUser();
-        String token = TokenGenerator.generateValue(loginUser.getUserName());
-        redisUser.setToken(token);
-        redisUser.setUser(loginUser);
-        redisUser.setRoleId(userRoleService.findByUserId(loginUser.getId()).getRoleId());
-        redisUser.setMenus(menuService.findMenuByRoleId(redisUser.getRoleId()));
-        redisUser.setPermissions(menuService.findPermsByRoleId(redisUser.getRoleId()));
-        // 将用户信息加入缓存
-        redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + loginUser.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
-        return HttpResult.success(token);
+        subject.login(usernamePasswordToken);
+        if (!subject.isAuthenticated()) {
+            throw new AuthenticationException("认证失败!");
+        }
+        // 认证成功, 将用户信息加入缓存
+        RedisUser redisUser = getRedisUser();
+        redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + queryUser.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
+        return HttpResult.success(getToken());
     }
 
     /**
@@ -133,11 +127,9 @@ public class LoginController extends AbstractController{
         if (redisUser != null) {
             redisTemplate.delete(Constant.REDIS_USER_PREFIX + getUser().getUserName());
         }
-
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
-
-        session.invalidate();
+        // session.invalidate();
         model.addAttribute("msg", "安全退出!");
         return "login";
     }

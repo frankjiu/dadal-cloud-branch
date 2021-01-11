@@ -1,6 +1,7 @@
 package com.modules.sys.admin.config;
 
 import com.core.constant.Constant;
+import com.core.utils.TokenGenerator;
 import com.modules.sys.admin.model.entity.RedisUser;
 import com.modules.sys.admin.model.entity.User;
 import com.modules.sys.admin.service.MenuService;
@@ -15,7 +16,6 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 
@@ -27,32 +27,47 @@ import java.util.HashSet;
 public class ShiroRealm extends AuthorizingRealm {
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserRoleService userRoleService;
+
+    @Autowired
+    private MenuService menuService;
+
+    @Autowired
     private RedisTemplate<String, RedisUser> redisTemplate;
-
-    @Autowired
-    private UserService userSerivce;
-
-    @Autowired
-    private MenuService menuSerivce;
-
-    @Autowired
-    private UserRoleService userRoleSerivce;
 
     /**
      * 认证
      */
+    @SneakyThrows
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken newToken) throws AuthenticationException {
+        // 获取账号信息
         UsernamePasswordToken account = (UsernamePasswordToken) newToken;
-        String userName = account.getUsername();
-
-        RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + userName);
+        String formUserName = account.getUsername();
+        String formPassWord = new String(account.getPassword());
+        // 查询缓存
+        RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + formUserName);
         if (redisUser == null) {
-            throw new IncorrectCredentialsException("token已过期, 请重新登陆!");
+            // 查询数据库比对账号信息,密码校验交由Authentication认证
+            User user = this.userService.findByUserName(formUserName);
+            if (user == null) {
+                throw new UnknownAccountException("账户不存在!");
+            }
+            if (0 == user.getStatus()) {
+                throw new LockedAccountException("账号已被禁用,请联系管理员!");
+            }
+            // 查询用户相关信息
+            redisUser = new RedisUser();
+            redisUser.setToken(TokenGenerator.generateValue(user.getUserName()));
+            redisUser.setUser(user);
+            redisUser.setRoleId(userRoleService.findByUserId(user.getId()).getRoleId());
+            redisUser.setMenus(menuService.findMenuByRoleId(redisUser.getRoleId()));
+            redisUser.setPermissions(menuService.findPermsByRoleId(redisUser.getRoleId()));
         }
-
-        String passWord = new String(account.getPassword());
-        return new SimpleAuthenticationInfo(redisUser, passWord, getName());
+        return new SimpleAuthenticationInfo(redisUser, formPassWord, getName());
     }
 
     /**
@@ -66,11 +81,11 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection pc) {
         /*SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         // 获取当前登录用户
-        User user = (User)SecurityUtils.getSubject().getPrincipal();
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
         // 获取登录用户的角色
-        UserRole userRole = userRoleSerivce.findByUserId(user.getId());
+        UserRole userRole = userRoleService.findByUserId(user.getId());
         // 根据userId获取用户权限perms, 如"user:add","user:delete"等; 如果用户为超管角色, 则查询所有菜单.
-        List<Menu> menus = menuSerivce.findMenuByRoleId(userRole.getRoleId());
+        List<Menu> menus = menuService.findMenuByRoleId(userRole.getRoleId());
         List<String> permList = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
         Set<String> perms = CollectionUtils.isEmpty(permList) ? new HashSet<>() : new HashSet<>(permList);
         // 资源授权
@@ -79,6 +94,7 @@ public class ShiroRealm extends AuthorizingRealm {
 
         RedisUser redisUser = (RedisUser) pc.getPrimaryPrincipal();
         SimpleAuthorizationInfo authInfo = new SimpleAuthorizationInfo();
+        authInfo.addRole(redisUser.getRoleId().toString());
         authInfo.setStringPermissions(new HashSet<>(redisUser.getPermissions()));
         return authInfo;
     }

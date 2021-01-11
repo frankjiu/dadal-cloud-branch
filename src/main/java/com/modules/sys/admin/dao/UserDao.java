@@ -45,7 +45,7 @@ public interface UserDao {
     int count(@Param("dto") UserGetDto dto);
 
     @Select(" SELECT * FROM user WHERE USER_NAME = #{userName} ")
-    User findByUserName(@Param("userName") String userName);
+    User findByUserName(@Param("userName") String userName) throws Exception;
 
     @Select(" SELECT * FROM user WHERE ID = #{userId} AND PASSWORD = #{oldPassword}")
     User findByUserIdAndPassword(Long userId, String oldPassword);

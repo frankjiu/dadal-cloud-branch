@@ -14,7 +14,7 @@
 <form action="/login" method="post">
 	用户名：<input id="uid" type="text" name="username"/><br/>
 	密码：<input id="pid" type="password" name="password"/><br/>
-	验证码：<input type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="点击更换"/>
+	验证码：<input id="codeInId" type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="点击更换"/>
 	(看不清<a href="javascript:void(0)" onclick="javascript:refresh()">换一张</a>)<br/>
 	<input type="checkbox" name="rememberMe"/>记住我<br/>
 	<input id="btn" type="button" value="提交"/>
@@ -53,10 +53,10 @@
 	$("#btn").click(function () {
 		let userName = $("#uid").val();
 		let passWord = $("#pid").val();
-		let codeId = $("#codeId").val();
+		let checkCode = $("#codeInId").val();
 		console.log(userName);
 		console.log(passWord);
-		let dto = {userName: userName, passWord: passWord, rememberMe: false};
+		let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
 		let data = JSON.stringify(dto);
 		$.ajax({
 			url: "/login",

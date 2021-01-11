@@ -30,7 +30,7 @@ public interface UserService {
 
     int count(UserGetDto dto);
 
-    User findByUserName(String userName);
+    User findByUserName(String userName) throws Exception;
 
     boolean changePassword(Long userId, String oldPassword, String newPassword) throws Exception;
 

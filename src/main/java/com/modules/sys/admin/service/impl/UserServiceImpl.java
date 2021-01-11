@@ -123,7 +123,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUserName(String userName) {
+    public User findByUserName(String userName) throws Exception {
         return userDao.findByUserName(userName);
     }
 

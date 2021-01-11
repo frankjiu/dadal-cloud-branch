@@ -29,9 +29,9 @@ spring:
   redis:
     database: 0
     #办公本CentOS7 Linux redis服务地址
-    #host: 192.168.75.130
+    host: 192.168.75.130
     #便携本Windows 本地redis服务地址
-    host: 127.0.0.1
+    #host: 127.0.0.1
     port: 6379
     password: 123456
     timeout: 20000
