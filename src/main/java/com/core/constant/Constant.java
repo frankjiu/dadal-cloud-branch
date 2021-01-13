@@ -49,6 +49,6 @@ public class Constant {
     /**
      * 登录之后过期的时间,默认是3天
      */
-    public static final long LOGIN_EXPIRE = 60 * 60 * 24 * 3L;
+    public static final long LOGIN_EXPIRE = 60 * 60 * 1;
 
 }

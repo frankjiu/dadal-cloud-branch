@@ -16,7 +16,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * 权限过滤器
@@ -73,12 +72,11 @@ public class PermitionFilter extends AuthenticatingFilter {
         httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
         httpResponse.setHeader("Access-Control-Allow-Origin", HttpContextUtils.getOrigin());
         try {
-            //处理登录失败的异常
-            Throwable throwable = e.getCause() == null ? e : e.getCause();
             HttpResult result = HttpResult.fail(RespCode.AUTHORIZATION_ERROR);
             String json = objectMapper.writeValueAsString(result);
             httpResponse.getWriter().print(json);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
+            log.info(ex.getMessage());
         }
 
         return false;

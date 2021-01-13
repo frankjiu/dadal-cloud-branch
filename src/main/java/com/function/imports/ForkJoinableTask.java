@@ -4,8 +4,8 @@ import com.core.utils.SpringContextUtils;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
 
@@ -34,13 +34,12 @@ public class ForkJoinableTask extends RecursiveTask<Integer> {
         int length = end - start;
         if (length <= BATCH_SIZE) {
             //在BATCH_SIZE内(包括)直接进行处理
-            List<Demo> forkList = new ArrayList<>();
-            for (int i = start; i < end; i++) {
-                forkList.add(list.get(i));
+            if (CollectionUtils.isEmpty(list)) {
+                return 0;
             }
             try {
                 DemoService demoService = SpringContextUtils.getBeanByClass(DemoService.class);
-                demoService.batchInsert(forkList);
+                demoService.batchInsert(list);
             } catch (Exception e) {
                 log.info(e.getMessage(), e);
             }

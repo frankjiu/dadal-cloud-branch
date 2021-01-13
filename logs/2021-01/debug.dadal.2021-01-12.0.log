@@ -1,0 +1,14 @@
+2021-01-12 08:34:29.752 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-12 08:37:26.743 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-12 08:37:26.761 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-12 08:37:26.778 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-12 08:37:30.638 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-12 08:37:30.639 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-12 08:37:30.641 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-12 08:38:11.271 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-12 08:38:11.272 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-12 08:38:11.274 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-12 08:39:14.589 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-12 08:39:14.590 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-12 08:39:14.592 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-12 09:16:28.763 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE

@@ -25,9 +25,6 @@ public class ImportDataFromText {
     @Autowired
     private ForkJoinPool pool;
 
-    @Autowired
-    private FileParser fileParser;
-
     /**
      * import file-text data
      *
@@ -44,7 +41,7 @@ public class ImportDataFromText {
         }
 
         // 文件解析
-        List<Demo> list = fileParser.parse(fileContent, fileName);
+        List<Demo> list = FileParser.parse(fileContent, fileName);
         try {
             long start = System.currentTimeMillis();
             ForkJoinableTask task = new ForkJoinableTask(0, list.size(), list);

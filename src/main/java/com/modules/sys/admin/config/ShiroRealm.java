@@ -79,19 +79,6 @@ public class ShiroRealm extends AuthorizingRealm {
     @SneakyThrows
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection pc) {
-        /*SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        // 获取当前登录用户
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
-        // 获取登录用户的角色
-        UserRole userRole = userRoleService.findByUserId(user.getId());
-        // 根据userId获取用户权限perms, 如"user:add","user:delete"等; 如果用户为超管角色, 则查询所有菜单.
-        List<Menu> menus = menuService.findMenuByRoleId(userRole.getRoleId());
-        List<String> permList = menus.stream().map(e -> e.getPerm()).collect(Collectors.toList());
-        Set<String> perms = CollectionUtils.isEmpty(permList) ? new HashSet<>() : new HashSet<>(permList);
-        // 资源授权
-        authorizationInfo.setStringPermissions(perms);
-        return authorizationInfo;*/
-
         RedisUser redisUser = (RedisUser) pc.getPrimaryPrincipal();
         SimpleAuthorizationInfo authInfo = new SimpleAuthorizationInfo();
         authInfo.addRole(redisUser.getRoleId().toString());

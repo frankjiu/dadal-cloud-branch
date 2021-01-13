@@ -27,7 +27,6 @@ import java.util.List;
  * @author: Frankjiu
  * @date: 2020年6月1日
  */
-@Component
 @Slf4j
 public class FileParser {
 
@@ -39,7 +38,7 @@ public class FileParser {
 
     private static final String ROOT = System.getProperty("user.dir"); //项目根目录
 
-    public List<Demo> parse(String fileContent, String fileName) {
+    public static List<Demo> parse(String fileContent, String fileName) {
         // 存储解析的数据集
         List<Demo> listData = new ArrayList<>();
         BufferedReader bufReader = null;

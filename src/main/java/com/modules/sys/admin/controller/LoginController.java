@@ -88,13 +88,6 @@ public class LoginController extends AbstractController{
      */
     @PostMapping("/login")
     public HttpResult loginUser(@RequestBody LoginDto loginForm) throws Exception {
-        /*// 从redis获取
-        RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + loginForm.getUserName());
-        if (redisUser != null) {
-            // 更新缓存
-            redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + loginForm.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
-            return HttpResult.success(redisUser.getToken());
-        }*/
         String sessionCode = (String) getSession().getAttribute(Constant.SESSION_RANDOM_CODE);
         if (loginForm.getCheckCode() == null || !loginForm.getCheckCode().equalsIgnoreCase(sessionCode)) {
             return HttpResult.fail("验证码错误!");
