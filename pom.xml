@@ -26,6 +26,7 @@
         <commons.io.version>2.6</commons.io.version>
         <beanutils.version>1.9.4</beanutils.version>
         <poi.version>4.1.2</poi.version>
+        <easypoi.version>4.2.0</easypoi.version>
     </properties>
 
     <dependencyManagement>
@@ -196,6 +197,12 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>${redisson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-web</artifactId>
+            <version>${easypoi.version}</version>
         </dependency>
 
         <dependency>

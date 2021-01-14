@@ -1,7 +1,9 @@
 package com.function.imports;
 
-import com.core.exception.CommonException;
+import com.core.anotation.Logged;
 import com.core.result.HttpResult;
+import com.core.utils.EasyPoiUtils;
+import com.modules.base.model.dto.DemoPostDto;
 import com.modules.base.model.entity.Demo;
 import com.modules.base.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,15 +11,19 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.util.ObjectUtils;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
@@ -101,4 +107,58 @@ public class ImportDataFromExcel {
         }
         return HttpResult.fail("File data import failed!");
     }
+
+
+    // GET方式测试下载
+    @Logged(description = "exportExcelTest")
+    @GetMapping("/exportExcelTest")
+    public void exportExcelTest(HttpServletResponse response) throws IOException {
+        List<Demo> exportExcelList = new ArrayList<>();
+        byte[] dataArray = EasyPoiUtils.exportExcel(exportExcelList, "Demo_Excel", "Demo_Excel_SHEET",
+                Demo.class);
+        String codeFileName = "Demo_Excel";
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition", "attachment;filename=" + codeFileName + ".xlsx");
+        OutputStream outputStream = response.getOutputStream();
+        outputStream.write(dataArray);
+        outputStream.flush();
+        outputStream.close();
+    }
+
+    // 将页面数据下载到excel
+    @Logged(description = "exportExcel")
+    @PostMapping("/exportExcel")
+    @RequiresPermissions("sys:sys:other")
+    public void exportExcel(@RequestBody @Valid DemoPostDto vo, HttpServletResponse response) throws IOException {
+        List<Demo> exportExcelList = this.demoService.findAll(500);
+        byte[] dataArray = EasyPoiUtils.exportExcel(exportExcelList, "Demo_Excel", "Demo_Excel_SHEET",
+                Demo.class);
+        String codeFileName = "Demo_Excel";
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition", "attachment;filename=" + codeFileName + ".xlsx");
+        OutputStream outputStream = response.getOutputStream();
+        outputStream.write(dataArray);
+        outputStream.flush();
+        outputStream.close();
+    }
+
+    // 将excel文件数据导入到库中
+    @Logged(description = "importExcel")
+    @PostMapping(value = "/importExcel", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public HttpResult uploadExcel(@RequestParam(value = "file") MultipartFile file) {
+        try {
+            List<Demo> list = EasyPoiUtils.importExcel(file, 0, 1, 1, Demo.class);
+            if (ObjectUtils.isEmpty(list)) {
+                return HttpResult.fail("Imported file is null!");
+            }
+            demoService.batchInsert(list);
+            return HttpResult.success();
+        } catch (Exception e) {
+            return HttpResult.fail("Import file was not successful!");
+        }
+
+    }
+
 }
