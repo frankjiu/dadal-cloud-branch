@@ -1,4 +1,4 @@
-package com.function.ftp;
+package com.function.ftp.old;
 
 public class FtpException extends Exception {
 

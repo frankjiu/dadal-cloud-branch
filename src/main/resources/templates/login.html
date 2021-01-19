@@ -48,40 +48,51 @@
 		window.location.href=url;
 	}*/
 
+	//回车登录
+	$(document).ready(function() {
+		$('body').keydown(function(e){
+			if(e.keyCode==13){
+				//doLogin();
+				$("#btn").click();
+			}
+		});
+	});
 
+	$("#btn").click(
+		function() {
+			let userName = $("#uid").val();
+			let passWord = $("#pid").val();
+			let checkCode = $("#codeInId").val();
+			console.log(userName);
+			console.log(passWord);
+			let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
+			let data = JSON.stringify(dto);
+			$.ajax({
+				url: "/login",
+				type: "post",
+				datatype: "json",
+				contentType: "application/json;charset=utf-8",
+				data: data,
+				//async: false,
+				success: function (result) {
+					//console.info("success: " + result);
+					window.location.href = "/index";
+				}/*,
+		beforeSend: function () {
+			// 禁用按钮防止重复提交
+			$("#btn").attr({disabled: "disabled"});
+		},
 
-	$("#btn").click(function () {
-		let userName = $("#uid").val();
-		let passWord = $("#pid").val();
-		let checkCode = $("#codeInId").val();
-		console.log(userName);
-		console.log(passWord);
-		let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
-		let data = JSON.stringify(dto);
-		$.ajax({
-			url: "/login",
-			type: "post",
-			datatype: "json",
-			contentType: "application/json;charset=utf-8",
-			data: data,
-			//async: false,
-			success: function (result) {
-				//console.info("success: " + result);
-				window.location.href = "/index";
-			}/*,
-			beforeSend: function () {
-				// 禁用按钮防止重复提交
-				$("#btn").attr({disabled: "disabled"});
-			},
+		complete: function () {
+			$("#btn").removeAttr("disabled");
+		},
+		error: function (data) {
+			console.info("error: " + data.responseText);
+		}*/
+			})
+		}
+	);
 
-			complete: function () {
-				$("#btn").removeAttr("disabled");
-			},
-			error: function (data) {
-				console.info("error: " + data.responseText);
-			}*/
-		})
-	})
 
 
 </script>

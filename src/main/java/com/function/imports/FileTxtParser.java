@@ -28,7 +28,7 @@ import java.util.List;
  * @date: 2020年6月1日
  */
 @Slf4j
-public class FileParser {
+public class FileTxtParser {
 
     private static final Integer startRows = 1; // 数据读取起始行
 

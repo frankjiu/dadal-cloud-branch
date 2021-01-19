@@ -41,7 +41,7 @@ public class ImportDataFromText {
         }
 
         // 文件解析
-        List<Demo> list = FileParser.parse(fileContent, fileName);
+        List<Demo> list = FileTxtParser.parse(fileContent, fileName);
         try {
             long start = System.currentTimeMillis();
             ForkJoinableTask task = new ForkJoinableTask(0, list.size(), list);
