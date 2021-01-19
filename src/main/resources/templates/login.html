@@ -14,11 +14,10 @@
 <form action="/login" method="post">
 	用户名：<input id="uid" type="text" name="username"/><br/>
 	密码：<input id="pid" type="password" name="password"/><br/>
-	验证码：<input id="codeInId" type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="点击更换"/>
-	(看不清<a href="javascript:void(0)" onclick="javascript:refresh()">换一张</a>)<br/>
+	验证码：<input id="codeInId" type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="换一张"/>
+	<a href="javascript:void(0)" onclick="javascript:refresh()"></a><br/>
 	<input type="checkbox" name="rememberMe"/>记住我<br/>
 	<input id="btn" type="button" value="提交"/>
-	<button><a href="/unlockAccount">解锁admin用户</a></button>
 </form>
 </body>
 
@@ -30,70 +29,53 @@
 		$("#codeId").attr("src", "/random/code?id=" + new Date() + Math.floor(Math.random() * 24));
 	}
 
-	function kickout() {
-		var href = location.href;
-		if (href.indexOf("kickout") > 0) {
-			alert("您的账号在另一台设备上登录,如非本人操作,请立即修改密码!");
-		}
-	}
-
-	window.onload = kickout();
-</script>
-
-<script>
-	//绑定单击事件
-	/*document.getElementById("btn").onclick = function () {
-		var url = "/?keyword=" + document.getElementById("txtKeyword").value;
-		//跳转到url地址
-		window.location.href=url;
-	}*/
+	$("#codeId").on('click', function() {
+		refresh()
+	})
 
 	//回车登录
-	$(document).ready(function() {
-		$('body').keydown(function(e){
-			if(e.keyCode==13){
-				//doLogin();
-				$("#btn").click();
-			}
-		});
+	$('body').keydown(function(e){
+		if(e.keyCode==13){
+			doLogin();
+		}
 	});
 
-	$("#btn").click(
-		function() {
-			let userName = $("#uid").val();
-			let passWord = $("#pid").val();
-			let checkCode = $("#codeInId").val();
-			console.log(userName);
-			console.log(passWord);
-			let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
-			let data = JSON.stringify(dto);
-			$.ajax({
-				url: "/login",
-				type: "post",
-				datatype: "json",
-				contentType: "application/json;charset=utf-8",
-				data: data,
-				//async: false,
-				success: function (result) {
-					//console.info("success: " + result);
-					window.location.href = "/index";
-				}/*,
-		beforeSend: function () {
-			// 禁用按钮防止重复提交
-			$("#btn").attr({disabled: "disabled"});
-		},
+	$("#btn").on('click', function() {
+		doLogin()
+	})
 
-		complete: function () {
-			$("#btn").removeAttr("disabled");
-		},
-		error: function (data) {
-			console.info("error: " + data.responseText);
-		}*/
-			})
-		}
-	);
-
-
+	function doLogin() {
+		let userName = $("#uid").val();
+		let passWord = $("#pid").val();
+		let checkCode = $("#codeInId").val();
+		console.log(userName);
+		console.log(passWord);
+		let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
+		let data = JSON.stringify(dto);
+		$.ajax({
+			url: "/login",
+			type: "post",
+			datatype: "json",
+			contentType: "application/json",
+			data: data,
+			async: true,
+			success: function (result) {
+				console.info("success: " + result);
+				window.location.href = "/index";
+			},
+			beforeSend: function () {
+				// 禁用按钮防止重复提交
+				$("#btn").attr({disabled: "disabled"});
+			},
+			complete: function () {
+				$("#btn").removeAttr("disabled");
+			},
+			error: function (result) {
+				console.info("error: " + result);
+				window.location.href = "/index";
+			}
+		})
+	}
 
 </script>
 

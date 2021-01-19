@@ -24,10 +24,10 @@ public class CommonFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest)request;
         String uri = req.getRequestURI();
         // 放行静态资源
-        if (uri.endsWith(".css") || uri.endsWith(".css") || uri.endsWith(".jpg")) {
+        /*if (uri.endsWith(".js") || uri.endsWith(".css") || uri.endsWith(".jpg") || uri.endsWith("login")) {
             chain.doFilter(request, response);
             return;
-        }
+        }*/
 
         String header = req.getHeader("user-agent");
         String remoteAddr = req.getRemoteAddr();
