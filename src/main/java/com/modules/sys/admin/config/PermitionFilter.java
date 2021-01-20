@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 权限过滤器
+ * token校验过滤器
  */
 @Slf4j
 public class PermitionFilter extends AuthenticatingFilter {

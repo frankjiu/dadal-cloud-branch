@@ -3,21 +3,21 @@
 >
 <html>
 <head>
-<meta charset="UTF-8">
-<title>登录页面</title>
-<script type="text/javascript" src="/js/jquery-1.11.1.min.js" ></script>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 <h3>登录</h3>
 <!--<h3 th:text="${msg}" style="color: red"></h3>-->
 
 <form action="/login" method="post">
-	用户名：<input id="uid" type="text" name="username"/><br/>
-	密码：<input id="pid" type="password" name="password"/><br/>
-	验证码：<input id="codeInId" type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="换一张"/>
-	<a href="javascript:void(0)" onclick="javascript:refresh()"></a><br/>
-	<input type="checkbox" name="rememberMe"/>记住我<br/>
-	<input id="btn" type="button" value="提交"/>
+    用户名：<input id="uid" type="text" name="username"/><br/>
+    密码：<input id="pid" type="password" name="password"/><br/>
+    验证码：<input id="codeInId" type="text" name="checkcode"/><img id="codeId" alt="验证码" th:src="@{/random/code}" title="换一张"/>
+    <a href="javascript:void(0)" onclick="javascript:refresh()"></a><br/>
+    <input type="checkbox" name="rememberMe"/>记住我<br/>
+    <input id="btn" type="button" value="提交"/>
 </form>
 </body>
 
@@ -25,57 +25,59 @@
 
 <script type="text/javascript">
 
-	function refresh() {
-		$("#codeId").attr("src", "/random/code?id=" + new Date() + Math.floor(Math.random() * 24));
-	}
+    function refresh() {
+        $("#codeId").attr("src", "/random/code?id=" + new Date() + Math.floor(Math.random() * 24));
+    }
 
-	$("#codeId").on('click', function() {
-		refresh()
-	})
+    $("#codeId").on('click', function () {
+        refresh()
+    })
 
-	//回车登录
-	$('body').keydown(function(e){
-		if(e.keyCode==13){
-			doLogin();
-		}
-	});
+    //回车登录
+    $('body').keydown(function (e) {
+        if (e.keyCode == 13) {
+            doLogin();
+        }
+    });
 
-	$("#btn").on('click', function() {
-		doLogin()
-	})
+    $("#btn").on('click', function () {
+        doLogin()
+    })
 
-	function doLogin() {
-		let userName = $("#uid").val();
-		let passWord = $("#pid").val();
-		let checkCode = $("#codeInId").val();
-		console.log(userName);
-		console.log(passWord);
-		let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
-		let data = JSON.stringify(dto);
-		$.ajax({
-			url: "/login",
-			type: "post",
-			datatype: "json",
-			contentType: "application/json",
-			data: data,
-			async: true,
-			success: function (result) {
-				console.info("success: " + result);
-				window.location.href = "/index";
-			},
-			beforeSend: function () {
-				// 禁用按钮防止重复提交
-				$("#btn").attr({disabled: "disabled"});
-			},
-			complete: function () {
-				$("#btn").removeAttr("disabled");
-			},
-			error: function (result) {
-				console.info("error: " + result);
-				window.location.href = "/login";
-			}
-		})
-	}
+    //let token;
+
+    function doLogin() {
+        let userName = $("#uid").val();
+        let passWord = $("#pid").val();
+        let checkCode = $("#codeInId").val();
+        console.log(userName);
+        console.log(passWord);
+        let dto = {userName: userName, passWord: passWord, checkCode: checkCode, rememberMe: false};
+        let data = JSON.stringify(dto);
+        $.ajax({
+            url: "/login",
+            type: "post",
+            datatype: "json",
+            contentType: "application/json",
+            data: data,
+            async: false,
+            success: function (res) {
+                let token = res.data;
+                localStorage.setItem('token', token);
+                window.location.href = "/index";
+            },
+            beforeSend: function () {
+                $("#btn").attr({disabled: "disabled"}); // 禁用按钮防止重复提交
+            },
+            complete: function () {
+                $("#btn").removeAttr("disabled");
+            },
+            error: function (result) {
+                console.info("error: " + result);
+                window.location.href = "/login";
+            }
+        })
+    }
 
 </script>
 

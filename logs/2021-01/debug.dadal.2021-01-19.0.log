@@ -1,0 +1,738 @@
+2021-01-19 17:15:44.013 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 17:18:28.219 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:18:28.238 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:18:28.275 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:18:31.185 | DEBUG | qtp2018783436-33 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:18:31.189 | DEBUG | qtp2018783436-33 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:18:31.191 | DEBUG | qtp2018783436-33 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:18:38.507 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:18:38.508 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:18:38.511 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:18:51.833 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:18:51.834 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:18:51.835 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:24:38.428 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:24:38.428 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:24:38.430 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:25:33.122 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:25:33.123 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:25:33.125 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:25:33.165 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:25:33.166 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:25:33.168 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:25:33.170 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 17:25:33.171 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 17:25:33.175 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 17:25:33.176 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:25:33.177 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:25:33.185 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 17:25:33.186 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:25:33.187 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:25:33.191 | DEBUG | qtp2018783436-29 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 17:53:02.183 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:53:02.185 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:53:02.188 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:53:02.193 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:53:02.194 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:53:02.196 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:53:02.199 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 17:53:02.199 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 17:53:02.203 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 17:53:02.204 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:53:02.205 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:53:02.211 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 17:53:02.212 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:53:02.213 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:53:02.216 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 17:53:16.505 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:53:16.507 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:53:16.510 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:53:16.516 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 17:53:16.517 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 17:53:16.518 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 17:53:16.520 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 17:53:16.520 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 17:53:16.522 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 17:53:16.523 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:53:16.524 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:53:16.527 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 17:53:16.528 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 17:53:16.529 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 17:53:16.532 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:37:58.258 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:37:58.259 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:37:58.264 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:38:22.007 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:38:22.008 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:38:22.010 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:38:22.013 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:38:22.014 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:38:22.016 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:38:22.018 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:38:22.019 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:38:22.022 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:38:22.023 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:38:22.023 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:38:22.027 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:38:22.028 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:38:22.029 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:38:22.032 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:39:52.525 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:39:52.526 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:39:52.528 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:39:52.535 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:39:52.537 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:39:52.539 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:39:52.541 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:39:52.541 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:39:52.543 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:39:52.544 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:39:52.545 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:39:52.548 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:39:52.549 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:39:52.549 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:39:52.552 | DEBUG | qtp2018783436-58 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:09.373 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:09.374 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:09.378 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:09.381 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:09.382 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:09.383 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:09.384 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:52:09.385 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:52:09.388 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:52:09.389 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:09.390 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:09.394 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:09.396 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:09.397 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:09.400 | DEBUG | qtp2018783436-36 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:27.131 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:27.132 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:27.133 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:27.136 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:27.137 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:27.138 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:27.139 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:52:27.140 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:52:27.141 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:52:27.142 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:27.143 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:27.144 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:27.146 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:27.146 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:27.148 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:43.725 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:43.726 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:43.727 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:43.730 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:52:43.731 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:52:43.734 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:52:43.735 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:52:43.737 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:52:43.739 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:52:43.740 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:43.740 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:43.742 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:52:43.743 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:52:43.744 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:52:43.747 | DEBUG | qtp2018783436-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:53:29.593 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:53:29.594 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:53:29.596 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:53:29.599 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:53:29.600 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:53:29.602 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:53:29.604 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:53:29.606 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:53:29.608 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:53:29.609 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:53:29.610 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:53:29.613 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:53:29.614 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:53:29.615 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:53:29.618 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:54:47.861 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:54:47.862 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:54:47.863 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:54:47.866 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:54:47.867 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:54:47.869 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:54:47.871 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:54:47.873 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:54:47.874 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:54:47.875 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:54:47.876 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:54:47.879 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:54:47.881 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:54:47.881 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:54:47.884 | DEBUG | qtp2018783436-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:55:18.656 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:55:18.657 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:55:18.659 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:55:18.665 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:55:18.666 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:55:18.667 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:55:18.670 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:55:18.670 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:55:18.673 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:55:18.674 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:55:18.675 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:55:18.677 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:55:18.678 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:55:18.680 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:55:18.682 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:55:31.047 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:55:31.048 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:55:31.050 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:55:31.054 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:55:31.055 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:55:31.058 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:55:31.061 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:55:31.062 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:55:31.064 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:55:31.065 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:55:31.067 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:55:31.070 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:55:31.071 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:55:31.071 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:55:31.073 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:00.139 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:00.140 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:00.145 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:00.148 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:00.150 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:00.151 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:00.153 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:56:00.154 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:56:00.156 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:56:00.157 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:00.158 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:00.161 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:00.162 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:00.163 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:00.165 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:18.019 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:18.020 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:18.021 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:18.024 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:18.025 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:18.027 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:18.028 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:56:18.029 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:56:18.032 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:56:18.034 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:18.034 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:18.037 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:18.038 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:18.039 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:18.041 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:28.276 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:28.277 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:28.279 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:28.282 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:28.283 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:28.285 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:28.285 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:56:28.286 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:56:28.288 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:56:28.289 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:28.291 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:28.293 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:28.295 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:28.296 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:28.298 | DEBUG | qtp2018783436-35 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:42.413 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:42.414 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:42.416 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:42.420 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:56:42.421 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:56:42.423 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:56:42.426 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:56:42.428 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:56:42.431 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:56:42.432 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:42.432 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:42.433 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:56:42.434 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:56:42.435 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:56:42.438 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:58:24.192 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:58:24.193 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:58:24.195 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:58:24.198 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:58:24.199 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:58:24.201 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:58:24.202 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:58:24.203 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:58:24.204 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:58:24.206 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:58:24.207 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:58:24.208 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:58:24.209 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:58:24.210 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:58:24.213 | DEBUG | qtp2018783436-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:59:16.414 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:59:16.415 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:59:16.417 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:59:16.420 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 18:59:16.421 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 18:59:16.422 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 18:59:16.424 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 18:59:16.425 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 18:59:16.427 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 18:59:16.428 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:59:16.428 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:59:16.430 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:59:16.431 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 18:59:16.432 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 18:59:16.434 | DEBUG | qtp2018783436-31 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 18:59:48.156 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 19:00:11.629 | DEBUG | qtp1855329823-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:00:11.647 | DEBUG | qtp1855329823-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:00:11.667 | DEBUG | qtp1855329823-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:14:51.515 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:14:51.518 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:14:51.522 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:14:51.535 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:14:51.537 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:14:51.540 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:14:51.542 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:14:51.543 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:14:51.548 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:14:51.549 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:14:51.551 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:14:51.567 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:14:51.568 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:14:51.570 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:14:51.584 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:15:20.197 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:15:20.204 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:15:20.221 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:15:27.649 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:15:27.657 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:15:27.671 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:15:27.676 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:15:27.679 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:15:27.685 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:15:27.690 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:15:27.693 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:15:27.723 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:15:27.727 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:15:27.730 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:15:27.761 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:19:46.549 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:19:46.551 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:19:46.553 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:19:46.557 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:19:46.558 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:19:46.561 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:19:46.562 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:19:46.564 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:19:46.566 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:19:46.567 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:19:46.568 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:19:46.577 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:19:46.581 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:19:46.583 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:19:46.592 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:24:22.854 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:24:22.855 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:24:22.858 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:24:22.862 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:24:22.863 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:24:22.865 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:24:22.867 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:24:22.869 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:24:22.871 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:24:22.872 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:24:22.873 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:24:22.878 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:24:22.880 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:24:22.881 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:24:22.885 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:24:32.689 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:24:32.691 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:24:32.697 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:24:32.703 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:24:32.705 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:24:32.707 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:24:32.710 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:24:32.711 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:24:32.713 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:24:32.714 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:24:32.715 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:24:32.720 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:24:32.722 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:24:32.723 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:24:32.743 | DEBUG | qtp1855329823-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:25:41.898 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 19:26:59.043 | DEBUG | qtp1641196047-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:26:59.079 | DEBUG | qtp1641196047-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:26:59.110 | DEBUG | qtp1641196047-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:27:57.871 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 19:28:35.251 | DEBUG | qtp775762264-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:28:35.270 | DEBUG | qtp775762264-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:28:35.287 | DEBUG | qtp775762264-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:28:57.528 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 19:29:19.239 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:29:19.259 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:29:19.276 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:04.056 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:04.057 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:04.059 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:04.062 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:04.063 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:04.065 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:04.067 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:30:04.068 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:30:04.070 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:30:04.071 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:04.071 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:04.078 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:30:04.082 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:04.084 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:04.096 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:30:15.577 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:15.578 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:15.580 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:15.584 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:15.585 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:15.587 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:15.589 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:30:15.590 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:30:15.592 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:30:15.593 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:15.594 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:15.599 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:30:15.601 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:15.602 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:15.607 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:30:27.676 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:27.677 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:27.680 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:27.683 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:30:27.684 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:30:27.687 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:30:27.689 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:30:27.690 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:30:27.693 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:30:27.695 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:27.696 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:27.700 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:30:27.702 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:30:27.703 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:30:27.709 | DEBUG | qtp1391748051-54 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:10.068 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:10.069 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:10.072 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:10.077 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:10.078 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:10.080 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:10.081 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:34:10.082 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:34:10.084 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:34:10.085 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:10.086 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:10.089 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:10.093 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:10.094 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:10.097 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:24.689 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:24.690 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:24.694 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:24.697 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:24.698 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:24.700 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:24.701 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:34:24.702 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:34:24.704 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:34:24.705 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:24.706 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:24.708 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:24.708 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:24.709 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:24.711 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:37.072 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:37.073 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:37.075 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:37.077 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:37.078 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:37.080 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:37.081 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:34:37.082 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:34:37.083 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:34:37.084 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:37.085 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:37.088 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:37.090 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:37.091 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:37.093 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:43.721 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:43.723 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:43.726 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:43.730 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:34:43.731 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:34:43.733 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:34:43.734 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:34:43.735 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:34:43.737 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:34:43.738 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:43.739 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:43.743 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:34:43.744 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:34:43.745 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:34:43.748 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:36:03.013 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:36:03.015 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:36:03.017 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:36:03.020 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:36:03.021 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:36:03.024 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:36:03.025 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:36:03.026 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:36:03.027 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:36:03.029 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:36:03.030 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:36:03.033 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:36:03.036 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:36:03.037 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:36:03.040 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:38:26.919 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:38:26.920 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:38:26.921 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:38:26.924 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:38:26.926 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:38:26.929 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:38:26.930 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:38:26.931 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:38:26.933 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:38:26.935 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:38:26.936 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:38:26.938 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:38:26.939 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:38:26.940 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:38:26.943 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:40:43.491 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:40:43.492 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:40:43.493 | DEBUG | qtp1391748051-55 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:40:50.362 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:40:50.364 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:40:50.365 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:40:53.840 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:40:53.841 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:40:53.843 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:41:03.463 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:41:03.464 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:41:03.466 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:41:03.468 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:41:03.469 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:41:03.471 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:41:03.473 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:41:03.475 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:41:03.477 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:41:03.478 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:41:03.479 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:41:03.482 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:41:03.483 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:41:03.483 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:41:03.485 | DEBUG | qtp1391748051-49 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:42:20.885 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:42:20.890 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:42:20.903 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:42:24.491 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:42:24.496 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:42:24.518 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:42:24.523 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:42:24.529 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:42:24.536 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:42:24.540 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:42:24.544 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:42:24.573 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:42:24.577 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:42:24.581 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:42:24.612 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:43:16.817 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:43:16.828 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:43:16.857 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:43:24.583 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:43:24.591 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:43:24.614 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:43:24.626 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:43:24.635 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:43:24.648 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:43:24.654 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:43:24.659 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:43:24.699 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:43:24.704 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:43:24.707 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:43:24.736 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:44:20.759 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:44:20.767 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:44:20.780 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:36.399 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:50:36.408 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:50:36.436 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:36.449 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:50:36.457 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:50:36.472 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:50:36.490 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:36.514 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:36.634 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:50:36.685 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:36.703 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:36.845 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:50:47.038 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:50:47.039 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:50:47.041 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:47.044 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:50:47.045 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:50:47.047 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:47.048 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:50:47.049 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:50:47.051 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:50:47.052 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:47.054 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:47.058 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:50:47.059 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:47.060 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:47.063 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:50:55.115 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:50:55.116 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:50:55.118 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:55.121 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:50:55.122 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:50:55.123 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:50:55.125 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:50:55.126 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:50:55.128 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:50:55.129 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:55.130 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:55.132 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:50:55.133 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:50:55.133 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:50:55.135 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:02.863 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:02.864 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:02.866 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:02.868 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:02.869 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:02.871 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:02.873 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:51:02.875 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:51:02.879 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:51:02.880 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:02.881 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:02.883 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:02.883 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:02.884 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:02.887 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:17.195 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:17.196 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:17.198 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:17.201 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:17.203 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:17.204 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:17.205 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:51:17.206 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:51:17.208 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:51:17.209 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:17.211 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:17.213 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:17.214 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:17.215 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:17.216 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:28.506 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:28.507 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:28.508 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:28.511 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:28.512 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:28.513 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:28.514 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:51:28.515 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:51:28.517 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:51:28.518 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:28.519 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:28.521 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:28.522 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:28.523 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:28.524 | DEBUG | qtp1391748051-53 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:45.652 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:45.653 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:45.654 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:45.657 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:51:45.658 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:51:45.660 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:51:45.662 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:51:45.663 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:51:45.664 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:51:45.666 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:45.667 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:45.669 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:51:45.670 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:51:45.671 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:51:45.673 | DEBUG | qtp1391748051-48 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:52:16.856 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:52:16.857 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:52:16.858 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:52:16.861 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:52:16.862 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:52:16.864 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:52:16.865 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:52:16.866 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:52:16.868 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:52:16.869 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:52:16.870 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:52:16.872 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:52:16.873 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:52:16.874 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:52:16.875 | DEBUG | qtp1391748051-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:58:37.977 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:58:37.978 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:58:37.979 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:58:37.982 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 19:58:37.983 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 19:58:37.985 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 19:58:37.986 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 19:58:37.987 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 19:58:37.988 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 19:58:37.990 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:58:37.990 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:58:37.994 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 19:58:37.995 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 19:58:37.996 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 19:58:37.998 | DEBUG | qtp1391748051-50 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 20:04:39.341 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-19 20:05:07.587 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 20:05:07.605 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 20:05:07.622 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 20:05:17.190 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 20:05:17.190 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 20:05:17.192 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 20:05:17.194 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 20:05:17.195 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 20:05:17.197 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 20:05:17.199 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 20:05:17.200 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 20:05:17.201 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 20:05:17.202 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 20:05:17.203 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 20:05:17.209 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 20:05:17.210 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 20:05:17.211 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 20:05:17.216 | DEBUG | qtp2103039176-51 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 20:05:29.510 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 20:05:29.511 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 20:05:29.513 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 20:05:29.515 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-19 20:05:29.516 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-19 20:05:29.518 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-19 20:05:29.519 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-19 20:05:29.519 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-19 20:05:29.520 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-19 20:05:29.521 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 20:05:29.521 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 20:05:29.524 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-19 20:05:29.525 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-19 20:05:29.526 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-19 20:05:29.529 | DEBUG | qtp2103039176-52 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22

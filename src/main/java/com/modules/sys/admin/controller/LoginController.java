@@ -65,7 +65,7 @@ public class LoginController extends AbstractController{
         if (redisUser == null) {
             return "login";
         } else {
-            return "redirect:index"; //重定向到index方法
+            return "redirect:/index"; //重定向到index方法
         }
     }
 
@@ -86,13 +86,14 @@ public class LoginController extends AbstractController{
     /**
      * 登录
      */
+    @ResponseBody
     @PostMapping("/login")
-    public HttpResult loginUser(@RequestBody LoginDto loginForm) throws Exception {
+    public HttpResult loginUser(@RequestBody LoginDto loginForm) {
         User queryUser = new User();
         try {
             String sessionCode = (String) getSession().getAttribute(Constant.SESSION_RANDOM_CODE);
             if (loginForm.getCheckCode() == null || !loginForm.getCheckCode().equalsIgnoreCase(sessionCode)) {
-                return HttpResult.fail("验证码错误!");
+                //return HttpResult.fail("验证码错误!"); //便于postman使用 暂时关闭
             }
             // 创建token, 加密后执行登陆验证
             queryUser = userService.findByUserName(loginForm.getUserName());
@@ -106,13 +107,14 @@ public class LoginController extends AbstractController{
             if (!subject.isAuthenticated()) {
                 throw new AuthenticationException("认证失败!");
             }
-            // 认证成功, 将用户信息加入缓存
+            // 认证成功, 将 token 和 用户信息 加入缓存
             RedisUser redisUser = getRedisUser();
             redisTemplate.opsForValue().set(Constant.REDIS_USER_PREFIX + queryUser.getUserName(), redisUser, Constant.LOGIN_EXPIRE, TimeUnit.SECONDS);
-            return HttpResult.success(getToken());
+            String token = getToken();
+            return HttpResult.success(token);
         } catch (Exception e) {
             redisTemplate.delete(Constant.REDIS_USER_PREFIX + queryUser.getUserName());
-            return HttpResult.fail();
+            return HttpResult.fail("Login error: " + e.getMessage());
         }
 
     }

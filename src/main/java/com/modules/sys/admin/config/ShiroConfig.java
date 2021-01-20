@@ -33,9 +33,9 @@ public class ShiroConfig {
 		//设置提示页
 		shiroFilterFactoryBean.setUnauthorizedUrl("/noAuth");
 
-		/*Map<String, Filter> filters = new HashMap<>();
+		Map<String, Filter> filters = new HashMap<>();
 		filters.put("permitionFilter", new PermitionFilter());
-		shiroFilterFactoryBean.setFilters(filters);*/
+		shiroFilterFactoryBean.setFilters(filters);
 
 		// 使用 LinkedHashMap 配置访问权限, 保证按从上向下的顺序执行
 		// Shiro内置过滤器: anon: 无需认证即可访问; authc: 通过认证才能访问;
@@ -65,7 +65,7 @@ public class ShiroConfig {
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 		return shiroFilterFactoryBean;
 	}
-	
+
 	/**
 	 * 创建DefaultWebSecurityManager
 	 */

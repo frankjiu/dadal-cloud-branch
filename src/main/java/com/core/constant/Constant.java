@@ -42,6 +42,11 @@ public class Constant {
 
     ////////////////////////////////////redis_constant/////////////////////////////////////////
     /**
+     * redis中TOKEN前缀
+     */
+    public static final String REDIS_TOKEN_PREFIX = APPLICATION_NAME + "::TOKEN::";
+
+    /**
      * redis中用户信息的前缀
      */
     public static final String REDIS_USER_PREFIX = APPLICATION_NAME + "::USER::";

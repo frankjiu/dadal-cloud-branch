@@ -50,7 +50,11 @@ public class ShiroRealm extends AuthorizingRealm {
         String formPassWord = new String(account.getPassword());
         // 查询缓存
         RedisUser redisUser = redisTemplate.opsForValue().get(Constant.REDIS_USER_PREFIX + formUserName);
-        if (redisUser == null) {
+        String token = null;
+        if (redisUser != null) {
+            token = redisUser.getToken();
+        }
+        if (token == null) {
             // 查询数据库比对账号信息,密码校验交由Authentication认证
             User user = this.userService.findByUserName(formUserName);
             if (user == null) {
