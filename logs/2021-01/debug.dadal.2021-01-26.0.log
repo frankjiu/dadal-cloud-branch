@@ -1,0 +1,22 @@
+2021-01-26 08:50:31.743 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-01-26 10:16:24.426 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-26 10:16:24.461 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-26 10:16:24.501 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-26 10:16:24.504 | DEBUG | qtp1769337191-56 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-01-26 10:16:25.447 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-26 10:16:25.448 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-26 10:16:25.450 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-01-26 10:16:25.452 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-01-26 10:16:25.454 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-01-26 10:16:25.459 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-01-26 10:16:25.460 | DEBUG | qtp1769337191-56 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20001} enter cache
+2021-01-26 10:16:25.461 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-26 10:16:25.462 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-26 10:16:25.472 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-26 10:16:25.474 | DEBUG | qtp1769337191-56 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20002} enter cache
+2021-01-26 10:16:25.475 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-01-26 10:16:25.475 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-01-26 10:16:25.480 | DEBUG | qtp1769337191-56 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-01-26 10:56:57.960 | DEBUG | qtp1769337191-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-01-26 10:56:57.961 | DEBUG | qtp1769337191-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-01-26 10:56:57.964 | DEBUG | qtp1769337191-53 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1

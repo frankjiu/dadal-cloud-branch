@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.concurrent.ForkJoinPool;
 
 /**
- * @Description:
+ * @Description: ForkJoinPool 线程池配置
  * @Author: QiuQiang
  * @Date: 2020-05-10
  */

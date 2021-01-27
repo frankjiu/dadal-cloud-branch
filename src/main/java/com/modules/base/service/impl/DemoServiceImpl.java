@@ -33,7 +33,7 @@ public class DemoServiceImpl implements DemoService {
     private DemoDao demoDao;
 
     @Override
-    @Cacheable(value = "DemoCache", key = "#id")
+    @Cacheable(value = "DemoCache", key = "#id", cacheManager = "demoCacheManager")
     public Demo findById(Integer id) {
         log.info(">>> Query from database.."); // 测试cache缓存效果
         Demo demo = null;

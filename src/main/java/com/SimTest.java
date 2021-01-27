@@ -1,10 +1,18 @@
 package com;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.RedisCallback;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Description:
@@ -13,21 +21,36 @@ import java.util.Date;
  */
 public class SimTest {
 
+    @Autowired
+    RedisTemplate redisTemplate;
+
     @Test
-    public void test1() throws IOException, InterruptedException {
+    public void test1() throws IOException, InterruptedException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 
-        String fileName = "tb_im.xlsx";
+        List<Integer> numList = Lists.newArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<List<Integer>> lists=Lists.partition(numList,4);
+        lists.get(0).remove(2);
+        System.out.println(numList);//[[1, 2, 3], [4, 5, 6], [7, 8]]
 
-        String perName = fileName.substring(0, fileName.lastIndexOf("."));
-        String suffix = fileName.substring(fileName.lastIndexOf("."));
-        String destFileName = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date()) + "_" + perName + "_" + "955688" + suffix;
+        Map.Entry<String,String> entry = new HashMap.SimpleEntry<>("a", "1");
+        System.out.println(entry);
+        System.out.println("getKey:" + entry.getKey());
+        System.out.println("getValue:" + entry.getValue());
+        entry.setValue("2");
+        System.out.println("setValue:" + entry);
 
-        for (int i = 0; i < 6; i++) {
-            String destFileName1 = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date()) + "_" + perName + "_" + "955688" + suffix;
-            Thread.sleep(1000);
-            System.out.println(destFileName1);
-        }
 
+    }
+
+    // 数据库层面的命令使用execute实现
+    public void testFlushDB(){
+        redisTemplate.execute(new RedisCallback() {
+            @Override
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                connection.flushDb();
+                return null;
+            }
+        });
     }
 
 }

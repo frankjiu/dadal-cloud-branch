@@ -30,10 +30,12 @@ spring:
     view:
       prefix: /
       suffix: .html
-
+  #set cache manager type
+  cache:
+    type: redis
   #redis
   redis:
-    database: 0
+    database: 5
     #办公本CentOS7 Linux redis服务地址
     host: 192.168.75.130
     #便携本Windows 本地redis服务地址
