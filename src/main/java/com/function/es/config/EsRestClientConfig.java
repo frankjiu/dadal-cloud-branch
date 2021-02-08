@@ -12,7 +12,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import java.time.Duration;
 
 /**
- * @Description: Es RestClient Config
+ * @Description: Es RestClient Config(springboot已自动配置, 无需注入)
  * @Author: QiuQiang
  * @Date: 2021-01-05
  */

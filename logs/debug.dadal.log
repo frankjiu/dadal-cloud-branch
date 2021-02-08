@@ -1,50 +1,183 @@
-2021-02-05 19:03:50.869 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 19:06:30.762 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 19:45:40.389 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 19:51:07.534 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 19:51:07.566 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 19:51:07.606 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 19:51:07.609 | DEBUG | http-nio-8090-exec-4 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
-2021-02-05 19:52:47.419 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 19:52:47.421 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 19:52:47.423 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 19:52:47.481 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 19:52:47.482 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 19:52:47.483 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 19:52:47.486 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
-2021-02-05 19:52:47.488 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
-2021-02-05 19:52:47.491 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
-2021-02-05 19:52:47.492 | DEBUG | http-nio-8090-exec-7 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20001} enter cache
-2021-02-05 19:52:47.493 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
-2021-02-05 19:52:47.494 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
-2021-02-05 19:52:47.503 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
-2021-02-05 19:52:47.504 | DEBUG | http-nio-8090-exec-7 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20002} enter cache
-2021-02-05 19:52:47.505 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
-2021-02-05 19:52:47.505 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
-2021-02-05 19:52:47.510 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
-2021-02-05 20:08:30.854 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
-2021-02-05 20:08:30.855 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20001} exit cache
-2021-02-05 20:08:30.855 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20002} exit cache
-2021-02-05 20:08:40.053 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 20:09:36.520 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 20:09:36.560 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 20:09:36.591 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 20:09:36.595 | DEBUG | http-nio-8090-exec-4 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
-2021-02-05 20:09:41.803 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 20:09:41.806 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 20:09:41.813 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 20:09:43.019 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 20:09:43.020 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 20:09:43.022 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 20:17:26.352 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
-2021-02-05 20:17:37.881 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 20:18:12.367 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 20:18:12.394 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 20:18:12.421 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 20:18:12.424 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
-2021-02-05 20:32:39.518 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
-2021-02-05 20:32:50.265 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-05 20:34:11.482 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-05 20:34:11.507 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-05 20:34:11.533 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-05 20:34:11.536 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 08:30:31.888 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 08:30:31.900 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 08:30:31.908 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 08:30:31.909 | DEBUG | http-nio-8090-exec-8 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10011, pstmt-20001} enter cache
+2021-02-08 08:34:51.205 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10011, pstmt-20001} exit cache
+2021-02-08 08:35:02.232 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 08:36:40.004 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 08:36:40.042 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 08:36:40.077 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 08:36:40.084 | DEBUG | http-nio-8090-exec-4 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 08:53:42.390 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 08:53:51.022 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 08:54:21.038 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 08:54:21.074 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 08:54:21.110 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 08:54:21.114 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 09:48:07.262 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 09:48:20.421 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 09:49:14.472 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 09:49:14.497 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 09:49:14.523 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 09:49:14.525 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:11:16.767 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:11:30.848 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:15:15.844 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:15:15.869 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:15:15.890 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:15:15.893 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:20:34.376 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:20:46.762 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:21:25.291 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:21:25.319 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:21:25.339 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:21:25.343 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:25:42.397 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:25:53.990 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:26:37.476 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:26:37.518 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:26:37.553 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:26:37.558 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:28:24.705 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:28:35.918 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:29:00.946 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:29:00.973 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:29:00.996 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:29:01.000 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:29:19.193 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:29:25.075 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:29:46.020 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:30:11.751 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:30:11.776 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:30:11.801 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:30:11.804 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 10:42:31.067 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 10:42:43.058 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 10:44:24.260 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 10:44:24.291 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 10:44:24.316 | DEBUG | http-nio-8090-exec-5 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 10:44:24.320 | DEBUG | http-nio-8090-exec-5 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 11:25:43.199 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 11:25:57.638 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 12:39:09.449 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 12:42:15.523 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 12:42:15.555 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 12:42:15.584 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 12:42:15.589 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 12:42:16.631 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 12:42:16.632 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 12:42:16.634 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 12:42:16.636 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-02-08 12:42:16.638 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-02-08 12:42:16.640 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-02-08 12:42:16.641 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20001} enter cache
+2021-02-08 12:42:16.642 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-02-08 12:42:16.643 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-02-08 12:42:16.653 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-02-08 12:42:16.654 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20002} enter cache
+2021-02-08 12:42:16.655 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-02-08 12:42:16.656 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-02-08 12:42:16.660 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-02-08 12:57:41.599 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 12:57:41.599 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20001} exit cache
+2021-02-08 12:57:41.599 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20002} exit cache
+2021-02-08 12:57:51.561 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 12:58:30.521 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 12:58:30.547 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 12:58:30.569 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 12:58:30.572 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:11:11.440 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:11:26.324 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:12:07.063 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:12:35.295 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:12:35.327 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:12:35.353 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:12:35.356 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:16:20.836 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:16:30.249 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:17:13.107 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:17:13.137 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:17:13.162 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:17:13.165 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:19:27.944 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:19:37.033 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:20:31.543 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:20:31.583 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:20:31.611 | DEBUG | http-nio-8090-exec-6 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:20:31.615 | DEBUG | http-nio-8090-exec-6 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:29:45.082 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:29:51.794 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:31:04.321 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:31:04.350 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:31:04.377 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:31:04.380 | DEBUG | http-nio-8090-exec-4 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:33:17.927 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:33:29.059 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:34:16.234 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:34:16.277 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:34:16.308 | DEBUG | http-nio-8090-exec-4 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:34:16.313 | DEBUG | http-nio-8090-exec-4 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:36:28.024 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:36:42.996 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:37:03.610 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:37:03.640 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:37:03.672 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:37:03.677 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:39:38.710 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:39:47.792 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:40:36.948 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:40:36.976 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:40:37.006 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:40:37.010 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 13:43:40.837 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 13:43:53.743 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 13:44:36.796 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 13:44:36.826 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 13:44:36.888 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 13:44:36.894 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 14:01:32.510 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 14:02:12.219 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 14:02:12.252 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 14:02:12.278 | DEBUG | http-nio-8090-exec-1 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 14:02:12.282 | DEBUG | http-nio-8090-exec-1 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 14:44:47.000 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 14:45:55.527 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 15:17:54.479 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 15:18:23.322 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:18:23.347 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:18:23.371 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:18:23.375 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 15:18:24.376 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:18:24.376 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:18:24.378 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:18:24.380 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
+2021-02-08 15:18:24.381 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
+2021-02-08 15:18:24.383 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
+2021-02-08 15:18:24.384 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20001} enter cache
+2021-02-08 15:18:24.385 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-02-08 15:18:24.386 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-02-08 15:18:24.395 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-02-08 15:18:24.396 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20002} enter cache
+2021-02-08 15:18:24.397 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
+2021-02-08 15:18:24.397 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
+2021-02-08 15:18:24.402 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-02-08 15:25:16.710 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:25:16.711 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:25:16.713 | DEBUG | http-nio-8090-exec-7 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:27:13.285 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 15:27:59.492 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:27:59.529 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:27:59.563 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:27:59.567 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 15:29:22.293 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 15:29:34.982 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 15:32:02.033 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:32:02.062 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:32:02.085 | DEBUG | http-nio-8090-exec-2 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:32:02.088 | DEBUG | http-nio-8090-exec-2 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
+2021-02-08 15:33:28.225 | DEBUG | SpringContextShutdownHook | com.alibaba.druid.pool.PreparedStatementPool-line:160 | {conn-10010, pstmt-20000} exit cache
+2021-02-08 15:33:41.042 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-02-08 15:35:29.573 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
+2021-02-08 15:35:29.599 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
+2021-02-08 15:35:29.623 | DEBUG | http-nio-8090-exec-3 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
+2021-02-08 15:35:29.626 | DEBUG | http-nio-8090-exec-3 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache

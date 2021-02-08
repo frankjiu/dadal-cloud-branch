@@ -15,14 +15,8 @@ import java.util.List;
 @Repository
 public interface EsDao extends ElasticsearchRepository<EsModel, Long> {
 
-    /**
-     * 数据访问层接口
-     */
-    //根据Title域中的关键词查找数据
-    public List<EsModel> findByName(String str);
+    List<EsModel> findByName(String name);
 
-    //根据Title域中的关键词查找数据
-    public List<EsModel> findByName(String str, Pageable pageable);
-
+    List<EsModel> findByName(String name, Pageable pageable);
 
 }

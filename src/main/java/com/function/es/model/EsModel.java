@@ -15,7 +15,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "dadal", createIndex = false)
+@Document(indexName = "dadal", shards = 6, replicas = 1, createIndex = true)
 public class EsModel {
 
     @Id
