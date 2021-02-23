@@ -1,7 +1,7 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/dadal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=true
+      url: jdbc:mysql://192.168.75.130:3316/dadal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=true
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
       password: root
@@ -79,7 +79,7 @@ mybatis:
   config-location: classpath:/mybatis-config.xml
 
 app:
-  version: v1.2
+  version: v2.0
 
 #limited of data query
 limited:

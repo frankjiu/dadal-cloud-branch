@@ -1,62 +1,173 @@
-2021-02-18 10:17:37.029 | INFO  | background-preinit | org.hibernate.validator.internal.util.Version-line:21 | HV000001: Hibernate Validator 6.1.5.Final
-2021-02-18 10:17:37.062 | INFO  | main | com.CloudBranchApplication-line:55 | Starting CloudBranchApplication on PC-FRANK with PID 21792 (D:\IDEA\workspace_idea\dadal-cloud-branch\target\classes started by Administrator in D:\IDEA\workspace_idea\dadal-cloud-branch)
-2021-02-18 10:17:37.121 | INFO  | main | com.CloudBranchApplication-line:655 | The following profiles are active: dev
-2021-02-18 10:17:43.034 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-02-18 10:17:43.040 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
-2021-02-18 10:17:45.265 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 2215ms. Found 1 Elasticsearch repository interfaces.
-2021-02-18 10:17:45.272 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-02-18 10:17:45.274 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
-2021-02-18 10:17:46.617 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 1343ms. Found 0 Reactive Elasticsearch repository interfaces.
-2021-02-18 10:17:46.637 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-02-18 10:17:46.640 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-02-18 10:17:48.039 | INFO  | main | o.springframework.data.repository.config.RepositoryConfigurationExtensionSupport-line:348 | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.function.es.dao.EsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2021-02-18 10:17:48.040 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 1376ms. Found 0 Redis repository interfaces.
-2021-02-18 10:17:49.695 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'shiroConfig' of type [com.modules.sys.admin.config.ShiroConfig$$EnhancerBySpringCGLIB$$d9cff194] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.751 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.762 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$2e0738e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.770 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'cloudBranchApplication' of type [com.CloudBranchApplication$$EnhancerBySpringCGLIB$$c321159f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.846 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.912 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:49.922 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.301 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.311 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.314 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.318 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userDao' of type [com.sun.proxy.$Proxy90] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.328 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.330 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleDao' of type [com.sun.proxy.$Proxy91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.335 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.340 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.347 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.351 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.358 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.360 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userServiceImpl' of type [com.modules.sys.admin.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.364 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleServiceImpl' of type [com.modules.sys.admin.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.369 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.370 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuDao' of type [com.sun.proxy.$Proxy94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.373 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuServiceImpl' of type [com.modules.sys.admin.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.378 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisTemplateConfig' of type [com.core.config.RedisTemplateConfig$$EnhancerBySpringCGLIB$$96c614e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.390 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.393 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.515 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.617 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.706 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisTemplate' of type [org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.719 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'shiroRealm' of type [com.modules.sys.admin.config.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:50.801 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-02-18 10:17:51.119 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:108 | Tomcat initialized with port(s): 8090 (http)
-2021-02-18 10:17:51.133 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Initializing ProtocolHandler ["http-nio-8090"]
-2021-02-18 10:17:51.134 | INFO  | main | org.apache.catalina.core.StandardService-line:173 | Starting service [Tomcat]
-2021-02-18 10:17:51.134 | INFO  | main | org.apache.catalina.core.StandardEngine-line:173 | Starting Servlet engine: [Apache Tomcat/9.0.38]
-2021-02-18 10:17:51.322 | INFO  | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring embedded WebApplicationContext
-2021-02-18 10:17:51.323 | INFO  | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-line:285 | Root WebApplicationContext: initialization completed in 14031 ms
-2021-02-18 10:17:52.184 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:59 | Version Spring Data Elasticsearch: 4.0.4.RELEASE
-2021-02-18 10:17:52.185 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:60 | Version Elasticsearch Client in build: 7.6.2
-2021-02-18 10:17:52.185 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:61 | Version Elasticsearch Client used: 7.6.2
-2021-02-18 10:17:52.185 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:69 | Version Elasticsearch cluster: 7.6.2
-2021-02-18 10:17:53.432 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
-2021-02-18 10:17:53.812 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Starting ProtocolHandler ["http-nio-8090"]
-2021-02-18 10:17:53.831 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:220 | Tomcat started on port(s): 8090 (http) with context path ''
-2021-02-18 10:17:53.847 | INFO  | main | com.CloudBranchApplication-line:61 | Started CloudBranchApplication in 18.355 seconds (JVM running for 26.597)
-2021-02-18 10:19:38.828 | INFO  | http-nio-8090-exec-2 | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-02-18 10:19:38.829 | INFO  | http-nio-8090-exec-2 | org.springframework.web.servlet.DispatcherServlet-line:525 | Initializing Servlet 'dispatcherServlet'
-2021-02-18 10:19:38.839 | INFO  | http-nio-8090-exec-2 | org.springframework.web.servlet.DispatcherServlet-line:547 | Completed initialization in 10 ms
-2021-02-18 10:19:39.487 | INFO  | http-nio-8090-exec-2 | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2021-02-20 16:34:37.500 | INFO  | background-preinit | org.hibernate.validator.internal.util.Version-line:21 | HV000001: Hibernate Validator 6.1.5.Final
+2021-02-20 16:34:37.518 | INFO  | main | com.CloudBranchApplication-line:55 | Starting CloudBranchApplication on PC-FRANK with PID 20088 (D:\IDEA\workspace_idea\dadal-cloud-branch\target\classes started by Administrator in D:\IDEA\workspace_idea\dadal-cloud-branch)
+2021-02-20 16:34:37.531 | INFO  | main | com.CloudBranchApplication-line:655 | The following profiles are active: dev
+2021-02-20 16:34:43.057 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-20 16:34:43.064 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2021-02-20 16:34:45.210 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 2139ms. Found 1 Elasticsearch repository interfaces.
+2021-02-20 16:34:45.215 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-20 16:34:45.216 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2021-02-20 16:34:46.398 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 1181ms. Found 0 Reactive Elasticsearch repository interfaces.
+2021-02-20 16:34:46.410 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-20 16:34:46.411 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-20 16:34:47.628 | INFO  | main | o.springframework.data.repository.config.RepositoryConfigurationExtensionSupport-line:348 | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.function.es.dao.EsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-02-20 16:34:47.629 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 1204ms. Found 0 Redis repository interfaces.
+2021-02-20 16:34:49.224 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'shiroConfig' of type [com.modules.sys.admin.config.ShiroConfig$$EnhancerBySpringCGLIB$$9a56c9e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.267 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.275 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ee8e1132] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.279 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'cloudBranchApplication' of type [com.CloudBranchApplication$$EnhancerBySpringCGLIB$$83a7eded] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.343 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'druid' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.398 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.405 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.669 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.675 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.678 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.680 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userDao' of type [com.sun.proxy.$Proxy90] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.687 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.688 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleDao' of type [com.sun.proxy.$Proxy91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.690 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.693 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.698 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.701 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.707 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.710 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userServiceImpl' of type [com.modules.sys.admin.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.713 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'userRoleServiceImpl' of type [com.modules.sys.admin.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.716 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuDao' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.717 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuDao' of type [com.sun.proxy.$Proxy94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.719 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'menuServiceImpl' of type [com.modules.sys.admin.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.722 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisTemplateConfig' of type [com.core.config.RedisTemplateConfig$$EnhancerBySpringCGLIB$$574ced34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.730 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.733 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.832 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:49.949 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:50.080 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'redisTemplate' of type [org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:50.088 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'shiroRealm' of type [com.modules.sys.admin.config.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:50.150 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-20 16:34:50.400 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:108 | Tomcat initialized with port(s): 8090 (http)
+2021-02-20 16:34:50.410 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Initializing ProtocolHandler ["http-nio-8090"]
+2021-02-20 16:34:50.411 | INFO  | main | org.apache.catalina.core.StandardService-line:173 | Starting service [Tomcat]
+2021-02-20 16:34:50.411 | INFO  | main | org.apache.catalina.core.StandardEngine-line:173 | Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-02-20 16:34:50.557 | INFO  | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring embedded WebApplicationContext
+2021-02-20 16:34:50.558 | INFO  | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-line:285 | Root WebApplicationContext: initialization completed in 12956 ms
+2021-02-20 16:34:51.327 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:59 | Version Spring Data Elasticsearch: 4.0.4.RELEASE
+2021-02-20 16:34:51.327 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:60 | Version Elasticsearch Client in build: 7.6.2
+2021-02-20 16:34:51.328 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:61 | Version Elasticsearch Client used: 7.6.2
+2021-02-20 16:34:51.329 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:69 | Version Elasticsearch cluster: 7.6.2
+2021-02-20 16:34:53.179 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:58 | Adding welcome page template: index
+2021-02-20 16:34:53.507 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Starting ProtocolHandler ["http-nio-8090"]
+2021-02-20 16:34:53.523 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:220 | Tomcat started on port(s): 8090 (http) with context path ''
+2021-02-20 16:34:53.535 | INFO  | main | com.CloudBranchApplication-line:61 | Started CloudBranchApplication in 17.004 seconds (JVM running for 20.065)
+2021-02-20 16:35:07.852 | INFO  | http-nio-8090-exec-2 | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-20 16:35:07.852 | INFO  | http-nio-8090-exec-2 | org.springframework.web.servlet.DispatcherServlet-line:525 | Initializing Servlet 'dispatcherServlet'
+2021-02-20 16:35:07.864 | INFO  | http-nio-8090-exec-2 | org.springframework.web.servlet.DispatcherServlet-line:547 | Completed initialization in 11 ms
+2021-02-20 16:35:13.485 | INFO  | http-nio-8090-exec-8 | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2021-02-20 16:35:16.409 | INFO  | http-nio-8090-exec-8 | com.core.exception.GlobalExceptionHandler-line:46 | Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 192.168.75.130:6379
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 192.168.75.130:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1534)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1442)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1228)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1211)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:975)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:360)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:134)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:97)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:84)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:215)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
+	at org.springframework.data.redis.core.RedisTemplate.delete(RedisTemplate.java:713)
+	at com.modules.sys.admin.controller.LoginController.loginUser(LoginController.java:116)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 192.168.75.130:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:242)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:206)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1440)
+	... 83 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /192.168.75.130:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
