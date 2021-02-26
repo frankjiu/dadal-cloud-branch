@@ -1,0 +1,15 @@
+第一步: 写shell脚本: 
+	以root权限在/etc/init.d下新建文件 tomcat_auto_start_stop(注意检查复制的脚本是否完整和配置是否正确)
+vi /etc/init.d/tomcat_auto_start_stop
+
+第二步：保存退出之后,给 tomcat_auto_start_stop 其赋予可执行权限(或者赋予所有权限: chmod 777 xxx.xxx)
+chmod +x /etc/init.d/tomcat_auto_start_stop
+
+第三步：挂载
+ln -s /etc/init.d/tomcat_auto_start_stop /etc/rc2.d/S16Tomcat
+
+第四步：设置脚本开机自启动
+chkconfig --add tomcat_auto_start_stop
+
+第五步：重启Linux验证系统验证Tomcat是否运行成功
+sudo reboot
