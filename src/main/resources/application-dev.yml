@@ -99,3 +99,12 @@ config:
     mode: pasv						    # port是主动模式,pasv是被动模式
     cron: 0 0 0 * * ?					# ftp扫描时间表达式
     retryCount: 3						# 重连次数
+
+ai:
+  appId: 15191935
+  apiKey: cyWSHgas93Vtdmt42OwbW8pu
+  secretKey: yf1GusMvvLBdOnyubfLubNyod9iEDEZW
+  imageType: BASE64
+  groupId: itcast
+qr:
+  url: https://192.168.75.130:8888/#/facelogin
