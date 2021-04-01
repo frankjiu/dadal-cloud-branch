@@ -1,4 +1,4 @@
-package com.function.CompletableFuture;
+package com.function.completablefuture;
 
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
@@ -31,7 +31,7 @@ public class FutureAsyncDemo {
         Integer c = futureC.join();
 
         long t2 = System.currentTimeMillis();
-        System.out.println(">>>>>>>>>>>>>>>" + (t2-t1));
+        System.out.println(">>>>>>>>>>>>>>>" + (t2 - t1));
 
         executor.shutdown();
         return a + b + c;

@@ -1,4 +1,4 @@
-package com.function.CompletableFuture;
+package com.function.completablefuture;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
  * @Author: QiuQiang
  * @Date: 2021-03-15
  */
-public class CalculateArticleScoreB {
+public class CalculateArticleScoreC {
     public static Integer call() {
         //业务代码
         Random random = new Random();
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(4);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package com.function.CompletableFuture;
+package com.function.completablefuture;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

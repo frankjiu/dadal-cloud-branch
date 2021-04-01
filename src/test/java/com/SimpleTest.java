@@ -109,7 +109,7 @@ public class SimpleTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         Demp demp1 = new Demp();
         demp1.setDesc(new Demp.Desc("BBB"));
         Demp demp2 = new Demp();
@@ -138,7 +138,7 @@ public class SimpleTest {
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         String property = System.getProperty("user.dir");
         System.out.println(property);
 
