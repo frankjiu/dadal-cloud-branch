@@ -25,6 +25,9 @@ public class SimTest {
     @Autowired
     RedisTemplate redisTemplate;
 
+    public String str;
+    public int a;
+
     @Test
     public void test1() throws IOException, InterruptedException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
 
@@ -126,6 +129,11 @@ public class SimTest {
         list.add(9);
         Integer min = Collections.min(list);
         System.out.println(min);
+
+        System.out.println(str);
+        System.out.println(a);
+
+        Class<SimTest> simTestClass = SimTest.class;
 
 
     }
