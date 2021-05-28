@@ -2,6 +2,7 @@ package com;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.modules.Face.util.QRCodeUtil;
 import com.modules.sys.admin.model.entity.User;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -120,7 +121,7 @@ public class SimTest {
             System.out.println(a);
         }*/
 
-        int compare = Integer.compare(3, 5);
+        /*int compare = Integer.compare(3, 5);
 
         List<Integer> list = new ArrayList<>();
         list.add(5);
@@ -133,10 +134,15 @@ public class SimTest {
         System.out.println(str);
         System.out.println(a);
 
-        Class<SimTest> simTestClass = SimTest.class;
+        Class<SimTest> simTestClass = SimTest.class;*/
 
+        QRCodeUtil qrCodeUtil = new QRCodeUtil();
+        String ab = qrCodeUtil.crateQRCode("ab");
+        System.out.println(ab);
 
     }
+
+
 
 
 

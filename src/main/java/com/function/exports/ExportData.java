@@ -55,7 +55,7 @@ public class ExportData {
      */
     @PostMapping("export")
     public void export(@RequestBody String demoVoJsonStr, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        var list = new ArrayList<Demo>();
+        List<Demo> list = new ArrayList<Demo>();
         for (int i = 1; i < 21000 ; i++) {
             Demo demo = new Demo().builder().id(i).cardName("中国银行" + i).cardNumber("99999999555" + i).createTime(new Date()).build();
             list.add(demo);

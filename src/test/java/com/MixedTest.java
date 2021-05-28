@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
  */
 public class MixedTest {
 
-    public static final List<String> thirdFieldList = new ArrayList<>() {{
+    public static final List thirdFieldList = new ArrayList<String>() {{
         add("city");
         add("region");
         add("sub_region");
