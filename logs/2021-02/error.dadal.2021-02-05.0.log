@@ -1,0 +1,42 @@
+2021-02-05 19:04:14.583 | ERROR | main | org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter-line:40 | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field elasticsearchRestTemplate in com.function.es.controller.ElasticsearchOperator required a bean of type 'org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'elasticsearchTemplate' in 'ElasticsearchDataConfiguration.RestClientConfiguration' not loaded because @ConditionalOnMissingBean (names: elasticsearchTemplate types: org.springframework.data.elasticsearch.core.ElasticsearchOperations; SearchStrategy: all) found beans of type 'org.springframework.data.elasticsearch.core.ElasticsearchOperations' elasticsearchOperations and found beans named elasticsearchTemplate
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate' in your configuration.
+
+2021-02-05 19:06:46.246 | ERROR | main | org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter-line:40 | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field elasticsearchRestTemplate in com.function.es.controller.ElasticsearchController required a bean of type 'org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'elasticsearchTemplate' in 'ElasticsearchDataConfiguration.RestClientConfiguration' not loaded because @ConditionalOnMissingBean (names: elasticsearchTemplate types: org.springframework.data.elasticsearch.core.ElasticsearchOperations; SearchStrategy: all) found beans of type 'org.springframework.data.elasticsearch.core.ElasticsearchOperations' elasticsearchOperations and found beans named elasticsearchTemplate
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate' in your configuration.
+

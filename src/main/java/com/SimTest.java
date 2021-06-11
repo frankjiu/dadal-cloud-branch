@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.modules.Face.util.QRCodeUtil;
 import com.modules.sys.admin.model.entity.User;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.util.*;
 
 /**
@@ -136,9 +138,18 @@ public class SimTest {
 
         Class<SimTest> simTestClass = SimTest.class;*/
 
-        QRCodeUtil qrCodeUtil = new QRCodeUtil();
+        /*QRCodeUtil qrCodeUtil = new QRCodeUtil();
         String ab = qrCodeUtil.crateQRCode("ab");
-        System.out.println(ab);
+        System.out.println(ab);*/
+
+        String encodeStr = DigestUtils.md5Hex("ABD");
+        System.out.println(encodeStr);
+        String decodeStr = new String(DigestUtils.md5(encodeStr), "UTF-8");
+        System.out.println(decodeStr);
+
+        String encoded = Base64.getEncoder().encodeToString(DigestUtils.md5(encodeStr));
+        System.out.println(encoded);
+
 
     }
 

@@ -12,7 +12,6 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import com.core.filter.CommonFilter;
 import com.modules.sys.admin.config.PermitionFilter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,7 +19,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.servlet.Filter;
 import javax.sql.DataSource;
@@ -35,7 +33,6 @@ import java.util.Map;
  */
 @SpringBootApplication
 @EnableCaching
-@PropertySource("classpath:config.properties") // 加载config.properties文件
 public class CloudBranchApplication {
 
     /**

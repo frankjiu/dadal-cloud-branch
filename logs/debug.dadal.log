@@ -1,22 +1,13 @@
-2021-02-20 16:34:37.523 | DEBUG | main | com.CloudBranchApplication-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-02-20 16:35:13.490 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-20 16:35:13.520 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-20 16:35:13.564 | DEBUG | http-nio-8090-exec-8 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-20 16:35:13.568 | DEBUG | http-nio-8090-exec-8 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20000} enter cache
-2021-02-20 16:37:36.750 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-20 16:37:36.751 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-20 16:37:36.755 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-20 16:37:36.805 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==>  Preparing: SELECT * FROM user WHERE USER_NAME = ?
-2021-02-20 16:37:36.806 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | ==> Parameters: admin(String)
-2021-02-20 16:37:36.808 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserDao.findByUserName-line:137 | <==      Total: 1
-2021-02-20 16:37:36.810 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==>  Preparing: SELECT * FROM user_role WHERE USER_ID = ?
-2021-02-20 16:37:36.812 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | ==> Parameters: 1(Long)
-2021-02-20 16:37:36.821 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.UserRoleDao.findByUserId-line:137 | <==      Total: 1
-2021-02-20 16:37:36.821 | DEBUG | http-nio-8090-exec-10 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20001} enter cache
-2021-02-20 16:37:36.822 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
-2021-02-20 16:37:36.823 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
-2021-02-20 16:37:36.839 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
-2021-02-20 16:37:36.840 | DEBUG | http-nio-8090-exec-10 | com.alibaba.druid.pool.PreparedStatementPool-line:129 | {conn-10010, pstmt-20002} enter cache
-2021-02-20 16:37:36.840 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==>  Preparing: SELECT * FROM menu WHERE ID <> 0 ORDER BY ORDER_NUM ASC
-2021-02-20 16:37:36.841 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | ==> Parameters: 
-2021-02-20 16:37:36.846 | DEBUG | http-nio-8090-exec-10 | com.modules.sys.admin.dao.MenuDao.findAll-line:137 | <==      Total: 22
+2021-06-11 09:59:14.142 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:00:25.929 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:05:57.874 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:16:56.173 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:18:19.925 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:20:11.067 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:34:42.972 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:36:33.363 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:39:08.793 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:41:03.673 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:45:34.722 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 10:52:11.923 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-06-11 11:47:01.961 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE

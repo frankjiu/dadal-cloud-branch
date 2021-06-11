@@ -35,13 +35,15 @@ spring:
     type: redis
   #redis
   redis:
-    database: 5
+    database: 0
     #办公本CentOS7 Linux redis服务地址
-    host: 192.168.75.130
+    #host: 192.168.75.130
+    host: 192.168.1.100
     #便携本Windows 本地redis服务地址
     #host: 127.0.0.1
     port: 6379
-    password: 123456
+    #password: 123456
+    password: weiliang!195
     timeout: 20000
     #    集群环境打开下面注释，单机不需要打开
     #    cluster:

@@ -3,15 +3,13 @@ package com.modules.Face.service;
 
 import com.modules.Face.model.FaceLoginResult;
 import com.modules.Face.model.QRCode;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class FaceLoginService {
 
-    @Value("${qr.url}")
-    private String url;
+    private static String url = "";
 
 	//创建二维码
     public QRCode getQRCode() throws Exception {

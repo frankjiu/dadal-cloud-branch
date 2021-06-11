@@ -14,7 +14,7 @@ import com.core.exception.CommonException;
 import com.core.result.HttpResult;
 import com.core.result.PageModel;
 import com.google.common.collect.Lists;
-import com.modules.base.config.AppConfig;
+import com.core.config.AppConfig;
 import com.modules.base.model.dto.DemoGetDto;
 import com.modules.base.model.dto.DemoPostDto;
 import com.modules.base.model.entity.Demo;
