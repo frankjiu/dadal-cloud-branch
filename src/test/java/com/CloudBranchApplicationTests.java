@@ -28,22 +28,22 @@ public class CloudBranchApplicationTests {
 
     @Test
     public void demoTest() throws Exception {
-
         String url = "https://autumnfish.cn/search?keywords=热爱毛主席";
-        String jsonData = restTemplate.getForObject(url, String.class);
-        if(StringUtils.contains(jsonData, "errcode")) {
-            HttpResult.fail("wx login failed!");
+        String jsonData = restTemplate.getForObject(url, String.class);// 包含 access_token 等信息
+        if (StringUtils.contains(jsonData, "errcode")) {
+            HttpResult.fail("wx login failed!"); //failed
         }
-
-        String md5key = DigestUtils.md5Hex(jsonData + "HYZC_WX_LOGIN");
-
-        String redisKey = "WX_LOGIN_" + md5key;
+        // 数据加密
+        String encodeData = DigestUtils.md5Hex(jsonData + "HYZC_WX_LOGIN");
+        // 构建redisKey, 存入redis
+        String redisKey = "WX_LOGIN_" + encodeData;
         redisTemplate.opsForValue().set(redisKey, jsonData, Duration.ofDays(3));
+        // 构建 ticketKey 返回前端
+        String ticketKey = "HYZC_" + encodeData;
         JSONObject js = new JSONObject();
-        js.put("ticket", "HYZC_" + md5key);
+        js.put("wx_token", ticketKey);
         HttpResult rs = HttpResult.success(js);
         System.out.println(rs); // HttpResult(success=true, code=11111, message=Success, data={"ticket":"HYZC06e007f0387714ed0304b37d285416be"})
-
     }
 
 }
