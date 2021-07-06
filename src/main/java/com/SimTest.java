@@ -1,21 +1,23 @@
 package com;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.modules.Face.util.QRCodeUtil;
-import com.modules.sys.admin.model.entity.User;
-import org.apache.commons.codec.digest.DigestUtils;
+import com.google.gson.Gson;
+import com.modules.base.model.entity.AliRes;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import net.minidev.json.JSONObject;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.nio.charset.Charset;
 import java.util.*;
 
 /**
@@ -35,7 +37,7 @@ public class SimTest {
     public void test1() throws IOException, InterruptedException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
 
         //List<Integer> numList = Lists.newArrayList(0, 0, 0, 1, 2, 3, 4, 5, 6, 0, 7, 8, 9, 0, 0, 0, 0, 0); // 18
-        List<Integer> numList = Lists.newArrayList(1,0); // 18
+        List<Integer> numList = Lists.newArrayList(1, 0); // 18
         /*List<List<Integer>> lists=Lists.partition(numList,4);
         lists.get(0).remove(2);
         System.out.println(numList);//[[1, 2, 3], [4, 5, 6], [7, 8]]
@@ -142,18 +144,52 @@ public class SimTest {
         String ab = qrCodeUtil.crateQRCode("ab");
         System.out.println(ab);*/
 
-        String encodeStr = DigestUtils.md5Hex("ABD");
+        /*String encodeStr = DigestUtils.md5Hex("ABD");
         System.out.println(encodeStr);
         String decodeStr = new String(DigestUtils.md5(encodeStr), "UTF-8");
         System.out.println(decodeStr);
 
         String encoded = Base64.getEncoder().encodeToString(DigestUtils.md5(encodeStr));
-        System.out.println(encoded);
+        System.out.println(encoded);*/
+
+        //System.out.println("aa".equals(null));
+        //long l = System.currentTimeMillis();
+        //System.out.println(l); //162 452 1413 337
+
+        /*String fileName = "abc.jpg";
+        String[] suffixArr = {"jpg", "png", "jpeg", "bmp"};
+        String suffix = fileName.substring(fileName.lastIndexOf('.') + 1);
+        if (Arrays.asList(suffixArr).contains(suffix)) {
+            System.out.println(suffix);
+        }*/
+
+        /*UUID uuid = UUID.randomUUID();
+        System.out.println(uuid);
+        String fileName = "abc.jpg";
+        String suffix = fileName.substring(fileName.lastIndexOf('.'));
+        System.out.println(suffix);*/
+
+        /*long time = new Date().getTime();
+        long l = System.currentTimeMillis();
+        System.out.println(time); // 162 460 2098 864
+        System.out.println(l);*/
+
+        /*String str = "alipay_sdk=alipay-sdk-java-4.8.103.ALL&app_id=2021002145607382&biz_content=%7B%22out_trade_no%22%3A%221409749588704890880%22%2C%22total_amount%22%3A%22100" +
+                ".00%22%2C%22subject%22%3A%22null%E5%85%85%E5%80%BC+100.00+%E5%85%83%E5%A5%96%E5%8A%B1+20" +
+                ".00+%E5%85%83%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&sign=OTqiqMiOo3clmCIxZEcfbqRtWZ7x7c3S1LwcSQY5YTUvsvY0TFGg%2FVwTeoBwLcgTHUfjD5Bmfo9iQBRDv4LDLeCTl%2FKzoksqXYcVEPa66X%2BsyMolDX%2F0sndxEauwGS9a8ugwn3LUQlVzg%2FTMneElUQG5eR6IvCzS0myRcNB%2Bv1Gn%2FSFOW7B%2F8FtskHZDhAi3sRMnulG2P5n40yLxu9oYsrnjX4GqR%2F39kUWnhqJzOvZr9AMPKSICbDdMKqIOXiphvUOyF94O12Wj2XGaH8k5SB3zTYopnpTrSkfVzrMD9tyeJ849vuR2xUFwMYSc2aDaB08yYXYRBWUiLBMbNynh2w%3D%3D&sign_type=RSA2&timestamp=2021-06-29+13%3A44%3A28&version=1.0";
+        String replaceStr = str.replace("&", "\",\"").replace("=", "\":\"");
+        String data = "{\"" + replaceStr + "\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        AliRes result = mapper.readValue(data, new TypeReference<AliRes>(){});
+        Gson gson = new Gson();
+        AliRes aliRes = gson.fromJson(data, AliRes.class);
+        System.out.println(aliRes);*/
+
+        /*boolean equals = "".equals(null);
+        System.out.println(equals);*/
 
 
     }
-
-
 
 
 
