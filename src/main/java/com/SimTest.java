@@ -17,6 +17,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.management.LockInfo;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -188,6 +189,20 @@ public class SimTest {
         /*boolean equals = "".equals(null);
         System.out.println(equals);*/
 
+        /*Long id1 = 1258966264475422720L;
+        Long id2 = 1258966264475422720L;
+        boolean flag = id1.equals(id2);
+        System.out.println(flag);*/
+
+        /*System.out.println(">>>" + File.separator);
+        System.out.println(">>>" + File.separatorChar);
+        System.out.println(">>>" + File.pathSeparator);
+        System.out.println(">>>" + File.pathSeparatorChar);*/
+
+        Long a = 1406863105862012928L;
+        Long b = 1406863105862012928L;
+        boolean flag = a.toString().equals(b.toString());
+        System.out.println(flag);
 
     }
 
