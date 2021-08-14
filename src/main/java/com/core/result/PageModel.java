@@ -7,10 +7,10 @@
 
 package com.core.result;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.Collection;
-
-import lombok.Data;
 
 /**
  * @Description: 分页封装

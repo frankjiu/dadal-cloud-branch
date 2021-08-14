@@ -1,11 +1,5 @@
 package com.core.utils;
 
-/**
- * @Description:
- * @Author: QiuQiang
- * @Date: 2020-11-15
- */
-
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -16,11 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @Author liuzongqiang
- * @Date 2019/7/27 0027 19:05
- * @Version 1.0
- **/
 @Component
 public final class RedisUtil {
 

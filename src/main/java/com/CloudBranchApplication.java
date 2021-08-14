@@ -18,6 +18,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import javax.servlet.Filter;
@@ -33,6 +35,8 @@ import java.util.Map;
  */
 @SpringBootApplication
 @EnableCaching
+@EnableDiscoveryClient
+@EnableFeignClients
 public class CloudBranchApplication {
 
     /**

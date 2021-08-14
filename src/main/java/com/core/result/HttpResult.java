@@ -1,8 +1,8 @@
 package com.core.result;
 
-import java.util.Collection;
-
 import lombok.Data;
+
+import java.util.Collection;
 
 /**
  * @Description: 响应结果集
@@ -10,13 +10,16 @@ import lombok.Data;
  * @date: 2020年6月3日
  */
 @Data
-@SuppressWarnings("rawtypes")
 public class HttpResult<T> {
 
+    // 响应状态
     private boolean success;
-    private String code;
+    // 响应码
+    private int code;
+    // 响应信息
     private String message;
-    private T data;
+    // 响应数据
+    private T data = (T) "Operate completed!";
 
     public HttpResult() {
     }
@@ -58,6 +61,13 @@ public class HttpResult<T> {
     }
 
     /**
+     * 返回成功(提示信息)
+     */
+    public static HttpResult success(RespCode chooseCode) {
+        return new HttpResult(true, chooseCode);
+    }
+
+    /**
      * 返回成功(数据)
      */
     public static <T> HttpResult<T> success(T data) {
@@ -75,7 +85,7 @@ public class HttpResult<T> {
      * 返回成功(分页数据)
      */
     public static <T> HttpResult<PageModel> success(Collection<T> list, Number totalCount) {
-        PageModel<T> pageList = new PageModel<T>();
+        PageModel<T> pageList = new PageModel();
         pageList.setData(list);
         pageList.setTotalCount(totalCount.longValue());
         return success(pageList);

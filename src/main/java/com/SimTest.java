@@ -1,22 +1,29 @@
 package com;
 
+import com.core.utils.EntityUtil;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.google.common.collect.Lists;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.modules.base.model.entity.AliRes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.minidev.json.JSONObject;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.PropertySetStrategy;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.hwpf.sprm.SprmUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.management.LockInfo;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -38,7 +45,7 @@ public class SimTest {
     public void test1() throws IOException, InterruptedException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
 
         //List<Integer> numList = Lists.newArrayList(0, 0, 0, 1, 2, 3, 4, 5, 6, 0, 7, 8, 9, 0, 0, 0, 0, 0); // 18
-        List<Integer> numList = Lists.newArrayList(1, 0); // 18
+        //List<Integer> numList = Lists.newArrayList(1, 0); // 18
         /*List<List<Integer>> lists=Lists.partition(numList,4);
         lists.get(0).remove(2);
         System.out.println(numList);//[[1, 2, 3], [4, 5, 6], [7, 8]]
@@ -199,13 +206,159 @@ public class SimTest {
         System.out.println(">>>" + File.pathSeparator);
         System.out.println(">>>" + File.pathSeparatorChar);*/
 
-        Long a = 1406863105862012928L;
+        /*Long a = 1406863105862012928L;
         Long b = 1406863105862012928L;
         boolean flag = a.toString().equals(b.toString());
-        System.out.println(flag);
+        System.out.println(flag);*/
+
+        /*String path = "/home/test/abc.txt";
+        File file = new File(path);
+        System.out.println(file.getAbsolutePath());*/
+        /*String imageUrl = "http://aiphoto.wlhlwl.com/fp1.jpg";
+        String suffix = imageUrl.substring(imageUrl.lastIndexOf("/")+1);
+        System.out.println(suffix);*/
+
+        /*List<Integer> numList = new ArrayList<>();
+        numList.add(6);
+        numList.add(3);
+        numList.add(5);
+        numList.add(2);
+        numList.add(9);
+        numList.sort(Comparator.comparing(e -> e));
+        System.out.println(numList);*/
+
+        // https://www.baidu.com/s?cl=3&tn=baidutop10&fr=top1000
+        /*String str1 = String.format("Hi,%s", "小超");
+
+        String BASE_URL = "https://open.douyin.com/platform/oauth/connect/";
+
+        String url = BASE_URL + String.format("?client_key=%s&response_type=code&scope=user_info&redirect_uri=%s&state=%s", "awysuxkb5c6zfsti", "https://www.baidu.com/", "");
+        System.out.println(url);*/
+
+        List<Map<String, String>> kindList = new ArrayList<>();
+
+        /*Map<String, String> map = null;
+        for (int i = 0; i < 5; i++) {
+            map = new HashMap<>();
+            map.put(String.valueOf(i), "156");
+            System.out.println(map.hashCode());
+            kindList.add(map);
+        }
+        System.out.println(kindList);*/
+
+        /*int count = 4;
+
+        int batchSize = (int) Math.floor(200 / (count - 1)) * (count - 1);
+        System.out.println(batchSize);*/
+
+        String before = "{\"home_address\":\"山东青岛\", \"user_name\":\"老王\"}";
+        //下横线格式转驼峰，并封装成类
+        ObjectMapper mapper = new ObjectMapper();
+        JSONObject jsonObject = mapper.readValue(before, JSONObject.class);
+        JSONObject result = toCamel(jsonObject);
+        System.out.println(result);
+
+        /*JsonConfig config = new JsonConfig();
+        config.setPropertySetStrategy(new PropertySetStrategy() {
+            @Override
+            public void setProperty(Object o, String s, Object o1) throws JSONException {
+                System.out.println("=======aa=======");
+                System.out.println(o);
+                System.out.println(s);
+                System.out.println(o1);
+                System.out.println("========bb======");
+                //EntityUtil.convertToCamel(o.toString());
+            }
+        });
+        JSONObject jsonObject = JSONObject.fromObject(before, config);
+        System.out.println(jsonObject);*/
+
+
+        /*StringBuilder sb = new StringBuilder();
+        String field = "this_is_an_apple";
+        if (!field.contains("_")){
+
+        }
+        String[] s = field.split("_");
+        sb.append(s[0]);
+        for (int i = 1; i < s.length; i++) {
+            String prefix = s[i].substring(0, 1);
+            String join = StringUtils.join(prefix.toUpperCase(), s[i].substring(1));
+            sb.append(join);
+            System.out.println(join);
+        }
+        System.out.println(sb.toString());
+        String s1 = EntityUtil.convertToCamel(field);
+        System.out.println(s1);*/
+
+        bufferedCopyMethod("C:\\Users\\Administrator\\Desktop\\tes\\a\\laptop-drop.mp4", "C:\\Users\\Administrator\\Desktop\\tes\\b\\laptop-drop.mp4");
+
 
     }
 
+    public void bufferedCopyMethod(String fromFileName, String toFileName) {
+        BufferedInputStream in = null;
+        BufferedOutputStream out = null;
+        try {
+            in = new BufferedInputStream(new FileInputStream(fromFileName));
+            out = new BufferedOutputStream(new FileOutputStream(toFileName));
+            int readContent;
+            byte[] buf = new byte[1024];
+            while ((readContent = in.read(buf)) != -1) {
+                out.write(buf);
+                out.flush();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (in != null) in.close();
+                if (out != null) out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    /**
+     * net.sf.json.JSONObject 属性名转驼峰
+     * @param jsonObject
+     * @return
+     */
+    public JSONObject toCamel(JSONObject jsonObject){
+        Iterator iterator = jsonObject.entrySet().iterator();
+        Map<String, Object> newMap = new HashMap<>();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            String key = entry.getKey().toString();
+            key = EntityUtil.convertToCamel(key);
+            Object value = entry.getValue();
+            newMap.put(key, value);
+        }
+        return mapToJsonObj(newMap);
+    }
+
+    /**
+     * map 转 JSONObject
+     * @param map
+     * @return
+     */
+    public JSONObject mapToJsonObj(Map<String, Object> map) {
+        JSONObject resultJson = new JSONObject();
+        Iterator it = map.keySet().iterator();
+        while (it.hasNext()) {
+            String key = (String) it.next();
+            resultJson.put(key, map.get(key));
+        }
+        return resultJson;
+    }
 
 }
+
+@Data
+class Person {
+    private String homeAddress;
+}
+

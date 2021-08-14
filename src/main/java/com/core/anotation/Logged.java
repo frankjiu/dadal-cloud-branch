@@ -21,19 +21,14 @@ import java.lang.annotation.*;
 public @interface Logged {
 
     /**
-     * 描述
-     */
-    String description() default "";
-
-    /**
      * 操作类型
      */
-    String operationType() default "";
+    String type() default "";
 
     /**
      * 操作模块
      */
-    String operationModule() default "";
+    String module() default "";
 
     /**
      * 备注

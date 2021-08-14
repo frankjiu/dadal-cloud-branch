@@ -72,7 +72,7 @@ public class PermitionFilter extends AuthenticatingFilter {
         httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
         httpResponse.setHeader("Access-Control-Allow-Origin", HttpContextUtils.getOrigin());
         try {
-            HttpResult result = HttpResult.fail(RespCode.AUTHORIZATION_ERROR);
+            HttpResult result = HttpResult.fail(RespCode.AUTHENTICATION_FAILED);
             String json = objectMapper.writeValueAsString(result);
             httpResponse.getWriter().print(json);
         } catch (Exception ex) {

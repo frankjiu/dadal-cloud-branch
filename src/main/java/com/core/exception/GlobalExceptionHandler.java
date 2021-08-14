@@ -13,7 +13,6 @@ import com.core.result.RespCode;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -22,7 +21,6 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +39,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public Object defaultExceptionHandle(HttpServletRequest request, Exception e) {
-        boolean isAjax = isAjax(request);
+        /*boolean isAjax = isAjax(request);
         if (isAjax) {
             log.info(e.getMessage(), e);
             HttpResult<?> result = HttpResult.fail(RespCode.INTERNAL_ERROR);
@@ -52,11 +50,11 @@ public class GlobalExceptionHandler {
             modelAndView.addObject("message", e.getMessage()).addObject("url", request.getRequestURL())
                     .addObject("stackTrace", e.getStackTrace()).setViewName("error");
             return modelAndView;
-        }
+        }*/
 
         // 如果是前后端分离, 只需做如下处理.
-        //log.error(e.getMessage(), e);
-        //return HttpResult.fail(RespCode.INTERNAL_ERROR);
+        log.error(e.getMessage(), e);
+        return HttpResult.fail(RespCode.INTERNAL_ERROR);
 
     }
 
@@ -94,25 +92,19 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public HttpResult handleJsonParseException(HttpMessageNotReadableException e) {
         log.error(e.getMessage(), e);
-        return HttpResult.fail(RespCode.PARAM_ERROR);
+        return HttpResult.fail(RespCode.INVALID_PARAM);
     }
 
     @ExceptionHandler(MismatchedInputException.class)
     public HttpResult handleJsonParseException(MismatchedInputException e) {
         log.error(e.getMessage(), e);
-        return HttpResult.fail(RespCode.PARAM_ERROR);
+        return HttpResult.fail(RespCode.INVALID_PARAM);
     }
 
     @ExceptionHandler(DuplicateKeyException.class)
     public HttpResult handleDuplicateKeyException(DuplicateKeyException e) {
         log.error(e.getMessage(), e);
-        return HttpResult.fail("数据库中已存在该记录");
-    }
-
-    @ExceptionHandler(AuthorizationException.class)
-    public HttpResult handleAuthorizationException(AuthorizationException e) {
-        log.error(e.getMessage(), e);
-        return HttpResult.fail("没有权限，请联系管理员授权");
+        return HttpResult.fail(RespCode.DUPLICATED);
     }
 
     /**
@@ -133,7 +125,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(BindException.class)
     public HttpResult handleBindException(BindException e) {
-        HttpResult r = new HttpResult(RespCode.PARAM_ERROR);
+        HttpResult r = new HttpResult(RespCode.INVALID_PARAM);
         r.setSuccess(false);
         String msg = null;
         FieldError field = e.getBindingResult().getFieldError();
@@ -157,7 +149,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public HttpResult handleBindException(MethodArgumentNotValidException e) {
-        HttpResult r = new HttpResult(RespCode.PARAM_ERROR);
+        HttpResult r = new HttpResult(RespCode.INVALID_PARAM);
         r.setSuccess(false);
         String msg = null;
         FieldError field = e.getBindingResult().getFieldError();

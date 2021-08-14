@@ -1,13 +1,27 @@
-2021-06-11 09:59:14.142 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:00:25.929 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:05:57.874 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:16:56.173 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:18:19.925 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:20:11.067 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:34:42.972 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:36:33.363 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:39:08.793 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:41:03.673 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:45:34.722 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 10:52:11.923 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2021-06-11 11:47:01.961 | DEBUG | main | com.CloudBranchApplicationTests-line:56 | Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2021-08-14 16:44:17.416 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-14 16:44:17.419 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-14 16:44:17.419 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-14 16:44:17.419 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-14 16:44:17.420 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-14 16:44:17.427 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-14 16:44:17.428 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-14 16:44:17.428 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-14 16:44:17.428 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-14 16:44:17.428 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-14 16:44:47.421 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:45:47.424 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:46:47.425 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:47:47.426 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:48:47.427 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:49:47.429 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:50:47.431 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:51:47.431 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:52:47.433 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:53:47.434 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:54:47.435 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:55:47.439 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:56:47.441 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:57:47.442 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:58:47.444 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 16:59:47.487 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-14 17:00:47.530 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started

@@ -1,6 +1,6 @@
 package com.core.utils;
 
-import com.core.exception.CommonException;
+import com.wlhlwl.hyzc.customer.core.exception.CommonException;
 
 import java.security.MessageDigest;
 import java.util.UUID;

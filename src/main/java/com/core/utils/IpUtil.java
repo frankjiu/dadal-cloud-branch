@@ -10,10 +10,9 @@ package com.core.utils;
 
 import org.springframework.util.StringUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Description: Get the real IP of the request
