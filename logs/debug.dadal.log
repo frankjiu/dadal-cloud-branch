@@ -242,3 +242,21 @@
 2021-08-15 17:32:06.348 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
 2021-08-15 17:33:06.351 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
 2021-08-15 17:34:06.352 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:35:06.353 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:36:06.355 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:37:06.358 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:38:06.360 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:39:06.361 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:40:06.363 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:41:06.364 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 17:43:03.508 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-15 17:43:03.508 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-15 17:43:03.508 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-15 17:43:03.508 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-15 17:43:03.508 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-15 17:43:03.516 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-15 17:43:03.517 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-15 17:43:03.517 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-15 17:43:03.517 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-15 17:43:03.517 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-15 17:43:33.510 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started

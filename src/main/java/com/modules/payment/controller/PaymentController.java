@@ -93,16 +93,13 @@ public class PaymentController {
         BeanUtils.copyProperties(input, paramDto);
         this.parseParam(paramDto);
         PayResultVo result = null;
-        if (paramDto.getPaymentMode() == Constant.PaymentMode.CHAIN_CARD) {
-            try {
-                result = paymentService.pay(paramDto);
-            } catch (Exception e) {
-                log.info(e.getMessage(), e);
-                throw new CommonException("支付异常!");
-            }
+        try {
+            result = paymentService.pay(paramDto);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+            throw new CommonException("支付异常!");
         }
-        PayResultVo response = paymentService.drawReward(paramDto.getOrderId());
-        return HttpResult.success(response);
+        return HttpResult.success(result);
     }
 
     /**

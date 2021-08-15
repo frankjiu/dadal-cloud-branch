@@ -20,7 +20,7 @@ public class OrderSaveDto {
     private Long createTime;
     //订单删除时间
     private Long deleteTime;
-    //支付渠道：0-微信支付；1-支付宝支付；2-跨店卡支付；3-会员卡支付；4-现金支付；
+    //支付渠道：0-微信支付；1-支付宝支付
     private String paymentMode;
     //会员卡ID
     private Long payMemberId;

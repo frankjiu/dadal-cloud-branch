@@ -253,7 +253,6 @@ public class PayServiceImpl implements PayService {
             OrderSaveDto orderSaveDto = new OrderSaveDto();
             BeanUtils.copyProperties(order, orderSaveDto);
             //支付信息
-            orderSaveDto.setPaymentMode(String.valueOf(Constant.PaymentMode.CHAIN_CARD));
             orderSaveDto.setPayMemberId(user.getId());
             if (orderService.saveOrder(orderSaveDto) == null) {
                 throw new CommonException("保存订单失败！");

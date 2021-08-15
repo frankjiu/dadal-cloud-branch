@@ -127,8 +127,8 @@ public class Constant {
         public static final String USER_INFO_URL = "https://api.weixin.qq.com/sns/userinfo";
         public static final String CHECK_TOKEN_URL = "https://api.weixin.qq.com/sns/auth";
         public static final String REFRESH_TOKEN_URL = "https://api.weixin.qq.com/sns/oauth2/refresh_token";
-        public static final String APPID = "wx29b316438f141617";
-        public static final String SECRET = "f61b7bd90d898bdd6473d77ac81dbaee";
+        public static final String APPID = "wx71b316438f141617";
+        public static final String SECRET = "f61b7bd25d898bdd6473d77ac81dbaee";
         public static final String AUTHORIZATION_CODE_BASE = "authorization_code"; //"authorization_code";
         public static final String AUTHORIZATION_CODE_USERINFO = "snsapi_userinfo";
         public static final String EXPIRES_TIME = "7200";
@@ -151,14 +151,7 @@ public class Constant {
         public static final int WX = 0;
         //支付宝支付
         public static final int ALI = 1;
-        //跨店卡支付
-        public static final int CROSS_CARD = 2;
-        //会员卡支付
-        public static final int CHAIN_CARD = 3;
-        //现金支付
-        public static final int CASH = 4;
     }
-
 
     // 第三方标识-微信
     public static final int WX = 0;
