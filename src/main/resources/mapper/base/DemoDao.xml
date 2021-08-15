@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.modules.base.dao.DemoDao">
+<mapper namespace="com.modules.base.demo.dao.DemoDao">
     <sql id="columns">
 		/*ID, CARD_NAME AS cardName, CARD_NUMBER AS cardNumber,
 		CREATE_TIME AS createTime*/
@@ -10,7 +10,7 @@
         CREATE_TIME AS createTime
 	</sql>
 
-    <select id="case1" resultType="com.modules.base.model.entity.Demo">
+    <select id="case1" resultType="com.modules.base.demo.model.entity.Demo">
         SELECT
         <include refid="columns"/>
         FROM DEMO
@@ -52,14 +52,14 @@
         </where>
     </sql>
 
-    <select id="findPage" parameterType="com.modules.base.model.dto.DemoGetDto" resultType="com.modules.base.model.entity.Demo">
+    <select id="findPage" parameterType="com.modules.base.demo.model.dto.DemoGetDto" resultType="com.modules.base.demo.model.entity.Demo">
         select * from demo dm
         <include refid="page_sql"/>
         ORDER BY dm.CREATE_TIME DESC
         LIMIT ${(demoGetDto.pageNum-1)*demoGetDto.pageSize},${demoGetDto.pageSize};
     </select>
 
-    <select id="count" parameterType="com.modules.base.model.dto.DemoGetDto" resultType="java.lang.Integer">
+    <select id="count" parameterType="com.modules.base.demo.model.dto.DemoGetDto" resultType="java.lang.Integer">
         select count(*) from demo dm
         <include refid="page_sql"/>
     </select>

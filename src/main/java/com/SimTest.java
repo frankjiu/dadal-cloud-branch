@@ -9,7 +9,6 @@ import com.google.common.collect.Lists;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.modules.base.model.entity.AliRes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -214,7 +213,7 @@ public class SimTest {
         /*String path = "/home/test/abc.txt";
         File file = new File(path);
         System.out.println(file.getAbsolutePath());*/
-        /*String imageUrl = "http://aiphoto.wlhlwl.com/fp1.jpg";
+        /*String imageUrl = "http://dadal.cloud.com/fp1.jpg";
         String suffix = imageUrl.substring(imageUrl.lastIndexOf("/")+1);
         System.out.println(suffix);*/
 
@@ -357,8 +356,5 @@ public class SimTest {
 
 }
 
-@Data
-class Person {
-    private String homeAddress;
-}
+
 

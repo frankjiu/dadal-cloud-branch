@@ -3,9 +3,9 @@ package com.function.imports;
 import com.core.anotation.Logged;
 import com.core.result.HttpResult;
 import com.core.utils.EasyPoiUtils;
-import com.modules.base.model.dto.DemoPostDto;
-import com.modules.base.model.entity.Demo;
-import com.modules.base.service.DemoService;
+import com.modules.base.demo.model.dto.DemoPostDto;
+import com.modules.base.demo.model.entity.Demo;
+import com.modules.base.demo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
@@ -30,7 +30,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 
 /**
- * @Description: import file-excel data
+ * @remark: import file-excel data
  * @Author: QiuQiang
  * @Date: 2020-12-31
  */
@@ -110,7 +110,7 @@ public class ImportDataFromExcel {
 
 
     // GET方式测试下载
-    @Logged(description = "exportExcelTest")
+    @Logged(remark = "exportExcelTest")
     @GetMapping("/exportExcelTest")
     public void exportExcelTest(HttpServletResponse response) throws IOException {
         List<Demo> exportExcelList = new ArrayList<>();
@@ -127,7 +127,7 @@ public class ImportDataFromExcel {
     }
 
     // 将页面数据下载到excel
-    @Logged(description = "exportExcel")
+    @Logged(remark = "exportExcel")
     @PostMapping("/exportExcel")
     @RequiresPermissions("sys:sys:other")
     public void exportExcel(@RequestBody @Valid DemoPostDto vo, HttpServletResponse response) throws IOException {
@@ -145,7 +145,7 @@ public class ImportDataFromExcel {
     }
 
     // 将excel文件数据导入到库中
-    @Logged(description = "importExcel")
+    @Logged(remark = "importExcel")
     @PostMapping(value = "/importExcel", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public HttpResult uploadExcel(@RequestParam(value = "file") MultipartFile file) {
         try {

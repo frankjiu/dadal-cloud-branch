@@ -6,7 +6,7 @@ package com.core.utils;
  * @Date: 2021-05-24
  */
 
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
+import com.core.constant.Constant;
 import org.junit.Test;
 
 import javax.crypto.Cipher;

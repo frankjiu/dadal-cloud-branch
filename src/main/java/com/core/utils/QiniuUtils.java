@@ -1,6 +1,8 @@
 package com.core.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.core.constant.Constant;
+import com.core.exception.CommonException;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.BucketManager;
@@ -9,8 +11,6 @@ import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
-import com.wlhlwl.hyzc.customer.core.exception.CommonException;
 import org.springframework.util.StringUtils;
 
 import java.io.File;

@@ -93,7 +93,7 @@ public class FileUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        String newUrl = "http://aiphoto.wlhlwl.com/Testme.mp4";
+        String newUrl = "http://dadal.cloud.com/Testme.mp4";
         long start = System.currentTimeMillis();
         storeRemoteFile(newUrl, "D:/home/video/temp/1421393105072033792", "1421393105072033792", ".mp4");
         long end = System.currentTimeMillis();

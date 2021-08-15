@@ -14,7 +14,7 @@ import java.util.List;
 public class AnotationUses {
 
     @Override
-    @Logged(operationType = "保存", operationModule = "系统模块", description = "用户系统操作信息", remark = "无")
+    @Logged(remark = "无")
     public String toString() {
         return "Overriden toString method";
     }

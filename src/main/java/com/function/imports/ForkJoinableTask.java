@@ -1,8 +1,8 @@
 package com.function.imports;
 
 import com.core.utils.SpringContextUtils;
-import com.modules.base.model.entity.Demo;
-import com.modules.base.service.DemoService;
+import com.modules.base.demo.model.entity.Demo;
+import com.modules.base.demo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 

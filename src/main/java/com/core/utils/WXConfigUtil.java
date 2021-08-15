@@ -1,18 +1,13 @@
 package com.core.utils;
 
+import com.core.constant.Constant;
 import com.github.wxpay.sdk.WXPayConfig;
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-/**
- * @Description:
- * @date: 2021/6/11/0011 14:56
- * @author: YuZHenBo
- */
 public class WXConfigUtil implements WXPayConfig {
 
     private byte[] certData;

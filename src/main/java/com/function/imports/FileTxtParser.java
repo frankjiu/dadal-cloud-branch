@@ -9,14 +9,12 @@
 
 package com.function.imports;
 
-import com.core.exception.CommonException;
-import com.modules.base.model.entity.Demo;
+import com.modules.base.demo.model.entity.Demo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -456,7 +456,7 @@
                     <fork>true</fork>
                     <!-- spring-boot:run 中文乱码解决 -->
                     <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-                    <mainClass>com.wlhlwl.hyzc.customer.WlldDishApplication</mainClass>
+                    <mainClass>com.CloudBranchApplication</mainClass>
                     <layout>ZIP</layout>
                     <includes>
                         <include>

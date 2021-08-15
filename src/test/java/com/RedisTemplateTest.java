@@ -1,6 +1,6 @@
 package com;
 
-import com.modules.base.model.entity.Demo;
+import com.modules.base.demo.model.entity.Demo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

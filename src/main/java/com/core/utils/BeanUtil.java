@@ -1,6 +1,6 @@
 package com.core.utils;
 
-import com.wlhlwl.hyzc.customer.modules.douyin.model.vo.UserInfo;
+import lombok.Data;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
@@ -70,4 +70,24 @@ public class BeanUtil {
 
 }
 
+
+@Data
+class UserInfo {
+
+    private String avatar;
+    private String avatarLarger;
+    private String city;
+    private String clientKey;
+    private String country;
+    private String errorCode;
+    private String gender;
+    private String logId;
+    private String nickname;
+    private String openId;
+    private String province;
+    private String unionId;
+    private String encryptMobile;
+    private String mobile;
+
+}
 

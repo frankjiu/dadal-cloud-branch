@@ -2,10 +2,10 @@ package com.function.thread;
 
 import com.core.result.HttpResult;
 import com.core.utils.SpringContextUtils;
-import com.modules.base.model.dto.DemoGetDto;
-import com.modules.base.model.entity.Demo;
-import com.modules.base.model.vo.DemoVo;
-import com.modules.base.service.DemoService;
+import com.modules.base.demo.model.dto.DemoGetDto;
+import com.modules.base.demo.model.entity.Demo;
+import com.modules.base.demo.model.vo.DemoVo;
+import com.modules.base.demo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -4,7 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
+import com.alipay.api.request.*;
+import com.alipay.api.response.*;
+import com.core.constant.Constant;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

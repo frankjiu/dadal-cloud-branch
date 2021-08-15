@@ -1,6 +1,6 @@
 package com.core.utils;
 
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
+import com.core.constant.Constant;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,6 +39,10 @@ public class IdUtil {
             redisTemplate.opsForValue().set(Constant.INCR_ID, val, Constant.INCR_ID_EXPIRE_TIME, TimeUnit.SECONDS);
         }
         return Long.valueOf(currentDateTime() + String.format("%1$07d", val));
+    }
+
+    public static String simpleUUID() {
+        return UUID.randomUUID().toString().replace("-", "");
     }
 
 }

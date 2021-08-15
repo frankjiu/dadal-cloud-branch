@@ -1,6 +1,6 @@
 package com.core.utils;
 
-import com.wlhlwl.hyzc.customer.core.constant.Constant;
+import com.core.constant.Constant;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;

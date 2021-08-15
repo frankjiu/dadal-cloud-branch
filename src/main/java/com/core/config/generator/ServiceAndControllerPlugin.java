@@ -156,15 +156,15 @@ public class ServiceAndControllerPlugin extends PluginAdapter {
         //描述 方法名
         Method method = new Method("selectAll");
         //方法注解
-        //添加@PermissionCheck注解，并引入相应的类
-        clazz.addImportedType(new FullyQualifiedJavaType("com.wlhlwl.hyzcbusiness.anotation.PermissionCheck"));
-        method.addAnnotation("@PermissionCheck");
+        //添加@AuthCheck注解，并引入相应的类
+        clazz.addImportedType(new FullyQualifiedJavaType("com.core.anotation.AuthCheck"));
+        method.addAnnotation("@AuthCheck");
         //添加@PostMapping注解，并引入相应的类
         clazz.addImportedType(new FullyQualifiedJavaType("org.springframework.web.bind.annotation.PostMapping"));
         // method.addAnnotation("@PostMapping(\"/find" + firstCharToLowCase(modelName) + "\")");
         method.addAnnotation("@PostMapping(\"/selectAll\")");
         //添加@Logged注解，并引入相应的类
-        clazz.addImportedType(new FullyQualifiedJavaType("com.wlhlwl.hyzcbusiness.anotation.Logged"));
+        clazz.addImportedType(new FullyQualifiedJavaType("com.core.anotation.Logged"));
         method.addAnnotation("@Logged(remark = \"查询" + firstCharToLowCase(modelName) + "列表\")");
         //添加@ApiOperation注解，并引入相应的类
         clazz.addImportedType(new FullyQualifiedJavaType("io.swagger.annotations.ApiOperation"));

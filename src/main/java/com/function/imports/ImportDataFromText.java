@@ -2,7 +2,7 @@ package com.function.imports;
 
 import com.core.exception.CommonException;
 import com.core.result.HttpResult;
-import com.modules.base.model.entity.Demo;
+import com.modules.base.demo.model.entity.Demo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

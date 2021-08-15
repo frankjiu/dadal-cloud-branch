@@ -28,9 +28,9 @@ public class Swagger2Config {
     @Bean
     public Docket api() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("hyzc-business")
-                .description("hyzc-business系统接口⽂档")
-                .termsOfServiceUrl("http://www.wlld.com/")
+                .title("ddl-cloud")
+                .description("dadal-cloud系统接口⽂档")
+                .termsOfServiceUrl("http://www.baidu.com/")
                 .version("v1.0")
                 .build();
 
@@ -44,7 +44,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.wlhlwl.hyzcbusiness.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.modules"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars);

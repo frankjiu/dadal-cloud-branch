@@ -16,4 +16,39 @@ public class UserServiceImpl implements UserService {
     public Object selectAll() {
         return userMapper.selectAll();
     }
+
+    @Override
+    public void insert(User user) {
+
+    }
+
+    @Override
+    public User findById(Long userId) {
+        return null;
+    }
+
+    @Override
+    public void update(User user) {
+
+    }
+
+    @Override
+    public void updateById(User user) {
+
+    }
+
+    @Override
+    public User findByMobile(String phone) {
+        return null;
+    }
+
+    @Override
+    public User findWxAccount(String openId) {
+        return null;
+    }
+
+    @Override
+    public User findAliAccount(String openId) {
+        return null;
+    }
 }
