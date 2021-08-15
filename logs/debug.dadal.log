@@ -191,3 +191,16 @@
 2021-08-15 16:45:05.698 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
 2021-08-15 16:45:05.698 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
 2021-08-15 16:45:05.698 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-15 16:53:36.271 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-15 16:53:36.271 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-15 16:53:36.271 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-15 16:53:36.271 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-15 16:53:36.272 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-15 16:53:36.278 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-15 16:53:36.278 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-15 16:53:36.278 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-15 16:53:36.278 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-15 16:53:36.279 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-15 16:54:06.273 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 16:55:06.275 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-15 16:56:06.276 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started

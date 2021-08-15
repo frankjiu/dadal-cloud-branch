@@ -1228,3 +1228,41 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2021-08-15 16:45:07.117 | INFO  | main | springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper-line:163 | Found 1 custom documentation plugin(s)
 2021-08-15 16:45:07.169 | INFO  | main | springfox.documentation.spring.web.scanners.ApiListingReferenceScanner-line:41 | Scanning for api listing references
 2021-08-15 16:45:07.541 | INFO  | main | com.CloudBranchApplication-line:61 | Started CloudBranchApplication in 45.164 seconds (JVM running for 47.032)
+2021-08-15 16:53:08.572 | INFO  | main | com.CloudBranchApplication-line:655 | The following profiles are active: dev
+2021-08-15 16:53:17.660 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-15 16:53:17.662 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2021-08-15 16:53:21.122 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 3455ms. Found 1 Elasticsearch repository interfaces.
+2021-08-15 16:53:21.128 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-15 16:53:21.129 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2021-08-15 16:53:23.531 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 2401ms. Found 0 Reactive Elasticsearch repository interfaces.
+2021-08-15 16:53:23.542 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:249 | Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-15 16:53:23.544 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:127 | Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-15 16:53:25.958 | INFO  | main | o.springframework.data.repository.config.RepositoryConfigurationExtensionSupport-line:348 | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.function.es.dao.EsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-08-15 16:53:25.958 | INFO  | main | org.springframework.data.repository.config.RepositoryConfigurationDelegate-line:187 | Finished Spring Data repository scanning in 2404ms. Found 0 Redis repository interfaces.
+2021-08-15 16:53:28.409 | INFO  | main | org.springframework.cloud.context.scope.GenericScope-line:295 | BeanFactory id=dda4fae8-a5f4-39f3-8256-18c1982142f3
+2021-08-15 16:53:28.461 | INFO  | main | o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker-line:335 | Bean 'com.function.openfeign.TestCallService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-15 16:53:28.988 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:108 | Tomcat initialized with port(s): 8090 (http)
+2021-08-15 16:53:28.997 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Initializing ProtocolHandler ["http-nio-8090"]
+2021-08-15 16:53:28.999 | INFO  | main | org.apache.catalina.core.StandardService-line:173 | Starting service [Tomcat]
+2021-08-15 16:53:29.000 | INFO  | main | org.apache.catalina.core.StandardEngine-line:173 | Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-08-15 16:53:29.157 | INFO  | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring embedded WebApplicationContext
+2021-08-15 16:53:29.157 | INFO  | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-line:285 | Root WebApplicationContext: initialization completed in 20560 ms
+2021-08-15 16:53:29.556 | INFO  | main | com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure-line:56 | Init DruidDataSource
+2021-08-15 16:53:29.794 | INFO  | main | com.alibaba.druid.pool.DruidDataSource-line:1002 | {dataSource-1} inited
+2021-08-15 16:53:34.095 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:59 | Version Spring Data Elasticsearch: 4.0.4.RELEASE
+2021-08-15 16:53:34.097 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:60 | Version Elasticsearch Client in build: 7.6.2
+2021-08-15 16:53:34.098 | INFO  | main | org.springframework.data.elasticsearch.support.VersionInfo-line:61 | Version Elasticsearch Client used: 7.6.2
+2021-08-15 16:53:36.214 | INFO  | main | springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping-line:69 | Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-08-15 16:53:36.266 | INFO  | main | com.netflix.config.sources.URLConfigurationSource-line:126 | URLs to be used as dynamic configuration source: [file:/D:/IDEA/workspace_idea/dadal-cloud-branch/target/classes/config.properties]
+2021-08-15 16:53:36.277 | INFO  | main | com.netflix.config.sources.URLConfigurationSource-line:126 | URLs to be used as dynamic configuration source: [file:/D:/IDEA/workspace_idea/dadal-cloud-branch/target/classes/config.properties]
+2021-08-15 16:53:36.410 | INFO  | main | org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-line:54 | Adding welcome page: class path resource [static/index.html]
+2021-08-15 16:53:36.760 | INFO  | main | org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler-line:181 | Initializing ExecutorService 'taskScheduler'
+2021-08-15 16:53:37.253 | INFO  | main | org.apache.coyote.http11.Http11NioProtocol-line:173 | Starting ProtocolHandler ["http-nio-8090"]
+2021-08-15 16:53:37.271 | INFO  | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer-line:220 | Tomcat started on port(s): 8090 (http) with context path ''
+2021-08-15 16:53:37.627 | INFO  | main | springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper-line:160 | Context refreshed
+2021-08-15 16:53:37.638 | INFO  | main | springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper-line:163 | Found 1 custom documentation plugin(s)
+2021-08-15 16:53:37.684 | INFO  | main | springfox.documentation.spring.web.scanners.ApiListingReferenceScanner-line:41 | Scanning for api listing references
+2021-08-15 16:53:38.024 | INFO  | main | com.CloudBranchApplication-line:61 | Started CloudBranchApplication in 32.044 seconds (JVM running for 34.415)
+2021-08-15 16:55:21.817 | INFO  | http-nio-8090-exec-1 | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-line:173 | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-15 16:55:21.817 | INFO  | http-nio-8090-exec-1 | org.springframework.web.servlet.DispatcherServlet-line:525 | Initializing Servlet 'dispatcherServlet'
+2021-08-15 16:55:21.828 | INFO  | http-nio-8090-exec-1 | org.springframework.web.servlet.DispatcherServlet-line:547 | Completed initialization in 11 ms
