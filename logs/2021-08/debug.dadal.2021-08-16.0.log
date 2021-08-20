@@ -1,0 +1,30 @@
+2021-08-16 08:48:52.787 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-16 08:48:52.789 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-16 08:48:52.789 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-16 08:48:52.789 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-16 08:48:52.790 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-16 08:48:52.799 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.website], value [www.baidu.com]
+2021-08-16 08:48:52.799 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.age], value [30]
+2021-08-16 08:48:52.799 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.report.name], value [/]
+2021-08-16 08:48:52.800 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.isTall], value [true]
+2021-08-16 08:48:52.800 | DEBUG | main | com.netflix.config.DynamicPropertyUpdater-line:122 | adding property key [app.name], value [frank]
+2021-08-16 08:49:22.793 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:50:22.794 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:51:22.796 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:52:22.797 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:53:22.799 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:54:22.801 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:55:22.803 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:56:22.805 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:57:22.807 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:58:22.809 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 08:59:22.811 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:00:22.815 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:01:22.817 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:02:22.821 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:03:22.822 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:04:22.824 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:05:22.826 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:06:22.828 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:07:22.830 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started
+2021-08-16 09:08:22.832 | DEBUG | pollingConfigurationSource | com.netflix.config.AbstractPollingScheduler-line:160 | Polling started

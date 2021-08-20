@@ -16,6 +16,7 @@ import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertySetStrategy;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hwpf.sprm.SprmUtils;
 import org.junit.Test;
@@ -290,8 +291,13 @@ public class SimTest {
         String s1 = EntityUtil.convertToCamel(field);
         System.out.println(s1);*/
 
-        bufferedCopyMethod("C:\\Users\\Administrator\\Desktop\\tes\\a\\laptop-drop.mp4", "C:\\Users\\Administrator\\Desktop\\tes\\b\\laptop-drop.mp4");
+        //bufferedCopyMethod("C:\\Users\\Administrator\\Desktop\\tes\\a\\laptop-drop.mp4", "C:\\Users\\Administrator\\Desktop\\tes\\b\\laptop-drop.mp4");
 
+        /*if (ids == null || ids.isEmpty()) {
+            return null;
+        }*/
+        boolean flag = CollectionUtils.isEmpty(new ArrayList());
+        System.out.println(flag);
 
     }
 

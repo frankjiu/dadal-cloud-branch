@@ -57,6 +57,25 @@ spring:
       min-idle: 0
       max-idle: 8
       max-wait: -1
+
+  #rabbitmq
+  rabbitmq:
+    host: 192.168.1.100
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 1000ms
+    listener:
+      simple:
+        acknowledge-mode: manual            # 开启消费者手动确认机制
+        concurrency: 1
+        max-concurrency: 5
+        prefetch: 1                         # 设置队列中最大的未确认的消息数量
+    publisher-confirm-type: correlated      # 开启生产者确认机制
+    publisher-returns: true                 # 开启return确认机制
+    template:
+      mandatory: true
+
   #spring data elasticsearch config
   elasticsearch:
     rest:
